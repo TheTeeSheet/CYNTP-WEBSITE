@@ -30,6 +30,8 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   padding: 16px 52px; display: flex; align-items: center; justify-content: space-between;
   transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
+  background: rgba(13,13,13,0.96); backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 nav .nav-center-home { position: absolute; left: 50%; transform: translateX(-50%); }
 nav.scrolled {
@@ -217,6 +219,7 @@ nav .active { color: var(--sun) !important; }
   background: #fff; border-radius: 16px; padding: 32px;
   border: 1px solid rgba(13,13,13,0.06);
   transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+  display: flex; flex-direction: column;
 }
 .audience-card:hover {
   transform: translateY(-4px);
@@ -234,7 +237,7 @@ nav .active { color: var(--sun) !important; }
   color: var(--ink); margin-bottom: 10px;
 }
 .audience-card p {
-  font-size: 14px; color: var(--muted); line-height: 1.7;
+  font-size: 14px; color: var(--muted); line-height: 1.7; flex: 1;
 }
 .audience-card .aud-stat {
   font-family: var(--font-head); font-size: 36px; letter-spacing: 1px;
@@ -276,6 +279,11 @@ nav .active { color: var(--sun) !important; }
   margin-top: 40px; font-size: 14px; color: rgba(255,255,255,0.25);
   font-style: italic;
 }
+
+.contact-socials { display: flex; gap: 12px; margin-top: 16px; }
+.contact-social-btn { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(13,13,13,0.15); color: var(--ink); transition: all 0.2s; }
+.contact-social-btn:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+.contact-social-btn svg { width: 18px; height: 18px; }
 
 /* CONTACT */
 .contact-section {
@@ -496,11 +504,7 @@ nav .active { color: var(--sun) !important; }
       <p class="r d2">Whether you're a brand looking to reach golfers, a resort wanting to drive bookings, or a course looking for exposure — we'd love to hear from you.</p>
       <div class="contact-detail r d2">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span>Reach us at <a href="/cdn-cgi/l/email-protection#f78796858399928584b7949882858492848e9882999292938398879b968ed994989a"><span class="__cf_email__" data-cfemail="4f3f2e3d3b212a3d3c0f2c203a3d3c2a3c36203a212a2a2b3b203f232e36612c2022">[email&#160;protected]</span></a></span>
-      </div>
-      <div class="contact-detail r d2">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        <span><a href="https://www.instagram.com/coursesyouneedtoplay" target="_blank">@coursesyouneedtoplay</a></span>
+        <span>Reach us at <a href="mailto:coursesyouneedtoplay@gmail.com">coursesyouneedtoplay@gmail.com</a></span>
       </div>
     </div>
     <div class="contact-form r d1" id="contactForm">
