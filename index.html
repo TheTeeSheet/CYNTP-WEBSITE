@@ -82,7 +82,7 @@ nav.scrolled {
 .hero-content { position: relative; z-index: 2; text-align: center; padding: 80px 40px 80px; display: flex; flex-direction: column; align-items: center; }
 .hero-eyebrow { font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: rgba(255,255,255,0.4); font-weight: 500; margin-bottom: 20px; }
 .hero-pill { display: inline-flex; align-items: center; padding: 5px 12px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; color: rgba(255,255,255,0.75); margin-bottom: 24px; }
-.hero h1 { font-family: var(--font-head); font-size: clamp(52px, 9vw, 120px); line-height: 0.9; letter-spacing: 5px; color: #fff; margin-bottom: 36px; }
+.hero h1 { font-family: var(--font-head); font-size: clamp(28px, 4.5vw, 80px); line-height: 0.9; letter-spacing: 5px; color: #fff; margin-bottom: 36px; white-space: nowrap; }
 .hero h1 em { font-style: italic; font-family: var(--font-serif); color: var(--sun); font-size: 1em; }
 .hero-sub { font-size: 17px; color: rgba(255,255,255,0.55); max-width: 480px; line-height: 1.7; margin-bottom: 40px; }
 .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
@@ -270,7 +270,7 @@ footer { background: #111; }
 
   /* HERO */
   .hero-content { padding: 0 24px 60px; }
-  .hero h1 { font-size: clamp(48px, 13vw, 80px); }
+  .hero h1 { font-size: clamp(18px, 5.5vw, 48px); letter-spacing: 2px; }
   .hero-ctas { flex-direction: column; align-items: center; gap: 10px; }
   .btn-sun, .btn-ghost { width: 100%; justify-content: center; max-width: 320px; }
   .scroll-hint { display: none; }
@@ -382,7 +382,7 @@ footer { background: #111; }
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-pill r">Golf Travel &mdash; Done Right</div>
-    <h1 class="r d1" style="white-space: nowrap; font-size: clamp(24px, 5vw, 80px);">COURSES <em>You Need</em> TO PLAY</h1>
+    <h1 class="r d1">COURSES <em>You Need</em> TO PLAY</h1>
     <p class="hero-sub r d2">Curated trips, honest course reviews, and the inside track on golf travel — from people who actually play.</p>
     <div class="hero-ctas r d3">
       <a href="cyntp-trips.html" class="btn-sun">Browse Trips &rarr;</a>
