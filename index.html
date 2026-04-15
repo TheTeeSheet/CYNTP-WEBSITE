@@ -117,7 +117,7 @@ nav.scrolled {
 .crew-pills { display: flex; gap: 10px; flex-wrap: wrap; }
 .crew-pill { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px 10px 10px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 100px; transition: all 0.2s; }
 .crew-pill:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.18); }
-.crew-avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-size: 14px; color: #fff; flex-shrink: 0; font-weight: 700; }
+.crew-avatar { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
 .av-cam { background: var(--grass); }
 .av-noah { background: #6b3fa0; }
 .av-beau { background: #c0622a; }
@@ -436,15 +436,15 @@ footer { background: #111; }
       <p class="about-stat r d2">100+ courses reviewed.</p>
       <div class="crew-pills r d3">
         <div class="crew-pill">
-          <div class="crew-avatar av-cam">C</div>
+          <img class="crew-avatar" src="https://res.cloudinary.com/dak67vton/image/upload/v1776231147/6112d7e6-92e4-4c22-b07e-3ea2f1bc6e27.png" alt="Cameron">
           <div><div class="crew-name">Cameron</div><div class="crew-handle">@cameronream</div></div>
         </div>
         <div class="crew-pill">
-          <div class="crew-avatar av-noah">N</div>
+          <img class="crew-avatar" src="https://res.cloudinary.com/dak67vton/image/upload/v1776231320/Screenshot_2026-04-15_at_12.35.15_AM_wgq3xx.png" alt="Noah">
           <div><div class="crew-name">Noah</div><div class="crew-handle">@noahmilly</div></div>
         </div>
         <div class="crew-pill">
-          <div class="crew-avatar av-beau">B</div>
+          <img class="crew-avatar" src="https://res.cloudinary.com/dak67vton/image/upload/v1776231270/Screenshot_2026-04-15_at_12.34.25_AM_akzznt.png" alt="Beau">
           <div><div class="crew-name">Beau</div><div class="crew-handle">@beauwjordan</div></div>
         </div>
       </div>
