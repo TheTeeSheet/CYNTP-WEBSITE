@@ -112,8 +112,8 @@ nav.scrolled {
 .about-body { font-size: 16px; color: rgba(255,255,255,0.6); line-height: 1.85; margin-bottom: 12px; }
 .about-body strong { color: #fff; font-weight: 700; }
 .about-stat { font-size: 14px; color: rgba(255,255,255,0.35); margin-bottom: 36px; }
-.about-photos { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 220px 220px; gap: 10px; border-radius: 16px; overflow: hidden; }
-.aphoto { border-radius: 10px; width: 100%; height: 100%; object-fit: cover; display: block; }
+.about-photos { height: 450px; border-radius: 16px; overflow: hidden; }
+.aphoto-single { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 16px; }
 .crew-pills { display: flex; gap: 10px; flex-wrap: wrap; }
 .crew-pill { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px 10px 10px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 100px; transition: all 0.2s; }
 .crew-pill:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.18); }
@@ -278,7 +278,7 @@ footer { background: #111; }
   /* ABOUT */
   .about { padding: 72px 24px; }
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
-  .about-photos { grid-template-rows: 160px 160px; }
+  .about-photos { height: 300px; }
 
   /* TRIPS */
   .trips { padding: 72px 24px; }
@@ -446,11 +446,8 @@ footer { background: #111; }
         </div>
       </div>
     </div>
-    <div class="about-photos">
-      <img class="aphoto r d1" src="https://res.cloudinary.com/dak67vton/image/upload/v1775979282/edit_2_gi62ir.png" alt="CYNTP crew" loading="lazy">
-      <img class="aphoto r d2" src="https://res.cloudinary.com/dak67vton/image/upload/v1775978622/Screenshot_2025-09-23_at_9.26.27_AM_2_oge3in.jpg" alt="CYNTP on course" loading="lazy">
-      <img class="aphoto r d3" src="https://res.cloudinary.com/dak67vton/image/upload/v1775979279/cam_golden_h_lzr5xj.jpg" alt="Buffalo Ridge" loading="lazy">
-      <img class="aphoto r d4" src="https://res.cloudinary.com/dak67vton/image/upload/v1775978633/Screenshot_2025-09-23_at_9.27.09_AM_2_plhxci.jpg" alt="CYNTP golf trip" loading="lazy">
+    <div class="about-photos r d2">
+      <img class="aphoto-single" src="https://res.cloudinary.com/dak67vton/image/upload/v1775978633/Screenshot_2025-09-23_at_9.27.09_AM_2_plhxci.jpg" alt="CYNTP golf trip" loading="lazy">
     </div>
   </div>
 </section>
