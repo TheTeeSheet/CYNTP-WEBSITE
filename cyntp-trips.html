@@ -258,18 +258,6 @@ nav {
   padding: 18px 32px; border-radius: 10px; transition: background 0.2s; width: 100%;
 }
 .panel-cta-btn:hover { background: var(--grass2); }
-.panel-video-btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: transparent; color: var(--ink);
-  border: 1.5px solid rgba(13,13,13,0.2);
-  font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
-  padding: 10px 20px; border-radius: 8px; text-decoration: none;
-  transition: all 0.2s; margin-bottom: 12px; width: 100%; justify-content: center;
-  font-family: var(--font-body);
-}
-.panel-video-btn:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
-.panel-video-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
-
 
 /* ── FOOTER BAND ── */
 .footer-band {
@@ -352,6 +340,116 @@ nav .active { color: var(--sun) !important; }
 <section class="trips-section">
   <div class="trips-grid">
     
+    <div class="trip-card r" onclick="openTrip('big-cedar')" data-type="stayplay">
+      <div class="trip-img-wrap bgi4">
+        <div class="trip-overlay"></div>
+        <div class="trip-badge" style="background:#2d6a3f">Stay &amp; Play</div>
+        <div class="trip-type-pill">Resort</div>
+      </div>
+      <div class="trip-body">
+        <div class="trip-meta-top">
+          <span class="trip-state">Missouri</span>
+          <span class="trip-price">TBD<span class="trip-pp">/person</span></span>
+        </div>
+        <h2 class="trip-name">Big Cedar Lodge</h2>
+        <p class="trip-tagline">Bass Pro's golf resort in the Ozarks.</p>
+        <p class="trip-desc">Five courses designed by the legends — Nicklaus, Dye, Fazio, and more. One of the most unique golf resort experiences in the country.</p>
+        <div class="trip-pills">
+          <div class="trip-pill">5 Courses</div>
+          <div class="trip-pill">Full Resort</div>
+        </div>
+        <a class="trip-cta">View Trip &rarr;</a>
+      </div>
+    </div>
+
+    <div class="trip-card r" onclick="openTrip('dominican-republic')" data-type="beach">
+      <div class="trip-img-wrap bgi5">
+        <div class="trip-overlay"></div>
+        <div class="trip-badge" style="background:#d4a055;color:#0d0d0d">Book Now</div>
+        <div class="trip-type-pill">International</div>
+      </div>
+      <div class="trip-body">
+        <div class="trip-meta-top">
+          <span class="trip-state">Dominican Republic</span>
+          <span class="trip-price">$1,749<span class="trip-pp">/person</span></span>
+        </div>
+        <h2 class="trip-name">Dominican Republic</h2>
+        <p class="trip-tagline">Teeth of the Dog. Enough said.</p>
+        <p class="trip-desc">2 nights at Westin Puntacana with Corales & La Cana, then 1 night at Casa de Campo with Teeth of the Dog & Dye Fore. Based on double occupancy.</p>
+        <div class="trip-pills">
+          <div class="trip-pill">4 Rounds</div>
+          <div class="trip-pill">3 Nights</div>
+        </div>
+        <a class="trip-cta">View Trip &rarr;</a>
+      </div>
+    </div>
+
+    <div class="trip-card r" onclick="openTrip('evermore')" data-type="stayplay">
+      <div class="trip-img-wrap bgi7">
+        <div class="trip-overlay"></div>
+        <div class="trip-badge" style="background:#2d6a3f">Stay &amp; Play</div>
+        <div class="trip-type-pill">Resort</div>
+      </div>
+      <div class="trip-body">
+        <div class="trip-meta-top">
+          <span class="trip-state">Florida</span>
+          <span class="trip-price">TBD<span class="trip-pp">/person</span></span>
+        </div>
+        <h2 class="trip-name">Evermore</h2>
+        <p class="trip-tagline">Two Jack Nicklaus courses next to Disney.</p>
+        <p class="trip-desc">The Cypress Course and Links Course deliver 36 holes of championship golf. The Links Course is Nicklaus's tribute to St. Andrews — double greens, pot bunkers, and all.</p>
+        <div class="trip-pills">
+          <div class="trip-pill">2 Courses</div>
+          <div class="trip-pill">36 Holes</div>
+        </div>
+        <a class="trip-cta">View Trip &rarr;</a>
+      </div>
+    </div>
+
+    <div class="trip-card r" onclick="openTrip('gamble-sands')" data-type="stayplay">
+      <div class="trip-img-wrap bgi6">
+        <div class="trip-overlay"></div>
+        <div class="trip-badge" style="background:#2d6a3f">Stay &amp; Play</div>
+        <div class="trip-type-pill">Resort</div>
+      </div>
+      <div class="trip-body">
+        <div class="trip-meta-top">
+          <span class="trip-state">Washington</span>
+          <span class="trip-price">TBD<span class="trip-pp">/person</span></span>
+        </div>
+        <h2 class="trip-name">Gamble Sands</h2>
+        <p class="trip-tagline">The best new public course in America.</p>
+        <p class="trip-desc">Perched above the Columbia River with sweeping high-desert views. A remote, bucket-list destination that lives up to every bit of the hype.</p>
+        <div class="trip-pills">
+          <div class="trip-pill">On-Site Lodge</div>
+          <div class="trip-pill">36 Holes</div>
+        </div>
+        <a class="trip-cta">View Trip &rarr;</a>
+      </div>
+    </div>
+
+    <div class="trip-card r" onclick="openTrip('grand-traverse')" data-type="stayplay">
+      <div class="trip-img-wrap bgi3">
+        <div class="trip-overlay"></div>
+        <div class="trip-badge" style="background:#2d6a3f">Stay &amp; Play</div>
+        <div class="trip-type-pill">Resort</div>
+      </div>
+      <div class="trip-body">
+        <div class="trip-meta-top">
+          <span class="trip-state">Michigan</span>
+          <span class="trip-price">TBD<span class="trip-pp">/person</span></span>
+        </div>
+        <h2 class="trip-name">Grand Traverse Resort</h2>
+        <p class="trip-tagline">Northern Michigan golf at its finest.</p>
+        <p class="trip-desc">Three championship courses including The Bear by Jack Nicklaus — a bucket list Michigan trip.</p>
+        <div class="trip-pills">
+          <div class="trip-pill">3 Courses</div>
+          <div class="trip-pill">Full Resort</div>
+        </div>
+        <a class="trip-cta">View Trip &rarr;</a>
+      </div>
+    </div>
+
     <div class="trip-card r" onclick="openTrip('hilton-head')" data-type="beach">
       <div class="trip-img-wrap bgi1">
         <div class="trip-overlay"></div>
@@ -373,41 +471,20 @@ nav .active { color: var(--sun) !important; }
         <a class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
-    <div class="trip-card r" onclick="openTrip('williamsburg')" data-type="parkland">
-      <div class="trip-img-wrap bgi2">
+
+    <div class="trip-card r" onclick="openTrip('las-vegas')" data-type="desert">
+      <div class="trip-img-wrap bgi9">
         <div class="trip-overlay"></div>
-        <div class="trip-badge" style="background:#d4a055">Best Value</div>
-        <div class="trip-type-pill">Parkland</div>
-      </div>
-      <div class="trip-body">
-        <div class="trip-meta-top">
-          <span class="trip-state">Virginia</span>
-          <span class="trip-price">$479<span class="trip-pp">/person</span></span>
-        </div>
-        <h2 class="trip-name">Williamsburg</h2>
-        <p class="trip-tagline">History, charm, and elite golf.</p>
-        <p class="trip-desc">Four legendary courses and the best price-to-quality ratio of any trip we offer.</p>
-        <div class="trip-pills">
-          <div class="trip-pill">4 Rounds</div>
-          <div class="trip-pill">3–4 Days</div>
-        </div>
-        <a class="trip-cta">View Trip &rarr;</a>
-      </div>
-    </div>
-    <div class="trip-card r" onclick="openTrip('st-george')" data-type="desert">
-      <div class="trip-img-wrap bgi3">
-        <div class="trip-overlay"></div>
-        <div class="trip-badge" style="background:#5b8dd9">Most Scenic</div>
         <div class="trip-type-pill">Desert</div>
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Utah</span>
-          <span class="trip-price">$1,148<span class="trip-pp">/person</span></span>
+          <span class="trip-state">Nevada</span>
+          <span class="trip-price">$986<span class="trip-pp">/person</span></span>
         </div>
-        <h2 class="trip-name">St. George</h2>
-        <p class="trip-tagline">Red rock. Black lava. Zero bad holes.</p>
-        <p class="trip-desc">The most visually dramatic golf in America. Red rock canyons and ancient lava fields.</p>
+        <h2 class="trip-name">Las Vegas</h2>
+        <p class="trip-tagline">Golf in the desert. Everything else after dark.</p>
+        <p class="trip-desc">World-class desert tracks in the morning. The rest of Vegas is up to you.</p>
         <div class="trip-pills">
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3–4 Days</div>
@@ -415,27 +492,7 @@ nav .active { color: var(--sun) !important; }
         <a class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
-    <div class="trip-card r" onclick="openTrip('orlando')" data-type="parkland">
-      <div class="trip-img-wrap bgi4">
-        <div class="trip-overlay"></div>
-        
-        <div class="trip-type-pill">Parkland</div>
-      </div>
-      <div class="trip-body">
-        <div class="trip-meta-top">
-          <span class="trip-state">Florida</span>
-          <span class="trip-price">$537<span class="trip-pp">/person</span></span>
-        </div>
-        <h2 class="trip-name">Orlando</h2>
-        <p class="trip-tagline">Florida golf done right.</p>
-        <p class="trip-desc">Skip the theme parks. Orlando has some of the best resort golf in the country.</p>
-        <div class="trip-pills">
-          <div class="trip-pill">4 Rounds</div>
-          <div class="trip-pill">3–4 Days</div>
-        </div>
-        <a class="trip-cta">View Trip &rarr;</a>
-      </div>
-    </div>
+
     <div class="trip-card r" onclick="openTrip('miami')" data-type="parkland">
       <div class="trip-img-wrap bgi5">
         <div class="trip-overlay"></div>
@@ -457,10 +514,52 @@ nav .active { color: var(--sun) !important; }
         <a class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
+
+    <div class="trip-card r" onclick="openTrip('myrtle-beach')" data-type="beach">
+      <div class="trip-img-wrap bgi8">
+        <div class="trip-overlay"></div>
+        <div class="trip-type-pill">Beach</div>
+      </div>
+      <div class="trip-body">
+        <div class="trip-meta-top">
+          <span class="trip-state">South Carolina</span>
+          <span class="trip-price">$679<span class="trip-pp">/person</span></span>
+        </div>
+        <h2 class="trip-name">Myrtle Beach</h2>
+        <p class="trip-tagline">The golf capital of the East Coast.</p>
+        <p class="trip-desc">More courses per square mile than anywhere in the country. Four elite rounds.</p>
+        <div class="trip-pills">
+          <div class="trip-pill">4 Rounds</div>
+          <div class="trip-pill">3–4 Days</div>
+        </div>
+        <a class="trip-cta">View Trip &rarr;</a>
+      </div>
+    </div>
+
+    <div class="trip-card r" onclick="openTrip('orlando')" data-type="parkland">
+      <div class="trip-img-wrap bgi4">
+        <div class="trip-overlay"></div>
+        <div class="trip-type-pill">Parkland</div>
+      </div>
+      <div class="trip-body">
+        <div class="trip-meta-top">
+          <span class="trip-state">Florida</span>
+          <span class="trip-price">$537<span class="trip-pp">/person</span></span>
+        </div>
+        <h2 class="trip-name">Orlando</h2>
+        <p class="trip-tagline">Florida golf done right.</p>
+        <p class="trip-desc">Skip the theme parks. Orlando has some of the best resort golf in the country.</p>
+        <div class="trip-pills">
+          <div class="trip-pill">4 Rounds</div>
+          <div class="trip-pill">3–4 Days</div>
+        </div>
+        <a class="trip-cta">View Trip &rarr;</a>
+      </div>
+    </div>
+
     <div class="trip-card r" onclick="openTrip('palm-springs')" data-type="desert">
       <div class="trip-img-wrap bgi6">
         <div class="trip-overlay"></div>
-        
         <div class="trip-type-pill">Desert</div>
       </div>
       <div class="trip-body">
@@ -478,6 +577,29 @@ nav .active { color: var(--sun) !important; }
         <a class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
+
+    <div class="trip-card r" onclick="openTrip('pursell-farms')" data-type="stayplay">
+      <div class="trip-img-wrap bgi2">
+        <div class="trip-overlay"></div>
+        <div class="trip-badge" style="background:#2d6a3f">Stay &amp; Play</div>
+        <div class="trip-type-pill">Resort</div>
+      </div>
+      <div class="trip-body">
+        <div class="trip-meta-top">
+          <span class="trip-state">Alabama</span>
+          <span class="trip-price">TBD<span class="trip-pp">/person</span></span>
+        </div>
+        <h2 class="trip-name">Pursell Farms</h2>
+        <p class="trip-tagline">Hidden gem of the South.</p>
+        <p class="trip-desc">A secluded Alabama resort with a stunning parkland course and full lodge experience.</p>
+        <div class="trip-pills">
+          <div class="trip-pill">On-Site Golf</div>
+          <div class="trip-pill">Full Resort</div>
+        </div>
+        <a class="trip-cta">View Trip &rarr;</a>
+      </div>
+    </div>
+
     <div class="trip-card r" onclick="openTrip('scottsdale')" data-type="desert">
       <div class="trip-img-wrap bgi7">
         <div class="trip-overlay"></div>
@@ -499,70 +621,6 @@ nav .active { color: var(--sun) !important; }
         <a class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
-    <div class="trip-card r" onclick="openTrip('myrtle-beach')" data-type="beach">
-      <div class="trip-img-wrap bgi8">
-        <div class="trip-overlay"></div>
-        
-        <div class="trip-type-pill">Beach</div>
-      </div>
-      <div class="trip-body">
-        <div class="trip-meta-top">
-          <span class="trip-state">South Carolina</span>
-          <span class="trip-price">$679<span class="trip-pp">/person</span></span>
-        </div>
-        <h2 class="trip-name">Myrtle Beach</h2>
-        <p class="trip-tagline">The golf capital of the East Coast.</p>
-        <p class="trip-desc">More courses per square mile than anywhere in the country. Four elite rounds.</p>
-        <div class="trip-pills">
-          <div class="trip-pill">4 Rounds</div>
-          <div class="trip-pill">3–4 Days</div>
-        </div>
-        <a class="trip-cta">View Trip &rarr;</a>
-      </div>
-    </div>
-    <div class="trip-card r" onclick="openTrip('las-vegas')" data-type="desert">
-      <div class="trip-img-wrap bgi9">
-        <div class="trip-overlay"></div>
-        
-        <div class="trip-type-pill">Desert</div>
-      </div>
-      <div class="trip-body">
-        <div class="trip-meta-top">
-          <span class="trip-state">Nevada</span>
-          <span class="trip-price">$986<span class="trip-pp">/person</span></span>
-        </div>
-        <h2 class="trip-name">Las Vegas</h2>
-        <p class="trip-tagline">Golf in the desert. Everything else after dark.</p>
-        <p class="trip-desc">World-class desert tracks in the morning. The rest of Vegas is up to you.</p>
-        <div class="trip-pills">
-          <div class="trip-pill">4 Rounds</div>
-          <div class="trip-pill">3–4 Days</div>
-        </div>
-        <a class="trip-cta">View Trip &rarr;</a>
-      </div>
-    </div>
-
-    <div class="trip-card r" onclick="openTrip('evermore')" data-type="stayplay">
-      <div class="trip-img-wrap bgi7">
-        <div class="trip-overlay"></div>
-        <div class="trip-badge" style="background:#2d6a3f">Stay &amp; Play</div>
-        <div class="trip-type-pill">Resort</div>
-      </div>
-      <div class="trip-body">
-        <div class="trip-meta-top">
-          <span class="trip-state">Orlando, FL</span>
-          <span class="trip-price">TBD<span class="trip-pp">/person</span></span>
-        </div>
-        <h2 class="trip-name">Evermore</h2>
-        <p class="trip-tagline">Two Jack Nicklaus courses next to Disney.</p>
-        <p class="trip-desc">The Cypress Course and Links Course deliver 36 holes of championship golf. The Links Course is Nicklaus's tribute to St. Andrews — double greens, pot bunkers, and all.</p>
-        <div class="trip-pills">
-          <div class="trip-pill">2 Courses</div>
-          <div class="trip-pill">36 Holes</div>
-        </div>
-        <a class="trip-cta">View Trip &rarr;</a>
-      </div>
-    </div>
 
     <div class="trip-card r" onclick="openTrip('sentryworld')" data-type="stayplay">
       <div class="trip-img-wrap bgi1">
@@ -572,7 +630,7 @@ nav .active { color: var(--sun) !important; }
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Stevens Point, WI</span>
+          <span class="trip-state">Wisconsin</span>
           <span class="trip-price">TBD<span class="trip-pp">/person</span></span>
         </div>
         <h2 class="trip-name">SentryWorld</h2>
@@ -586,110 +644,67 @@ nav .active { color: var(--sun) !important; }
       </div>
     </div>
 
-    <div class="trip-card r" onclick="openTrip('pursell-farms')" data-type="stayplay">
-      <div class="trip-img-wrap bgi2">
-        <div class="trip-overlay"></div>
-        <div class="trip-badge" style="background:#2d6a3f">Stay &amp; Play</div>
-        <div class="trip-type-pill">Resort</div>
-      </div>
-      <div class="trip-body">
-        <div class="trip-meta-top">
-          <span class="trip-state">Sylacauga, AL</span>
-          <span class="trip-price">TBD<span class="trip-pp">/person</span></span>
-        </div>
-        <h2 class="trip-name">Pursell Farms</h2>
-        <p class="trip-tagline">Hidden gem of the South.</p>
-        <p class="trip-desc">A secluded Alabama resort with a stunning parkland course and full lodge experience.</p>
-        <div class="trip-pills">
-          <div class="trip-pill">On-Site Golf</div>
-          <div class="trip-pill">Full Resort</div>
-        </div>
-        <a class="trip-cta">View Trip &rarr;</a>
-      </div>
-    </div>
-
-    <div class="trip-card r" onclick="openTrip('grand-traverse')" data-type="stayplay">
+    <div class="trip-card r" onclick="openTrip('st-george')" data-type="desert">
       <div class="trip-img-wrap bgi3">
         <div class="trip-overlay"></div>
-        <div class="trip-badge" style="background:#2d6a3f">Stay &amp; Play</div>
-        <div class="trip-type-pill">Resort</div>
+        <div class="trip-badge" style="background:#5b8dd9">Most Scenic</div>
+        <div class="trip-type-pill">Desert</div>
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Acme, MI</span>
-          <span class="trip-price">TBD<span class="trip-pp">/person</span></span>
+          <span class="trip-state">Utah</span>
+          <span class="trip-price">$1,148<span class="trip-pp">/person</span></span>
         </div>
-        <h2 class="trip-name">Grand Traverse Resort</h2>
-        <p class="trip-tagline">Northern Michigan golf at its finest.</p>
-        <p class="trip-desc">Three championship courses including The Bear by Jack Nicklaus — a bucket list Michigan trip.</p>
+        <h2 class="trip-name">St. George</h2>
+        <p class="trip-tagline">Red rock. Black lava. Zero bad holes.</p>
+        <p class="trip-desc">The most visually dramatic golf in America. Red rock canyons and ancient lava fields.</p>
         <div class="trip-pills">
-          <div class="trip-pill">3 Courses</div>
-          <div class="trip-pill">Full Resort</div>
+          <div class="trip-pill">4 Rounds</div>
+          <div class="trip-pill">3–4 Days</div>
         </div>
         <a class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
 
-    <div class="trip-card r" onclick="openTrip('gamble-sands')" data-type="stayplay">
-      <div class="trip-img-wrap bgi6">
+    <div class="trip-card r" onclick="openTrip('tucson')" data-type="desert">
+      <div class="trip-img-wrap bgi7">
         <div class="trip-overlay"></div>
-        <div class="trip-badge" style="background:#2d6a3f">Stay &amp; Play</div>
-        <div class="trip-type-pill">Resort</div>
+        <div class="trip-badge" style="background:#d4a055;color:#0d0d0d">Book Now</div>
+        <div class="trip-type-pill">Desert</div>
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Brewster, WA</span>
-          <span class="trip-price">TBD<span class="trip-pp">/person</span></span>
+          <span class="trip-state">Arizona</span>
+          <span class="trip-price">$697<span class="trip-pp">/person</span></span>
         </div>
-        <h2 class="trip-name">Gamble Sands</h2>
-        <p class="trip-tagline">The best new public course in America.</p>
-        <p class="trip-desc">Perched above the Columbia River with sweeping high-desert views. A remote, bucket-list destination that lives up to every bit of the hype.</p>
+        <h2 class="trip-name">Tucson</h2>
+        <p class="trip-tagline">Desert golf at The Kennedy Hotel.</p>
+        <p class="trip-desc">4 nights, 4 rounds across two SaddleBrooke courses, Arizona National, and The Club at Starr Pass. All in at $697 per person.</p>
         <div class="trip-pills">
-          <div class="trip-pill">On-Site Lodge</div>
-          <div class="trip-pill">36 Holes</div>
+          <div class="trip-pill">4 Rounds</div>
+          <div class="trip-pill">4 Nights</div>
         </div>
         <a class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
 
-    <div class="trip-card r" onclick="openTrip('big-cedar')" data-type="stayplay">
-      <div class="trip-img-wrap bgi4">
+    <div class="trip-card r" onclick="openTrip('williamsburg')" data-type="parkland">
+      <div class="trip-img-wrap bgi2">
         <div class="trip-overlay"></div>
-        <div class="trip-badge" style="background:#2d6a3f">Stay &amp; Play</div>
-        <div class="trip-type-pill">Resort</div>
+        <div class="trip-badge" style="background:#d4a055">Best Value</div>
+        <div class="trip-type-pill">Parkland</div>
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Hollister, MO</span>
-          <span class="trip-price">TBD<span class="trip-pp">/person</span></span>
+          <span class="trip-state">Virginia</span>
+          <span class="trip-price">$479<span class="trip-pp">/person</span></span>
         </div>
-        <h2 class="trip-name">Big Cedar Lodge</h2>
-        <p class="trip-tagline">Bass Pro's golf resort in the Ozarks.</p>
-        <p class="trip-desc">Five courses designed by the legends — Nicklaus, Dye, Fazio, and more. One of the most unique golf resort experiences in the country.</p>
+        <h2 class="trip-name">Williamsburg</h2>
+        <p class="trip-tagline">History, charm, and elite golf.</p>
+        <p class="trip-desc">Four legendary courses and the best price-to-quality ratio of any trip we offer.</p>
         <div class="trip-pills">
-          <div class="trip-pill">6 Courses</div>
-          <div class="trip-pill">Full Resort</div>
-        </div>
-        <a class="trip-cta">View Trip &rarr;</a>
-      </div>
-    </div>
-    <div class="trip-card r" onclick="openTrip('park-hyatt-aviara')" data-type="stayplay">
-      <div class="trip-img-wrap bgi6">
-        <div class="trip-overlay"></div>
-        <div class="trip-badge" style="background:#2d6a3f">Stay &amp; Play</div>
-        <div class="trip-type-pill">Resort</div>
-      </div>
-      <div class="trip-body">
-        <div class="trip-meta-top">
-          <span class="trip-state">Carlsbad, CA</span>
-          <span class="trip-price">TBD<span class="trip-pp">/person</span></span>
-        </div>
-        <h2 class="trip-name">Park Hyatt Aviara</h2>
-        <p class="trip-tagline">SoCal's finest golf resort.</p>
-        <p class="trip-desc">AAA Five Diamond resort with the only Arnold Palmer-designed course in San Diego. Miraval Spa, five restaurants, and 250 acres overlooking Batiquitos Lagoon.</p>
-        <div class="trip-pills">
-          <div class="trip-pill">1 Course</div>
-          <div class="trip-pill">Full Resort</div>
+          <div class="trip-pill">4 Rounds</div>
+          <div class="trip-pill">3–4 Days</div>
         </div>
         <a class="trip-cta">View Trip &rarr;</a>
       </div>
@@ -711,7 +726,7 @@ nav .active { color: var(--sun) !important; }
 </div>
 
 <script>
-const TRIPS = [{"id": "hilton-head", "name": "Hilton Head", "state": "Hilton Head Island, SC", "type": "Beach", "price": "$741", "days": "3\u20134 Days", "rounds": 4, "tagline": "Lowcountry golf at its finest.", "desc": "Salt marsh views, live oaks, and four of the best courses on the East Coast.", "courses": ["Palmetto Dunes \u2014 Jones Course", "Old South Golf Links", "Golden Bear at Indigo Run", "Hilton Head National"], "badge": "Most Popular", "badgeColor": "#2d6a3f", "bgi": "bgi1", "video": ""}, {"id": "williamsburg", "name": "Williamsburg", "state": "Williamsburg, VA", "type": "Parkland", "price": "$479", "days": "3\u20134 Days", "rounds": 4, "tagline": "History, charm, and elite golf.", "desc": "Four legendary courses and the best price-to-quality ratio of any trip we offer.", "courses": ["Golden Horseshoe Gold", "Royal New Kent", "Stonehouse", "Club at Viniterra"], "badge": "Best Value", "badgeColor": "#d4a055", "bgi": "bgi2", "video": ""}, {"id": "st-george", "name": "St. George", "state": "St. George, UT", "type": "Desert", "price": "$1,148", "days": "3\u20134 Days", "rounds": 4, "tagline": "Red rock. Black lava. Zero bad holes.", "desc": "The most visually dramatic golf in America. Red rock canyons and ancient lava fields.", "courses": ["Black Desert Resort", "Sky Mountain GC", "Entrada at Snow Canyon", "Red Hills Golf Course"], "badge": "Most Scenic", "badgeColor": "#5b8dd9", "bgi": "bgi3", "video": ""}, {"id": "orlando", "name": "Orlando", "state": "Orlando, FL", "type": "Parkland", "price": "$537", "days": "3\u20134 Days", "rounds": 4, "tagline": "Florida golf done right.", "desc": "Skip the theme parks. Orlando has some of the best resort golf in the country.", "courses": ["Grand Cypress Links Course", "Grand Cypress Cypress Course", "Shingle Creek", "Forest Lake"], "badge": null, "badgeColor": null, "bgi": "bgi4", "video": ""}, {"id": "miami", "name": "Miami", "state": "Miami, FL", "type": "Parkland", "price": "$1,629", "days": "3\u20134 Days", "rounds": 4, "tagline": "PGA Tour golf. South Beach energy.", "desc": "Doral. The Blue Monster. World-class conditions and a city to match.", "courses": ["Trump National Doral Blue Monster", "Trump National Doral Silver Fox", "Miami Lakes Golf Club", "Hammock Beach Ocean Course"], "badge": "Premium", "badgeColor": "#9b6dff", "bgi": "bgi5", "video": ""}, {"id": "palm-springs", "name": "Palm Springs", "state": "Palm Springs, CA", "type": "Desert", "price": "$968", "days": "4 Days", "rounds": 4, "tagline": "Desert golf in the Coachella Valley.", "desc": "Mountain backdrops, perfect weather, and a corridor packed with elite desert tracks.", "courses": ["Desert Willow Firecliff", "Classic Club", "Escena Golf Club", "Indian Wells Celebrity"], "badge": null, "badgeColor": null, "bgi": "bgi6", "video": ""}, {"id": "scottsdale", "name": "Scottsdale", "state": "Scottsdale, AZ", "type": "Desert", "price": "$926", "days": "3\u20134 Days", "rounds": 4, "tagline": "The greatest golf destination in America.", "desc": "World-class courses, desert sunsets, and buddy trip stories you'll tell forever.", "courses": ["We-Ko-Pa Saguaro", "We-Ko-Pa Cholla", "Grayhawk Raptor", "Talking Stick O'odham"], "badge": "Fan Favorite", "badgeColor": "#e05252", "bgi": "bgi7", "video": ""}, {"id": "myrtle-beach", "name": "Myrtle Beach", "state": "Myrtle Beach, SC", "type": "Beach", "price": "$679", "days": "3\u20134 Days", "rounds": 4, "tagline": "The golf capital of the East Coast.", "desc": "More courses per square mile than anywhere in the country. Four elite rounds.", "courses": ["Caledonia Golf & Fish Club", "True Blue Golf Club", "Pawleys Plantation", "King's North"], "badge": null, "badgeColor": null, "bgi": "bgi8", "video": ""}, {"id": "las-vegas", "name": "Las Vegas", "state": "Las Vegas, NV", "type": "Desert", "price": "$986", "days": "3\u20134 Days", "rounds": 4, "tagline": "Golf in the desert. Everything else after dark.", "desc": "World-class desert tracks in the morning. The rest of Vegas is up to you.", "courses": ["Cascata Golf Club", "Shadow Creek", "Wolf Course at Las Vegas Paiute", "Bear's Best Las Vegas"], "badge": null, "badgeColor": null, "bgi": "bgi9", "video": ""}, {"id": "evermore", "name": "Evermore", "state": "Orlando, FL", "type": "Resort", "price": "TBD", "days": "2\u20133 Days", "rounds": 2, "tagline": "Two Jack Nicklaus courses next to Disney.", "desc": "The Cypress Course and Links Course deliver 36 holes of championship golf. The Links Course is Nicklaus's tribute to St. Andrews \u2014 double greens, pot bunkers, and all.", "courses": ["The Cypress Course \u2014 Jack Nicklaus", "The Links Course \u2014 Jack Nicklaus (St. Andrews tribute)"], "badge": "Stay & Play", "badgeColor": "#2d6a3f", "bgi": "bgi7", "video": "https://youtu.be/zoLflTpjmdU?si=j_8PYSrPg3JwSc7i"}, {"id": "sentryworld", "name": "SentryWorld", "state": "Stevens Point, WI", "type": "Resort", "price": "TBD", "days": "2\u20133 Days", "rounds": 2, "tagline": "The flower hole. Need we say more.", "desc": "Robert Trent Jones Jr.'s masterpiece in Stevens Point \u2014 one of the most iconic holes in golf.", "courses": ["SentryWorld Golf Course"], "badge": "Stay & Play", "badgeColor": "#2d6a3f", "bgi": "bgi1", "video": ""}, {"id": "pursell-farms", "name": "Pursell Farms", "state": "Sylacauga, AL", "type": "Resort", "price": "TBD", "days": "2\u20133 Days", "rounds": 2, "tagline": "Hidden gem of the South.", "desc": "A secluded Alabama resort with a stunning parkland course and full lodge experience.", "courses": ["Farmlinks Golf Club"], "badge": "Stay & Play", "badgeColor": "#2d6a3f", "bgi": "bgi2", "video": "https://youtu.be/OT1DEPbedR8?si=gKrWulDsdAieSugi"}, {"id": "grand-traverse", "name": "Grand Traverse Resort", "state": "Acme, MI", "type": "Resort", "price": "TBD", "days": "3\u20134 Days", "rounds": 3, "tagline": "Northern Michigan golf at its finest.", "desc": "Three championship courses including The Bear by Jack Nicklaus \u2014 a bucket list Michigan trip.", "courses": ["The Bear", "Spruce Run", "Wolverine Course"], "badge": "Stay & Play", "badgeColor": "#2d6a3f", "bgi": "bgi3", "video": ""}, {"id": "gamble-sands", "name": "Gamble Sands", "state": "Brewster, WA", "type": "Resort", "price": "TBD", "days": "2\u20133 Days", "rounds": 3, "tagline": "The best new public course in America.", "desc": "Perched above the Columbia River with sweeping high-desert views. A remote, bucket-list destination that lives up to every bit of the hype.", "courses": ["Gamble Sands", "Scarecrow", "Quicksands"], "badge": "Stay & Play", "badgeColor": "#2d6a3f", "bgi": "bgi6", "video": ""}, {"id": "big-cedar", "name": "Big Cedar Lodge", "state": "Hollister, MO", "type": "Resort", "price": "TBD", "days": "3\u20134 Days", "rounds": 6, "tagline": "Bass Pro's golf resort in the Ozarks.", "desc": "Five courses designed by the legends \u2014 Nicklaus, Dye, Fazio, and more. One of the most unique golf resort experiences in the country.", "courses": ["Top of the Rock \u2014 Jack Nicklaus", "Buffalo Ridge Springs \u2014 Tom Fazio", "Mountain Top \u2014 Gary Player", "Payne's Valley \u2014 Tiger Woods", "Ozarks National \u2014 Bill Coore & Ben Crenshaw", "Cliffhangers Par 3"], "badge": "Stay & Play", "badgeColor": "#2d6a3f", "bgi": "bgi4", "video": ""}, {"id": "park-hyatt-aviara", "name": "Park Hyatt Aviara", "state": "Carlsbad, CA", "type": "Resort", "price": "TBD", "days": "2\u20133 Days", "rounds": 2, "tagline": "SoCal's finest golf resort.", "desc": "AAA Five Diamond resort with the only Arnold Palmer-designed course in San Diego. Miraval Spa, five restaurants, and 250 acres overlooking Batiquitos Lagoon.", "courses": ["Aviara Golf Club \u2014 Arnold Palmer"], "badge": "Stay & Play", "badgeColor": "#2d6a3f", "bgi": "bgi6", "video": ""}];
+const TRIPS = [{"id": "tucson", "name": "Tucson", "state": "Arizona", "type": "Desert", "price": "$697", "days": "4 Nights", "rounds": 4, "tagline": "Desert golf at The Kennedy Hotel.", "desc": "4 nights and 4 rounds all in at $697 per person. Stay at The Kennedy Hotel and play two SaddleBrooke courses, Arizona National, and The Club at Starr Pass.", "courses": ["SaddleBrooke One Golf Club", "SaddleBrooke TWO Golf Club", "Arizona National Golf Club", "The Club at Starr Pass"], "badge": "Book Now", "badgeColor": "#d4a055", "bgi": "bgi7"}, {"id": "dominican-republic", "name": "Dominican Republic", "state": "Dominican Republic", "type": "International", "price": "$1,749", "days": "3 Nights", "rounds": 4, "tagline": "Teeth of the Dog. Enough said.", "desc": "2 nights at Westin Puntacana Resort with rounds at Corales and La Cana, followed by 1 night at Casa de Campo with Teeth of the Dog and Dye Fore. Based on double occupancy.", "courses": ["Corales Golf Course — Puntacana", "La Cana Golf Course — Puntacana", "Teeth of the Dog — Casa de Campo", "Dye Fore — Casa de Campo"], "badge": "Book Now", "badgeColor": "#d4a055", "bgi": "bgi5"},{"id": "hilton-head", "name": "Hilton Head", "state": "South Carolina", "type": "Beach", "price": "$741", "days": "3–4 Days", "rounds": 4, "tagline": "Lowcountry golf at its finest.", "desc": "Salt marsh views, live oaks, and four of the best courses on the East Coast.", "courses": ["Palmetto Dunes — Jones Course", "Old South Golf Links", "Golden Bear at Indigo Run", "Hilton Head National"], "badge": "Most Popular", "badgeColor": "#2d6a3f", "bgi": "bgi1"}, {"id": "williamsburg", "name": "Williamsburg", "state": "Virginia", "type": "Parkland", "price": "$479", "days": "3–4 Days", "rounds": 4, "tagline": "History, charm, and elite golf.", "desc": "Four legendary courses and the best price-to-quality ratio of any trip we offer.", "courses": ["Golden Horseshoe Gold", "Royal New Kent", "Stonehouse", "Club at Viniterra"], "badge": "Best Value", "badgeColor": "#d4a055", "bgi": "bgi2"}, {"id": "st-george", "name": "St. George", "state": "Utah", "type": "Desert", "price": "$1,148", "days": "3–4 Days", "rounds": 4, "tagline": "Red rock. Black lava. Zero bad holes.", "desc": "The most visually dramatic golf in America. Red rock canyons and ancient lava fields.", "courses": ["Black Desert Resort", "Sky Mountain GC", "Entrada at Snow Canyon", "Red Hills Golf Course"], "badge": "Most Scenic", "badgeColor": "#5b8dd9", "bgi": "bgi3"}, {"id": "orlando", "name": "Orlando", "state": "Florida", "type": "Parkland", "price": "$537", "days": "3–4 Days", "rounds": 4, "tagline": "Florida golf done right.", "desc": "Skip the theme parks. Orlando has some of the best resort golf in the country.", "courses": ["Grand Cypress Links Course", "Grand Cypress Cypress Course", "Shingle Creek", "Forest Lake"], "badge": null, "badgeColor": null, "bgi": "bgi4"}, {"id": "miami", "name": "Miami", "state": "Florida", "type": "Parkland", "price": "$1,629", "days": "3–4 Days", "rounds": 4, "tagline": "PGA Tour golf. South Beach energy.", "desc": "Doral. The Blue Monster. World-class conditions and a city to match.", "courses": ["Trump National Doral Blue Monster", "Trump National Doral Silver Fox", "Miami Lakes Golf Club", "Hammock Beach Ocean Course"], "badge": "Premium", "badgeColor": "#9b6dff", "bgi": "bgi5"}, {"id": "palm-springs", "name": "Palm Springs", "state": "California", "type": "Desert", "price": "$968", "days": "4 Days", "rounds": 4, "tagline": "Desert golf in the Coachella Valley.", "desc": "Mountain backdrops, perfect weather, and a corridor packed with elite desert tracks.", "courses": ["Desert Willow Firecliff", "Classic Club", "Escena Golf Club", "Indian Wells Celebrity"], "badge": null, "badgeColor": null, "bgi": "bgi6"}, {"id": "scottsdale", "name": "Scottsdale", "state": "Arizona", "type": "Desert", "price": "$926", "days": "3–4 Days", "rounds": 4, "tagline": "The greatest golf destination in America.", "desc": "World-class courses, desert sunsets, and buddy trip stories you'll tell forever.", "courses": ["We-Ko-Pa Saguaro", "We-Ko-Pa Cholla", "Grayhawk Raptor", "Talking Stick O'odham"], "badge": "Fan Favorite", "badgeColor": "#e05252", "bgi": "bgi7"}, {"id": "myrtle-beach", "name": "Myrtle Beach", "state": "South Carolina", "type": "Beach", "price": "$679", "days": "3–4 Days", "rounds": 4, "tagline": "The golf capital of the East Coast.", "desc": "More courses per square mile than anywhere in the country. Four elite rounds.", "courses": ["Caledonia Golf & Fish Club", "True Blue Golf Club", "Pawleys Plantation", "King's North"], "badge": null, "badgeColor": null, "bgi": "bgi8"}, {"id": "las-vegas", "name": "Las Vegas", "state": "Nevada", "type": "Desert", "price": "$986", "days": "3–4 Days", "rounds": 4, "tagline": "Golf in the desert. Everything else after dark.", "desc": "World-class desert tracks in the morning. The rest of Vegas is up to you.", "courses": ["Cascata Golf Club", "Shadow Creek", "Wolf Course at Las Vegas Paiute", "Bear's Best Las Vegas"], "badge": null, "badgeColor": null, "bgi": "bgi9"}, {"id": "evermore", "name": "Evermore", "state": "Orlando, Florida", "type": "Resort", "price": "TBD", "days": "2–3 Days", "rounds": 2, "tagline": "Two Jack Nicklaus courses next to Disney.", "desc": "The Cypress Course and Links Course deliver 36 holes of championship golf. The Links Course is Nicklaus's tribute to St. Andrews — double greens, pot bunkers, and all.", "courses": ["The Cypress Course — Jack Nicklaus", "The Links Course — Jack Nicklaus (St. Andrews tribute)"], "badge": "Stay & Play", "badgeColor": "#2d6a3f", "bgi": "bgi7"}, {"id": "sentryworld", "name": "SentryWorld", "state": "Wisconsin", "type": "Resort", "price": "TBD", "days": "2–3 Days", "rounds": 2, "tagline": "The flower hole. Need we say more.", "desc": "Robert Trent Jones Jr.'s masterpiece in Stevens Point — one of the most iconic holes in golf.", "courses": ["SentryWorld Golf Course"], "badge": "Stay & Play", "badgeColor": "#2d6a3f", "bgi": "bgi1"}, {"id": "pursell-farms", "name": "Pursell Farms", "state": "Alabama", "type": "Resort", "price": "TBD", "days": "2–3 Days", "rounds": 2, "tagline": "Hidden gem of the South.", "desc": "A secluded Alabama resort with a stunning parkland course and full lodge experience.", "courses": ["Farmlinks Golf Club"], "badge": "Stay & Play", "badgeColor": "#2d6a3f", "bgi": "bgi2"}, {"id": "grand-traverse", "name": "Grand Traverse Resort", "state": "Michigan", "type": "Resort", "price": "TBD", "days": "3–4 Days", "rounds": 3, "tagline": "Northern Michigan golf at its finest.", "desc": "Three championship courses including The Bear by Jack Nicklaus — a bucket list Michigan trip.", "courses": ["The Bear — Jack Nicklaus", "Spruce Run", "Wolverine Course"], "badge": "Stay & Play", "badgeColor": "#2d6a3f", "bgi": "bgi3"}, {"id": "gamble-sands", "name": "Gamble Sands", "state": "Washington", "type": "Resort", "price": "TBD", "days": "2–3 Days", "rounds": 2, "tagline": "The best new public course in America.", "desc": "Perched above the Columbia River with sweeping high-desert views. A remote, bucket-list destination that lives up to every bit of the hype.", "courses": ["Gamble Sands", "The Dunes Course"], "badge": "Stay & Play", "badgeColor": "#2d6a3f", "bgi": "bgi6"}, {"id": "big-cedar", "name": "Big Cedar Lodge", "state": "Missouri", "type": "Resort", "price": "TBD", "days": "3–4 Days", "rounds": 3, "tagline": "Bass Pro's golf resort in the Ozarks.", "desc": "Five courses designed by the legends — Nicklaus, Dye, Fazio, and more. One of the most unique golf resort experiences in the country.", "courses": ["Top of the Rock — Jack Nicklaus", "Buffalo Ridge Springs — Tom Fazio", "Mountain Top — Gary Player", "Payne's Valley — Tiger Woods", "Ozarks National — Bill Coore & Ben Crenshaw"], "badge": "Stay & Play", "badgeColor": "#2d6a3f", "bgi": "bgi4"}];
 
 function openTrip(id) {
   const trip = TRIPS.find(t => t.id === id);
@@ -743,9 +758,8 @@ function openTrip(id) {
       </div>
       <div class="panel-tagline">${trip.tagline}</div>
       <div class="panel-desc">${trip.desc}</div>
-      <div class="panel-section-label">Courses</div>
+      <div class="panel-section-label">Courses Played</div>
       <ul class="panel-courses-list">${courses}</ul>
-      ${trip.video ? `<a href="${trip.video}" target="_blank" class="panel-video-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Watch Our Video</a>` : ''}
       <a href="https://www.coursesyouneedtoplay.com/golf-trips/${trip.id}" target="_blank" class="panel-cta-btn">Book Now &rarr;</a>
     </div>`;
   document.getElementById('overlay').classList.add('open');
