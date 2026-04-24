@@ -91,6 +91,18 @@ nav {
 .ad-slot-mid { min-height: 120px; }
 .ad-slot-end { min-height: 100px; }
 
+/* SOCIAL EMBED */
+.social-callout { display: flex; align-items: center; gap: 16px; background: var(--paper2); border-radius: 12px; padding: 16px 20px; margin: 32px 0; text-decoration: none; transition: background 0.2s; }
+.social-callout:hover { background: #e5e0d4; }
+.social-callout-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.social-callout-icon.ig { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.social-callout-icon.tt { background: #000; }
+.social-callout-icon.yt { background: #ff0000; }
+.social-callout-body { flex: 1; }
+.social-callout-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 3px; }
+.social-callout-caption { font-size: 15px; font-weight: 600; color: var(--ink); }
+.social-callout-arrow { font-size: 16px; color: var(--muted); flex-shrink: 0; }
+
 /* BACK LINK */
 .post-back { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--grass); text-decoration: none; margin-bottom: 48px; transition: gap 0.2s; }
 .post-back:hover { gap: 12px; }
@@ -288,6 +300,26 @@ function renderPost(post) {
         </div>
       </div>
     </div>`;
+
+  // Parse social shortcodes
+  const socialRegex = /\[social(?:\s+url="([^"]*)")?(?:\s+caption="([^"]*)")?(?:\s+platform="([^"]*)")?\]/g;
+  bodyText = bodyText.replace(socialRegex, (_, url, caption, platform) => {
+    const href = url || '#';
+    const text = caption || 'See our post';
+    const p = (platform || 'ig').toLowerCase();
+    const icons = { ig: '📸', tt: '🎵', yt: '▶️' };
+    const labels = { ig: 'Instagram', tt: 'TikTok', yt: 'YouTube' };
+    const icon = icons[p] || '📸';
+    const label = labels[p] || 'Instagram';
+    return `<a href="${href}" target="_blank" class="social-callout">
+      <div class="social-callout-icon ${p}">${icon}</div>
+      <div class="social-callout-body">
+        <div class="social-callout-label">${label}</div>
+        <div class="social-callout-caption">${text}</div>
+      </div>
+      <div class="social-callout-arrow">→</div>
+    </a>`;
+  });
 
   // Parse affiliate shortcodes — book-trip and shop-gear
   let bodyText = post.body || '';
