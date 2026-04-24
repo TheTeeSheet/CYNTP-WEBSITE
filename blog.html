@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Turn &mdash; CYNTP Blog</title>
+<meta name="description" content="Course reviews, trip guides, and golf travel stories from the CYNTP crew.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --ink: #0d0d0d; --ink2: #181818; --paper: #f4f0e8; --paper2: #ede8dc;
+  --grass: #2d6a3f; --grass-bright: #3d9155; --grass-pale: #c8e6c9;
+  --sun: #d4a055; --sun2: #b8843a; --white: #ffffff; --muted: #6b6560; --coral: #e85d3a;
+  --font-head: 'Anton', sans-serif; --font-serif: 'Instrument Serif', serif; --font-body: 'Outfit', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); font-family: var(--font-body); overflow-x: hidden; }
+::selection { background: var(--sun); color: var(--ink); }
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-thumb { background: var(--grass); }
+
+.r { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.r.on { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; }
+.d3 { transition-delay: 0.3s; } .d4 { transition-delay: 0.4s; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  padding: 16px 52px; display: flex; align-items: center; justify-content: space-between;
+  background: rgba(13,13,13,0.96); backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.logo { font-family: var(--font-head); font-size: 22px; letter-spacing: 5px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; transition: opacity 0.2s; }
+.logo:hover { opacity: 0.8; }
+.logo-mark { width: 32px; height: 32px; border-radius: 50%; background: var(--sun); color: var(--ink); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; font-family: var(--font-body); }
+.nav-center { display: flex; align-items: center; gap: 6px; position: absolute; left: 50%; transform: translateX(-50%); z-index: 1; }
+.nav-center a { color: rgba(255,255,255,0.55); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 6px 12px; border-radius: 100px; text-decoration: none; transition: all 0.2s; white-space: nowrap; }
+.nav-center a:hover, .nav-center a.active { color: #fff; background: rgba(255,255,255,0.08); }
+.nav-ctas { display: flex; align-items: center; gap: 10px; }
+.cta-sm { padding: 9px 20px; border-radius: 100px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; white-space: nowrap; font-family: var(--font-body); text-decoration: none; display: inline-flex; align-items: center; }
+.cta-sm-ghost { background: transparent; color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.25); }
+.cta-sm-ghost:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
+.cta-sm-sun { background: var(--sun); color: var(--ink); border: 1px solid transparent; }
+.cta-sm-sun:hover { background: var(--sun2); transform: translateY(-1px); }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; }
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--ink); z-index: 190; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { color: #fff; font-family: var(--font-head); font-size: 36px; letter-spacing: 4px; text-decoration: none; text-transform: uppercase; }
+
+/* HERO */
+.blog-hero { background: var(--ink); padding: 160px 80px 80px; text-align: center; }
+.eyebrow { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.45); font-weight: 600; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+.eyebrow::before, .eyebrow::after { content: ''; display: block; width: 28px; height: 2px; background: var(--sun); flex-shrink: 0; }
+.blog-hero h1 { font-family: var(--font-head); font-size: clamp(52px, 8vw, 110px); letter-spacing: 4px; line-height: 0.92; color: #fff; margin-bottom: 24px; }
+.blog-hero h1 em { font-style: italic; font-family: var(--font-serif); color: var(--sun); }
+.blog-hero p { font-size: 17px; color: rgba(255,255,255,0.55); max-width: 500px; margin: 0 auto 48px; line-height: 1.7; }
+
+/* FILTERS */
+.blog-filters { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.bfilter { padding: 10px 22px; border-radius: 100px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; cursor: pointer; border: 1.5px solid rgba(255,255,255,0.2); background: transparent; color: rgba(255,255,255,0.6); font-family: var(--font-body); transition: all 0.2s; }
+.bfilter.active, .bfilter:hover { background: var(--sun); color: var(--ink); border-color: var(--sun); }
+
+/* FEATURED POST */
+.blog-featured { padding: 80px 80px 0; }
+.featured-card { display: grid; grid-template-columns: 1.2fr 1fr; gap: 0; border-radius: 20px; overflow: hidden; background: var(--white); border: 1px solid rgba(15,15,15,0.06); text-decoration: none; color: var(--ink); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s; }
+.featured-card:hover { transform: translateY(-4px); box-shadow: 0 24px 64px rgba(0,0,0,0.1); }
+.featured-img { height: 480px; overflow: hidden; }
+.featured-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.55s cubic-bezier(0.16,1,0.3,1); }
+.featured-card:hover .featured-img img { transform: scale(1.04); }
+.featured-img-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, #1a3d28, #061008); }
+.featured-body { padding: 52px 48px; display: flex; flex-direction: column; justify-content: center; }
+.post-cat { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--grass); font-weight: 700; margin-bottom: 16px; }
+.featured-body h2 { font-family: var(--font-serif); font-size: clamp(28px, 3vw, 42px); line-height: 1.2; margin-bottom: 16px; font-weight: 700; }
+.featured-body p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 28px; }
+.post-meta { display: flex; align-items: center; gap: 16px; font-size: 12px; color: var(--muted); }
+.post-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted); }
+.featured-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--sun); color: var(--ink); font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; margin-bottom: 20px; width: fit-content; }
+
+/* GRID */
+.blog-grid-section { padding: 60px 80px 100px; }
+.blog-grid-section h3 { font-family: var(--font-head); font-size: 28px; letter-spacing: 2px; margin-bottom: 32px; color: var(--ink); }
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.post-card { background: var(--white); border-radius: 16px; overflow: hidden; text-decoration: none; color: var(--ink); border: 1px solid rgba(15,15,15,0.06); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s; display: flex; flex-direction: column; }
+.post-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
+.post-thumb { height: 220px; overflow: hidden; flex-shrink: 0; }
+.post-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.55s cubic-bezier(0.16,1,0.3,1); }
+.post-card:hover .post-thumb img { transform: scale(1.05); }
+.post-thumb-placeholder { width: 100%; height: 100%; }
+.post-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+.post-body h4 { font-family: var(--font-serif); font-size: 20px; line-height: 1.3; margin-bottom: 10px; font-weight: 700; flex: 1; }
+.post-body p { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+.post-foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+.read-more { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grass); }
+
+/* LOAD MORE */
+.blog-load-more { text-align: center; padding-bottom: 100px; }
+.btn-load { display: inline-flex; align-items: center; gap: 10px; background: var(--ink); color: #fff; padding: 18px 48px; border-radius: 100px; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; font-family: var(--font-body); transition: all 0.25s; }
+.btn-load:hover { background: #2a2a2a; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.2); }
+
+/* FOOTER */
+footer { background: var(--ink2); }
+.footer-main { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding: 72px 80px 56px; }
+.footer-brand-name { font-family: var(--font-head); font-size: 32px; letter-spacing: 6px; color: #fff; margin-bottom: 14px; }
+.footer-brand-desc { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.7; max-width: 260px; }
+.footer-col-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.35); font-weight: 600; margin-bottom: 18px; }
+.footer-links { display: flex; flex-direction: column; gap: 12px; }
+.footer-links a { font-size: 14px; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: #fff; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding: 24px 80px; display: flex; justify-content: space-between; align-items: center; }
+.footer-bottom span { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+/* NO POSTS */
+.no-posts { text-align: center; padding: 80px 20px; color: var(--muted); font-size: 16px; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .featured-card { grid-template-columns: 1fr; }
+  .featured-img { height: 320px; }
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
+  .blog-hero, .blog-featured, .blog-grid-section { padding-left: 40px; padding-right: 40px; }
+  .footer-main { grid-template-columns: 1fr 1fr; gap: 32px; padding: 60px 40px 48px; }
+  .footer-bottom { padding: 24px 40px; }
+}
+@media (max-width: 768px) {
+  nav { padding: 14px 24px; }
+  .nav-center, .nav-ctas .cta-sm { display: none; }
+  .nav-hamburger { display: flex; }
+  .blog-hero { padding: 120px 24px 60px; }
+  .blog-featured, .blog-grid-section { padding-left: 24px; padding-right: 24px; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .footer-main { grid-template-columns: 1fr; gap: 32px; padding: 48px 24px 40px; }
+  .footer-bottom { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="logo">
+    <div class="logo-mark">C</div>
+    CYNTP
+  </a>
+  <div class="nav-center">
+    <a href="cyntp-trips.html">Trips</a>
+    <a href="cyntp-courses.html">Courses</a>
+    <a href="blog.html" class="active">The Turn</a>
+    <a href="cyntp-about.html">About</a>
+    <a href="cyntp-partner.html">Partner</a>
+  </div>
+  <div class="nav-ctas">
+    <button class="cta-sm cta-sm-ghost">Sign In</button>
+    <button class="cta-sm cta-sm-sun">Join Community</button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="cyntp-trips.html">Trips</a>
+  <a href="cyntp-courses.html">Courses</a>
+  <a href="blog.html">The Turn</a>
+  <a href="cyntp-about.html">About</a>
+  <a href="cyntp-partner.html">Partner</a>
+</div>
+
+<!-- HERO -->
+<div class="blog-hero">
+  <div class="eyebrow r">CYNTP Blog</div>
+  <h1 class="r d1">THE<br><em>Turn.</em></h1>
+  <p class="r d2">Course reviews, trip guides, and golf travel stories from people who actually play.</p>
+  <div class="blog-filters r d3">
+    <button class="bfilter active" data-filter="all">All</button>
+    <button class="bfilter" data-filter="course-review">Course Reviews</button>
+    <button class="bfilter" data-filter="trip-guide">Trip Guides</button>
+    <button class="bfilter" data-filter="lifestyle">Lifestyle</button>
+  </div>
+</div>
+
+<!-- FEATURED POST -->
+<div class="blog-featured r" id="featuredPost"></div>
+
+<!-- POST GRID -->
+<div class="blog-grid-section">
+  <h3 class="r">LATEST POSTS</h3>
+  <div class="blog-grid r d1" id="postGrid"></div>
+  <div class="blog-load-more" id="loadMore" style="display:none; margin-top:48px;">
+    <button class="btn-load" id="loadMoreBtn">Load More Posts</button>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-main">
+    <div>
+      <div class="footer-brand-name">CYNTP</div>
+      <p class="footer-brand-desc">Honest golf course reviews and trip guides for everyday golfers. We play it, we rate it, we tell you the truth.</p>
+    </div>
+    <div>
+      <div class="footer-col-label">Explore</div>
+      <div class="footer-links">
+        <a href="cyntp-trips.html">Golf Trips</a>
+        <a href="blog.html">The Turn</a>
+        <a href="cyntp-about.html">About Us</a>
+        <a href="cyntp-partner.html">Partner</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-label">Destinations</div>
+      <div class="footer-links">
+        <a href="cyntp-trips.html">Scottsdale</a>
+        <a href="cyntp-trips.html">Hilton Head</a>
+        <a href="cyntp-trips.html">Myrtle Beach</a>
+        <a href="cyntp-trips.html">Las Vegas</a>
+        <a href="cyntp-trips.html">Palm Springs</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-label">Connect</div>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/coursesyouneedtoplay" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@coursesyouneedtoplay" target="_blank">TikTok</a>
+        <a href="https://www.youtube.com/@coursesyouneedtoplay" target="_blank">YouTube</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Sharp Golf LLC. All Rights Reserved.</span>
+    <span>Built for golfers who play hard and <strong>plan smarter.</strong></span>
+  </div>
+</footer>
+
+<script>
+// ─── Load posts from JSON files ───────────────────────────────────────────────
+const POSTS_INDEX = '_posts/index.json';
+const POSTS_PER_PAGE = 6;
+let allPosts = [];
+let filteredPosts = [];
+let currentPage = 1;
+let activeFilter = 'all';
+
+const gradients = [
+  'linear-gradient(135deg,#1a3d28,#061008)',
+  'linear-gradient(135deg,#1a2838,#060a10)',
+  'linear-gradient(135deg,#2a1a14,#120808)',
+  'linear-gradient(135deg,#2a2814,#121008)',
+];
+
+async function loadPosts() {
+  try {
+    const res = await fetch(POSTS_INDEX);
+    if (!res.ok) throw new Error('No index found');
+    allPosts = await res.json();
+    allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+  } catch {
+    allPosts = [];
+  }
+  applyFilter();
+}
+
+function applyFilter() {
+  filteredPosts = activeFilter === 'all'
+    ? allPosts
+    : allPosts.filter(p => p.category === activeFilter);
+  currentPage = 1;
+  renderPosts();
+}
+
+function formatDate(d) {
+  return new Date(d).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+}
+
+function renderPosts() {
+  const featured = document.getElementById('featuredPost');
+  const grid = document.getElementById('postGrid');
+  const loadMore = document.getElementById('loadMore');
+
+  if (!filteredPosts.length) {
+    featured.innerHTML = '';
+    grid.innerHTML = '<div class="no-posts">No posts yet — check back soon.</div>';
+    loadMore.style.display = 'none';
+    return;
+  }
+
+  // Featured (first post)
+  const f = filteredPosts[0];
+  featured.innerHTML = `
+    <a href="blog-post.html?slug=${f.slug}" class="featured-card">
+      <div class="featured-img">
+        ${f.image
+          ? `<img src="${f.image}" alt="${f.title}" loading="lazy">`
+          : `<div class="featured-img-placeholder" style="background:${gradients[0]}"></div>`}
+      </div>
+      <div class="featured-body">
+        <div class="featured-badge">★ Featured</div>
+        <div class="post-cat">${f.category ? f.category.replace('-', ' ') : 'Read'}</div>
+        <h2>${f.title}</h2>
+        <p>${f.excerpt || ''}</p>
+        <div class="post-meta">
+          <span>${f.author || 'CYNTP'}</span>
+          <div class="post-meta-dot"></div>
+          <span>${formatDate(f.date)}</span>
+          ${f.readTime ? `<div class="post-meta-dot"></div><span>${f.readTime} min read</span>` : ''}
+        </div>
+      </div>
+    </a>`;
+
+  // Grid (rest of posts)
+  const rest = filteredPosts.slice(1, 1 + POSTS_PER_PAGE * currentPage);
+  grid.innerHTML = rest.map((p, i) => `
+    <a href="blog-post.html?slug=${p.slug}" class="post-card r" style="transition-delay:${(i % 3) * 0.1}s">
+      <div class="post-thumb">
+        ${p.image
+          ? `<img src="${p.image}" alt="${p.title}" loading="lazy">`
+          : `<div class="post-thumb-placeholder" style="background:${gradients[i % gradients.length]}"></div>`}
+      </div>
+      <div class="post-body">
+        <div class="post-cat">${p.category ? p.category.replace('-', ' ') : 'Read'}</div>
+        <h4>${p.title}</h4>
+        <p>${p.excerpt || ''}</p>
+        <div class="post-foot">
+          <div class="post-meta">
+            <span>${formatDate(p.date)}</span>
+            ${p.readTime ? `<div class="post-meta-dot"></div><span>${p.readTime} min read</span>` : ''}
+          </div>
+          <span class="read-more">Read →</span>
+        </div>
+      </div>
+    </a>`).join('');
+
+  // Load more
+  const total = filteredPosts.length - 1;
+  const shown = POSTS_PER_PAGE * currentPage;
+  loadMore.style.display = total > shown ? 'block' : 'none';
+
+  // Re-observe new cards
+  document.querySelectorAll('.r:not(.on)').forEach(el => obs.observe(el));
+}
+
+document.getElementById('loadMoreBtn').addEventListener('click', () => {
+  currentPage++;
+  renderPosts();
+});
+
+document.querySelectorAll('.bfilter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.bfilter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.filter;
+    applyFilter();
+  });
+});
+
+document.getElementById('navHamburger').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.toggle('open');
+});
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.r').forEach(el => obs.observe(el));
+
+loadPosts();
+</script>
+</body>
+</html>
