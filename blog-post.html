@@ -76,13 +76,13 @@ nav {
 .sponsored-banner span { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; background: var(--sun); color: var(--ink); padding: 4px 10px; border-radius: 100px; font-weight: 800; }
 
 /* AFFILIATE CALLOUT */
-.affiliate-box { background: var(--ink); border-radius: 16px; padding: 24px 28px; margin: 40px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-.affiliate-box-text { color: #fff; }
-.affiliate-box-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); font-weight: 600; margin-bottom: 6px; }
-.affiliate-box-title { font-family: var(--font-head); font-size: 20px; letter-spacing: 2px; margin-bottom: 4px; }
-.affiliate-box-sub { font-size: 13px; color: rgba(255,255,255,0.45); }
-.affiliate-box-btn { background: var(--sun); color: var(--ink); padding: 12px 24px; border-radius: 100px; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: all 0.2s; flex-shrink: 0; font-family: var(--font-body); }
-.affiliate-box-btn:hover { background: var(--sun2); transform: translateY(-2px); }
+.affiliate-box { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid rgba(0,0,0,0.1); border-bottom: 1px solid rgba(0,0,0,0.1); padding: 14px 0; margin: 32px 0; flex-wrap: wrap; }
+.affiliate-box-text { display: flex; align-items: center; gap: 10px; }
+.affiliate-box-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.affiliate-box-title { font-size: 15px; font-weight: 600; color: var(--ink); }
+.affiliate-box-sub { display: none; }
+.affiliate-box-btn { font-size: 12px; font-weight: 700; letter-spacing: 1px; color: var(--grass); text-decoration: none; white-space: nowrap; transition: opacity 0.2s; font-family: var(--font-body); background: none; border: none; cursor: pointer; }
+.affiliate-box-btn:hover { opacity: 0.7; }
 
 /* AD SLOTS */
 .ad-slot { width: 100%; background: var(--paper2); border-radius: 12px; display: none; align-items: center; justify-content: center; color: var(--muted); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; margin: 40px 0; }
@@ -149,6 +149,7 @@ footer { background: var(--ink2); }
   .footer-bottom { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
 }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
 </head>
 <body>
 
@@ -226,7 +227,6 @@ footer { background: var(--ink2); }
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
 <script>
 const slug = new URLSearchParams(window.location.search).get('slug');
 
@@ -300,15 +300,14 @@ function renderPost(post) {
     const sub = isGear ? 'Use our link — it helps keep the site going.' : 'Use our link — it helps keep the site going.';
     return `<div class="affiliate-box">
       <div class="affiliate-box-text">
-        <div class="affiliate-box-label">${label}</div>
-        <div class="affiliate-box-title">${bookTitle}</div>
-        <div class="affiliate-box-sub">${sub}</div>
+        <span class="affiliate-box-label">${label}:</span>
+        <span class="affiliate-box-title">${bookTitle}</span>
       </div>
       <a href="${bookUrl}" target="_blank" class="affiliate-box-btn">${bookCta}</a>
     </div>`;
   });
 
-  const html = typeof marked !== 'undefined' ? marked.parse(bodyText) : bodyText.replace(/\n/g, '<br>');
+  const html = marked.parse(bodyText);
 
   // Split content at midpoint for mid-content ad slot
   const midHtml = injectMidAd(html, post.adMid);
