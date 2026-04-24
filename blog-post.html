@@ -76,12 +76,12 @@ nav {
 .sponsored-banner span { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; background: var(--sun); color: var(--ink); padding: 4px 10px; border-radius: 100px; font-weight: 800; }
 
 /* AFFILIATE CALLOUT */
-.affiliate-box { background: var(--ink); border-radius: 16px; padding: 28px 32px; margin: 40px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.affiliate-box { background: var(--ink); border-radius: 16px; padding: 24px 28px; margin: 40px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 .affiliate-box-text { color: #fff; }
-.affiliate-box-label { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--sun); font-weight: 700; margin-bottom: 6px; }
-.affiliate-box-title { font-family: var(--font-head); font-size: 22px; letter-spacing: 2px; margin-bottom: 6px; }
-.affiliate-box-sub { font-size: 13px; color: rgba(255,255,255,0.55); }
-.affiliate-box-btn { background: var(--sun); color: var(--ink); padding: 14px 28px; border-radius: 100px; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: all 0.2s; flex-shrink: 0; }
+.affiliate-box-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); font-weight: 600; margin-bottom: 6px; }
+.affiliate-box-title { font-family: var(--font-head); font-size: 20px; letter-spacing: 2px; margin-bottom: 4px; }
+.affiliate-box-sub { font-size: 13px; color: rgba(255,255,255,0.45); }
+.affiliate-box-btn { background: var(--sun); color: var(--ink); padding: 12px 24px; border-radius: 100px; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: all 0.2s; flex-shrink: 0; font-family: var(--font-body); }
 .affiliate-box-btn:hover { background: var(--sun2); transform: translateY(-2px); }
 
 /* AD SLOTS */
@@ -288,18 +288,20 @@ function renderPost(post) {
       </div>
     </div>`;
 
-  // Parse body — handle [book-trip] shortcode for affiliate callout
-  let bodyText = post.body || '';
-  const affiliateRegex = /\[book-trip(?:\s+url="([^"]*)")?(?:\s+title="([^"]*)")?(?:\s+cta="([^"]*)")?\]/g;
-  bodyText = bodyText.replace(affiliateRegex, (_, url, title, cta) => {
+  // Parse affiliate shortcodes — book-trip and shop-gear
+  const affiliateRegex = /\[(book-trip|shop-gear)(?:\s+url="([^"]*)")?(?:\s+title="([^"]*)")?(?:\s+cta="([^"]*)")?\]/g;
+  bodyText = bodyText.replace(affiliateRegex, (_, type, url, title, cta) => {
+    const isGear = type === 'shop-gear';
     const bookUrl = url || 'https://teetimesusa.com';
-    const bookTitle = title || 'Book This Trip';
-    const bookCta = cta || 'Book Now →';
+    const bookTitle = title || (isGear ? 'Gear We Use' : 'Book This Trip');
+    const bookCta = cta || (isGear ? 'Shop Now →' : 'Book Now →');
+    const label = isGear ? 'Gear We Use' : 'Where We Book';
+    const sub = isGear ? 'Use our link — it helps keep the site going.' : 'Use our link — it helps keep the site going.';
     return `<div class="affiliate-box">
       <div class="affiliate-box-text">
-        <div class="affiliate-box-label">Partner Offer</div>
+        <div class="affiliate-box-label">${label}</div>
         <div class="affiliate-box-title">${bookTitle}</div>
-        <div class="affiliate-box-sub">Book through our partner link and support CYNTP.</div>
+        <div class="affiliate-box-sub">${sub}</div>
       </div>
       <a href="${bookUrl}" target="_blank" class="affiliate-box-btn">${bookCta}</a>
     </div>`;
