@@ -129,10 +129,13 @@ body { background: #f0ece4; font-family: var(--font-body); color: var(--ink); mi
       <div class="snav-item active" onclick="showPanel('posts')" id="nav-posts">
         <span class="snav-icon">📝</span> All Posts
       </div>
+      <div class="snav-item" onclick="showPanel('drafts')" id="nav-drafts">
+        <span class="snav-icon">🗂️</span> Drafts
+      </div>
       <div class="snav-item" onclick="showPanel('new')" id="nav-new">
         <span class="snav-icon">✏️</span> New Post
       </div>
-      <div class="snav-item" onclick="window.open('blog.html','_blank')" id="nav-view">
+      <div class="snav-item" onclick="window.open('../blog.html','_blank')" id="nav-view">
         <span class="snav-icon">👁</span> View Blog
       </div>
     </div>
@@ -152,6 +155,17 @@ body { background: #f0ece4; font-family: var(--font-body); color: var(--ink); mi
       </div>
       <div style="padding:40px;">
         <div class="posts-list" id="postsList"></div>
+      </div>
+    </div>
+
+    <!-- DRAFTS PANEL -->
+    <div class="panel" id="panel-drafts">
+      <div class="main-header">
+        <h1>DRAFTS</h1>
+        <button class="btn-primary btn-sun" onclick="showPanel('new')">+ New Post</button>
+      </div>
+      <div style="padding:40px;">
+        <div class="posts-list" id="draftsList"></div>
       </div>
     </div>
 
@@ -291,6 +305,7 @@ function showPanel(name) {
   document.getElementById(`nav-${name}`)?.classList.add('active');
   if (name === 'new' && !editingSlug) resetEditor();
   if (name === 'posts') renderPostsList();
+  if (name === 'drafts') renderDraftsList();
 }
 
 // ─── Storage (localStorage as stand-in for file system) ─────────────────────
@@ -443,11 +458,12 @@ function showInstructions(slug) {
 // ─── Posts list ───────────────────────────────────────────────────────────────
 function renderPostsList() {
   const list = document.getElementById('postsList');
-  if (!posts.length) {
+  const published = posts.filter(p => p.status === 'published');
+  if (!published.length) {
     list.innerHTML = `<div class="empty-state"><h3>NO POSTS YET</h3><p>Hit "New Post" to write your first one.</p></div>`;
     return;
   }
-  list.innerHTML = posts.map(p => `
+  list.innerHTML = published.map(p => `
     <div class="post-row">
       ${p.image ? `<img class="post-row-thumb" src="${p.image}" alt="${p.title}">` : `<div class="post-row-thumb"></div>`}
       <div class="post-row-info">
@@ -456,12 +472,38 @@ function renderPostsList() {
           <span class="post-row-cat">${p.category ? p.category.replace('-',' ') : 'general'}</span>
           <span>${p.author || 'Cameron'}</span>
           <span>${new Date(p.date).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}</span>
-          <span style="color:${p.status==='published'?'#2d6a3f':'#b8843a'};font-weight:600">${p.status || 'draft'}</span>
+          <span style="color:#2d6a3f;font-weight:600">published</span>
         </div>
       </div>
       <div class="post-row-actions">
         <button class="btn-primary btn-ghost" style="padding:8px 16px;font-size:10px;" onclick="editPost('${p.slug}')">Edit</button>
-        ${p.status === 'published' ? `<button class="btn-primary btn-sun" style="padding:8px 16px;font-size:10px;" onclick="redownload('${p.slug}')">Re-download</button>` : ''}
+        <button class="btn-primary btn-sun" style="padding:8px 16px;font-size:10px;" onclick="redownload('${p.slug}')">Re-download</button>
+      </div>
+    </div>`).join('');
+}
+
+function renderDraftsList() {
+  const list = document.getElementById('draftsList');
+  const drafts = posts.filter(p => p.status === 'draft');
+  if (!drafts.length) {
+    list.innerHTML = `<div class="empty-state"><h3>NO DRAFTS</h3><p>Save a post as a draft and it'll show up here.</p></div>`;
+    return;
+  }
+  list.innerHTML = drafts.map(p => `
+    <div class="post-row">
+      ${p.image ? `<img class="post-row-thumb" src="${p.image}" alt="${p.title}">` : `<div class="post-row-thumb"></div>`}
+      <div class="post-row-info">
+        <div class="post-row-title">${p.title}</div>
+        <div class="post-row-meta">
+          <span class="post-row-cat">${p.category ? p.category.replace('-',' ') : 'general'}</span>
+          <span>${p.author || 'Cameron'}</span>
+          <span>${new Date(p.date).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}</span>
+          <span style="color:#b8843a;font-weight:600">draft</span>
+        </div>
+      </div>
+      <div class="post-row-actions">
+        <button class="btn-primary btn-ghost" style="padding:8px 16px;font-size:10px;" onclick="editPost('${p.slug}')">Edit</button>
+        <button class="btn-primary btn-sun" style="padding:8px 16px;font-size:10px;" onclick="publishFromDraft('${p.slug}')">Publish</button>
       </div>
     </div>`).join('');
 }
@@ -469,6 +511,16 @@ function renderPostsList() {
 function redownload(slug) {
   const post = posts.find(p => p.slug === slug);
   if (post) generateDownload(post);
+}
+
+function publishFromDraft(slug) {
+  const post = posts.find(p => p.slug === slug);
+  if (!post) return;
+  post.status = 'published';
+  savePosts();
+  generateDownload(post);
+  showToast('Draft published! Download the files.', 'success');
+  renderDraftsList();
 }
 
 // ─── Toolbar ──────────────────────────────────────────────────────────────────
