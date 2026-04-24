@@ -59,7 +59,39 @@ body { background: #f0ece4; font-family: var(--font-body); color: var(--ink); mi
 .btn-danger { background: #e85d3a; color: #fff; }
 .btn-danger:hover { background: #c94826; }
 
-/* IMAGE MODAL */
+/* PREVIEW MODAL */
+.preview-backdrop { display: none; position: fixed; inset: 0; background: #f4f0e8; z-index: 600; overflow-y: auto; }
+.preview-backdrop.open { display: block; }
+.preview-topbar { position: sticky; top: 0; background: #0d0d0d; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; z-index: 10; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.preview-topbar span { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+.preview-close { background: rgba(255,255,255,0.08); border: none; color: #fff; padding: 8px 20px; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; font-family: var(--font-body); transition: all 0.2s; }
+.preview-close:hover { background: rgba(255,255,255,0.16); }
+.preview-body { max-width: 780px; margin: 0 auto; padding: 60px 40px 100px; font-family: 'Outfit', sans-serif; }
+.preview-hero { position: relative; height: 400px; border-radius: 20px; overflow: hidden; margin-bottom: 48px; background: linear-gradient(135deg, #1a3d28, #061008); }
+.preview-hero img { width: 100%; height: 100%; object-fit: cover; }
+.preview-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 60%); }
+.preview-hero-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 36px; }
+.preview-cat { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #d4a055; font-weight: 700; margin-bottom: 10px; }
+.preview-title { font-family: 'Anton', sans-serif; font-size: clamp(28px, 4vw, 52px); letter-spacing: 2px; color: #fff; line-height: 1.05; margin-bottom: 14px; }
+.preview-meta { font-size: 13px; color: rgba(255,255,255,0.55); }
+.preview-sponsored { display: flex; align-items: center; gap: 10px; background: #fdf6ec; border: 1.5px solid #d4a055; border-radius: 10px; padding: 12px 18px; margin-bottom: 32px; font-size: 13px; color: #b8843a; font-weight: 600; }
+.preview-sponsored span { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; background: #d4a055; color: #0d0d0d; padding: 3px 10px; border-radius: 100px; font-weight: 800; }
+.preview-content { font-size: 17px; line-height: 1.85; color: #2a2a2a; }
+.preview-content h2 { font-family: 'Anton', sans-serif; font-size: 28px; letter-spacing: 2px; margin: 48px 0 18px; color: #0d0d0d; }
+.preview-content h3 { font-family: 'Instrument Serif', serif; font-size: 24px; margin: 36px 0 14px; color: #0d0d0d; font-weight: 700; }
+.preview-content p { margin-bottom: 22px; }
+.preview-content img { width: 100%; border-radius: 12px; margin: 32px 0; }
+.preview-content blockquote { border-left: 3px solid #d4a055; padding: 14px 24px; margin: 32px 0; background: #ede8dc; border-radius: 0 12px 12px 0; font-size: 19px; color: #0d0d0d; line-height: 1.5; }
+.preview-content ul, .preview-content ol { padding-left: 24px; margin-bottom: 22px; }
+.preview-content li { margin-bottom: 8px; }
+.preview-content a { color: #2d6a3f; text-decoration: underline; }
+.preview-content strong { font-weight: 700; }
+.preview-content hr { border: none; border-top: 1px solid rgba(0,0,0,0.1); margin: 44px 0; }
+.preview-affiliate { background: #0d0d0d; border-radius: 14px; padding: 24px 28px; margin: 36px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.preview-affiliate-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #d4a055; font-weight: 700; margin-bottom: 4px; }
+.preview-affiliate-title { font-family: 'Anton', sans-serif; font-size: 20px; letter-spacing: 2px; color: #fff; margin-bottom: 4px; }
+.preview-affiliate-sub { font-size: 12px; color: rgba(255,255,255,0.45); }
+.preview-affiliate-btn { background: #d4a055; color: #0d0d0d; padding: 12px 24px; border-radius: 100px; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-decoration: none; white-space: nowrap; }
 .img-modal-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 500; align-items: center; justify-content: center; }
 .img-modal-backdrop.open { display: flex; }
 .img-modal { background: #fff; border-radius: 20px; padding: 36px; width: 100%; max-width: 520px; }
@@ -184,6 +216,7 @@ body { background: #f0ece4; font-family: var(--font-body); color: var(--ink); mi
       <div class="main-header">
         <h1 id="editorTitle">NEW POST</h1>
         <div style="display:flex;gap:10px;">
+          <button class="btn-primary btn-ghost" onclick="previewPost()">👁 Preview</button>
           <button class="btn-primary btn-ghost" onclick="saveDraft()">Save Draft</button>
           <button class="btn-primary btn-sun" onclick="publishPost()">Publish →</button>
         </div>
@@ -309,8 +342,8 @@ body { background: #f0ece4; font-family: var(--font-body); color: var(--ink); mi
 
 <div class="toast" id="toast"></div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
 <script>
-// ─── Password (change this!) ──────────────────────────────────────────────────
 const PASSWORD = 'cyntp2026';
 
 // ─── State ────────────────────────────────────────────────────────────────────
@@ -442,6 +475,8 @@ function saveDraft() {
   if (!data) return;
   savePostData(data);
   showToast('Draft saved ✓', 'success');
+  resetEditor();
+  showPanel('drafts');
 }
 
 function publishPost() {
@@ -590,6 +625,20 @@ function showToast(msg, type = '') {
   t.textContent = msg;
   t.className = `toast ${type} show`;
   setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// ─── Preview ──────────────────────────────────────────────────────────────────
+function previewPost() {
+  const title = document.getElementById('postTitle').value.trim();
+  if (!title) { showToast('Add a title first', 'error'); return; }
+
+  const data = getFormData('draft');
+  if (!data) return;
+
+  // Save to localStorage as preview temp
+  localStorage.setItem('cyntp_preview_post', JSON.stringify(data));
+  window.open('../blog-post.html?preview=true', '_blank');
+  showToast('Opening preview...', 'success');
 }
 
 // ─── Image Modal ──────────────────────────────────────────────────────────────
