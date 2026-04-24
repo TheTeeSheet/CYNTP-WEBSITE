@@ -573,33 +573,7 @@ footer { background: #111; }
       <h2 class="h2 r d1" style="color:var(--ink);">PLAN YOUR<br><em style="color:var(--grass);">Next Round.</em></h2>
     </div>
   </div>
-  <div class="guide-grid">
-    <a href="https://courses-newsletter-56d38d.beehiiv.com/p/we-played-the-best-new-public-golf-course-of-2025" target="_blank" class="gcard gcard-main r">
-      <div class="gthumb"><div class="gthumb-in gt1"></div></div>
-      <div class="gbody">
-        <div class="gcat">Course Review</div>
-        <div class="gtitle">We Played the Best New Public Golf Course of 2025</div>
-        <p class="gexcerpt">What it was actually like for normal golfers. Gamble Sands delivered.</p>
-        <div class="gfoot"><span class="gdate">Feb 2, 2026</span><span class="gmore">Read More &rarr;</span></div>
-      </div>
-    </a>
-    <a href="https://courses-newsletter-56d38d.beehiiv.com/p/miami-golf-trip-4-courses-3-nights" target="_blank" class="gcard r d1">
-      <div class="gthumb"><div class="gthumb-in gt2"></div></div>
-      <div class="gbody">
-        <div class="gcat">Trip Guide</div>
-        <div class="gtitle">Miami Golf Trip — 4 Courses & 3 Nights</div>
-        <div class="gfoot"><span class="gdate">Jan 1, 2026</span><span class="gmore">Read &rarr;</span></div>
-      </div>
-    </a>
-    <a href="https://courses-newsletter-56d38d.beehiiv.com/p/10-rules-i-use-for-every-golf-trip" target="_blank" class="gcard r d2">
-      <div class="gthumb"><div class="gthumb-in gt3"></div></div>
-      <div class="gbody">
-        <div class="gcat">Trip Guide</div>
-        <div class="gtitle">10 Rules I Use For Every Golf Trip</div>
-        <div class="gfoot"><span class="gdate">Dec 11, 2025</span><span class="gmore">Read &rarr;</span></div>
-      </div>
-    </a>
-  </div>
+  <div class="guide-grid" id="homePostsGrid"></div>
   <div style="text-align:center; margin-top:40px;">
     <a href="cyntp-turn.html" class="btn-grass r">Read All Guides &rarr;</a>
   </div>
@@ -723,6 +697,35 @@ document.querySelectorAll('.tfilter').forEach(btn => {
     btn.classList.add('active');
   });
 });
+
+// Load latest posts for The Turn section
+(async function() {
+  try {
+    const res = await fetch('_posts/index.json');
+    if (!res.ok) return;
+    const posts = await res.json();
+    const latest = posts.sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3);
+    const gradients = ['gt1', 'gt2', 'gt3'];
+    const formatDate = d => new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    const formatCat = c => c ? c.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') : 'Read';
+    document.getElementById('homePostsGrid').innerHTML = latest.map((p, i) => `
+      <a href="blog-post.html?slug=${p.slug}" class="gcard ${i === 0 ? 'gcard-main' : ''} r ${i > 0 ? 'd' + i : ''}">
+        <div class="gthumb">
+          ${p.image
+            ? `<div class="gthumb-in" style="background-image:url(${p.image});background-size:cover;background-position:center;"></div>`
+            : `<div class="gthumb-in ${gradients[i]}"></div>`}
+        </div>
+        <div class="gbody">
+          <div class="gcat">${formatCat(p.category)}</div>
+          <div class="gtitle">${p.title}</div>
+          ${i === 0 && p.excerpt ? `<p class="gexcerpt">${p.excerpt}</p>` : ''}
+          <div class="gfoot"><span class="gdate">${formatDate(p.date)}</span><span class="gmore">${i === 0 ? 'Read More' : 'Read'} &rarr;</span></div>
+        </div>
+      </a>`).join('');
+    // Re-observe new cards for scroll animations
+    document.querySelectorAll('#homePostsGrid .r').forEach(el => obs.observe(el));
+  } catch(e) {}
+})();
 
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
