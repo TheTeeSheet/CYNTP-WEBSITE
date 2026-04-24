@@ -59,6 +59,16 @@ body { background: #f0ece4; font-family: var(--font-body); color: var(--ink); mi
 .btn-danger { background: #e85d3a; color: #fff; }
 .btn-danger:hover { background: #c94826; }
 
+/* IMAGE MODAL */
+.img-modal-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 500; align-items: center; justify-content: center; }
+.img-modal-backdrop.open { display: flex; }
+.img-modal { background: #fff; border-radius: 20px; padding: 36px; width: 100%; max-width: 520px; }
+.img-modal h3 { font-family: var(--font-head); font-size: 22px; letter-spacing: 2px; margin-bottom: 24px; }
+.img-modal .field { margin-bottom: 14px; }
+.img-modal-preview { width: 100%; height: 180px; border-radius: 10px; background: var(--paper2); object-fit: cover; display: none; margin-bottom: 14px; }
+.img-modal-preview.show { display: block; }
+.img-modal-actions { display: flex; gap: 10px; margin-top: 8px; }
+
 /* PANELS */
 .panel { display: none; padding: 40px; }
 .panel.active { display: block; }
@@ -197,7 +207,7 @@ body { background: #f0ece4; font-family: var(--font-body); color: var(--ink); mi
                   <button class="tbtn" onclick="insertMd('\n> ','')">Quote</button>
                   <button class="tbtn" onclick="insertMd('\n- ','')">List</button>
                   <button class="tbtn" onclick="insertMd('\n---\n','')">Divider</button>
-                  <button class="tbtn" onclick="insertMd('![alt](',')')">Image</button>
+                  <button class="tbtn" onclick="openImgModal()">🖼 Image</button>
                   <button class="tbtn" onclick="insertMd('[','](url)')">Link</button>
                 </div>
                 <textarea id="postBody" placeholder="Write your post here using Markdown...&#10;&#10;## Section Heading&#10;&#10;Your content here..."></textarea>
@@ -246,7 +256,21 @@ body { background: #f0ece4; font-family: var(--font-body); color: var(--ink); mi
             </div>
 
             <div class="card">
-              <div class="card-label">Status</div>
+              <div class="card-label">Monetization</div>
+              <div class="field">
+                <label style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+                  <input type="checkbox" id="postSponsored" style="width:auto;margin:0;"> Sponsored Post
+                </label>
+              </div>
+              <div class="field" id="sponsoredByField" style="display:none;">
+                <label>Sponsored By</label>
+                <input type="text" id="postSponsoredBy" placeholder="e.g. Tee Times USA">
+              </div>
+              <div class="field">
+                <label>Affiliate Callout — paste this shortcode anywhere in the body:</label>
+                <code style="display:block;background:var(--paper2);padding:10px 14px;border-radius:8px;font-size:12px;color:var(--muted);margin-top:6px;">[book-trip url="https://..." title="Book This Trip" cta="Book Now →"]</code>
+              </div>
+            </div>
               <div id="postStatusBadge" class="status-badge status-draft" style="margin-bottom:16px;">Draft</div>
               <div class="action-btns">
                 <button class="btn-primary btn-sun" onclick="publishPost()" style="justify-content:center;">Publish Post</button>
@@ -260,6 +284,26 @@ body { background: #f0ece4; font-family: var(--font-body); color: var(--ink); mi
       </div>
     </div>
 
+  </div>
+</div>
+
+<!-- IMAGE MODAL -->
+<div class="img-modal-backdrop" id="imgModalBackdrop">
+  <div class="img-modal">
+    <h3>INSERT IMAGE</h3>
+    <div class="field">
+      <label>Cloudinary URL</label>
+      <input type="text" class="field input" id="imgUrl" placeholder="https://res.cloudinary.com/..." oninput="previewImg()" style="width:100%;background:var(--paper);border:1.5px solid rgba(0,0,0,0.1);border-radius:10px;padding:12px 16px;font-size:14px;font-family:var(--font-body);outline:none;">
+    </div>
+    <div class="field">
+      <label>Alt Text (optional)</label>
+      <input type="text" class="field input" id="imgAlt" placeholder="Describe the image..." style="width:100%;background:var(--paper);border:1.5px solid rgba(0,0,0,0.1);border-radius:10px;padding:12px 16px;font-size:14px;font-family:var(--font-body);outline:none;">
+    </div>
+    <img class="img-modal-preview" id="imgPreview" alt="Preview">
+    <div class="img-modal-actions">
+      <button class="btn-primary btn-sun" onclick="insertImg()" style="flex:1;justify-content:center;">Insert Image</button>
+      <button class="btn-primary btn-ghost" onclick="closeImgModal()" style="justify-content:center;">Cancel</button>
+    </div>
   </div>
 </div>
 
@@ -362,6 +406,9 @@ function editPost(slug) {
   document.getElementById('postDate').value = post.date;
   document.getElementById('postReadTime').value = post.readTime || '';
   document.getElementById('postCategory').value = post.category || 'course-review';
+  document.getElementById('postSponsored').checked = post.sponsored || false;
+  document.getElementById('sponsoredByField').style.display = post.sponsored ? 'block' : 'none';
+  document.getElementById('postSponsoredBy').value = post.sponsoredBy || '';
   document.getElementById('slugPreview').textContent = `slug: ${post.slug}`;
   const published = post.status === 'published';
   document.getElementById('postStatusBadge').className = `status-badge ${published ? 'status-published' : 'status-draft'}`;
@@ -375,6 +422,7 @@ function getFormData(status) {
   const title = document.getElementById('postTitle').value.trim();
   if (!title) { showToast('Please add a title', 'error'); return null; }
   const slug = editingSlug || toSlug(title);
+  const sponsored = document.getElementById('postSponsored').checked;
   return {
     slug, title, status,
     body: document.getElementById('postBody').value,
@@ -384,6 +432,8 @@ function getFormData(status) {
     date: document.getElementById('postDate').value,
     readTime: parseInt(document.getElementById('postReadTime').value) || null,
     category: document.getElementById('postCategory').value,
+    sponsored,
+    sponsoredBy: sponsored ? document.getElementById('postSponsoredBy').value.trim() : null,
   };
 }
 
@@ -541,6 +591,52 @@ function showToast(msg, type = '') {
   t.className = `toast ${type} show`;
   setTimeout(() => t.classList.remove('show'), 3000);
 }
+
+// ─── Image Modal ──────────────────────────────────────────────────────────────
+function openImgModal() {
+  document.getElementById('imgUrl').value = '';
+  document.getElementById('imgAlt').value = '';
+  document.getElementById('imgPreview').classList.remove('show');
+  document.getElementById('imgModalBackdrop').classList.add('open');
+  setTimeout(() => document.getElementById('imgUrl').focus(), 100);
+}
+
+function closeImgModal() {
+  document.getElementById('imgModalBackdrop').classList.remove('open');
+}
+
+function previewImg() {
+  const url = document.getElementById('imgUrl').value.trim();
+  const preview = document.getElementById('imgPreview');
+  if (url) {
+    preview.src = url;
+    preview.classList.add('show');
+  } else {
+    preview.classList.remove('show');
+  }
+}
+
+function insertImg() {
+  const url = document.getElementById('imgUrl').value.trim();
+  const alt = document.getElementById('imgAlt').value.trim() || 'image';
+  if (!url) { showToast('Please enter an image URL', 'error'); return; }
+  const ta = document.getElementById('postBody');
+  const pos = ta.selectionStart;
+  const markdown = `\n![${alt}](${url})\n`;
+  ta.value = ta.value.substring(0, pos) + markdown + ta.value.substring(pos);
+  ta.focus();
+  ta.selectionStart = ta.selectionEnd = pos + markdown.length;
+  closeImgModal();
+  showToast('Image inserted ✓', 'success');
+}
+
+document.getElementById('imgModalBackdrop').addEventListener('click', function(e) {
+  if (e.target === this) closeImgModal();
+});
+
+document.getElementById('postSponsored').addEventListener('change', function() {
+  document.getElementById('sponsoredByField').style.display = this.checked ? 'block' : 'none';
+});
 
 // Set today's date
 document.getElementById('postDate').value = new Date().toISOString().split('T')[0];
