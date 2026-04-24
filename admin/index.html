@@ -233,15 +233,15 @@ body { background: #f0ece4; font-family: var(--font-body); color: var(--ink); mi
               <div class="field">
                 <label>Body <span style="font-weight:400;text-transform:none;letter-spacing:0">(Markdown supported)</span></label>
                 <div class="toolbar">
-                  <button class="tbtn" onclick="insertMd('**','**')"><b>B</b></button>
-                  <button class="tbtn" onclick="insertMd('*','*')"><i>I</i></button>
-                  <button class="tbtn" onclick="insertMd('\n## ','')">H2</button>
-                  <button class="tbtn" onclick="insertMd('\n### ','')">H3</button>
-                  <button class="tbtn" onclick="insertMd('\n> ','')">Quote</button>
-                  <button class="tbtn" onclick="insertMd('\n- ','')">List</button>
+                  <button class="tbtn" onclick="insertMd('**','**','bold text')"><b>B</b></button>
+                  <button class="tbtn" onclick="insertMd('*','*','italic text')"><i>I</i></button>
+                  <button class="tbtn" onclick="insertMd('\n## ','','Heading')">H2</button>
+                  <button class="tbtn" onclick="insertMd('\n### ','','Heading')">H3</button>
+                  <button class="tbtn" onclick="insertMd('\n> ','','Quote')">Quote</button>
+                  <button class="tbtn" onclick="insertMd('\n- ','','List item')">List</button>
                   <button class="tbtn" onclick="insertMd('\n---\n','')">Divider</button>
                   <button class="tbtn" onclick="openImgModal()">🖼 Image</button>
-                  <button class="tbtn" onclick="insertMd('[','](url)')">Link</button>
+                  <button class="tbtn" onclick="insertMd('[','](url)','link text')">Link</button>
                 </div>
                 <textarea id="postBody" placeholder="Write your post here using Markdown...&#10;&#10;## Section Heading&#10;&#10;Your content here..."></textarea>
               </div>
@@ -301,7 +301,7 @@ body { background: #f0ece4; font-family: var(--font-body); color: var(--ink); mi
               </div>
               <div class="field">
                 <label>Affiliate Shortcodes — paste anywhere in the body:</label>
-                <code style="display:block;background:var(--paper2);padding:10px 14px;border-radius:8px;font-size:12px;color:var(--muted);margin-top:6px;line-height:1.8;">[book-trip url="https://..." title="Scottsdale Trip" cta="Book Now →"]<br>[shop-gear url="https://..." title="Callaway Rogue Driver" cta="Shop Now →"]</code>
+                <code style="display:block;background:var(--paper2);padding:10px 14px;border-radius:8px;font-size:12px;color:var(--muted);margin-top:6px;line-height:1.8;">[book-trip url="https://..." title="Scottsdale Trip" cta="Book Now →"]<br>[shop-gear url="https://..." title="Callaway Rogue Driver" cta="Shop Now →"]<br>[social url="https://instagram.com/p/..." caption="Our full recap" platform="ig"]</code>
               </div>
             </div>
               <div id="postStatusBadge" class="status-badge status-draft" style="margin-bottom:16px;">Draft</div>
@@ -613,14 +613,17 @@ function publishFromDraft(slug) {
 }
 
 // ─── Toolbar ──────────────────────────────────────────────────────────────────
-function insertMd(before, after) {
+function insertMd(before, after, placeholder) {
   const ta = document.getElementById('postBody');
+  const scrollTop = ta.scrollTop;
   const start = ta.selectionStart;
   const end = ta.selectionEnd;
-  const selected = ta.value.substring(start, end);
+  const selected = ta.value.substring(start, end) || placeholder || '';
   ta.value = ta.value.substring(0, start) + before + selected + after + ta.value.substring(end);
   ta.focus();
-  ta.selectionStart = ta.selectionEnd = start + before.length + selected.length + after.length;
+  ta.selectionStart = start + before.length;
+  ta.selectionEnd = start + before.length + selected.length;
+  ta.scrollTop = scrollTop;
 }
 
 // ─── Toast ────────────────────────────────────────────────────────────────────
