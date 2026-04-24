@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading... &mdash; CYNTP</title>
+<meta name="description" content="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --ink: #0d0d0d; --ink2: #181818; --paper: #f4f0e8; --paper2: #ede8dc;
+  --grass: #2d6a3f; --grass-bright: #3d9155; --grass-pale: #c8e6c9;
+  --sun: #d4a055; --sun2: #b8843a; --white: #ffffff; --muted: #6b6560; --coral: #e85d3a;
+  --font-head: 'Anton', sans-serif; --font-serif: 'Instrument Serif', serif; --font-body: 'Outfit', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); font-family: var(--font-body); overflow-x: hidden; }
+::selection { background: var(--sun); color: var(--ink); }
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-thumb { background: var(--grass); }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  padding: 16px 52px; display: flex; align-items: center; justify-content: space-between;
+  background: rgba(13,13,13,0.96); backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.logo { font-family: var(--font-head); font-size: 22px; letter-spacing: 5px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; transition: opacity 0.2s; }
+.logo:hover { opacity: 0.8; }
+.logo-mark { width: 32px; height: 32px; border-radius: 50%; background: var(--sun); color: var(--ink); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; font-family: var(--font-body); }
+.nav-center { display: flex; align-items: center; gap: 6px; position: absolute; left: 50%; transform: translateX(-50%); z-index: 1; }
+.nav-center a { color: rgba(255,255,255,0.55); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 6px 12px; border-radius: 100px; text-decoration: none; transition: all 0.2s; white-space: nowrap; }
+.nav-center a:hover, .nav-center a.active { color: #fff; background: rgba(255,255,255,0.08); }
+.nav-ctas { display: flex; align-items: center; gap: 10px; }
+.cta-sm { padding: 9px 20px; border-radius: 100px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; white-space: nowrap; font-family: var(--font-body); text-decoration: none; display: inline-flex; align-items: center; }
+.cta-sm-ghost { background: transparent; color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.25); }
+.cta-sm-ghost:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
+.cta-sm-sun { background: var(--sun); color: var(--ink); border: 1px solid transparent; }
+.cta-sm-sun:hover { background: var(--sun2); transform: translateY(-1px); }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; }
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--ink); z-index: 190; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { color: #fff; font-family: var(--font-head); font-size: 36px; letter-spacing: 4px; text-decoration: none; text-transform: uppercase; }
+
+/* POST HERO */
+.post-hero { position: relative; height: 60vh; min-height: 480px; overflow: hidden; display: flex; align-items: flex-end; }
+.post-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.post-hero-placeholder { position: absolute; inset: 0; background: linear-gradient(135deg, #1a3d28, #061008); }
+.post-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 60%, transparent 100%); }
+.post-hero-content { position: relative; z-index: 2; padding: 52px 80px; width: 100%; max-width: 900px; }
+.post-cat { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--sun); font-weight: 700; margin-bottom: 16px; }
+.post-hero-content h1 { font-family: var(--font-serif); font-size: clamp(32px, 5vw, 64px); line-height: 1.1; color: #fff; margin-bottom: 20px; font-weight: 700; }
+.post-meta { display: flex; align-items: center; gap: 16px; font-size: 13px; color: rgba(255,255,255,0.6); }
+.post-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,0.4); }
+
+/* POST BODY */
+.post-container { max-width: 780px; margin: 0 auto; padding: 72px 40px 100px; }
+.post-content { font-size: 17px; line-height: 1.85; color: #2a2a2a; }
+.post-content h2 { font-family: var(--font-head); font-size: 32px; letter-spacing: 2px; margin: 52px 0 20px; color: var(--ink); }
+.post-content h3 { font-family: var(--font-serif); font-size: 26px; margin: 40px 0 16px; color: var(--ink); font-weight: 700; }
+.post-content p { margin-bottom: 24px; }
+.post-content img { width: 100%; border-radius: 12px; margin: 36px 0; }
+.post-content blockquote { border-left: 3px solid var(--sun); padding: 16px 28px; margin: 36px 0; background: var(--paper2); border-radius: 0 12px 12px 0; font-family: var(--font-serif); font-size: 20px; color: var(--ink); line-height: 1.5; }
+.post-content ul, .post-content ol { padding-left: 24px; margin-bottom: 24px; }
+.post-content li { margin-bottom: 8px; }
+.post-content a { color: var(--grass); text-decoration: underline; }
+.post-content strong { font-weight: 700; color: var(--ink); }
+.post-content hr { border: none; border-top: 1px solid rgba(0,0,0,0.1); margin: 48px 0; }
+
+/* BACK LINK */
+.post-back { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--grass); text-decoration: none; margin-bottom: 48px; transition: gap 0.2s; }
+.post-back:hover { gap: 12px; }
+
+/* SHARE */
+.post-share { border-top: 1px solid rgba(0,0,0,0.08); padding-top: 40px; margin-top: 40px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.post-share-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; color: var(--muted); }
+.share-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 100px; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-decoration: none; border: 1.5px solid rgba(0,0,0,0.12); color: var(--ink); transition: all 0.2s; cursor: pointer; background: transparent; font-family: var(--font-body); }
+.share-btn:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+/* RELATED */
+.related { background: var(--paper2); padding: 80px; }
+.related h3 { font-family: var(--font-head); font-size: 28px; letter-spacing: 2px; margin-bottom: 32px; }
+.related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.post-card { background: var(--white); border-radius: 16px; overflow: hidden; text-decoration: none; color: var(--ink); border: 1px solid rgba(15,15,15,0.06); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s; }
+.post-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
+.post-thumb { height: 180px; overflow: hidden; }
+.post-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.55s; }
+.post-card:hover .post-thumb img { transform: scale(1.05); }
+.post-thumb-placeholder { width: 100%; height: 100%; }
+.post-body { padding: 20px; }
+.post-body .post-cat { margin-bottom: 8px; }
+.post-body h4 { font-family: var(--font-serif); font-size: 18px; line-height: 1.3; font-weight: 700; }
+
+/* FOOTER */
+footer { background: var(--ink2); }
+.footer-main { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding: 72px 80px 56px; }
+.footer-brand-name { font-family: var(--font-head); font-size: 32px; letter-spacing: 6px; color: #fff; margin-bottom: 14px; }
+.footer-brand-desc { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.7; max-width: 260px; }
+.footer-col-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.35); font-weight: 600; margin-bottom: 18px; }
+.footer-links { display: flex; flex-direction: column; gap: 12px; }
+.footer-links a { font-size: 14px; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: #fff; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding: 24px 80px; display: flex; justify-content: space-between; align-items: center; }
+.footer-bottom span { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+/* NOT FOUND */
+.post-not-found { text-align: center; padding: 160px 40px; }
+.post-not-found h2 { font-family: var(--font-head); font-size: 48px; letter-spacing: 3px; margin-bottom: 16px; }
+.post-not-found p { color: var(--muted); margin-bottom: 32px; }
+
+@media (max-width: 1024px) {
+  .related { padding: 60px 40px; }
+  .related-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-main { grid-template-columns: 1fr 1fr; padding: 60px 40px 48px; }
+  .footer-bottom { padding: 24px 40px; }
+}
+@media (max-width: 768px) {
+  nav { padding: 14px 24px; }
+  .nav-center, .nav-ctas .cta-sm { display: none; }
+  .nav-hamburger { display: flex; }
+  .post-hero-content { padding: 40px 24px; }
+  .post-container { padding: 48px 24px 80px; }
+  .related { padding: 48px 24px; }
+  .related-grid { grid-template-columns: 1fr; }
+  .footer-main { grid-template-columns: 1fr; padding: 48px 24px 40px; }
+  .footer-bottom { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="logo">
+    <div class="logo-mark">C</div>
+    CYNTP
+  </a>
+  <div class="nav-center">
+    <a href="cyntp-trips.html">Trips</a>
+    <a href="cyntp-courses.html">Courses</a>
+    <a href="blog.html" class="active">The Turn</a>
+    <a href="cyntp-about.html">About</a>
+    <a href="cyntp-partner.html">Partner</a>
+  </div>
+  <div class="nav-ctas">
+    <button class="cta-sm cta-sm-ghost">Sign In</button>
+    <button class="cta-sm cta-sm-sun">Join Community</button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="cyntp-trips.html">Trips</a>
+  <a href="cyntp-courses.html">Courses</a>
+  <a href="blog.html">The Turn</a>
+  <a href="cyntp-about.html">About</a>
+  <a href="cyntp-partner.html">Partner</a>
+</div>
+
+<div id="postHero"></div>
+<div id="postBody"></div>
+<div id="relatedPosts"></div>
+
+<footer>
+  <div class="footer-main">
+    <div>
+      <div class="footer-brand-name">CYNTP</div>
+      <p class="footer-brand-desc">Honest golf course reviews and trip guides for everyday golfers. We play it, we rate it, we tell you the truth.</p>
+    </div>
+    <div>
+      <div class="footer-col-label">Explore</div>
+      <div class="footer-links">
+        <a href="cyntp-trips.html">Golf Trips</a>
+        <a href="blog.html">The Turn</a>
+        <a href="cyntp-about.html">About Us</a>
+        <a href="cyntp-partner.html">Partner</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-label">Destinations</div>
+      <div class="footer-links">
+        <a href="cyntp-trips.html">Scottsdale</a>
+        <a href="cyntp-trips.html">Hilton Head</a>
+        <a href="cyntp-trips.html">Myrtle Beach</a>
+        <a href="cyntp-trips.html">Las Vegas</a>
+        <a href="cyntp-trips.html">Palm Springs</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-label">Connect</div>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/coursesyouneedtoplay" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@coursesyouneedtoplay" target="_blank">TikTok</a>
+        <a href="https://www.youtube.com/@coursesyouneedtoplay" target="_blank">YouTube</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Sharp Golf LLC. All Rights Reserved.</span>
+    <span>Built for golfers who play hard and <strong>plan smarter.</strong></span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<script>
+const slug = new URLSearchParams(window.location.search).get('slug');
+
+function formatDate(d) {
+  return new Date(d).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+}
+
+async function loadPost() {
+  if (!slug) { showNotFound(); return; }
+  try {
+    const res = await fetch(`_posts/${slug}.json`);
+    if (!res.ok) throw new Error('Not found');
+    const post = await res.json();
+    renderPost(post);
+    loadRelated(post);
+  } catch {
+    showNotFound();
+  }
+}
+
+function renderPost(post) {
+  document.title = `${post.title} — CYNTP`;
+  document.querySelector('meta[name="description"]').setAttribute('content', post.excerpt || '');
+
+  document.getElementById('postHero').innerHTML = `
+    <div class="post-hero">
+      ${post.image
+        ? `<img class="post-hero-img" src="${post.image}" alt="${post.title}">`
+        : `<div class="post-hero-placeholder"></div>`}
+      <div class="post-hero-overlay"></div>
+      <div class="post-hero-content">
+        <div class="post-cat">${post.category ? post.category.replace('-', ' ') : 'Read'}</div>
+        <h1>${post.title}</h1>
+        <div class="post-meta">
+          <span>${post.author || 'CYNTP'}</span>
+          <div class="post-meta-dot"></div>
+          <span>${formatDate(post.date)}</span>
+          ${post.readTime ? `<div class="post-meta-dot"></div><span>${post.readTime} min read</span>` : ''}
+        </div>
+      </div>
+    </div>`;
+
+  const html = typeof marked !== 'undefined' ? marked.parse(post.body || '') : (post.body || '').replace(/\n/g, '<br>');
+
+  document.getElementById('postBody').innerHTML = `
+    <div class="post-container">
+      <a href="blog.html" class="post-back">← Back to The Turn</a>
+      <div class="post-content">${html}</div>
+      <div class="post-share">
+        <span class="post-share-label">Share</span>
+        <a class="share-btn" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(window.location.href)}" target="_blank">Twitter / X</a>
+        <a class="share-btn" href="https://www.instagram.com/coursesyouneedtoplay" target="_blank">Instagram</a>
+        <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href).then(()=>this.textContent='Copied!')">Copy Link</button>
+      </div>
+    </div>`;
+}
+
+async function loadRelated(current) {
+  try {
+    const res = await fetch('_posts/index.json');
+    const all = await res.json();
+    const related = all
+      .filter(p => p.slug !== current.slug && p.category === current.category)
+      .slice(0, 3);
+    if (!related.length) return;
+    const gradients = ['linear-gradient(135deg,#1a3d28,#061008)','linear-gradient(135deg,#1a2838,#060a10)','linear-gradient(135deg,#2a1a14,#120808)'];
+    document.getElementById('relatedPosts').innerHTML = `
+      <div class="related">
+        <h3>MORE FROM THE TURN</h3>
+        <div class="related-grid">
+          ${related.map((p, i) => `
+            <a href="blog-post.html?slug=${p.slug}" class="post-card">
+              <div class="post-thumb">
+                ${p.image ? `<img src="${p.image}" alt="${p.title}" loading="lazy">` : `<div class="post-thumb-placeholder" style="background:${gradients[i]}"></div>`}
+              </div>
+              <div class="post-body">
+                <div class="post-cat">${p.category ? p.category.replace('-', ' ') : 'Read'}</div>
+                <h4>${p.title}</h4>
+              </div>
+            </a>`).join('')}
+        </div>
+      </div>`;
+  } catch {}
+}
+
+function showNotFound() {
+  document.getElementById('postHero').innerHTML = '';
+  document.getElementById('postBody').innerHTML = `
+    <div class="post-not-found">
+      <h2>POST NOT FOUND</h2>
+      <p>This post doesn't exist or may have moved.</p>
+      <a href="blog.html" class="post-back">← Back to The Turn</a>
+    </div>`;
+}
+
+document.getElementById('navHamburger').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.toggle('open');
+});
+
+loadPost();
+</script>
+</body>
+</html>
