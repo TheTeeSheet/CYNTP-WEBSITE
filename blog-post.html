@@ -301,6 +301,9 @@ function renderPost(post) {
       </div>
     </div>`;
 
+  // Parse body
+  let bodyText = post.body || '';
+
   // Parse social shortcodes
   const socialRegex = /\[social(?:\s+url="([^"]*)")?(?:\s+caption="([^"]*)")?(?:\s+platform="([^"]*)")?\]/g;
   bodyText = bodyText.replace(socialRegex, (_, url, caption, platform) => {
@@ -322,7 +325,6 @@ function renderPost(post) {
   });
 
   // Parse affiliate shortcodes — book-trip and shop-gear
-  let bodyText = post.body || '';
   const affiliateRegex = /\[(book-trip|shop-gear)(?:\s+url="([^"]*)")?(?:\s+title="([^"]*)")?(?:\s+cta="([^"]*)")?\]/g;
   bodyText = bodyText.replace(affiliateRegex, (_, type, url, title, cta) => {
     const isGear = type === 'shop-gear';
