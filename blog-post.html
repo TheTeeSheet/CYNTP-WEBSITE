@@ -295,8 +295,8 @@ function renderPost(post) {
     const isGear = type === 'shop-gear';
     const bookUrl = url || 'https://teetimesusa.com';
     const bookTitle = title || (isGear ? 'Gear We Use' : 'Book This Trip');
-    const bookCta = cta || (isGear ? 'Shop Now →' : 'Book Now →');
-    const label = isGear ? 'Gear We Use' : 'Where We Book';
+    const bookCta = cta || (isGear ? 'Shop Now →' : 'See Details →');
+    const label = isGear ? 'Gear We Use' : 'Book This Trip';
     const sub = isGear ? 'Use our link — it helps keep the site going.' : 'Use our link — it helps keep the site going.';
     return `<div class="affiliate-box">
       <div class="affiliate-box-text">
