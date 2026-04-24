@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CYNTP Admin — The Turn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --ink: #0d0d0d; --paper: #f4f0e8; --paper2: #ede8dc;
+  --grass: #2d6a3f; --grass-bright: #3d9155;
+  --sun: #d4a055; --sun2: #b8843a; --muted: #6b6560;
+  --font-head: 'Anton', sans-serif; --font-body: 'Outfit', sans-serif;
+}
+body { background: #f0ece4; font-family: var(--font-body); color: var(--ink); min-height: 100vh; }
+
+/* LOGIN */
+.login-screen { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: var(--ink); }
+.login-box { background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 48px; width: 100%; max-width: 400px; text-align: center; }
+.login-logo { font-family: var(--font-head); font-size: 28px; letter-spacing: 6px; color: #fff; margin-bottom: 8px; }
+.login-sub { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 36px; }
+.login-input { width: 100%; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 16px 20px; font-size: 15px; color: #fff; font-family: var(--font-body); outline: none; margin-bottom: 12px; transition: border-color 0.2s; }
+.login-input:focus { border-color: var(--sun); }
+.login-btn { width: 100%; background: var(--sun); color: var(--ink); border: none; border-radius: 10px; padding: 18px; font-size: 12px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; cursor: pointer; font-family: var(--font-body); transition: all 0.2s; margin-top: 4px; }
+.login-btn:hover { background: var(--sun2); }
+.login-error { color: #e85d3a; font-size: 13px; margin-top: 12px; display: none; }
+
+/* APP */
+.app { display: none; }
+.app.visible { display: flex; min-height: 100vh; }
+
+/* SIDEBAR */
+.sidebar { width: 280px; background: var(--ink); flex-shrink: 0; display: flex; flex-direction: column; padding: 32px 0; }
+.sidebar-logo { font-family: var(--font-head); font-size: 20px; letter-spacing: 5px; color: #fff; padding: 0 28px 32px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.sidebar-logo span { display: block; font-family: var(--font-body); font-size: 10px; letter-spacing: 2px; color: rgba(255,255,255,0.35); margin-top: 4px; text-transform: uppercase; }
+.sidebar-nav { padding: 24px 0; flex: 1; }
+.snav-item { display: flex; align-items: center; gap: 12px; padding: 12px 28px; font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.5); cursor: pointer; transition: all 0.2s; border-left: 3px solid transparent; }
+.snav-item:hover { color: #fff; background: rgba(255,255,255,0.04); }
+.snav-item.active { color: #fff; background: rgba(255,255,255,0.06); border-left-color: var(--sun); }
+.snav-icon { font-size: 16px; }
+.sidebar-bottom { padding: 24px 28px; border-top: 1px solid rgba(255,255,255,0.06); }
+.sidebar-signout { font-size: 12px; color: rgba(255,255,255,0.3); cursor: pointer; transition: color 0.2s; background: none; border: none; font-family: var(--font-body); }
+.sidebar-signout:hover { color: #fff; }
+
+/* MAIN */
+.main { flex: 1; overflow-y: auto; }
+
+/* HEADER */
+.main-header { background: #fff; border-bottom: 1px solid rgba(0,0,0,0.06); padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+.main-header h1 { font-family: var(--font-head); font-size: 22px; letter-spacing: 3px; }
+.btn-primary { background: var(--grass); color: #fff; border: none; border-radius: 100px; padding: 12px 28px; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; font-family: var(--font-body); transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+.btn-primary:hover { background: var(--grass-bright); transform: translateY(-1px); }
+.btn-sun { background: var(--sun); color: var(--ink); }
+.btn-sun:hover { background: var(--sun2); }
+.btn-ghost { background: transparent; color: var(--ink); border: 1.5px solid rgba(0,0,0,0.15); }
+.btn-ghost:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+.btn-danger { background: #e85d3a; color: #fff; }
+.btn-danger:hover { background: #c94826; }
+
+/* PANELS */
+.panel { display: none; padding: 40px; }
+.panel.active { display: block; }
+
+/* POSTS LIST */
+.posts-list { display: flex; flex-direction: column; gap: 12px; }
+.post-row { background: #fff; border-radius: 12px; padding: 20px 24px; display: flex; align-items: center; gap: 20px; border: 1px solid rgba(0,0,0,0.06); transition: box-shadow 0.2s; }
+.post-row:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.post-row-thumb { width: 64px; height: 64px; border-radius: 8px; object-fit: cover; flex-shrink: 0; background: linear-gradient(135deg,#1a3d28,#061008); }
+.post-row-info { flex: 1; }
+.post-row-title { font-family: var(--font-body); font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.post-row-meta { font-size: 12px; color: var(--muted); display: flex; gap: 12px; }
+.post-row-cat { display: inline-block; background: var(--paper2); color: var(--muted); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; padding: 3px 10px; border-radius: 100px; }
+.post-row-actions { display: flex; gap: 8px; }
+.empty-state { text-align: center; padding: 80px 20px; color: var(--muted); }
+.empty-state h3 { font-family: var(--font-head); font-size: 28px; letter-spacing: 2px; margin-bottom: 12px; color: var(--ink); }
+
+/* EDITOR */
+.editor-grid { display: grid; grid-template-columns: 1fr 360px; gap: 24px; align-items: start; }
+.editor-main { display: flex; flex-direction: column; gap: 16px; }
+.editor-sidebar { display: flex; flex-direction: column; gap: 16px; position: sticky; top: 88px; }
+.card { background: #fff; border-radius: 16px; padding: 28px; border: 1px solid rgba(0,0,0,0.06); }
+.card-label { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 700; color: var(--muted); margin-bottom: 14px; }
+.field { margin-bottom: 16px; }
+.field label { display: block; font-size: 12px; font-weight: 600; color: var(--muted); margin-bottom: 6px; letter-spacing: 1px; text-transform: uppercase; }
+.field input, .field select, .field textarea { width: 100%; background: var(--paper); border: 1.5px solid rgba(0,0,0,0.1); border-radius: 10px; padding: 12px 16px; font-size: 14px; color: var(--ink); font-family: var(--font-body); outline: none; transition: border-color 0.2s; }
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--grass); }
+.field textarea { resize: vertical; }
+#postTitle { font-size: 20px; font-weight: 600; padding: 16px 20px; }
+#postBody { min-height: 500px; font-size: 15px; line-height: 1.7; }
+.toolbar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+.tbtn { background: var(--paper2); border: none; border-radius: 6px; padding: 6px 12px; font-size: 12px; font-weight: 600; cursor: pointer; font-family: var(--font-body); transition: all 0.2s; color: var(--ink); }
+.tbtn:hover { background: var(--ink); color: #fff; }
+.slug-preview { font-size: 11px; color: var(--muted); margin-top: 4px; }
+.status-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+.status-draft { background: var(--paper2); color: var(--muted); }
+.status-published { background: #d4edda; color: #2d6a3f; }
+.action-btns { display: flex; flex-direction: column; gap: 10px; }
+.save-indicator { font-size: 12px; color: var(--grass); text-align: center; height: 16px; }
+
+/* TOAST */
+.toast { position: fixed; bottom: 32px; right: 32px; background: var(--ink); color: #fff; padding: 16px 24px; border-radius: 12px; font-size: 14px; font-weight: 500; z-index: 999; transform: translateY(20px); opacity: 0; transition: all 0.3s; pointer-events: none; }
+.toast.show { transform: translateY(0); opacity: 1; }
+.toast.success { background: var(--grass); }
+.toast.error { background: #e85d3a; }
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-box">
+    <div class="login-logo">CYNTP</div>
+    <div class="login-sub">Admin — The Turn</div>
+    <input type="password" class="login-input" id="loginPassword" placeholder="Enter password" onkeydown="if(event.key==='Enter')login()">
+    <button class="login-btn" onclick="login()">Sign In</button>
+    <div class="login-error" id="loginError">Incorrect password</div>
+  </div>
+</div>
+
+<!-- APP -->
+<div class="app" id="app">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="sidebar-logo">CYNTP <span>The Turn CMS</span></div>
+    <div class="sidebar-nav">
+      <div class="snav-item active" onclick="showPanel('posts')" id="nav-posts">
+        <span class="snav-icon">📝</span> All Posts
+      </div>
+      <div class="snav-item" onclick="showPanel('new')" id="nav-new">
+        <span class="snav-icon">✏️</span> New Post
+      </div>
+      <div class="snav-item" onclick="window.open('blog.html','_blank')" id="nav-view">
+        <span class="snav-icon">👁</span> View Blog
+      </div>
+    </div>
+    <div class="sidebar-bottom">
+      <button class="sidebar-signout" onclick="signOut()">Sign out</button>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- POSTS PANEL -->
+    <div class="panel active" id="panel-posts">
+      <div class="main-header">
+        <h1>ALL POSTS</h1>
+        <button class="btn-primary btn-sun" onclick="showPanel('new')">+ New Post</button>
+      </div>
+      <div style="padding:40px;">
+        <div class="posts-list" id="postsList"></div>
+      </div>
+    </div>
+
+    <!-- NEW / EDIT PANEL -->
+    <div class="panel" id="panel-new">
+      <div class="main-header">
+        <h1 id="editorTitle">NEW POST</h1>
+        <div style="display:flex;gap:10px;">
+          <button class="btn-primary btn-ghost" onclick="saveDraft()">Save Draft</button>
+          <button class="btn-primary btn-sun" onclick="publishPost()">Publish →</button>
+        </div>
+      </div>
+      <div style="padding:40px;">
+        <div class="editor-grid">
+          <div class="editor-main">
+            <div class="card">
+              <div class="field">
+                <label>Post Title</label>
+                <input type="text" id="postTitle" placeholder="e.g. Black Desert Is The Best Course In America" oninput="updateSlug()">
+                <div class="slug-preview" id="slugPreview">slug: —</div>
+              </div>
+              <div class="field">
+                <label>Body <span style="font-weight:400;text-transform:none;letter-spacing:0">(Markdown supported)</span></label>
+                <div class="toolbar">
+                  <button class="tbtn" onclick="insertMd('**','**')"><b>B</b></button>
+                  <button class="tbtn" onclick="insertMd('*','*')"><i>I</i></button>
+                  <button class="tbtn" onclick="insertMd('\n## ','')">H2</button>
+                  <button class="tbtn" onclick="insertMd('\n### ','')">H3</button>
+                  <button class="tbtn" onclick="insertMd('\n> ','')">Quote</button>
+                  <button class="tbtn" onclick="insertMd('\n- ','')">List</button>
+                  <button class="tbtn" onclick="insertMd('\n---\n','')">Divider</button>
+                  <button class="tbtn" onclick="insertMd('![alt](',')')">Image</button>
+                  <button class="tbtn" onclick="insertMd('[','](url)')">Link</button>
+                </div>
+                <textarea id="postBody" placeholder="Write your post here using Markdown...&#10;&#10;## Section Heading&#10;&#10;Your content here..."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="editor-sidebar">
+            <div class="card">
+              <div class="card-label">Post Settings</div>
+              <div class="field">
+                <label>Category</label>
+                <select id="postCategory">
+                  <option value="course-review">Course Review</option>
+                  <option value="trip-guide">Trip Guide</option>
+                  <option value="lifestyle">Lifestyle</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Author</label>
+                <input type="text" id="postAuthor" placeholder="e.g. Cameron" value="Cameron">
+              </div>
+              <div class="field">
+                <label>Date</label>
+                <input type="date" id="postDate">
+              </div>
+              <div class="field">
+                <label>Read Time (minutes)</label>
+                <input type="number" id="postReadTime" placeholder="5" min="1" max="60">
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-label">Cover Image</div>
+              <div class="field">
+                <label>Image URL (Cloudinary)</label>
+                <input type="text" id="postImage" placeholder="https://res.cloudinary.com/...">
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-label">Excerpt</div>
+              <div class="field">
+                <textarea id="postExcerpt" rows="3" placeholder="Short description shown on the blog listing page..."></textarea>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-label">Status</div>
+              <div id="postStatusBadge" class="status-badge status-draft" style="margin-bottom:16px;">Draft</div>
+              <div class="action-btns">
+                <button class="btn-primary btn-sun" onclick="publishPost()" style="justify-content:center;">Publish Post</button>
+                <button class="btn-primary btn-ghost" onclick="saveDraft()" style="justify-content:center;">Save as Draft</button>
+                <button class="btn-primary btn-danger" id="deleteBtn" onclick="deletePost()" style="justify-content:center;display:none;">Delete Post</button>
+              </div>
+              <div class="save-indicator" id="saveIndicator"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ─── Password (change this!) ──────────────────────────────────────────────────
+const PASSWORD = 'cyntp2026';
+
+// ─── State ────────────────────────────────────────────────────────────────────
+let posts = [];
+let editingSlug = null;
+
+// ─── Auth ─────────────────────────────────────────────────────────────────────
+function login() {
+  const pw = document.getElementById('loginPassword').value;
+  if (pw === PASSWORD) {
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('app').classList.add('visible');
+    sessionStorage.setItem('cyntp_auth', '1');
+    loadPosts();
+  } else {
+    document.getElementById('loginError').style.display = 'block';
+  }
+}
+
+function signOut() {
+  sessionStorage.removeItem('cyntp_auth');
+  location.reload();
+}
+
+if (sessionStorage.getItem('cyntp_auth') === '1') {
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('app').classList.add('visible');
+  loadPosts();
+}
+
+// ─── Navigation ───────────────────────────────────────────────────────────────
+function showPanel(name) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.snav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById(`panel-${name}`).classList.add('active');
+  document.getElementById(`nav-${name}`)?.classList.add('active');
+  if (name === 'new' && !editingSlug) resetEditor();
+  if (name === 'posts') renderPostsList();
+}
+
+// ─── Storage (localStorage as stand-in for file system) ─────────────────────
+function loadPosts() {
+  const stored = localStorage.getItem('cyntp_posts');
+  posts = stored ? JSON.parse(stored) : [];
+  renderPostsList();
+}
+
+function savePosts() {
+  localStorage.setItem('cyntp_posts', JSON.stringify(posts));
+}
+
+// ─── Slug ─────────────────────────────────────────────────────────────────────
+function toSlug(str) {
+  return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+function updateSlug() {
+  const title = document.getElementById('postTitle').value;
+  const slug = toSlug(title);
+  document.getElementById('slugPreview').textContent = `slug: ${slug || '—'}`;
+}
+
+// ─── Editor ───────────────────────────────────────────────────────────────────
+function resetEditor() {
+  editingSlug = null;
+  document.getElementById('editorTitle').textContent = 'NEW POST';
+  document.getElementById('postTitle').value = '';
+  document.getElementById('postBody').value = '';
+  document.getElementById('postExcerpt').value = '';
+  document.getElementById('postImage').value = '';
+  document.getElementById('postAuthor').value = 'Cameron';
+  document.getElementById('postDate').value = new Date().toISOString().split('T')[0];
+  document.getElementById('postReadTime').value = '';
+  document.getElementById('postCategory').value = 'course-review';
+  document.getElementById('slugPreview').textContent = 'slug: —';
+  document.getElementById('postStatusBadge').className = 'status-badge status-draft';
+  document.getElementById('postStatusBadge').textContent = 'Draft';
+  document.getElementById('deleteBtn').style.display = 'none';
+  document.getElementById('saveIndicator').textContent = '';
+}
+
+function editPost(slug) {
+  const post = posts.find(p => p.slug === slug);
+  if (!post) return;
+  editingSlug = slug;
+  document.getElementById('editorTitle').textContent = 'EDIT POST';
+  document.getElementById('postTitle').value = post.title;
+  document.getElementById('postBody').value = post.body || '';
+  document.getElementById('postExcerpt').value = post.excerpt || '';
+  document.getElementById('postImage').value = post.image || '';
+  document.getElementById('postAuthor').value = post.author || 'Cameron';
+  document.getElementById('postDate').value = post.date;
+  document.getElementById('postReadTime').value = post.readTime || '';
+  document.getElementById('postCategory').value = post.category || 'course-review';
+  document.getElementById('slugPreview').textContent = `slug: ${post.slug}`;
+  const published = post.status === 'published';
+  document.getElementById('postStatusBadge').className = `status-badge ${published ? 'status-published' : 'status-draft'}`;
+  document.getElementById('postStatusBadge').textContent = published ? 'Published' : 'Draft';
+  document.getElementById('deleteBtn').style.display = 'flex';
+  showPanel('new');
+  document.getElementById('nav-new').classList.add('active');
+}
+
+function getFormData(status) {
+  const title = document.getElementById('postTitle').value.trim();
+  if (!title) { showToast('Please add a title', 'error'); return null; }
+  const slug = editingSlug || toSlug(title);
+  return {
+    slug, title, status,
+    body: document.getElementById('postBody').value,
+    excerpt: document.getElementById('postExcerpt').value.trim(),
+    image: document.getElementById('postImage').value.trim(),
+    author: document.getElementById('postAuthor').value.trim() || 'Cameron',
+    date: document.getElementById('postDate').value,
+    readTime: parseInt(document.getElementById('postReadTime').value) || null,
+    category: document.getElementById('postCategory').value,
+  };
+}
+
+function saveDraft() {
+  const data = getFormData('draft');
+  if (!data) return;
+  savePostData(data);
+  showToast('Draft saved ✓', 'success');
+}
+
+function publishPost() {
+  const data = getFormData('published');
+  if (!data) return;
+  savePostData(data);
+  generateDownload(data);
+  showToast('Post published! Download the files below.', 'success');
+  document.getElementById('postStatusBadge').className = 'status-badge status-published';
+  document.getElementById('postStatusBadge').textContent = 'Published';
+}
+
+function savePostData(data) {
+  const idx = posts.findIndex(p => p.slug === data.slug);
+  if (idx >= 0) posts[idx] = data;
+  else posts.unshift(data);
+  savePosts();
+  editingSlug = data.slug;
+  document.getElementById('deleteBtn').style.display = 'flex';
+}
+
+function deletePost() {
+  if (!editingSlug) return;
+  if (!confirm('Delete this post?')) return;
+  posts = posts.filter(p => p.slug !== editingSlug);
+  savePosts();
+  showToast('Post deleted');
+  resetEditor();
+  showPanel('posts');
+}
+
+// ─── File generation ──────────────────────────────────────────────────────────
+function generateDownload(post) {
+  // Generate individual post JSON
+  const postJson = JSON.stringify(post, null, 2);
+  downloadFile(`${post.slug}.json`, postJson, '_posts/');
+
+  // Generate updated index
+  const published = posts.filter(p => p.status === 'published');
+  const indexData = published.map(({ slug, title, excerpt, image, category, author, date, readTime }) =>
+    ({ slug, title, excerpt, image, category, author, date, readTime }));
+  const indexJson = JSON.stringify(indexData, null, 2);
+  downloadFile('index.json', indexJson, '_posts/');
+
+  showInstructions(post.slug);
+}
+
+function downloadFile(filename, content, folder) {
+  const blob = new Blob([content], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function showInstructions(slug) {
+  setTimeout(() => {
+    alert(`✅ Two files downloaded:\n\n1. ${slug}.json → upload to your repo's _posts/ folder\n2. index.json → replace _posts/index.json in your repo\n\nThen push to GitHub and Cloudflare will redeploy automatically.`);
+  }, 500);
+}
+
+// ─── Posts list ───────────────────────────────────────────────────────────────
+function renderPostsList() {
+  const list = document.getElementById('postsList');
+  if (!posts.length) {
+    list.innerHTML = `<div class="empty-state"><h3>NO POSTS YET</h3><p>Hit "New Post" to write your first one.</p></div>`;
+    return;
+  }
+  list.innerHTML = posts.map(p => `
+    <div class="post-row">
+      ${p.image ? `<img class="post-row-thumb" src="${p.image}" alt="${p.title}">` : `<div class="post-row-thumb"></div>`}
+      <div class="post-row-info">
+        <div class="post-row-title">${p.title}</div>
+        <div class="post-row-meta">
+          <span class="post-row-cat">${p.category ? p.category.replace('-',' ') : 'general'}</span>
+          <span>${p.author || 'Cameron'}</span>
+          <span>${new Date(p.date).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}</span>
+          <span style="color:${p.status==='published'?'#2d6a3f':'#b8843a'};font-weight:600">${p.status || 'draft'}</span>
+        </div>
+      </div>
+      <div class="post-row-actions">
+        <button class="btn-primary btn-ghost" style="padding:8px 16px;font-size:10px;" onclick="editPost('${p.slug}')">Edit</button>
+        ${p.status === 'published' ? `<button class="btn-primary btn-sun" style="padding:8px 16px;font-size:10px;" onclick="redownload('${p.slug}')">Re-download</button>` : ''}
+      </div>
+    </div>`).join('');
+}
+
+function redownload(slug) {
+  const post = posts.find(p => p.slug === slug);
+  if (post) generateDownload(post);
+}
+
+// ─── Toolbar ──────────────────────────────────────────────────────────────────
+function insertMd(before, after) {
+  const ta = document.getElementById('postBody');
+  const start = ta.selectionStart;
+  const end = ta.selectionEnd;
+  const selected = ta.value.substring(start, end);
+  ta.value = ta.value.substring(0, start) + before + selected + after + ta.value.substring(end);
+  ta.focus();
+  ta.selectionStart = ta.selectionEnd = start + before.length + selected.length + after.length;
+}
+
+// ─── Toast ────────────────────────────────────────────────────────────────────
+function showToast(msg, type = '') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = `toast ${type} show`;
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// Set today's date
+document.getElementById('postDate').value = new Date().toISOString().split('T')[0];
+</script>
+</body>
+</html>
