@@ -235,6 +235,25 @@ function formatDate(d) {
 }
 
 async function loadPost() {
+  // Preview mode — load from localStorage
+  const isPreview = new URLSearchParams(window.location.search).get('preview');
+  if (isPreview) {
+    const stored = localStorage.getItem('cyntp_preview_post');
+    if (stored) {
+      const post = JSON.parse(stored);
+      renderPost(post);
+      loadRelated(post);
+      // Show preview banner
+      const banner = document.createElement('div');
+      banner.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#d4a055;color:#0d0d0d;text-align:center;padding:10px;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;z-index:999;';
+      banner.textContent = '⚠ Preview Mode — This post is not published';
+      document.body.prepend(banner);
+    } else {
+      showNotFound();
+    }
+    return;
+  }
+
   if (!slug) { showNotFound(); return; }
   try {
     const res = await fetch(`_posts/${slug}.json`);
