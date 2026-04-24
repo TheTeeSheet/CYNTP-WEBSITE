@@ -489,8 +489,8 @@ function publishPost() {
   savePostData(data);
   generateDownload(data);
   showToast('Post published! Download the files below.', 'success');
-  document.getElementById('postStatusBadge').className = 'status-badge status-published';
-  document.getElementById('postStatusBadge').textContent = 'Published';
+  resetEditor();
+  showPanel('posts');
 }
 
 function savePostData(data) {
