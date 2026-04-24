@@ -332,6 +332,10 @@ body { background: #f0ece4; font-family: var(--font-body); color: var(--ink); mi
       <label>Alt Text (optional)</label>
       <input type="text" class="field input" id="imgAlt" placeholder="Describe the image..." style="width:100%;background:var(--paper);border:1.5px solid rgba(0,0,0,0.1);border-radius:10px;padding:12px 16px;font-size:14px;font-family:var(--font-body);outline:none;">
     </div>
+    <div class="field">
+      <label>Caption (optional)</label>
+      <input type="text" class="field input" id="imgCaption" placeholder="e.g. Hole 14 at Black Desert Resort" style="width:100%;background:var(--paper);border:1.5px solid rgba(0,0,0,0.1);border-radius:10px;padding:12px 16px;font-size:14px;font-family:var(--font-body);outline:none;">
+    </div>
     <img class="img-modal-preview" id="imgPreview" alt="Preview">
     <div class="img-modal-actions">
       <button class="btn-primary btn-sun" onclick="insertImg()" style="flex:1;justify-content:center;">Insert Image</button>
@@ -645,6 +649,7 @@ function previewPost() {
 function openImgModal() {
   document.getElementById('imgUrl').value = '';
   document.getElementById('imgAlt').value = '';
+  document.getElementById('imgCaption').value = '';
   document.getElementById('imgPreview').classList.remove('show');
   document.getElementById('imgModalBackdrop').classList.add('open');
   setTimeout(() => document.getElementById('imgUrl').focus(), 100);
@@ -668,10 +673,13 @@ function previewImg() {
 function insertImg() {
   const url = document.getElementById('imgUrl').value.trim();
   const alt = document.getElementById('imgAlt').value.trim() || 'image';
+  const caption = document.getElementById('imgCaption').value.trim();
   if (!url) { showToast('Please enter an image URL', 'error'); return; }
   const ta = document.getElementById('postBody');
   const pos = ta.selectionStart;
-  const markdown = `\n![${alt}](${url})\n`;
+  const markdown = caption
+    ? `\n![${alt}](${url})\n*${caption}*\n`
+    : `\n![${alt}](${url})\n`;
   ta.value = ta.value.substring(0, pos) + markdown + ta.value.substring(pos);
   ta.focus();
   ta.selectionStart = ta.selectionEnd = pos + markdown.length;
