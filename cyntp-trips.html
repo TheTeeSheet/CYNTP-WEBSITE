@@ -309,7 +309,7 @@ nav .active { color: var(--sun) !important; }
   <button class="ftab" data-filter="beach">Beach</button>
   <button class="ftab" data-filter="desert">Desert</button>
   <button class="ftab" data-filter="parkland">Parkland</button>
-  <button class="ftab" data-filter="stayplay">Stay &amp; Play</button>
+  <button class="ftab" data-filter="stayplay">Resort</button>
 </div>
 
 <section class="trips-section">
@@ -448,7 +448,7 @@ nav .active { color: var(--sun) !important; }
     </div>
 
     <div class="trip-card r" onclick="openTrip('hammock-beach')" data-type="beach">
-      <div class="trip-img-wrap bgi2">
+      <div class="trip-img-wrap bgi2" style="background-image:url('https://res.cloudinary.com/dak67vton/image/upload/v1777738442/Screenshot_2026-05-02_at_11.13.51_AM_ihmb3i.png');background-size:cover;background-position:center;">
         <div class="trip-overlay"></div>
         <div class="trip-badge badge-book">Book Now</div>
         <div class="trip-type-pill">Beach</div>
@@ -762,6 +762,7 @@ const TRIP_IMAGES = {
   'miami':             ['https://res.cloudinary.com/dak67vton/image/upload/v1777732609/Screenshot_2026-05-02_at_9.35.14_AM_rmxrxj.png', 'https://res.cloudinary.com/dak67vton/image/upload/v1777733765/Screenshot_2026-05-02_at_9.55.39_AM_l8fn57.png'],
   'dominican-republic': ['https://res.cloudinary.com/dak67vton/image/upload/v1777737412/Screenshot_2026-05-02_at_10.56.18_AM_fxk3lx.png'],
   'gulf-shores':        ['https://res.cloudinary.com/dak67vton/image/upload/v1777738442/Screenshot_2026-05-02_at_11.13.51_AM_ihmb3i.png'],
+  'hammock-beach':      ['https://res.cloudinary.com/dak67vton/image/upload/v1777738442/Screenshot_2026-05-02_at_11.13.51_AM_ihmb3i.png'],
 };
 
 function openTrip(id) {
