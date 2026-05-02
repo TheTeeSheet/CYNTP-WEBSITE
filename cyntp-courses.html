@@ -564,6 +564,7 @@ const COURSES = [
   },
   {
     id:4,dest:"alabama",destLabel:"Alabama",thumbClass:"ct3",
+    tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1777738442/Screenshot_2026-05-02_at_11.13.51_AM_ihmb3i.png",
     name:"Kiva Dunes Golf Club",price:"$60&ndash;$100",
     cyntp:"Gulf Shores' best links-style track. Right on the Gulf with dunes, sea breezes, and some of the most fun golf on the Alabama coast.",
     review:"Kiva Dunes is the most distinctive course on the Alabama Gulf Coast. The links-style layout sits right on the Gulf of Mexico with natural dune terrain, persistent sea breezes, and wide-open views that make it feel more like a coastal Carolina track than a typical Alabama resort course. The conditions are excellent and the experience is genuinely memorable. A must-play on any Gulf Shores golf trip.",
@@ -1444,7 +1445,7 @@ function renderGrid() {
     g.courses.forEach(c => {
       html += `<div class="course-card r on" onclick="openCourse(${c.id})">
         <div class="card-thumb">
-          <div class="card-thumb-bg ${c.thumbClass}"></div>
+          <div class="card-thumb-bg ${c.thumbClass}" ${c.tileImg ? `style="background-image:url('${c.tileImg}');background-size:cover;background-position:center;"` : ''}></div>
           <div class="card-dest-tag">${c.destLabel}</div>
           ${c.cyntp_tag ? `<div class="card-cyntp-tag">${c.cyntp_tag}</div>` : ''}
           ${c.cyntp_rating != null ? `<div class="card-rating-badge"><span class="card-rating-badge-num">${c.cyntp_rating.toFixed(1)}</span><span class="card-rating-badge-label">CYNTP</span></div>` : ''}
@@ -1489,7 +1490,7 @@ function sortCourses(val) {
 
 // ── COURSE OVERLAY ────────────────────────────────────────────────────
 const COURSE_IMAGES = {
-  // Add course images by ID: 1: ['url1', 'url2']
+  4: ['https://res.cloudinary.com/dak67vton/image/upload/v1777738442/Screenshot_2026-05-02_at_11.13.51_AM_ihmb3i.png'],
 };
 
 function openCourse(id) {
