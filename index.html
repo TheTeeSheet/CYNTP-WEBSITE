@@ -336,19 +336,48 @@ footer { background: #111; }
 
 @media (max-width: 540px) {
   /* TRIPS */
-  .trips-bento { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .trips-bento { grid-template-columns: 1fr; grid-template-rows: auto; gap: 8px; }
   .tc-featured { grid-column: auto; }
-  .tcard { height: 200px; }
+  .tcard { height: 190px; }
+  .tcard-name { font-size: 22px; }
+  .tc-featured .tcard-name { font-size: 26px; }
+  .tc-tall .tcard-name { font-size: 26px; }
+
+  /* HERO */
+  .hero h1 { font-size: clamp(36px, 10vw, 54px); }
+  .hero-sub { font-size: 14px; }
+
+  /* EMAIL BAND */
+  .email-band::before { display: none; }
+  .email-band { padding: 48px 24px; }
+  .email-form-side { padding-top: 36px; }
+
+  /* GUIDE */
+  .guide-grid { gap: 12px; }
+  .guide { padding: 60px 24px; }
+  .guide-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+
+  /* PARTNER */
+  .partner-split-content { padding: 40px 24px; }
+  .pstat { flex: 1 1 40%; }
 
   /* SOCIAL */
   .social-grid { grid-template-columns: repeat(2, 1fr); }
   .social-grid .sgrid-tile:nth-child(n+5) { display: none; }
+  .social { padding: 52px 24px; }
 
   /* FOOTER */
   .footer-main { grid-template-columns: 1fr; }
+  .footer-main { padding: 40px 24px 32px; }
 
-  /* GUIDE */
-  .guide-grid { gap: 12px; }
+  /* ABOUT */
+  .about { padding: 56px 24px; }
+
+  /* TICKER */
+  .ticker-wrap { font-size: 11px; }
+
+  /* VIEW ALL BTN */
+  .btn-viewall { padding: 16px 32px; font-size: 11px; }
 }
 </style>
 <meta property="og:title" content="CYNTP — Courses You Need To Play | Golf Trip Planning & Course Reviews">
