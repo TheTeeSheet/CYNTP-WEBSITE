@@ -169,18 +169,19 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
   padding: 4px 10px; border-radius: 3px;
 }
 .card-rating-badge {
-  position: absolute; bottom: 12px; left: 12px;
-  background: rgba(6,10,8,0.82);
-  border: 1px solid rgba(255,255,255,0.12);
+  position: absolute; bottom: 12px; right: 12px;
+  background: rgba(6,10,8,0.55); border: 2px solid var(--sun);
   border-radius: 6px; padding: 5px 10px;
   display: flex; flex-direction: column; align-items: center; line-height: 1;
 }
 .card-rating-badge-num {
   font-family: var(--font-head); font-size: 18px; color: var(--sun); letter-spacing: 0.5px;
+  display: block; text-align: center; width: 100%;
 }
 .card-rating-badge-label {
   font-size: 8px; letter-spacing: 2px; text-transform: uppercase;
   color: rgba(255,255,255,0.45); font-weight: 600; margin-top: 2px;
+  display: block; text-align: center; width: 100%;
 }
 .card-body { padding: 20px; }
 .card-name { font-family: var(--font-head); font-size: 22px; letter-spacing: 1px; color: var(--ink); line-height: 1; margin-bottom: 4px; }
@@ -198,7 +199,7 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 /* ── COURSE DETAIL OVERLAY ── */
 .overlay {
   position: fixed; inset: 0; z-index: 500;
-  display: none; align-items: flex-start; justify-content: flex-end;
+  display: none; align-items: center; justify-content: center; padding: 24px;
 }
 .overlay.open { display: flex; }
 .overlay-backdrop {
@@ -208,17 +209,34 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 .overlay-panel {
   position: relative; z-index: 1;
-  width: min(680px, 100vw); height: 100vh;
-  background: var(--paper); overflow-y: auto;
-  animation: slideIn 0.4s cubic-bezier(0.16,1,0.3,1);
+  width: min(680px, 100%); max-height: 88vh;
+  background: var(--paper); overflow: hidden; border-radius: 16px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+  animation: panelPopIn 0.35s cubic-bezier(0.16,1,0.3,1);
   display: flex; flex-direction: column;
 }
-@keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes panelPopIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
 .panel-hero {
-  height: 260px; flex-shrink: 0; position: relative; overflow: hidden;
+  height: 360px; flex-shrink: 0; position: relative; overflow: hidden;
 }
 .panel-hero-bg { width: 100%; height: 100%; }
-.panel-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(6,10,8,0.9) 0%, rgba(6,10,8,0.1) 60%, transparent 100%); }
+.panel-hero-img { width: 100%; height: 100%; background-size: cover; background-position: center; }
+.panel-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(6,10,8,0.65) 0%, rgba(6,10,8,0.05) 55%, transparent 100%); }
+.panel-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.4); color: #fff; border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 18px; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+.panel-arrow:hover { background: rgba(0,0,0,0.65); }
+.panel-arrow-prev { left: 14px; }
+.panel-arrow-next { right: 14px; }
+.panel-dots { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); display: flex; gap: 4px; z-index: 10; }
+.panel-dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.4); transition: background 0.2s; }
+.panel-dot.active { background: #fff; }
+.panel-rating-badge {
+  position: absolute; bottom: 20px; right: 20px; z-index: 10;
+  background: rgba(6,10,8,0.55); border: 2px solid var(--sun);
+  border-radius: 6px; padding: 6px 14px;
+  display: flex; flex-direction: column; align-items: center; line-height: 1;
+}
+.panel-rating-badge-num { font-family: var(--font-head); font-size: 22px; color: var(--sun); letter-spacing: 0.5px; display: block; text-align: center; }
+.panel-rating-badge-label { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.45); font-weight: 600; margin-top: 3px; display: block; text-align: center; }
 .panel-close {
   position: absolute; top: 16px; right: 16px;
   width: 36px; height: 36px; border-radius: 50%;
@@ -230,7 +248,7 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 .panel-hero-body { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px; }
 .panel-dest { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 6px; }
 .panel-name { font-family: var(--font-head); font-size: 36px; letter-spacing: 1px; color: #fff; line-height: 1; }
-.panel-body { padding: 28px; flex: 1; }
+.panel-body { padding: 28px; flex: 1; overflow-y: auto; }
 
 .panel-score {
   display: flex; flex-direction: column; align-items: center; gap: 2px;
@@ -435,14 +453,6 @@ nav .active { color: var(--sun) !important; }
         <div class="ph-stat-n"><span class="counter" data-target="19" data-decimal="0">19</span></div>
         <div class="ph-stat-l">Destinations</div>
       </div>
-      <div>
-        <div class="ph-stat-n" id="totalRatings"><span class="counter" data-target="312" data-decimal="0">0</span></div>
-        <div class="ph-stat-l">Community Ratings</div>
-      </div>
-      <div>
-        <div class="ph-stat-n" id="totalComments"><span class="counter" data-target="4.7" data-decimal="1">4.7</span><span style="color:var(--sun);">★</span></div>
-        <div class="ph-stat-l">Avg. Rating</div>
-      </div>
     </div>
   </div>
 </div>
@@ -536,7 +546,7 @@ const COURSES = [
     name:"Craft Farms Golf Club",price:"$55&ndash;$95",
     cyntp:"Two solid tracks in Gulf Shores. The Cotton Creek course is the standout &mdash; tree-lined, strategic, and a good contrast to the coastal layouts nearby.",
     review:"Craft Farms offers two courses &mdash; Cotton Creek and Woodlands &mdash; that provide a wooded contrast to the open coastal layouts around Gulf Shores. Cotton Creek is the stronger of the two with tree-lined fairways and a layout that demands accuracy off the tee. Well-maintained and a reliable option to round out a Gulf Shores golf trip.",
-    cyntp_rating:null,cyntp_tag:null,city:"Gulf Shores, AL",comments:[]
+    cyntp_rating:6.5,cyntp_tag:null,city:"Gulf Shores, AL",comments:[]
   },
   {
     id:2,dest:"alabama",destLabel:"Alabama",thumbClass:"ct5",
@@ -1478,17 +1488,33 @@ function sortCourses(val) {
 }
 
 // ── COURSE OVERLAY ────────────────────────────────────────────────────
+const COURSE_IMAGES = {
+  // Add course images by ID: 1: ['url1', 'url2']
+};
+
 function openCourse(id) {
   currentCourseId = id;
   const course = courseData.find(c => c.id === id);
   if (!course) return;
 
+  const imgs = COURSE_IMAGES[course.id] || [];
+  const arrows = imgs.length > 1
+    ? '<button class="panel-arrow panel-arrow-prev" onclick="shiftCourseImage(-1)">&#8592;</button><button class="panel-arrow panel-arrow-next" onclick="shiftCourseImage(1)">&#8594;</button>'
+    : '';
+  const dots = imgs.length > 1
+    ? `<div class="panel-dots">${imgs.map((_, i) => `<div class="panel-dot${i === 0 ? ' active' : ''}"></div>`).join('')}</div>`
+    : '';
+  const heroInner = imgs.length > 0
+    ? `<div class="panel-hero-img" id="panelHeroImg" style="background-image:url('${imgs[0]}')" data-imgs='${JSON.stringify(imgs)}' data-idx="0"></div>${arrows}${dots}`
+    : `<div class="panel-hero-bg ${course.thumbClass}"></div>`;
+
   const panel = document.getElementById('overlayPanel');
   panel.innerHTML = `
     <div class="panel-hero">
-      <div class="panel-hero-bg ${course.thumbClass}"></div>
+      ${heroInner}
       <div class="panel-hero-overlay"></div>
       <button class="panel-close" onclick="closeOverlay()">&times;</button>
+      ${course.cyntp_rating != null ? `<div class="panel-rating-badge"><span class="panel-rating-badge-num">${course.cyntp_rating.toFixed(1)}</span><span class="panel-rating-badge-label">CYNTP</span></div>` : ''}
       <div class="panel-hero-body">
         <div class="panel-dest">${course.destLabel}</div>
         <div class="panel-name">${course.name}</div>
@@ -1496,11 +1522,6 @@ function openCourse(id) {
     </div>
     <div class="panel-body">
       <div class="panel-price-tag" style="margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--paper3);display:flex;align-items:center;gap:32px;">
-        ${course.cyntp_rating != null ? `<div class="panel-score">
-          <div class="panel-score-num">${course.cyntp_rating.toFixed(1)}<span class="panel-score-denom">/10</span></div>
-          <div class="panel-score-label">CYNTP Rating</div>
-        </div>
-        <div style="width:1px;height:48px;background:var(--paper3);"></div>` : ''}
         <div>
           <div class="panel-price">${course.price}</div>
           <div class="panel-price-label">Green Fee</div>
@@ -1525,6 +1546,16 @@ function closeOverlay() {
   document.getElementById('overlay').classList.remove('open');
   document.body.style.overflow = '';
   currentCourseId = null;
+}
+
+function shiftCourseImage(dir) {
+  const img = document.getElementById('panelHeroImg');
+  if (!img) return;
+  const imgs = JSON.parse(img.dataset.imgs);
+  const idx = (parseInt(img.dataset.idx) + dir + imgs.length) % imgs.length;
+  img.style.backgroundImage = `url('${imgs[idx]}')`;
+  img.dataset.idx = idx;
+  document.querySelectorAll('.panel-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
 }
 
 // ── SCROLL REVEAL ─────────────────────────────────────────────────────
