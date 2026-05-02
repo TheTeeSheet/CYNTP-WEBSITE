@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Turn | Golf Course Reviews & Trip Guides — CYNTP</title>
 <meta name="description" content="Course reviews, trip guides, and golf travel stories from people who actually play. New posts every week from the CYNTP crew.">
-<meta name="description" content="Course reviews, trip guides, and golf travel stories from the CYNTP crew.">
+<link rel="canonical" href="https://www.coursesyouneedtoplay.com/cyntp-turn.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -49,9 +49,11 @@ nav {
 .cta-sm-sun:hover { background: var(--sun2); transform: translateY(-1px); }
 .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
 .nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; }
-.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--ink); z-index: 190; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+.mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: rgba(13,13,13,0.97); backdrop-filter: blur(16px); z-index: 999; padding: 24px 32px 32px; flex-direction: column; gap: 4px; border-bottom: 1px solid rgba(255,255,255,0.08); }
 .mobile-menu.open { display: flex; }
-.mobile-menu a { color: #fff; font-family: var(--font-head); font-size: 36px; letter-spacing: 4px; text-decoration: none; text-transform: uppercase; }
+.mobile-menu a { font-size: 22px; font-family: var(--font-head); letter-spacing: 3px; color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); transition: color 0.2s; }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover { color: var(--sun); }
 
 /* HERO */
 .blog-hero { background: var(--ink); padding: 160px 80px 80px; text-align: center; }
@@ -63,12 +65,12 @@ nav {
 
 /* FILTERS */
 .blog-filters { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
-.bfilter { padding: 10px 22px; border-radius: 100px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; cursor: pointer; border: 1.5px solid rgba(255,255,255,0.2); background: transparent; color: rgba(255,255,255,0.6); font-family: var(--font-body); transition: all 0.2s; }
+.bfilter { padding: 10px 22px; border-radius: 6px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; cursor: pointer; border: 1.5px solid rgba(255,255,255,0.2); background: transparent; color: rgba(255,255,255,0.6); font-family: var(--font-body); transition: all 0.2s; }
 .bfilter.active, .bfilter:hover { background: var(--sun); color: var(--ink); border-color: var(--sun); }
 
 /* FEATURED POST */
 .blog-featured { padding: 80px 80px 0; }
-.featured-card { display: grid; grid-template-columns: 1.2fr 1fr; gap: 0; border-radius: 20px; overflow: hidden; background: var(--white); border: 1px solid rgba(15,15,15,0.06); text-decoration: none; color: var(--ink); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s; }
+.featured-card { display: grid; grid-template-columns: 1.2fr 1fr; gap: 0; border-radius: 12px; overflow: hidden; background: var(--white); border: 1px solid rgba(15,15,15,0.06); text-decoration: none; color: var(--ink); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s; }
 .featured-card:hover { transform: translateY(-4px); box-shadow: 0 24px 64px rgba(0,0,0,0.1); }
 .featured-img { height: 480px; overflow: hidden; }
 .featured-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.55s cubic-bezier(0.16,1,0.3,1); }
@@ -86,7 +88,7 @@ nav {
 .blog-grid-section { padding: 60px 80px 100px; }
 .blog-grid-section h3 { font-family: var(--font-head); font-size: 28px; letter-spacing: 2px; margin-bottom: 32px; color: var(--ink); }
 .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.post-card { background: var(--white); border-radius: 16px; overflow: hidden; text-decoration: none; color: var(--ink); border: 1px solid rgba(15,15,15,0.06); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s; display: flex; flex-direction: column; }
+.post-card { background: var(--white); border-radius: 10px; overflow: hidden; text-decoration: none; color: var(--ink); border: 1px solid rgba(15,15,15,0.06); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s; display: flex; flex-direction: column; }
 .post-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
 .post-thumb { height: 220px; overflow: hidden; flex-shrink: 0; }
 .post-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.55s cubic-bezier(0.16,1,0.3,1); }
@@ -100,7 +102,7 @@ nav {
 
 /* LOAD MORE */
 .blog-load-more { text-align: center; padding-bottom: 100px; }
-.btn-load { display: inline-flex; align-items: center; gap: 10px; background: var(--ink); color: #fff; padding: 18px 48px; border-radius: 100px; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; font-family: var(--font-body); transition: all 0.25s; }
+.btn-load { display: inline-flex; align-items: center; gap: 10px; background: var(--ink); color: #fff; padding: 18px 48px; border-radius: 6px; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; font-family: var(--font-body); transition: all 0.25s; }
 .btn-load:hover { background: #2a2a2a; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.2); }
 
 /* FOOTER */
@@ -155,6 +157,7 @@ footer { background: var(--ink2); }
     CYNTP
   </a>
   <div class="nav-center">
+    <a href="index.html">Home</a>
     <a href="cyntp-trips.html">Trips</a>
     <a href="cyntp-courses.html">Courses</a>
     <a href="cyntp-turn.html" class="active">The Turn</a>
@@ -162,8 +165,6 @@ footer { background: var(--ink2); }
     <a href="cyntp-partner.html">Partner</a>
   </div>
   <div class="nav-ctas">
-    <button class="cta-sm cta-sm-ghost">Sign In</button>
-    <button class="cta-sm cta-sm-sun">Join Community</button>
     <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -181,9 +182,9 @@ footer { background: var(--ink2); }
 
 <!-- HERO -->
 <div class="blog-hero">
-  <div class="eyebrow r">CYNTP Blog</div>
+  <div class="eyebrow r">The Inside Track</div>
   <h1 class="r d1">THE <em>Turn.</em></h1>
-  <p class="r d2">Course reviews, trip guides, and golf travel stories from people who actually play.</p>
+  <p class="r d2">New trip guides and course reviews every week — written by the crew, for golfers who want the real story.</p>
   <div class="blog-filters r d3">
     <button class="bfilter active" data-filter="all">All</button>
     <button class="bfilter" data-filter="course-review">Course Reviews</button>
@@ -214,6 +215,7 @@ footer { background: var(--ink2); }
       <div class="footer-col-label">Explore</div>
       <div class="footer-links">
         <a href="cyntp-trips.html">Golf Trips</a>
+        <a href="cyntp-courses.html">Courses</a>
         <a href="cyntp-turn.html">The Turn</a>
         <a href="cyntp-about.html">About Us</a>
         <a href="cyntp-partner.html">Partner</a>

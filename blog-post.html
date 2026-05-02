@@ -3,8 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Loading... &mdash; CYNTP</title>
-<meta name="description" content="">
+<title>Golf Course Reviews & Trip Guides — CYNTP</title>
+<meta name="description" content="Course reviews, trip guides, and golf travel stories from people who actually play. New posts every week from the CYNTP crew.">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="https://www.coursesyouneedtoplay.com/cyntp-turn.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CYNTP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.coursesyouneedtoplay.com/cyntp-turn.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -42,9 +50,11 @@ nav {
 .cta-sm-sun:hover { background: var(--sun2); transform: translateY(-1px); }
 .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
 .nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; }
-.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--ink); z-index: 190; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+.mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: rgba(13,13,13,0.97); backdrop-filter: blur(16px); z-index: 999; padding: 24px 32px 32px; flex-direction: column; gap: 4px; border-bottom: 1px solid rgba(255,255,255,0.08); }
 .mobile-menu.open { display: flex; }
-.mobile-menu a { color: #fff; font-family: var(--font-head); font-size: 36px; letter-spacing: 4px; text-decoration: none; text-transform: uppercase; }
+.mobile-menu a { font-size: 22px; font-family: var(--font-head); letter-spacing: 3px; color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); transition: color 0.2s; }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover { color: var(--sun); }
 
 /* POST HERO */
 .post-hero { position: relative; height: 60vh; min-height: 480px; overflow: hidden; display: flex; align-items: flex-end; }
@@ -63,9 +73,9 @@ nav {
 .post-content h2 { font-family: var(--font-head); font-size: 32px; letter-spacing: 2px; margin: 32px 0 8px; color: var(--ink); }
 .post-content h3 { font-family: var(--font-serif); font-size: 26px; margin: 16px 0 12px; color: var(--ink); font-weight: 700; }
 .post-content p { margin-bottom: 24px; }
-.post-content img { width: 100%; border-radius: 12px; margin: 36px 0 8px; }
+.post-content img { width: 100%; border-radius: 4px; margin: 36px 0 8px; }
 .post-content img + em { display: block; text-align: center; font-size: 13px; color: var(--muted); font-style: normal; margin-bottom: 32px; margin-top: 0; }
-.post-content blockquote { border-left: 3px solid var(--sun); padding: 16px 28px; margin: 36px 0; background: var(--paper2); border-radius: 0 12px 12px 0; font-family: var(--font-serif); font-size: 20px; color: var(--ink); line-height: 1.5; }
+.post-content blockquote { border-left: 3px solid var(--sun); padding: 16px 28px; margin: 36px 0; background: var(--paper2); border-radius: 0; font-family: var(--font-serif); font-size: 20px; color: var(--ink); line-height: 1.5; }
 .post-content ul, .post-content ol { padding-left: 24px; margin-bottom: 24px; }
 .post-content li { margin-bottom: 8px; }
 .post-content a:not(.social-callout):not(.affiliate-box-btn) { color: var(--grass); text-decoration: underline; }
@@ -74,8 +84,8 @@ nav {
 .post-content hr { border: none; border-top: 1px solid rgba(0,0,0,0.1); margin: 48px 0; }
 
 /* SPONSORED LABEL */
-.sponsored-banner { display: flex; align-items: center; gap: 12px; background: #fdf6ec; border: 1.5px solid var(--sun); border-radius: 10px; padding: 14px 20px; margin-bottom: 40px; font-size: 13px; color: var(--sun2); font-weight: 600; letter-spacing: 1px; }
-.sponsored-banner span { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; background: var(--sun); color: var(--ink); padding: 4px 10px; border-radius: 100px; font-weight: 800; }
+.sponsored-banner { display: flex; align-items: center; gap: 12px; background: #fdf6ec; border: 1.5px solid var(--sun); border-radius: 4px; padding: 14px 20px; margin-bottom: 40px; font-size: 13px; color: var(--sun2); font-weight: 600; letter-spacing: 1px; }
+.sponsored-banner span { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; background: var(--sun); color: var(--ink); padding: 4px 10px; border-radius: 3px; font-weight: 800; }
 
 /* AFFILIATE CALLOUT */
 .affiliate-box { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid rgba(0,0,0,0.1); border-bottom: 1px solid rgba(0,0,0,0.1); padding: 14px 0; margin: 32px 0; flex-wrap: wrap; }
@@ -93,7 +103,7 @@ nav {
 .ad-slot-end { min-height: 100px; }
 
 /* SOCIAL EMBED */
-.social-callout { display: flex; align-items: center; gap: 16px; background: var(--paper2); border-radius: 12px; padding: 16px 20px; margin: 32px 0; text-decoration: none; transition: background 0.2s; }
+.social-callout { display: flex; align-items: center; gap: 16px; background: var(--paper2); border-radius: 6px; padding: 16px 20px; margin: 32px 0; text-decoration: none; transition: background 0.2s; }
 .social-callout:hover { background: #e5e0d4; }
 .social-callout-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
 .social-callout-icon.ig { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
@@ -111,14 +121,14 @@ nav {
 /* SHARE */
 .post-share { border-top: 1px solid rgba(0,0,0,0.08); padding-top: 40px; margin-top: 40px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 .post-share-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; color: var(--muted); }
-.share-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 100px; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-decoration: none; border: 1.5px solid rgba(0,0,0,0.12); color: var(--ink); transition: all 0.2s; cursor: pointer; background: transparent; font-family: var(--font-body); }
+.share-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 6px; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-decoration: none; border: 1.5px solid rgba(0,0,0,0.12); color: var(--ink); transition: all 0.2s; cursor: pointer; background: transparent; font-family: var(--font-body); }
 .share-btn:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
 
 /* RELATED */
 .related { background: var(--paper2); padding: 80px; }
 .related h3 { font-family: var(--font-head); font-size: 28px; letter-spacing: 2px; margin-bottom: 32px; }
 .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.post-card { background: var(--white); border-radius: 16px; overflow: hidden; text-decoration: none; color: var(--ink); border: 1px solid rgba(15,15,15,0.06); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s; }
+.post-card { background: var(--white); border-radius: 10px; overflow: hidden; text-decoration: none; color: var(--ink); border: 1px solid rgba(15,15,15,0.06); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s; }
 .post-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
 .post-thumb { height: 180px; overflow: hidden; }
 .post-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.55s; }
@@ -175,13 +185,11 @@ footer { background: var(--ink2); }
   <div class="nav-center">
     <a href="cyntp-trips.html">Trips</a>
     <a href="cyntp-courses.html">Courses</a>
-    <a href="blog.html" class="active">The Turn</a>
+    <a href="cyntp-turn.html" class="active">The Turn</a>
     <a href="cyntp-about.html">About</a>
     <a href="cyntp-partner.html">Partner</a>
   </div>
   <div class="nav-ctas">
-    <button class="cta-sm cta-sm-ghost">Sign In</button>
-    <button class="cta-sm cta-sm-sun">Join Community</button>
     <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -192,7 +200,7 @@ footer { background: var(--ink2); }
   <a href="index.html">Home</a>
   <a href="cyntp-trips.html">Trips</a>
   <a href="cyntp-courses.html">Courses</a>
-  <a href="blog.html">The Turn</a>
+  <a href="cyntp-turn.html">The Turn</a>
   <a href="cyntp-about.html">About</a>
   <a href="cyntp-partner.html">Partner</a>
 </div>
@@ -211,7 +219,8 @@ footer { background: var(--ink2); }
       <div class="footer-col-label">Explore</div>
       <div class="footer-links">
         <a href="cyntp-trips.html">Golf Trips</a>
-        <a href="blog.html">The Turn</a>
+        <a href="cyntp-courses.html">Courses</a>
+        <a href="cyntp-turn.html">The Turn</a>
         <a href="cyntp-about.html">About Us</a>
         <a href="cyntp-partner.html">Partner</a>
       </div>
@@ -284,6 +293,14 @@ function renderPost(post) {
   document.title = `${post.title} — CYNTP`;
   document.querySelector('meta[name="description"]').setAttribute('content', post.excerpt || '');
 
+  // Dynamic OG tags
+  document.querySelector('meta[property="og:title"]').setAttribute('content', post.title + ' — CYNTP');
+  document.querySelector('meta[property="og:description"]').setAttribute('content', post.excerpt || '');
+  document.querySelector('meta[property="og:image"]').setAttribute('content', post.image || 'https://res.cloudinary.com/dak67vton/image/upload/v1775979282/edit_2_gi62ir.png');
+  document.querySelector('meta[property="og:url"]').setAttribute('content', window.location.href);
+
+  const formatCat = c => c ? c.replace(/-/g, ' ') : 'Read';
+
   document.getElementById('postHero').innerHTML = `
     <div class="post-hero">
       ${post.image
@@ -291,7 +308,7 @@ function renderPost(post) {
         : `<div class="post-hero-placeholder"></div>`}
       <div class="post-hero-overlay"></div>
       <div class="post-hero-content">
-        <div class="post-cat">${post.category ? post.category.replace('-', ' ') : 'Read'}</div>
+        <div class="post-cat">${formatCat(post.category)}</div>
         <h1>${post.title}</h1>
         <div class="post-meta">
           <span>${post.author || 'CYNTP'}</span>
@@ -396,7 +413,7 @@ async function loadRelated(current) {
                 ${p.image ? `<img src="${p.image}" alt="${p.title}" loading="lazy">` : `<div class="post-thumb-placeholder" style="background:${gradients[i]}"></div>`}
               </div>
               <div class="post-body">
-                <div class="post-cat">${p.category ? p.category.replace('-', ' ') : 'Read'}</div>
+                <div class="post-cat">${formatCat(p.category)}</div>
                 <h4>${p.title}</h4>
               </div>
             </a>`).join('')}
@@ -411,7 +428,7 @@ function showNotFound() {
     <div class="post-not-found">
       <h2>POST NOT FOUND</h2>
       <p>This post doesn't exist or may have moved.</p>
-      <a href="blog.html" class="post-back">← Back to The Turn</a>
+      <a href="cyntp-turn.html" class="post-back">← Back to The Turn</a>
     </div>`;
 }
 

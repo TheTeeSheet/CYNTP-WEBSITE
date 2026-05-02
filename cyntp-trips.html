@@ -5,54 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Golf Trips | Scottsdale, Hilton Head, St. George & More — CYNTP</title>
 <meta name="description" content="Curated golf trip packages to the best destinations in the US and beyond. All-in pricing, hand-picked courses, and zero guesswork. Book your next golf trip with CYNTP.">
+<link rel="canonical" href="https://www.coursesyouneedtoplay.com/cyntp-trips.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-/* NAV */
-nav {
-  position: relative; z-index: 200;
-  padding: 28px 52px; display: flex; align-items: center; justify-content: space-between;
-  transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
-}
-nav .nav-center-home { position: absolute; left: 50%; transform: translateX(-50%); }
-nav.scrolled {
-  background: rgba(13,13,13,0.96); backdrop-filter: blur(24px);
-  padding: 16px 52px; border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.nav-albi { height: 48px; width: auto; display: block; }
-.logo {
-  font-family: var(--font-head); font-size: 22px; letter-spacing: 5px;
-  color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; transition: opacity 0.2s;
-}
-.logo:hover { opacity: 0.8; }
-.logo-mark {
-  width: 32px; height: 32px; border-radius: 50%; background: var(--sun); color: var(--ink);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 13px; font-weight: 700; flex-shrink: 0; font-family: var(--font-body);
-}
-.nav-center-home { display: flex; align-items: center; gap: 6px; position: absolute; left: 50%; transform: translateX(-50%); z-index: 1; }
-.nav-center-home a { color: rgba(255,255,255,0.55); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 6px 12px; border-radius: 100px; text-decoration: none; transition: all 0.2s; white-space: nowrap; }
-.nav-center-home a:hover { color: #fff; background: rgba(255,255,255,0.08); }
-.nav-links { display: flex; align-items: center; gap: 36px; }
-.nav-links a {
-  color: rgba(255,255,255,0.65); font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase;
-  text-decoration: none; font-weight: 500; transition: color 0.2s;
-}
-.nav-links a:hover { color: #fff; }
-.nav-cta {
-  background: var(--sun) !important; color: var(--ink) !important;
-  padding: 11px 26px !important; border-radius: 100px; font-weight: 600 !important; letter-spacing: 1.5px !important;
-}
-.nav-cta:hover { background: var(--sun2) !important; transform: translateY(-1px); }
-
-.cta-sm { padding: 9px 20px; border-radius: 100px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; white-space: nowrap; font-family: var(--font-body); }
-.cta-sm-ghost { background: transparent; color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.25); }
-.cta-sm-ghost:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
-.cta-sm-sun { background: var(--sun); color: var(--ink); }
-.cta-sm-sun:hover { background: var(--sun2); transform: translateY(-1px); }
-@media (max-width: 960px) { nav { padding: 18px 24px; } .nav-links { display: none; } }
-
 :root {
   --ink: #0d0d0d; --ink2: #141414; --ink3: #1a1a1a;
   --paper: #f4f0e8; --paper2: #ede8dc; --paper3: #d6d0c0;
@@ -155,14 +112,16 @@ nav {
 .trip-badge {
   position: absolute; top: 14px; left: 14px;
   font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
-  font-weight: 600; color: #fff; padding: 5px 10px; border-radius: 100px;
+  font-weight: 600; color: #fff; padding: 5px 10px; border-radius: 3px;
 }
+.badge-book { background: var(--sun); color: var(--ink); }
+.badge-stay { background: var(--grass); color: #fff; }
 .trip-type-pill {
   position: absolute; top: 14px; right: 14px;
   font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
-  color: rgba(255,255,255,0.7); background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15);
-  padding: 5px 10px; border-radius: 100px;
+  color: rgba(255,255,255,0.7); background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 5px 10px; border-radius: 4px;
 }
 
 .trip-body { padding: 22px; display: flex; flex-direction: column; gap: 8px; }
@@ -177,7 +136,7 @@ nav {
 .trip-pill {
   font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
   color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08); padding: 5px 12px; border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.08); padding: 5px 12px; border-radius: 4px;
 }
 .trip-cta {
   margin-top: 8px;
@@ -240,9 +199,9 @@ nav {
 .panel-pill {
   font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
   color: rgba(0,0,0,0.5); background: var(--paper2);
-  border: 1px solid var(--paper3); padding: 5px 12px; border-radius: 100px;
+  border: 1px solid var(--paper3); padding: 5px 12px; border-radius: 4px;
 }
-.panel-badge { display: inline-block; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; color: #fff; padding: 5px 12px; border-radius: 100px; margin-bottom: 14px; }
+.panel-badge { display: inline-block; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; color: #fff; padding: 5px 12px; border-radius: 3px; margin-bottom: 14px; }
 .panel-tagline { font-family: var(--font-serif); font-style: italic; font-size: 20px; color: var(--grass); margin-bottom: 10px; line-height: 1.4; }
 .panel-desc { font-size: 14px; line-height: 1.7; color: rgba(0,0,0,0.65); margin-bottom: 24px; }
 .panel-section-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; font-weight: 600; }
@@ -293,7 +252,7 @@ nav .active { color: var(--sun) !important; }
 @media(max-width:960px) { .nav-hamburger { display: flex; } .nav-center-home { display: none !important; } .nav-ctas .cta-sm-ghost { display: none; } }
 </style>
 <meta property="og:title" content="Golf Trips | Scottsdale, Hilton Head, St. George & More — CYNTP">
-<meta property="og:description" content="Curated golf trip packages to the best destinations in the US and beyond. All-in pricing, hand-picked courses.">
+<meta property="og:description" content="Curated golf trip packages to Scottsdale, Myrtle Beach, Ireland, and more. Real pricing, hand-picked courses, and zero guesswork.">
 <meta property="og:url" content="https://coursesyouneedtoplay.com/cyntp-trips.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="CYNTP">
@@ -314,8 +273,6 @@ nav .active { color: var(--sun) !important; }
     <a href="cyntp-partner.html">Partner</a>
   </div>
   <div class="nav-ctas">
-    <button class="cta-sm cta-sm-ghost">Sign In</button>
-    <button class="cta-sm cta-sm-sun">Join Community</button>
     <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -352,13 +309,13 @@ nav .active { color: var(--sun) !important; }
     <div class="trip-card r" onclick="openTrip('big-cedar')" data-type="stayplay">
       <div class="trip-img-wrap bgi4">
         <div class="trip-overlay"></div>
-        <div class="trip-badge" style="background:#2d6a3f">Stay &amp; Play</div>
+        <div class="trip-badge badge-stay">Stay &amp; Play</div>
         <div class="trip-type-pill">Resort</div>
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
           <span class="trip-state">Missouri</span>
-          <span class="trip-price">TBD<span class="trip-pp">/person</span></span>
+          <span class="trip-price">Custom Pricing<span class="trip-pp"></span></span>
         </div>
         <h2 class="trip-name">Big Cedar Lodge</h2>
         <p class="trip-tagline">Bass Pro's golf resort in the Ozarks.</p>
@@ -367,14 +324,14 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">5 Courses</div>
           <div class="trip-pill">Full Resort</div>
         </div>
-        <a class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
 
     <div class="trip-card r" onclick="openTrip('dominican-republic')" data-type="beach">
       <div class="trip-img-wrap bgi5">
         <div class="trip-overlay"></div>
-        <div class="trip-badge" style="background:#d4a055;color:#0d0d0d">Book Now</div>
+        <div class="trip-badge badge-book">Book Now</div>
         <div class="trip-type-pill">International</div>
       </div>
       <div class="trip-body">
@@ -389,20 +346,20 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3 Nights</div>
         </div>
-        <a class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
 
     <div class="trip-card r" onclick="openTrip('evermore')" data-type="stayplay">
       <div class="trip-img-wrap bgi7">
         <div class="trip-overlay"></div>
-        <div class="trip-badge" style="background:#2d6a3f">Stay &amp; Play</div>
+        <div class="trip-badge badge-stay">Stay &amp; Play</div>
         <div class="trip-type-pill">Resort</div>
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
           <span class="trip-state">Florida</span>
-          <span class="trip-price">TBD<span class="trip-pp">/person</span></span>
+          <span class="trip-price">Custom Pricing<span class="trip-pp"></span></span>
         </div>
         <h2 class="trip-name">Evermore</h2>
         <p class="trip-tagline">Two Jack Nicklaus courses next to Disney.</p>
@@ -411,20 +368,20 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">2 Courses</div>
           <div class="trip-pill">36 Holes</div>
         </div>
-        <a class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
 
     <div class="trip-card r" onclick="openTrip('gamble-sands')" data-type="stayplay">
       <div class="trip-img-wrap bgi6">
         <div class="trip-overlay"></div>
-        <div class="trip-badge" style="background:#2d6a3f">Stay &amp; Play</div>
+        <div class="trip-badge badge-stay">Stay &amp; Play</div>
         <div class="trip-type-pill">Resort</div>
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
           <span class="trip-state">Washington</span>
-          <span class="trip-price">TBD<span class="trip-pp">/person</span></span>
+          <span class="trip-price">Custom Pricing<span class="trip-pp"></span></span>
         </div>
         <h2 class="trip-name">Gamble Sands</h2>
         <p class="trip-tagline">The best new public course in America.</p>
@@ -433,14 +390,14 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">On-Site Lodge</div>
           <div class="trip-pill">36 Holes</div>
         </div>
-        <a class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
 
     <div class="trip-card r" onclick="openTrip('gulf-shores')" data-type="beach">
       <div class="trip-img-wrap bgi1">
         <div class="trip-overlay"></div>
-        <div class="trip-badge" style="background:#d4a055;color:#0d0d0d">Book Now</div>
+        <div class="trip-badge badge-book">Book Now</div>
         <div class="trip-type-pill">Beach</div>
       </div>
       <div class="trip-body">
@@ -455,20 +412,20 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3 Nights</div>
         </div>
-        <a class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
 
     <div class="trip-card r" onclick="openTrip('grand-traverse')" data-type="stayplay">
       <div class="trip-img-wrap bgi3">
         <div class="trip-overlay"></div>
-        <div class="trip-badge" style="background:#2d6a3f">Stay &amp; Play</div>
+        <div class="trip-badge badge-stay">Stay &amp; Play</div>
         <div class="trip-type-pill">Resort</div>
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
           <span class="trip-state">Michigan</span>
-          <span class="trip-price">TBD<span class="trip-pp">/person</span></span>
+          <span class="trip-price">Custom Pricing<span class="trip-pp"></span></span>
         </div>
         <h2 class="trip-name">Grand Traverse Resort</h2>
         <p class="trip-tagline">Northern Michigan golf at its finest.</p>
@@ -477,14 +434,14 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">3 Courses</div>
           <div class="trip-pill">Full Resort</div>
         </div>
-        <a class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
 
     <div class="trip-card r" onclick="openTrip('hammock-beach')" data-type="beach">
       <div class="trip-img-wrap bgi2">
         <div class="trip-overlay"></div>
-        <div class="trip-badge" style="background:#d4a055;color:#0d0d0d">Book Now</div>
+        <div class="trip-badge badge-book">Book Now</div>
         <div class="trip-type-pill">Beach</div>
       </div>
       <div class="trip-body">
@@ -499,7 +456,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3 Nights</div>
         </div>
-        <a class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
 
@@ -521,7 +478,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3–4 Days</div>
         </div>
-        <a class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
 
@@ -542,7 +499,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3–4 Days</div>
         </div>
-        <a class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
 
@@ -564,7 +521,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3–4 Days</div>
         </div>
-        <a class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
 
@@ -585,7 +542,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3–4 Days</div>
         </div>
-        <a class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
 
@@ -606,7 +563,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3–4 Days</div>
         </div>
-        <a class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
 
@@ -627,20 +584,20 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">4 Days</div>
         </div>
-        <a class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
 
     <div class="trip-card r" onclick="openTrip('pursell-farms')" data-type="stayplay">
       <div class="trip-img-wrap bgi2">
         <div class="trip-overlay"></div>
-        <div class="trip-badge" style="background:#2d6a3f">Stay &amp; Play</div>
+        <div class="trip-badge badge-stay">Stay &amp; Play</div>
         <div class="trip-type-pill">Resort</div>
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
           <span class="trip-state">Alabama</span>
-          <span class="trip-price">TBD<span class="trip-pp">/person</span></span>
+          <span class="trip-price">Custom Pricing<span class="trip-pp"></span></span>
         </div>
         <h2 class="trip-name">Pursell Farms</h2>
         <p class="trip-tagline">Hidden gem of the South.</p>
@@ -649,7 +606,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">On-Site Golf</div>
           <div class="trip-pill">Full Resort</div>
         </div>
-        <a class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
 
@@ -671,20 +628,20 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3–4 Days</div>
         </div>
-        <a class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
 
     <div class="trip-card r" onclick="openTrip('sentryworld')" data-type="stayplay">
       <div class="trip-img-wrap bgi1">
         <div class="trip-overlay"></div>
-        <div class="trip-badge" style="background:#2d6a3f">Stay &amp; Play</div>
+        <div class="trip-badge badge-stay">Stay &amp; Play</div>
         <div class="trip-type-pill">Resort</div>
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
           <span class="trip-state">Wisconsin</span>
-          <span class="trip-price">TBD<span class="trip-pp">/person</span></span>
+          <span class="trip-price">Custom Pricing<span class="trip-pp"></span></span>
         </div>
         <h2 class="trip-name">SentryWorld</h2>
         <p class="trip-tagline">The flower hole. Need we say more.</p>
@@ -693,7 +650,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">On-Site Golf</div>
           <div class="trip-pill">Full Resort</div>
         </div>
-        <a class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
 
@@ -715,14 +672,14 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3–4 Days</div>
         </div>
-        <a class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
 
     <div class="trip-card r" onclick="openTrip('tucson')" data-type="desert">
       <div class="trip-img-wrap bgi7">
         <div class="trip-overlay"></div>
-        <div class="trip-badge" style="background:#d4a055;color:#0d0d0d">Book Now</div>
+        <div class="trip-badge badge-book">Book Now</div>
         <div class="trip-type-pill">Desert</div>
       </div>
       <div class="trip-body">
@@ -737,7 +694,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">4 Nights</div>
         </div>
-        <a class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
 
@@ -759,7 +716,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3–4 Days</div>
         </div>
-        <a class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">View Trip &rarr;</a>
       </div>
     </div>
   </div>

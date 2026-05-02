@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CYNTP — Courses You Need To Play | Golf Trip Planning & Course Reviews</title>
 <meta name="description" content="Curated golf trips, honest course reviews, and insider travel guides from people who actually play. Plan your next golf trip with CYNTP.">
+<link rel="canonical" href="https://www.coursesyouneedtoplay.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -129,7 +130,7 @@ nav.scrolled {
 .trips { background: var(--paper); padding: 100px 80px; }
 .trips-top { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 40px; }
 .trips-filters { display: flex; gap: 8px; }
-.tfilter { padding: 10px 22px; border-radius: 100px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; cursor: pointer; border: 1.5px solid rgba(13,13,13,0.15); background: transparent; color: var(--muted); font-family: var(--font-body); transition: all 0.2s; }
+.tfilter { padding: 10px 22px; border-radius: 6px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; cursor: pointer; border: 1.5px solid rgba(13,13,13,0.15); background: transparent; color: var(--muted); font-family: var(--font-body); transition: all 0.2s; }
 .tfilter.active, .tfilter:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
 .trips-bento { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 290px 290px; gap: 14px; }
 .tcard { border-radius: 16px; overflow: hidden; position: relative; text-decoration: none; color: #fff; display: block; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1); }
@@ -143,9 +144,9 @@ nav.scrolled {
 .tcard-name { font-family: var(--font-head); font-size: 26px; letter-spacing: 1px; line-height: 1; }
 .tcard-price { font-size: 13px; color: var(--sun); font-weight: 600; }
 .tcard-price span { color: rgba(255,255,255,0.45); font-weight: 400; font-size: 11px; }
-.tcard-btn { background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 8px 16px; border-radius: 100px; font-size: 11px; font-weight: 600; letter-spacing: 1px; white-space: nowrap; transition: background 0.2s; }
+.tcard-btn { background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 8px 16px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 1px; white-space: nowrap; transition: background 0.2s; }
 .tcard:hover .tcard-btn { background: rgba(255,255,255,0.28); }
-.tcard-featured { position: absolute; top: 18px; left: 18px; background: var(--sun); color: var(--ink); font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; }
+.tcard-featured { position: absolute; top: 18px; left: 18px; background: var(--sun); color: var(--ink); font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; padding: 5px 12px; border-radius: 3px; }
 .tc-featured { grid-column: 1; grid-row: 1; }
 .tc-featured .tcard-name { font-size: 34px; }
 .tc-tall { grid-column: 3; grid-row: 1 / 3; }
@@ -160,7 +161,8 @@ nav.scrolled {
 .tg5 { background: linear-gradient(160deg, #0f1f2e, #060c14); }
 
 /* EMAIL / GUIDE CAPTURE */
-.email-band { background: var(--grass); padding: 90px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.email-band { background: var(--grass); padding: 90px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; overflow: hidden; }
+.email-band::before { content: ''; position: absolute; top: -60px; right: -60px; width: 320px; height: 320px; border-radius: 50%; background: rgba(255,255,255,0.04); pointer-events: none; }
 .email-band-left .eyebrow { color: rgba(255,255,255,0.5); margin-bottom: 20px; }
 .email-band-left h3 { font-family: var(--font-head); font-size: clamp(42px, 5.5vw, 72px); letter-spacing: 2px; color: #fff; line-height: 0.92; margin-bottom: 24px; }
 .email-band-left h3 em { font-style: italic; font-family: var(--font-serif); color: var(--sun); }
@@ -168,15 +170,16 @@ nav.scrolled {
 .email-checks { display: flex; flex-direction: column; gap: 12px; }
 .email-check { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,0.8); }
 .email-check::before { content: ''; width: 20px; height: 20px; border-radius: 50%; background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.3); flex-shrink: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='white' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; }
-.email-form-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 40px; backdrop-filter: blur(12px); }
-.email-form-card h4 { font-family: var(--font-head); font-size: 28px; letter-spacing: 2px; color: #fff; margin-bottom: 8px; }
-.email-form-card p { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 24px; }
-.email-field { width: 100%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 16px 20px; font-size: 14px; color: #fff; font-family: var(--font-body); outline: none; margin-bottom: 12px; transition: border-color 0.2s; box-sizing: border-box; }
-.email-field::placeholder { color: rgba(255,255,255,0.4); }
-.email-field:focus { border-color: rgba(255,255,255,0.5); }
-.email-submit { width: 100%; background: var(--sun); color: var(--ink); border: none; border-radius: 10px; padding: 18px; font-size: 12px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; cursor: pointer; font-family: var(--font-body); transition: all 0.2s; margin-top: 4px; }
+.email-form-side { display: flex; flex-direction: column; justify-content: center; border-left: 1px solid rgba(255,255,255,0.15); padding-left: 72px; }
+.email-form-side h4 { font-family: var(--font-head); font-size: clamp(28px, 3.5vw, 42px); letter-spacing: 2px; color: #fff; line-height: 0.95; margin-bottom: 10px; }
+.email-form-side h4 em { font-style: italic; font-family: var(--font-serif); color: var(--sun); }
+.email-form-side > p { font-size: 14px; color: rgba(255,255,255,0.45); margin-bottom: 32px; line-height: 1.6; }
+.email-field { width: 100%; background: transparent; border: none; border-bottom: 1.5px solid rgba(255,255,255,0.3); padding: 14px 0; font-size: 16px; color: #fff; font-family: var(--font-body); outline: none; margin-bottom: 20px; transition: border-color 0.2s; box-sizing: border-box; }
+.email-field::placeholder { color: rgba(255,255,255,0.35); }
+.email-field:focus { border-bottom-color: var(--sun); }
+.email-submit { background: var(--sun); color: var(--ink); border: none; padding: 16px 36px; font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; cursor: pointer; font-family: var(--font-body); transition: all 0.2s; display: inline-block; border-radius: 4px; }
 .email-submit:hover { background: var(--sun2); transform: translateY(-1px); }
-.email-fine { font-size: 12px; color: rgba(255,255,255,0.35); text-align: center; margin-top: 14px; }
+.email-fine { font-size: 12px; color: rgba(255,255,255,0.28); margin-top: 14px; }
 
 /* GUIDE */
 .guide { background: var(--paper2); padding: 100px 80px; }
@@ -211,14 +214,16 @@ nav.scrolled {
 .partner-split-photo { position: relative; overflow: hidden; height: 100%; min-height: 580px; }
 .partner-split-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: transform 0.8s cubic-bezier(0.16,1,0.3,1); }
 .partner-split:hover .partner-split-photo img { transform: scale(1.03); }
-.partner-photo-caption { position: absolute; bottom: 16px; left: 16px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); background: rgba(0,0,0,0.4); padding: 6px 12px; border-radius: 100px; backdrop-filter: blur(8px); }
+.partner-photo-caption { position: absolute; bottom: 16px; left: 16px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); background: rgba(0,0,0,0.4); padding: 6px 12px; border-radius: 3px; backdrop-filter: blur(8px); }
 .partner-split-content { padding: 80px 72px; display: flex; flex-direction: column; justify-content: center; }
 .partner-split-content .eyebrow { color: var(--sun); }
 .partner-split-content .h2 { color: var(--paper); }
 .partner-split-content .h2 em { color: var(--sun); font-family: var(--font-serif); font-style: italic; }
 .partner-split-content p { font-size: 15px; line-height: 1.8; color: rgba(244,240,232,0.55); margin-top: 20px; }
-.pstats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(255,255,255,0.05); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.07); margin-top: 36px; }
-.pstat { background: rgba(255,255,255,0.03); padding: 28px 24px; text-align: center; }
+.pstats { display: flex; gap: 0; margin-top: 36px; border-top: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12); }
+.pstat { flex: 1; padding: 28px 0; text-align: left; border-right: 1px solid rgba(255,255,255,0.1); padding-right: 24px; padding-left: 24px; }
+.pstat:first-child { padding-left: 0; }
+.pstat:last-child { border-right: none; }
 .pstat-n { font-family: var(--font-head); font-size: 40px; line-height: 1; color: var(--paper); }
 .pstat-n .g { color: var(--grass-bright); }
 .pstat-n .y { color: var(--sun); }
@@ -291,6 +296,7 @@ footer { background: #111; }
 
   /* EMAIL / BUCKET LIST */
   .email-band { grid-template-columns: 1fr; gap: 48px; padding: 60px 24px; }
+  .email-form-side { border-left: none; padding-left: 0; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 48px; }
 
   /* GUIDE */
   .guide { padding: 72px 24px; }
@@ -302,7 +308,8 @@ footer { background: #111; }
   .partner-split { grid-template-columns: 1fr; }
   .partner-split-photo { height: 300px; }
   .partner-split-content { padding: 52px 28px; }
-  .pstats { grid-template-columns: 1fr 1fr; }
+  .pstats { flex-wrap: wrap; }
+  .pstat { flex: 1 1 45%; padding: 20px 16px; }
 
   /* SOCIAL */
   .social { padding: 64px 24px; }
@@ -366,8 +373,6 @@ footer { background: #111; }
     <a href="cyntp-partner.html">Partner</a>
   </div>
   <div class="nav-ctas">
-    <button class="cta-sm cta-sm-ghost">Sign In</button>
-    <button class="cta-sm cta-sm-sun">Join Community</button>
     <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -393,7 +398,7 @@ footer { background: #111; }
   <div class="hero-content">
     <div class="hero-pill r">Golf Travel &mdash; Done Right</div>
     <h1 class="r d1">COURSES<br><em>You Need</em><br>TO PLAY</h1>
-    <p class="hero-sub r d2">Curated trips, honest course reviews, and the inside track on golf travel — from people who actually play.</p>
+    <p class="hero-sub r d2">Built by three guys who play too much golf and will tell you exactly what's worth your money.</p>
     <div class="hero-ctas r d3">
       <a href="cyntp-trips.html" class="btn-sun">Browse Trips &rarr;</a>
       <a href="cyntp-courses.html" class="btn-ghost">Explore Courses</a>
@@ -442,7 +447,8 @@ footer { background: #111; }
       <div class="eyebrow r">Who We Are</div>
       <h2 class="h2 r d1">REAL GOLFERS.<br><em>Real Takes.</em></h2>
       <p class="about-body r d2"><strong>We're Cameron, Noah, and Beau</strong> — three friends who got tired of golf reviews written for people who've never had to check a green fee before booking. We built CYNTP to give everyday golfers an honest look at where to play, what to pay, and whether the trip is worth it.</p>
-      <p class="about-stat r d2">100+ courses reviewed.</p>
+      <p class="about-body r d2">So if you're planning a trip and need someone to tell you if it's actually worth it — you're in the right place.</p>
+      <p class="about-stat r d2">100+ courses played &amp; rated.</p>
       <div class="crew-pills r d3">
         <a href="https://www.instagram.com/cameronream" target="_blank" class="crew-pill">
           <img class="crew-avatar" src="https://res.cloudinary.com/dak67vton/image/upload/v1776231147/6112d7e6-92e4-4c22-b07e-3ea2f1bc6e27.png" alt="Cameron">
@@ -468,8 +474,7 @@ footer { background: #111; }
 <section class="trips" id="trips">
   <div class="trips-top">
     <div>
-      <div class="eyebrow r" style="color:var(--sun);">Golf Trips</div>
-      <h2 class="h2 r d1" style="color:var(--ink);">WHERE TO<br><em>Play Next.</em></h2>
+      <h2 class="h2 r" style="color:var(--ink);">WHERE TO<br><em>Play Next.</em></h2>
     </div>
     <div class="trips-filters r d1">
       <button class="tfilter active">All</button>
@@ -555,18 +560,17 @@ footer { background: #111; }
 <div class="email-band">
   <div class="email-band-left">
     <div class="eyebrow r">Free Guide</div>
-    <h3 class="r d1">GET OUR <em>BUCKET<br>LIST</em> GUIDE.</h3>
-    <p class="r d2">25 courses we think every golfer needs to play before they die — ranked, priced, and reviewed the CYNTP way. Free.</p>
+    <h3 class="r d1">STOP GOOGLING.<br><em>Start Playing.</em></h3>
+    <p class="r d2">113 courses. 19 destinations. All played, rated, and priced by real golfers — zero filler. Get the free bucket list guide.</p>
     <div class="email-checks r d3">
-      <div class="email-check">25 courses ranked and honestly reviewed</div>
-      <div class="email-check">Real pricing for real golfers</div>
+      <div class="email-check">25 bucket-list courses ranked and priced</div>
       <div class="email-check">New trip guides straight to your inbox</div>
       <div class="email-check">Partner deals and exclusive offers</div>
     </div>
   </div>
-  <div class="email-form-card r d2">
-    <h4>JOIN 10,000+ GOLFERS</h4>
-    <p>Get the free bucket list guide instantly.</p>
+  <div class="email-form-side r d2">
+    <h4>JOIN 10,000+<br><em>Golfers.</em></h4>
+    <p>Free. Instant. Worth it.</p>
     <input type="text" class="email-field" placeholder="First name">
     <input type="email" class="email-field" placeholder="Email address">
     <button class="email-submit" onclick="window.open('https://courses-newsletter-56d38d.beehiiv.com/subscribe','_blank')">Get the Free Guide →</button>
@@ -578,7 +582,6 @@ footer { background: #111; }
 <section class="guide" id="guide">
   <div class="guide-header">
     <div>
-      <div class="eyebrow guide-eyebrow r" style="color:var(--grass);">The Turn &mdash; Insider Guide</div>
       <h2 class="h2 r d1" style="color:var(--ink);">PLAN YOUR<br><em style="color:var(--grass);">Next Round.</em></h2>
     </div>
   </div>
@@ -618,7 +621,7 @@ footer { background: #111; }
         </div>
       </div>
       <div class="pctas r d3">
-        <a href="cyntp-partner.html" class="btn-sun-sm">Learn More &rarr;</a>
+        <a href="cyntp-partner.html" class="btn-sun-sm">See Partnership Options &rarr;</a>
       </div>
     </div>
   </div>
@@ -626,8 +629,7 @@ footer { background: #111; }
 
 <!-- SOCIAL / FOLLOW ALONG -->
 <div class="social">
-  <div class="social-eyebrow r">Follow Along</div>
-  <h2 class="r d1">SEE WHERE WE'RE<br><em>Playing Next.</em></h2>
+  <h2 class="r">SEE WHERE WE'RE<br><em>Playing Next.</em></h2>
   <div class="social-grid r d2">
     <div class="sgrid-tile"><a href="https://www.instagram.com/coursesyouneedtoplay" target="_blank"><img src="https://res.cloudinary.com/dak67vton/image/upload/v1776226361/Paynes_19_q5dn2t_frbl0o.jpg" alt="CYNTP golf" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a></div>
     <div class="sgrid-tile"><a href="https://www.instagram.com/coursesyouneedtoplay" target="_blank"><img src="https://res.cloudinary.com/dak67vton/image/upload/v1776226249/Buffalo_Ridge_1_hm78ns_ljyfdf.jpg" alt="Buffalo Ridge" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a></div>
