@@ -338,7 +338,7 @@ nav .active { color: var(--sun) !important; }
     </div>
 
     <div class="trip-card r" onclick="openTrip('dominican-republic')" data-type="beach">
-      <div class="trip-img-wrap bgi5">
+      <div class="trip-img-wrap bgi5" style="background-image:url('https://res.cloudinary.com/dak67vton/image/upload/v1777737412/Screenshot_2026-05-02_at_10.56.18_AM_fxk3lx.png');background-size:cover;background-position:center;">
         <div class="trip-overlay"></div>
         <div class="trip-badge badge-book">Book Now</div>
         <div class="trip-type-pill">International</div>
@@ -759,7 +759,8 @@ const TRIP_IMAGES = {
   'evermore':     ['https://res.cloudinary.com/dak67vton/image/upload/v1777731271/Screenshot_2026-05-02_at_9.13.40_AM_pe6ldo.png'],
   'gamble-sands': ['https://res.cloudinary.com/dak67vton/image/upload/v1777731564/Screenshot_2026-05-02_at_9.19.12_AM_lkc11o.png'],
   'sentryworld':  ['https://res.cloudinary.com/dak67vton/image/upload/v1777731765/Screenshot_2026-05-02_at_9.22.35_AM_s8be9k.png', 'https://res.cloudinary.com/dak67vton/image/upload/v1775978959/sentry_5_rc4wdq.jpg'],
-  'miami':        ['https://res.cloudinary.com/dak67vton/image/upload/v1777732609/Screenshot_2026-05-02_at_9.35.14_AM_rmxrxj.png', 'https://res.cloudinary.com/dak67vton/image/upload/v1777733765/Screenshot_2026-05-02_at_9.55.39_AM_l8fn57.png'],
+  'miami':             ['https://res.cloudinary.com/dak67vton/image/upload/v1777732609/Screenshot_2026-05-02_at_9.35.14_AM_rmxrxj.png', 'https://res.cloudinary.com/dak67vton/image/upload/v1777733765/Screenshot_2026-05-02_at_9.55.39_AM_l8fn57.png'],
+  'dominican-republic': ['https://res.cloudinary.com/dak67vton/image/upload/v1777737412/Screenshot_2026-05-02_at_10.56.18_AM_fxk3lx.png'],
 };
 
 function openTrip(id) {
@@ -837,6 +838,15 @@ document.querySelectorAll('.ftab').forEach(btn => {
     });
   });
 });
+
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const preFilter = params.get('filter');
+  if (preFilter) {
+    const tab = document.querySelector(`.ftab[data-filter="${preFilter}"]`);
+    if (tab) tab.click();
+  }
+})();
 
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
