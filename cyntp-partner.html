@@ -22,11 +22,6 @@ body { background: var(--paper); color: var(--ink); font-family: var(--font-body
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-thumb { background: var(--grass); }
 
-.r { opacity: 1; transform: none; }
-.r.on { opacity: 1; transform: translateY(0); }
-.d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; }
-.d3 { transition-delay: 0.3s; } .d4 { transition-delay: 0.4s; }
-
 /* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
@@ -571,4 +566,14 @@ function submitForm() {
   inputs.forEach(i => { if (!i.value.trim()) valid = false; });
   if (!valid) {
     inputs.forEach(i => {
-      if (!i.value.trim()) i.style.borderColor = 'var(--co
+      if (!i.value.trim()) i.style.borderColor = 'var(--coral)';
+    });
+    return;
+  }
+  inputs.forEach(i => { i.style.borderColor = ''; });
+  document.querySelectorAll('#contactForm .form-group, #contactForm .form-row, #contactForm .form-submit').forEach(el => el.style.display = 'none');
+  document.getElementById('formSuccess').style.display = 'block';
+}
+</script>
+</body>
+</html>
