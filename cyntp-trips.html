@@ -155,7 +155,7 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 /* ── OVERLAY PANEL ── */
 .overlay {
   position: fixed; inset: 0; z-index: 500;
-  display: none; align-items: flex-start; justify-content: flex-end;
+  display: none; align-items: center; justify-content: center; padding: 24px;
 }
 .overlay.open { display: flex; }
 .overlay-backdrop {
@@ -165,17 +165,26 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 .overlay-panel {
   position: relative; z-index: 1;
-  width: min(600px, 100vw); height: 100vh;
-  background: var(--paper); overflow-y: auto;
-  animation: slideIn 0.4s cubic-bezier(0.16,1,0.3,1);
+  width: min(680px, 100%); max-height: 88vh;
+  background: var(--paper); overflow: hidden; border-radius: 16px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+  animation: popIn 0.35s cubic-bezier(0.16,1,0.3,1);
   display: flex; flex-direction: column;
 }
-@keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
-.panel-hero { height: 280px; flex-shrink: 0; position: relative; overflow: hidden; }
+@keyframes popIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+.panel-hero { height: 360px; flex-shrink: 0; position: relative; overflow: hidden; }
 .panel-hero-color { width: 100%; height: 100%; }
+.panel-hero-img { width: 100%; height: 100%; background-size: cover; background-position: center; }
+.panel-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.4); color: #fff; border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 18px; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+.panel-arrow:hover { background: rgba(0,0,0,0.65); }
+.panel-arrow-prev { left: 14px; }
+.panel-arrow-next { right: 14px; }
+.panel-dots { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); display: flex; gap: 4px; z-index: 10; }
+.panel-dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.4); transition: background 0.2s; }
+.panel-dot.active { background: #fff; }
 .panel-hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(6,10,8,0.92) 0%, rgba(6,10,8,0.15) 60%, transparent 100%);
+  background: linear-gradient(to top, rgba(6,10,8,0.65) 0%, rgba(6,10,8,0.05) 55%, transparent 100%);
 }
 .panel-close {
   position: absolute; top: 16px; right: 16px;
@@ -188,7 +197,7 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 .panel-hero-body { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 28px; }
 .panel-state { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 6px; }
 .panel-name { font-family: var(--font-head); font-size: 42px; color: #fff; letter-spacing: 2px; line-height: 1; }
-.panel-body { padding: 28px; flex: 1; background: var(--paper); color: var(--ink); }
+.panel-body { padding: 28px; flex: 1; background: var(--paper); color: var(--ink); overflow-y: auto; }
 .panel-top-row {
   display: flex; align-items: flex-start; justify-content: space-between;
   padding-bottom: 20px; border-bottom: 1px solid var(--paper3); margin-bottom: 20px;
@@ -738,14 +747,39 @@ nav .active { color: var(--sun) !important; }
 <script>
 const TRIPS = [{"id": "tucson", "name": "Tucson", "state": "Arizona", "type": "Desert", "price": "$697", "days": "4 Nights", "rounds": 4, "tagline": "Desert golf at The Kennedy Hotel.", "desc": "4 nights and 4 rounds all in at $697 per person. Stay at The Kennedy Hotel and play two SaddleBrooke courses, Arizona National, and The Club at Starr Pass.", "courses": ["SaddleBrooke One Golf Club", "SaddleBrooke TWO Golf Club", "Arizona National Golf Club", "The Club at Starr Pass"], "badge": "Book Now", "badgeColor": "#d4a055", "bgi": "bgi7"}, {"id": "dominican-republic", "name": "Dominican Republic", "state": "Dominican Republic", "type": "International", "price": "$1,749", "days": "3 Nights", "rounds": 4, "tagline": "Teeth of the Dog. Enough said.", "desc": "2 nights at Westin Puntacana Resort with rounds at Corales and La Cana, followed by 1 night at Casa de Campo with Teeth of the Dog and Dye Fore. Based on double occupancy.", "courses": ["Corales Golf Course — Puntacana", "La Cana Golf Course — Puntacana", "Teeth of the Dog — Casa de Campo", "Dye Fore — Casa de Campo"], "badge": "Book Now", "badgeColor": "#d4a055", "bgi": "bgi5"},{"id": "hilton-head", "name": "Hilton Head", "state": "South Carolina", "type": "Beach", "price": "$741", "days": "3–4 Days", "rounds": 4, "tagline": "Lowcountry golf at its finest.", "desc": "Salt marsh views, live oaks, and four of the best courses on the East Coast.", "courses": ["Palmetto Dunes — Jones Course", "Old South Golf Links", "Golden Bear at Indigo Run", "Hilton Head National"], "badge": "Most Popular", "badgeColor": "#2d6a3f", "bgi": "bgi1"}, {"id": "williamsburg", "name": "Williamsburg", "state": "Virginia", "type": "Parkland", "price": "$479", "days": "3–4 Days", "rounds": 4, "tagline": "History, charm, and elite golf.", "desc": "Four legendary courses and the best price-to-quality ratio of any trip we offer.", "courses": ["Golden Horseshoe Gold", "Royal New Kent", "Stonehouse", "Club at Viniterra"], "badge": "Best Value", "badgeColor": "#d4a055", "bgi": "bgi2"}, {"id": "st-george", "name": "St. George", "state": "Utah", "type": "Desert", "price": "$1,148", "days": "3–4 Days", "rounds": 4, "tagline": "Red rock. Black lava. Zero bad holes.", "desc": "The most visually dramatic golf in America. Red rock canyons and ancient lava fields.", "courses": ["Black Desert Resort", "Sky Mountain GC", "Entrada at Snow Canyon", "Red Hills Golf Course"], "badge": "Most Scenic", "badgeColor": "#5b8dd9", "bgi": "bgi3"}, {"id": "orlando", "name": "Orlando", "state": "Florida", "type": "Parkland", "price": "$537", "days": "3–4 Days", "rounds": 4, "tagline": "Florida golf done right.", "desc": "Skip the theme parks. Orlando has some of the best resort golf in the country.", "courses": ["Grand Cypress Links Course", "Grand Cypress Cypress Course", "Shingle Creek", "Forest Lake"], "badge": null, "badgeColor": null, "bgi": "bgi4"}, {"id": "miami", "name": "Miami", "state": "Florida", "type": "Parkland", "price": "$1,629", "days": "3–4 Days", "rounds": 4, "tagline": "PGA Tour golf. South Beach energy.", "desc": "Doral. The Blue Monster. World-class conditions and a city to match.", "courses": ["Trump National Doral Blue Monster", "Trump National Doral Silver Fox", "Miami Lakes Golf Club", "Hammock Beach Ocean Course"], "badge": "Premium", "badgeColor": "#9b6dff", "bgi": "bgi5"}, {"id": "palm-springs", "name": "Palm Springs", "state": "California", "type": "Desert", "price": "$968", "days": "4 Days", "rounds": 4, "tagline": "Desert golf in the Coachella Valley.", "desc": "Mountain backdrops, perfect weather, and a corridor packed with elite desert tracks.", "courses": ["Desert Willow Firecliff", "Classic Club", "Escena Golf Club", "Indian Wells Celebrity"], "badge": null, "badgeColor": null, "bgi": "bgi6"}, {"id": "scottsdale", "name": "Scottsdale", "state": "Arizona", "type": "Desert", "price": "$926", "days": "3–4 Days", "rounds": 4, "tagline": "The greatest golf destination in America.", "desc": "World-class courses, desert sunsets, and buddy trip stories you'll tell forever.", "courses": ["We-Ko-Pa Saguaro", "We-Ko-Pa Cholla", "Grayhawk Raptor", "Talking Stick O'odham"], "badge": "Fan Favorite", "badgeColor": "#e05252", "bgi": "bgi7"}, {"id": "myrtle-beach", "name": "Myrtle Beach", "state": "South Carolina", "type": "Beach", "price": "$679", "days": "3–4 Days", "rounds": 4, "tagline": "The golf capital of the East Coast.", "desc": "More courses per square mile than anywhere in the country. Four elite rounds.", "courses": ["Caledonia Golf & Fish Club", "True Blue Golf Club", "Pawleys Plantation", "King's North"], "badge": null, "badgeColor": null, "bgi": "bgi8"}, {"id": "las-vegas", "name": "Las Vegas", "state": "Nevada", "type": "Desert", "price": "$986", "days": "3–4 Days", "rounds": 4, "tagline": "Golf in the desert. Everything else after dark.", "desc": "World-class desert tracks in the morning. The rest of Vegas is up to you.", "courses": ["Cascata Golf Club", "Shadow Creek", "Wolf Course at Las Vegas Paiute", "Bear's Best Las Vegas"], "badge": null, "badgeColor": null, "bgi": "bgi9"}, {"id": "evermore", "name": "Evermore", "state": "Orlando, Florida", "type": "Resort", "price": "TBD", "days": "2–3 Days", "rounds": 2, "tagline": "Two Jack Nicklaus courses next to Disney.", "desc": "The Cypress Course and Links Course deliver 36 holes of championship golf. The Links Course is Nicklaus's tribute to St. Andrews — double greens, pot bunkers, and all.", "courses": ["The Cypress Course — Jack Nicklaus", "The Links Course — Jack Nicklaus (St. Andrews tribute)"], "badge": "Stay & Play", "badgeColor": "#2d6a3f", "bgi": "bgi7"}, {"id": "sentryworld", "name": "SentryWorld", "state": "Wisconsin", "type": "Resort", "price": "TBD", "days": "2–3 Days", "rounds": 2, "tagline": "The flower hole. Need we say more.", "desc": "Robert Trent Jones Jr.'s masterpiece in Stevens Point — one of the most iconic holes in golf.", "courses": ["SentryWorld Golf Course"], "badge": "Stay & Play", "badgeColor": "#2d6a3f", "bgi": "bgi1"}, {"id": "pursell-farms", "name": "Pursell Farms", "state": "Alabama", "type": "Resort", "price": "TBD", "days": "2–3 Days", "rounds": 2, "tagline": "Hidden gem of the South.", "desc": "A secluded Alabama resort with a stunning parkland course and full lodge experience.", "courses": ["Farmlinks Golf Club"], "badge": "Stay & Play", "badgeColor": "#2d6a3f", "bgi": "bgi2"}, {"id": "gulf-shores", "name": "Gulf Shores", "state": "Alabama", "type": "Beach", "price": "$959", "days": "3 Nights", "rounds": 4, "tagline": "Alabama's best kept golf secret.", "desc": "3 nights in a shared condo and 4 rounds at four of the Gulf Coast's best courses. All in at $959 per person based on 4 people sharing.", "courses": ["Lakewood Golf Club — Azalea Course", "Peninsula Golf & Racquet Club", "Kiva Dunes Golf Course", "Craft Farms Golf Resort — Cypress Bend Course"], "badge": "Book Now", "badgeColor": "#d4a055", "bgi": "bgi1"}, {"id": "hammock-beach", "name": "Hammock Beach", "state": "Florida", "type": "Beach", "price": "$1,300", "days": "3 Nights", "rounds": 4, "tagline": "A Florida resort trip worth every penny.", "desc": "3 nights in a 3-BR villa at Hammock Beach Resort and 4 rounds across both resort courses plus World Golf Village. Based on 4 guys sharing.", "courses": ["Ocean Course — Hammock Beach Resort", "Conservatory Course — Hammock Beach Resort", "Slammer & Squire — World Golf Village", "King & Bear — World Golf Village"], "badge": "Book Now", "badgeColor": "#d4a055", "bgi": "bgi2"}, {"id": "grand-traverse", "name": "Grand Traverse Resort", "state": "Michigan", "type": "Resort", "price": "TBD", "days": "3–4 Days", "rounds": 3, "tagline": "Northern Michigan golf at its finest.", "desc": "Three championship courses including The Bear by Jack Nicklaus — a bucket list Michigan trip.", "courses": ["The Bear — Jack Nicklaus", "Spruce Run", "Wolverine Course"], "badge": "Stay & Play", "badgeColor": "#2d6a3f", "bgi": "bgi3"}, {"id": "gamble-sands", "name": "Gamble Sands", "state": "Washington", "type": "Resort", "price": "TBD", "days": "2–3 Days", "rounds": 2, "tagline": "The best new public course in America.", "desc": "Perched above the Columbia River with sweeping high-desert views. A remote, bucket-list destination that lives up to every bit of the hype.", "courses": ["Gamble Sands", "The Dunes Course"], "badge": "Stay & Play", "badgeColor": "#2d6a3f", "bgi": "bgi6"}, {"id": "big-cedar", "name": "Big Cedar Lodge", "state": "Missouri", "type": "Resort", "price": "TBD", "days": "3–4 Days", "rounds": 3, "tagline": "Bass Pro's golf resort in the Ozarks.", "desc": "Five courses designed by the legends — Nicklaus, Dye, Fazio, and more. One of the most unique golf resort experiences in the country.", "courses": ["Top of the Rock — Jack Nicklaus", "Buffalo Ridge Springs — Tom Fazio", "Mountain Top — Gary Player", "Payne's Valley — Tiger Woods", "Ozarks National — Bill Coore & Ben Crenshaw"], "badge": "Stay & Play", "badgeColor": "#2d6a3f", "bgi": "bgi4"}];
 
+const TRIP_IMAGES = {
+  'scottsdale':   ['https://res.cloudinary.com/dak67vton/image/upload/v1777693417/Screenshot_2026-05-01_at_10.40.37_PM_p2vdx9.png'],
+  'hilton-head':  ['https://res.cloudinary.com/dak67vton/image/upload/v1777699416/Screenshot_2026-05-02_at_12.22.11_AM_cunmv9.png'],
+  'las-vegas':    ['https://res.cloudinary.com/dak67vton/image/upload/v1777699841/Screenshot_2026-05-02_at_12.29.02_AM_suftxo.png'],
+  'myrtle-beach': ['https://res.cloudinary.com/dak67vton/image/upload/v1777700209/Screenshot_2026-05-02_at_12.36.39_AM_bkucgt.png'],
+  'palm-springs': ['https://res.cloudinary.com/dak67vton/image/upload/v1777700314/DJI_20250118120703_0565_D_c43jpz.jpg'],
+  'williamsburg': ['https://res.cloudinary.com/dak67vton/image/upload/v1777700821/Screenshot_2026-05-02_at_12.46.55_AM_fgulzi.png'],
+  'big-cedar':    ['https://res.cloudinary.com/dak67vton/image/upload/v1777730867/Screenshot_2026-05-02_at_9.07.33_AM_ibzv4l.png'],
+  'orlando':      ['https://res.cloudinary.com/dak67vton/image/upload/v1777700738/Screenshot_2026-05-02_at_12.44.01_AM_jkibks.png'],
+  'evermore':     ['https://res.cloudinary.com/dak67vton/image/upload/v1777731271/Screenshot_2026-05-02_at_9.13.40_AM_pe6ldo.png'],
+  'gamble-sands': ['https://res.cloudinary.com/dak67vton/image/upload/v1777731564/Screenshot_2026-05-02_at_9.19.12_AM_lkc11o.png'],
+  'sentryworld':  ['https://res.cloudinary.com/dak67vton/image/upload/v1777731765/Screenshot_2026-05-02_at_9.22.35_AM_s8be9k.png', 'https://res.cloudinary.com/dak67vton/image/upload/v1775978959/sentry_5_rc4wdq.jpg'],
+  'miami':        ['https://res.cloudinary.com/dak67vton/image/upload/v1777732609/Screenshot_2026-05-02_at_9.35.14_AM_rmxrxj.png', 'https://res.cloudinary.com/dak67vton/image/upload/v1777733765/Screenshot_2026-05-02_at_9.55.39_AM_l8fn57.png'],
+};
+
 function openTrip(id) {
   const trip = TRIPS.find(t => t.id === id);
   if (!trip) return;
   const badge = trip.badge ? `<div class="panel-badge" style="background:${trip.badgeColor}">${trip.badge}</div>` : '';
   const courses = trip.courses.map(c => `<li>${c}</li>`).join('');
+  const imgs = TRIP_IMAGES[trip.id] || [];
+  const arrows = imgs.length > 1
+    ? '<button class="panel-arrow panel-arrow-prev" onclick="shiftHeroImage(-1)">&#8592;</button><button class="panel-arrow panel-arrow-next" onclick="shiftHeroImage(1)">&#8594;</button>'
+    : '';
+  const dots = imgs.length > 1
+    ? `<div class="panel-dots">${imgs.map((_, i) => `<div class="panel-dot${i === 0 ? ' active' : ''}"></div>`).join('')}</div>`
+    : '';
+  const heroInner = imgs.length > 0
+    ? `<div class="panel-hero-img" id="panelHeroImg" style="background-image:url('${imgs[0]}')" data-imgs='${JSON.stringify(imgs)}' data-idx="0"></div>${arrows}${dots}`
+    : `<div class="panel-hero-color ${trip.bgi}"></div>`;
   document.getElementById('overlayPanel').innerHTML = `
     <div class="panel-hero">
-      <div class="panel-hero-color ${trip.bgi}"></div>
+      ${heroInner}
       <div class="panel-hero-overlay"></div>
       <button class="panel-close" onclick="closeOverlay()">&times;</button>
       <div class="panel-hero-body">
@@ -779,6 +813,16 @@ function openTrip(id) {
 function closeOverlay() {
   document.getElementById('overlay').classList.remove('open');
   document.body.style.overflow = '';
+}
+
+function shiftHeroImage(dir) {
+  const img = document.getElementById('panelHeroImg');
+  if (!img) return;
+  const imgs = JSON.parse(img.dataset.imgs);
+  const idx = (parseInt(img.dataset.idx) + dir + imgs.length) % imgs.length;
+  img.style.backgroundImage = `url('${imgs[idx]}')`;
+  img.dataset.idx = idx;
+  document.querySelectorAll('.panel-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeOverlay(); });
