@@ -390,9 +390,25 @@ function showPanel(name) {
 }
 
 // ─── Storage (localStorage as stand-in for file system) ─────────────────────
-function loadPosts() {
+async function loadPosts() {
   const stored = localStorage.getItem('cyntp_posts');
-  posts = stored ? JSON.parse(stored) : [];
+  const localPosts = stored ? JSON.parse(stored) : [];
+
+  // Fetch published posts from the actual repo index
+  let indexPosts = [];
+  try {
+    const res = await fetch('/_posts/index.json');
+    if (res.ok) indexPosts = (await res.json()).map(p => ({ ...p, status: 'published' }));
+  } catch (e) { /* offline or local dev — fall back to localStorage only */ }
+
+  // Merge: prefer localStorage version (has full body) if available, else use index entry
+  const localBySlug = Object.fromEntries(localPosts.map(p => [p.slug, p]));
+  const indexSlugs = new Set(indexPosts.map(p => p.slug));
+
+  const published = indexPosts.map(p => localBySlug[p.slug] || p);
+  const draftsOnly = localPosts.filter(p => p.status === 'draft' && !indexSlugs.has(p.slug));
+
+  posts = [...published, ...draftsOnly];
   renderPostsList();
 }
 
@@ -430,9 +446,22 @@ function resetEditor() {
   document.getElementById('saveIndicator').textContent = '';
 }
 
-function editPost(slug) {
-  const post = posts.find(p => p.slug === slug);
+async function editPost(slug) {
+  let post = posts.find(p => p.slug === slug);
   if (!post) return;
+
+  // Posts from _posts/index.json only have summary fields — fetch the full JSON for editing
+  if (post.body === undefined) {
+    try {
+      const res = await fetch(`/_posts/${slug}.json`);
+      if (res.ok) {
+        post = { ...post, ...(await res.json()) };
+        const idx = posts.findIndex(p => p.slug === slug);
+        if (idx >= 0) posts[idx] = post;
+      }
+    } catch (e) { /* proceed with available data */ }
+  }
+
   editingSlug = slug;
   document.getElementById('editorTitle').textContent = 'EDIT POST';
   document.getElementById('postTitle').value = post.title;
