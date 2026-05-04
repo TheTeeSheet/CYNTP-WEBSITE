@@ -37,11 +37,11 @@ button { cursor: pointer; font-family: var(--font-body); }
 /* ── NAV ── */
 
 nav {
-  position: relative; top: 0; z-index: 200;
-  background: rgba(13,13,13,0.97); backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  padding: 28px 52px;
-  display: flex; align-items: center; justify-content: space-between; position: relative;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  padding: 16px 52px; display: flex; align-items: center; justify-content: space-between;
+  background: rgba(13,13,13,0.96); backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
 }
 .nav-left { display: flex; align-items: center; gap: 32px; }
 .nav-logo { font-family: var(--font-head); font-size: 20px; letter-spacing: 5px; color: #fff; display: flex; align-items: center; gap: 10px; }
@@ -72,7 +72,7 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 /* ── PAGE HEADER ── */
 .page-header {
   background: var(--ink);
-  padding: 52px 80px 60px;
+  padding: 116px 80px 60px;
   position: relative; overflow: hidden;
 }
 .page-header::before {
