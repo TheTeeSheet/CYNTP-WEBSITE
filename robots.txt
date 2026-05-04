@@ -13,6 +13,12 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 User-agent: Googlebot
 Allow: /
 

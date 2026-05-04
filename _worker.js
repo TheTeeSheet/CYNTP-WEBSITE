@@ -4,6 +4,16 @@ const CORS = {
   'Access-Control-Allow-Headers': 'Content-Type',
 };
 
+function addSecurityHeaders(response) {
+  const newResponse = new Response(response.body, response);
+  newResponse.headers.set('X-Frame-Options', 'SAMEORIGIN');
+  newResponse.headers.set('X-Content-Type-Options', 'nosniff');
+  newResponse.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  newResponse.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+  newResponse.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+  return newResponse;
+}
+
 function json(body, status = 200) {
   return new Response(JSON.stringify(body), {
     status,
@@ -16,19 +26,19 @@ async function handleSubscribe(request, env) {
     return new Response(null, { status: 204, headers: CORS });
   }
   if (request.method !== 'POST') {
-    return json({ error: 'Method not allowed.' }, 405);
+    return addSecurityHeaders(json({ error: 'Method not allowed.' }, 405));
   }
 
   let body;
   try {
     body = await request.json();
   } catch {
-    return json({ error: 'Invalid request body.' }, 400);
+    return addSecurityHeaders(json({ error: 'Invalid request body.' }, 400));
   }
 
   const email = (body.email || '').trim().toLowerCase();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return json({ error: 'Invalid email address.' }, 400);
+    return addSecurityHeaders(json({ error: 'Invalid email address.' }, 400));
   }
 
   /* ── Beehiiv ─────────────────────────────────────────────────────────── */
@@ -56,7 +66,7 @@ async function handleSubscribe(request, env) {
     } catch (err) {
       console.error('Beehiiv fetch failed', err);
     }
-    return json({ success: true });
+    return addSecurityHeaders(json({ success: true }));
   }
 
   /* ── Fallback: KV + console log ──────────────────────────────────────── */
@@ -70,7 +80,7 @@ async function handleSubscribe(request, env) {
     }
   }
 
-  return json({ success: true });
+  return addSecurityHeaders(json({ success: true }));
 }
 
 export default {
@@ -82,6 +92,6 @@ export default {
     }
 
     /* Pass everything else through to static assets */
-    return env.ASSETS.fetch(request);
+    return addSecurityHeaders(await env.ASSETS.fetch(request));
   },
 };

@@ -12,6 +12,12 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="CYNTP">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://www.coursesyouneedtoplay.com/cyntp-turn.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -241,9 +247,9 @@ footer { background: var(--ink2); }
     <div>
       <div class="footer-col-label">Connect</div>
       <div class="footer-links">
-        <a href="https://www.instagram.com/coursesyouneedtoplay" target="_blank">Instagram</a>
-        <a href="https://www.tiktok.com/@coursesyouneedtoplay" target="_blank">TikTok</a>
-        <a href="https://www.youtube.com/@coursesyouneedtoplay" target="_blank">YouTube</a>
+        <a href="https://www.instagram.com/coursesyouneedtoplay" rel="noopener noreferrer" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@coursesyouneedtoplay" rel="noopener noreferrer" target="_blank">TikTok</a>
+        <a href="https://www.youtube.com/@coursesyouneedtoplay" rel="noopener noreferrer" target="_blank">YouTube</a>
       </div>
     </div>
   </div>
@@ -302,6 +308,43 @@ function renderPost(post) {
   document.querySelector('meta[property="og:image"]').setAttribute('content', post.image || 'https://res.cloudinary.com/dak67vton/image/upload/v1775979282/edit_2_gi62ir.png');
   document.querySelector('meta[property="og:url"]').setAttribute('content', window.location.href);
 
+  // Update canonical URL dynamically
+  const canonicalEl = document.querySelector('link[rel="canonical"]');
+  if (canonicalEl) canonicalEl.href = window.location.href;
+
+  // Update Twitter card tags dynamically
+  const twTitle = document.querySelector('meta[name="twitter:title"]');
+  const twDesc = document.querySelector('meta[name="twitter:description"]');
+  const twImg = document.querySelector('meta[name="twitter:image"]');
+  if (twTitle) twTitle.setAttribute('content', post.title + ' — CYNTP');
+  if (twDesc) twDesc.setAttribute('content', post.excerpt || '');
+  if (twImg) twImg.setAttribute('content', post.image || 'https://res.cloudinary.com/dak67vton/image/upload/v1775979282/edit_2_gi62ir.png');
+
+  // Inject BlogPosting JSON-LD
+  let ldScript = document.getElementById('post-ld-json');
+  if (!ldScript) {
+    ldScript = document.createElement('script');
+    ldScript.id = 'post-ld-json';
+    ldScript.type = 'application/ld+json';
+    document.head.appendChild(ldScript);
+  }
+  ldScript.textContent = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    'headline': post.title,
+    'description': post.excerpt || '',
+    'image': post.image || 'https://res.cloudinary.com/dak67vton/image/upload/v1775979282/edit_2_gi62ir.png',
+    'datePublished': post.date || '',
+    'author': {'@type': 'Person', 'name': post.author || 'CYNTP'},
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'Courses You Need To Play',
+      'logo': {'@type': 'ImageObject', 'url': 'https://res.cloudinary.com/dak67vton/image/upload/v1775979282/edit_2_gi62ir.png'}
+    },
+    'url': window.location.href,
+    'mainEntityOfPage': {'@type': 'WebPage', '@id': window.location.href}
+  });
+
   const formatCat = c => c ? c.replace(/-/g, ' ') : 'Read';
 
   document.getElementById('postHero').innerHTML = `
@@ -339,7 +382,7 @@ function renderPost(post) {
     const labels = { ig: 'Instagram', tt: 'TikTok', yt: 'YouTube' };
     const icon = icons[p] || '📸';
     const label = labels[p] || 'Instagram';
-    return `<a href="${href}" target="_blank" class="social-callout">
+    return `<a href="${href}" rel="noopener noreferrer" target="_blank" class="social-callout">
       <div class="social-callout-icon ${p}">${icon}</div>
       <div class="social-callout-body">
         <div class="social-callout-label">${label}</div>
@@ -363,7 +406,7 @@ function renderPost(post) {
         <span class="affiliate-box-label">${label}:</span>
         <span class="affiliate-box-title">${bookTitle}</span>
       </div>
-      <a href="${bookUrl}" target="_blank" class="affiliate-box-btn">${bookCta}</a>
+      <a href="${bookUrl}" rel="noopener noreferrer" target="_blank" class="affiliate-box-btn">${bookCta}</a>
     </div>`;
   });
 
@@ -382,8 +425,8 @@ function renderPost(post) {
       </div>
       <div class="post-share">
         <span class="post-share-label">Share</span>
-        <a class="share-btn" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(window.location.href)}" target="_blank">Twitter / X</a>
-        <a class="share-btn" href="https://www.instagram.com/coursesyouneedtoplay" target="_blank">Instagram</a>
+        <a class="share-btn" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(window.location.href)}" rel="noopener noreferrer" target="_blank">Twitter / X</a>
+        <a class="share-btn" href="https://www.instagram.com/coursesyouneedtoplay" rel="noopener noreferrer" target="_blank">Instagram</a>
         <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href).then(()=>this.textContent='Copied!')">Copy Link</button>
       </div>
       ${window.buildPostCTA ? window.buildPostCTA() : ''}
