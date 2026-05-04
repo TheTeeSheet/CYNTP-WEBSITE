@@ -21,6 +21,8 @@
   top: 50%; left: 50%;
   transform: translate(-50%, calc(-50% + 20px));
   width: min(520px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
   background: #0d0d0d;
   border: 1px solid rgba(212,160,85,0.35);
   border-radius: 12px;
@@ -106,22 +108,54 @@
   display: none;
 }
 
-/* Success state */
+/* ─── Success state ───────────────────────────────────────────────────────── */
 .cem-success {
   display: flex; flex-direction: column;
-  align-items: center; text-align: center;
-  padding: 12px 0 4px;
+  padding: 8px 0 4px;
 }
-.cem-success-icon {
-  width: 54px; height: 54px;
+
+.cem-success-check {
+  width: 44px; height: 44px;
   border: 2px solid #d4a055;
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 22px; color: #d4a055;
-  margin: 0 auto 20px;
+  font-size: 18px; color: #d4a055;
+  margin: 0 0 20px;
+  flex-shrink: 0;
 }
-.cem-success .cem-headline { margin-bottom: 8px; }
-.cem-success .cem-sub { margin: 0; }
+
+.cem-success .cem-headline { margin-bottom: 10px; }
+.cem-success .cem-sub { margin-bottom: 20px; }
+
+.cem-success-links {
+  display: flex; flex-direction: column; gap: 10px;
+  margin-bottom: 24px;
+}
+
+.cem-success-link {
+  display: block;
+  padding: 13px 18px;
+  border: 1px solid rgba(212,160,85,0.45);
+  border-radius: 6px;
+  color: #d4a055;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.cem-success-link:hover {
+  background: #d4a055;
+  color: #0d0d0d;
+  border-color: #d4a055;
+}
+
+.cem-success-signoff {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px; font-style: italic;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.6; margin: 0;
+}
 
 /* ─── Nav Join Button ─────────────────────────────────────────────────────── */
 .nav-join-btn {
@@ -161,9 +195,17 @@
 .post-email-cta .cem-btn { width: auto; padding: 14px 22px; }
 .post-email-cta .cem-legal { text-align: left; }
 
+/* Post CTA success: horizontal links on wider screens */
+.post-cta-success .cem-success-links {
+  flex-direction: row; flex-wrap: wrap; gap: 10px;
+}
+.post-cta-success .cem-success-link { flex: 1; min-width: 180px; text-align: center; }
+
 @media (max-width: 600px) {
   .cem-box { padding: 36px 22px 30px; }
   .post-email-cta { padding: 28px 22px 24px; }
   .post-email-cta .cem-form { flex-direction: column; }
   .post-email-cta .cem-btn { width: 100%; }
+  .post-cta-success .cem-success-links { flex-direction: column; }
+  .post-cta-success .cem-success-link { min-width: unset; }
 }

@@ -1,11 +1,10 @@
 /* ─── CYNTP Email Capture ────────────────────────────────────────────────── */
 
 (function () {
-  const COOKIE = 'cyntp_modal';
+  const COOKIE     = 'cyntp_modal';
   const COOKIE_DAYS = 7;
   const FALLBACK_MS = 25000;
-  const SUCCESS_CLOSE_MS = 3000;
-  const WORKER_URL = '/subscribe';
+  const WORKER_URL  = '/subscribe';
 
   /* ── Cookie helpers ────────────────────────────────────────────────────── */
   function setCookie(name, value, days) {
@@ -14,6 +13,20 @@
   }
   function getCookie(name) {
     return document.cookie.split(';').some(c => c.trim().startsWith(name + '='));
+  }
+
+  /* ── Shared success inner HTML ─────────────────────────────────────────── */
+  function successHTML() {
+    return `
+      <div class="cem-success-check">&#10003;</div>
+      <h2 class="cem-headline">You're in.</h2>
+      <p class="cem-sub">Every Friday we send curated golf trips, course reviews, and travel intel to your inbox. While you wait for the first one, here are three places to start:</p>
+      <div class="cem-success-links">
+        <a href="/cyntp-trips.html" class="cem-success-link">Browse Stay &amp; Play Trips &rarr;</a>
+        <a href="/cyntp-turn.html" class="cem-success-link">Read The Turn &rarr;</a>
+        <a href="https://instagram.com/coursesyouneedtoplay" class="cem-success-link" target="_blank" rel="noopener">Follow on Instagram &rarr;</a>
+      </div>
+      <p class="cem-success-signoff">See you Friday,<br>— Cameron, Noah &amp; Beau</p>`;
   }
 
   /* ── Modal HTML ────────────────────────────────────────────────────────── */
@@ -33,11 +46,7 @@
         <p class="cem-legal">Unsubscribe anytime. We'll never share your email.</p>
       </form>
     </div>
-    <div id="cemSuccess" class="cem-success" style="display:none">
-      <div class="cem-success-icon">&#10003;</div>
-      <h2 class="cem-headline">You're in.</h2>
-      <p class="cem-sub">See you Friday.</p>
-    </div>
+    <div id="cemSuccess" class="cem-success" style="display:none"></div>
   </div>
 </div>`;
 
@@ -52,7 +61,7 @@
   const errorMsg  = document.getElementById('cemError');
   const submitBtn = document.getElementById('cemSubmit');
   const content   = document.getElementById('cemContent');
-  const success   = document.getElementById('cemSuccess');
+  const successEl = document.getElementById('cemSuccess');
 
   /* ── Open / close ──────────────────────────────────────────────────────── */
   function openModal() {
@@ -120,10 +129,10 @@
       /* silently succeed for network errors — don't block the user */
     }
 
-    /* Show success */
+    /* Show success — user closes manually */
     content.style.display = 'none';
-    success.style.display = 'flex';
-    setTimeout(closeModal, SUCCESS_CLOSE_MS);
+    successEl.innerHTML = successHTML();
+    successEl.style.display = 'flex';
   }
 
   form.addEventListener('submit', function (e) {
@@ -141,7 +150,8 @@
   modal.addEventListener('transitionend', function () {
     if (!modal.classList.contains('cem-visible')) {
       content.style.display = '';
-      success.style.display = 'none';
+      successEl.style.display = 'none';
+      successEl.innerHTML = '';
       form.reset();
       submitBtn.disabled = false;
       submitBtn.textContent = 'Join the Community';
@@ -155,7 +165,7 @@
   /* ── Post CTA builder (used by blog-post.html) ─────────────────────────── */
   window.buildPostCTA = function () {
     return `
-<div class="post-email-cta">
+<div class="post-email-cta" id="postEmailCta">
   <p class="cem-eyebrow">CYNTP Community</p>
   <h3 class="cem-headline">Liked this? You'll love what we send on Fridays.</h3>
   <p class="cem-sub">Curated golf trips and course reviews from CYNTP. No spam, just the good stuff.</p>
@@ -171,7 +181,6 @@
     const postForm   = document.getElementById('postCtaForm');
     const postEmail  = document.getElementById('postCtaEmail');
     const postSubmit = document.getElementById('postCtaSubmit');
-    const postLegal  = document.getElementById('postCtaLegal');
     if (!postForm) return;
 
     postForm.addEventListener('submit', async function (e) {
@@ -192,13 +201,11 @@
         });
       } catch (err) { /* silent */ }
 
-      postForm.innerHTML = '';
-      if (postLegal) postLegal.style.display = 'none';
-      const confirm = document.createElement('p');
-      confirm.className = 'cem-sub';
-      confirm.style.margin = '0';
-      confirm.textContent = "You're in. See you Friday.";
-      postForm.parentNode.insertBefore(confirm, postForm);
+      /* Replace entire CTA block with success content */
+      const cta = document.getElementById('postEmailCta');
+      if (cta) {
+        cta.innerHTML = `<div class="cem-success post-cta-success">${successHTML()}</div>`;
+      }
     });
   };
 })();
