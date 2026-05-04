@@ -20,13 +20,13 @@
     return `
       <div class="cem-success-check">&#10003;</div>
       <h2 class="cem-headline">You're in.</h2>
-      <p class="cem-sub">Every Friday we send curated golf trips, course reviews, and travel intel to your inbox. While you wait for the first one, here are three places to start:</p>
+      <p class="cem-sub">Every Thursday we send curated golf trips, course reviews, and travel intel to your inbox. While you wait for the first one, here are three places to start:</p>
       <div class="cem-success-links">
         <a href="/cyntp-trips.html" class="cem-success-link">Browse Stay &amp; Play Trips &rarr;</a>
         <a href="/cyntp-turn.html" class="cem-success-link">Read The Turn &rarr;</a>
         <a href="https://instagram.com/coursesyouneedtoplay" class="cem-success-link" target="_blank" rel="noopener">Follow on Instagram &rarr;</a>
       </div>
-      <p class="cem-success-signoff">See you Friday,<br>— Cameron, Noah &amp; Beau</p>`;
+      <p class="cem-success-signoff">See you Thursday,<br>— Cameron, Noah &amp; Beau</p>`;
   }
 
   /* ── Modal HTML ────────────────────────────────────────────────────────── */
@@ -38,7 +38,7 @@
     <div id="cemContent">
       <p class="cem-eyebrow">CYNTP Community</p>
       <h2 class="cem-headline" id="cemHeadline">Don't play another round you'll forget.</h2>
-      <p class="cem-sub">Curated golf trips, course reviews, and travel intel — straight to your inbox every Friday. Free, no fluff.</p>
+      <p class="cem-sub">Curated golf trips, course reviews, and travel intel — straight to your inbox every Thursday. Free, no fluff.</p>
       <form class="cem-form" id="cemForm" novalidate>
         <input class="cem-input" id="cemEmail" type="email" placeholder="Your email address" autocomplete="email" required>
         <p class="cem-error" id="cemError">Please enter a valid email address.</p>
@@ -167,7 +167,7 @@
     return `
 <div class="post-email-cta" id="postEmailCta">
   <p class="cem-eyebrow">CYNTP Community</p>
-  <h3 class="cem-headline">Liked this? You'll love what we send on Fridays.</h3>
+  <h3 class="cem-headline">Liked this? You'll love what we send on Thursdays.</h3>
   <p class="cem-sub">Curated golf trips and course reviews from CYNTP. No spam, just the good stuff.</p>
   <form class="cem-form" id="postCtaForm" novalidate>
     <input class="cem-input" id="postCtaEmail" type="email" placeholder="Your email address" autocomplete="email" required>
