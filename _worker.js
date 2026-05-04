@@ -11,11 +11,14 @@ function json(body, status = 200) {
   });
 }
 
-export async function onRequestOptions() {
-  return new Response(null, { status: 204, headers: CORS });
-}
+async function handleSubscribe(request, env) {
+  if (request.method === 'OPTIONS') {
+    return new Response(null, { status: 204, headers: CORS });
+  }
+  if (request.method !== 'POST') {
+    return json({ error: 'Method not allowed.' }, 405);
+  }
 
-export async function onRequestPost({ request, env }) {
   let body;
   try {
     body = await request.json();
@@ -69,3 +72,16 @@ export async function onRequestPost({ request, env }) {
 
   return json({ success: true });
 }
+
+export default {
+  async fetch(request, env, ctx) {
+    const url = new URL(request.url);
+
+    if (url.pathname === '/subscribe') {
+      return handleSubscribe(request, env);
+    }
+
+    /* Pass everything else through to static assets */
+    return env.ASSETS.fetch(request);
+  },
+};
