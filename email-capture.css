@@ -1,0 +1,169 @@
+/* ─── CYNTP Email Capture — Modal, Nav Button, Post CTA ─────────────────── */
+
+/* Modal wrapper */
+#ceModal { display: none; }
+#ceModal.cem-visible { display: block; }
+
+.cem-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.72);
+  backdrop-filter: blur(4px);
+  z-index: 9998;
+  opacity: 0; transition: opacity 0.3s;
+  pointer-events: none;
+}
+#ceModal.cem-visible .cem-backdrop {
+  opacity: 1; pointer-events: auto;
+}
+
+.cem-box {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, calc(-50% + 20px));
+  width: min(520px, calc(100vw - 32px));
+  background: #0d0d0d;
+  border: 1px solid rgba(212,160,85,0.35);
+  border-radius: 12px;
+  padding: 48px 44px 40px;
+  z-index: 9999;
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), opacity 0.35s;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.7);
+}
+#ceModal.cem-visible .cem-box {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.cem-close {
+  position: absolute; top: 14px; right: 16px;
+  background: none; border: none;
+  color: rgba(255,255,255,0.35);
+  font-size: 26px; line-height: 1;
+  cursor: pointer; padding: 4px;
+  transition: color 0.2s;
+}
+.cem-close:hover { color: #fff; }
+
+.cem-eyebrow {
+  font-family: 'Anton', sans-serif;
+  font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+  color: #d4a055; margin-bottom: 14px;
+}
+
+.cem-headline {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(24px, 4vw, 32px);
+  letter-spacing: 1px; line-height: 1.08;
+  color: #fff; margin: 0 0 14px;
+  text-transform: uppercase;
+}
+
+.cem-sub {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px; line-height: 1.65;
+  color: rgba(255,255,255,0.5);
+  margin: 0 0 28px;
+}
+
+.cem-form {
+  display: flex; flex-direction: column; gap: 12px;
+}
+
+.cem-input {
+  width: 100%; padding: 14px 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px; outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.cem-input::placeholder { color: rgba(255,255,255,0.3); }
+.cem-input:focus { border-color: #d4a055; }
+
+.cem-btn {
+  width: 100%; padding: 15px;
+  background: #d4a055; color: #0d0d0d;
+  border: none; border-radius: 6px;
+  font-family: 'Anton', sans-serif;
+  font-size: 13px; letter-spacing: 2.5px; text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.cem-btn:hover:not(:disabled) { background: #b8843a; transform: translateY(-1px); }
+.cem-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.cem-legal {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px; color: rgba(255,255,255,0.22);
+  margin: 10px 0 0; text-align: center;
+}
+.cem-error {
+  color: #e85d3a !important;
+  display: none;
+}
+
+/* Success state */
+.cem-success {
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center;
+  padding: 12px 0 4px;
+}
+.cem-success-icon {
+  width: 54px; height: 54px;
+  border: 2px solid #d4a055;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; color: #d4a055;
+  margin: 0 auto 20px;
+}
+.cem-success .cem-headline { margin-bottom: 8px; }
+.cem-success .cem-sub { margin: 0; }
+
+/* ─── Nav Join Button ─────────────────────────────────────────────────────── */
+.nav-join-btn {
+  padding: 8px 16px;
+  background: #d4a055; color: #0d0d0d;
+  border: none; border-radius: 6px;
+  font-family: 'Anton', sans-serif;
+  font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+  cursor: pointer; white-space: nowrap;
+  transition: background 0.2s, transform 0.15s;
+}
+.nav-join-btn:hover { background: #b8843a; transform: translateY(-1px); }
+
+.mobile-join-btn {
+  display: block;
+  margin-top: 12px; padding: 16px;
+  background: #d4a055; color: #0d0d0d;
+  border: none; border-radius: 6px;
+  font-family: 'Anton', sans-serif;
+  font-size: 14px; letter-spacing: 2.5px; text-transform: uppercase;
+  cursor: pointer; width: 100%;
+  transition: background 0.2s;
+}
+.mobile-join-btn:hover { background: #b8843a; }
+
+/* ─── Post Email CTA ──────────────────────────────────────────────────────── */
+.post-email-cta {
+  margin: 48px 0 0;
+  background: #0d0d0d;
+  border: 1px solid rgba(212,160,85,0.28);
+  border-radius: 10px;
+  padding: 36px 40px 32px;
+}
+.post-email-cta .cem-headline { font-size: clamp(20px, 3vw, 26px); }
+.post-email-cta .cem-form { flex-direction: row; gap: 10px; }
+.post-email-cta .cem-input { flex: 1; }
+.post-email-cta .cem-btn { width: auto; padding: 14px 22px; }
+.post-email-cta .cem-legal { text-align: left; }
+
+@media (max-width: 600px) {
+  .cem-box { padding: 36px 22px 30px; }
+  .post-email-cta { padding: 28px 22px 24px; }
+  .post-email-cta .cem-form { flex-direction: column; }
+  .post-email-cta .cem-btn { width: 100%; }
+}

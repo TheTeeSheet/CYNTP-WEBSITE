@@ -146,6 +146,7 @@ footer { background: var(--ink2); }
 <meta property="og:image" content="https://res.cloudinary.com/dak67vton/image/upload/v1775979282/edit_2_gi62ir.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@coursesyouneedtoplay">
+  <link rel="stylesheet" href="/email-capture.css">
 </head>
 <body>
 
@@ -160,6 +161,7 @@ footer { background: var(--ink2); }
     <a href="cyntp-partner.html">Partner</a>
   </div>
   <div class="nav-ctas">
+    <button class="nav-join-btn" onclick="openEmailModal()">Join the Community</button>
     <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -173,6 +175,7 @@ footer { background: var(--ink2); }
   <a href="blog.html">The Turn</a>
   <a href="cyntp-about.html">About</a>
   <a href="cyntp-partner.html">Partner</a>
+  <button class="mobile-join-btn" onclick="openEmailModal()">Join the Community</button>
 </div>
 
 <!-- HERO -->
@@ -372,5 +375,6 @@ document.querySelectorAll('.r').forEach(el => obs.observe(el));
 
 loadPosts();
 </script>
+<script src="/email-capture.js"></script>
 </body>
 </html>

@@ -175,6 +175,7 @@ footer { background: var(--ink2); }
 }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+  <link rel="stylesheet" href="/email-capture.css">
 </head>
 <body>
 
@@ -189,6 +190,7 @@ footer { background: var(--ink2); }
     <a href="cyntp-partner.html">Partner</a>
   </div>
   <div class="nav-ctas">
+    <button class="nav-join-btn" onclick="openEmailModal()">Join the Community</button>
     <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -202,6 +204,7 @@ footer { background: var(--ink2); }
   <a href="cyntp-turn.html">The Turn</a>
   <a href="cyntp-about.html">About</a>
   <a href="cyntp-partner.html">Partner</a>
+  <button class="mobile-join-btn" onclick="openEmailModal()">Join the Community</button>
 </div>
 
 <div id="postHero"></div>
@@ -382,7 +385,9 @@ function renderPost(post) {
         <a class="share-btn" href="https://www.instagram.com/coursesyouneedtoplay" target="_blank">Instagram</a>
         <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href).then(()=>this.textContent='Copied!')">Copy Link</button>
       </div>
+      ${window.buildPostCTA ? window.buildPostCTA() : ''}
     </div>`;
+  if (window.wirePostCTA) window.wirePostCTA();
 }
 
 function injectMidAd(html, adCode) {
@@ -437,5 +442,6 @@ document.getElementById('navHamburger').addEventListener('click', () => {
 
 loadPost();
 </script>
+<script src="/email-capture.js"></script>
 </body>
 </html>
