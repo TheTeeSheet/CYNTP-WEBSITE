@@ -142,12 +142,14 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 .trip-cta {
   margin-top: 8px;
   display: inline-flex; align-items: center; justify-content: center;
-  background: var(--grass); color: #fff;
+  background: transparent; color: var(--sun);
+  border: 1.5px solid var(--sun);
   font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600;
   padding: 13px 24px; border-radius: 8px;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  text-decoration: none;
 }
-.trip-card:hover .trip-cta { background: var(--grass2); }
+.trip-card:hover .trip-cta { background: var(--sun); color: var(--ink); border-color: var(--sun); }
 
 /* ── REVEAL ── */
 .r { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -354,8 +356,7 @@ nav .active { color: var(--sun) !important; }
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Missouri</span>
-          <span class="trip-price">Custom Pricing<span class="trip-pp"></span></span>
+          <span class="trip-state">Missouri</span></span>
         </div>
         <h2 class="trip-name">Big Cedar Lodge</h2>
         <p class="trip-tagline">Bass Pro's golf resort in the Ozarks.</p>
@@ -364,20 +365,18 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">5 Courses</div>
           <div class="trip-pill">Full Resort</div>
         </div>
-        <a href="#" class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">Read The Guide &rarr;</a>
       </div>
     </div>
 
     <div class="trip-card r" onclick="openTrip('dominican-republic')" data-type="beach">
       <div class="trip-img-wrap bgi5" style="background-image:url('https://res.cloudinary.com/dak67vton/image/upload/v1777737412/Screenshot_2026-05-02_at_10.56.18_AM_fxk3lx.png');background-size:cover;background-position:center;">
         <div class="trip-overlay"></div>
-        <div class="trip-badge badge-book">Book Now</div>
         <div class="trip-type-pill">International</div>
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Dominican Republic</span>
-          <span class="trip-price">From $1,749<span class="trip-pp">/person</span></span>
+          <span class="trip-state">Dominican Republic</span></span>
         </div>
         <h2 class="trip-name">Dominican Republic</h2>
         <p class="trip-tagline">Teeth of the Dog. Enough said.</p>
@@ -386,7 +385,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3 Nights</div>
         </div>
-        <a href="#" class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">Read The Guide &rarr;</a>
       </div>
     </div>
 
@@ -398,8 +397,7 @@ nav .active { color: var(--sun) !important; }
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Florida</span>
-          <span class="trip-price">Custom Pricing<span class="trip-pp"></span></span>
+          <span class="trip-state">Florida</span></span>
         </div>
         <h2 class="trip-name">Evermore</h2>
         <p class="trip-tagline">Two Jack Nicklaus courses next to Disney.</p>
@@ -408,7 +406,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">2 Courses</div>
           <div class="trip-pill">36 Holes</div>
         </div>
-        <a href="#" class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">Read The Guide &rarr;</a>
       </div>
     </div>
 
@@ -420,8 +418,7 @@ nav .active { color: var(--sun) !important; }
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Washington</span>
-          <span class="trip-price">Custom Pricing<span class="trip-pp"></span></span>
+          <span class="trip-state">Washington</span></span>
         </div>
         <h2 class="trip-name">Gamble Sands</h2>
         <p class="trip-tagline">The best new public course in America.</p>
@@ -430,20 +427,18 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">On-Site Lodge</div>
           <div class="trip-pill">36 Holes</div>
         </div>
-        <a href="#" class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">Read The Guide &rarr;</a>
       </div>
     </div>
 
     <div class="trip-card r" onclick="openTrip('gulf-shores')" data-type="beach">
       <div class="trip-img-wrap bgi1" style="background-image:url('https://res.cloudinary.com/dak67vton/image/upload/v1777738442/Screenshot_2026-05-02_at_11.13.51_AM_ihmb3i.png');background-size:cover;background-position:center;">
         <div class="trip-overlay"></div>
-        <div class="trip-badge badge-book">Book Now</div>
         <div class="trip-type-pill">Beach</div>
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Alabama</span>
-          <span class="trip-price">From $959<span class="trip-pp">/person</span></span>
+          <span class="trip-state">Alabama</span></span>
         </div>
         <h2 class="trip-name">Gulf Shores</h2>
         <p class="trip-tagline">Alabama's best kept golf secret.</p>
@@ -452,7 +447,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3 Nights</div>
         </div>
-        <a href="#" class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">Read The Guide &rarr;</a>
       </div>
     </div>
 
@@ -464,8 +459,7 @@ nav .active { color: var(--sun) !important; }
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Michigan</span>
-          <span class="trip-price">Custom Pricing<span class="trip-pp"></span></span>
+          <span class="trip-state">Michigan</span></span>
         </div>
         <h2 class="trip-name">Grand Traverse Resort</h2>
         <p class="trip-tagline">Northern Michigan golf at its finest.</p>
@@ -474,20 +468,18 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">3 Courses</div>
           <div class="trip-pill">Full Resort</div>
         </div>
-        <a href="#" class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">Read The Guide &rarr;</a>
       </div>
     </div>
 
     <div class="trip-card r" onclick="openTrip('hammock-beach')" data-type="beach">
       <div class="trip-img-wrap bgi2" style="background-image:url('https://res.cloudinary.com/dak67vton/image/upload/v1777739562/Screenshot_2026-05-02_at_11.19.05_AM_noc4lg.png');background-size:cover;background-position:center;">
         <div class="trip-overlay"></div>
-        <div class="trip-badge badge-book">Book Now</div>
         <div class="trip-type-pill">Beach</div>
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Florida</span>
-          <span class="trip-price">From $1,300<span class="trip-pp">/person</span></span>
+          <span class="trip-state">Florida</span></span>
         </div>
         <h2 class="trip-name">Hammock Beach</h2>
         <p class="trip-tagline">A Florida resort trip worth every penny.</p>
@@ -496,7 +488,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3 Nights</div>
         </div>
-        <a href="#" class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">Read The Guide &rarr;</a>
       </div>
     </div>
 
@@ -508,8 +500,7 @@ nav .active { color: var(--sun) !important; }
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">South Carolina</span>
-          <span class="trip-price">From $699<span class="trip-pp">/person</span></span>
+          <span class="trip-state">South Carolina</span></span>
         </div>
         <h2 class="trip-name">Hilton Head</h2>
         <p class="trip-tagline">Lowcountry golf at its finest.</p>
@@ -518,7 +509,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3–4 Days</div>
         </div>
-        <a href="#" class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">Read The Guide &rarr;</a>
       </div>
     </div>
 
@@ -529,8 +520,7 @@ nav .active { color: var(--sun) !important; }
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Nevada</span>
-          <span class="trip-price">From $986<span class="trip-pp">/person</span></span>
+          <span class="trip-state">Nevada</span></span>
         </div>
         <h2 class="trip-name">Las Vegas</h2>
         <p class="trip-tagline">Golf in the desert. Everything else after dark.</p>
@@ -539,7 +529,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3–4 Days</div>
         </div>
-        <a href="#" class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">Read The Guide &rarr;</a>
       </div>
     </div>
 
@@ -551,8 +541,7 @@ nav .active { color: var(--sun) !important; }
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Florida</span>
-          <span class="trip-price">From $1,629<span class="trip-pp">/person</span></span>
+          <span class="trip-state">Florida</span></span>
         </div>
         <h2 class="trip-name">Miami</h2>
         <p class="trip-tagline">PGA Tour golf. South Beach energy.</p>
@@ -561,7 +550,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3–4 Days</div>
         </div>
-        <a href="#" class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">Read The Guide &rarr;</a>
       </div>
     </div>
 
@@ -572,8 +561,7 @@ nav .active { color: var(--sun) !important; }
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">South Carolina</span>
-          <span class="trip-price">From $679<span class="trip-pp">/person</span></span>
+          <span class="trip-state">South Carolina</span></span>
         </div>
         <h2 class="trip-name">Myrtle Beach</h2>
         <p class="trip-tagline">The golf capital of the East Coast.</p>
@@ -582,7 +570,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3–4 Days</div>
         </div>
-        <a href="#" class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">Read The Guide &rarr;</a>
       </div>
     </div>
 
@@ -593,8 +581,7 @@ nav .active { color: var(--sun) !important; }
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Florida</span>
-          <span class="trip-price">From $669<span class="trip-pp">/person</span></span>
+          <span class="trip-state">Florida</span></span>
         </div>
         <h2 class="trip-name">Orlando</h2>
         <p class="trip-tagline">Florida golf done right.</p>
@@ -603,7 +590,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3–4 Days</div>
         </div>
-        <a href="#" class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">Read The Guide &rarr;</a>
       </div>
     </div>
 
@@ -614,8 +601,7 @@ nav .active { color: var(--sun) !important; }
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">California</span>
-          <span class="trip-price">From $968<span class="trip-pp">/person</span></span>
+          <span class="trip-state">California</span></span>
         </div>
         <h2 class="trip-name">Palm Springs</h2>
         <p class="trip-tagline">Desert golf in the Coachella Valley.</p>
@@ -624,7 +610,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">4 Days</div>
         </div>
-        <a href="#" class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">Read The Guide &rarr;</a>
       </div>
     </div>
 
@@ -636,8 +622,7 @@ nav .active { color: var(--sun) !important; }
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Alabama</span>
-          <span class="trip-price">Custom Pricing<span class="trip-pp"></span></span>
+          <span class="trip-state">Alabama</span></span>
         </div>
         <h2 class="trip-name">Pursell Farms</h2>
         <p class="trip-tagline">Hidden gem of the South.</p>
@@ -646,7 +631,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">On-Site Golf</div>
           <div class="trip-pill">Full Resort</div>
         </div>
-        <a href="#" class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">Read The Guide &rarr;</a>
       </div>
     </div>
 
@@ -658,8 +643,7 @@ nav .active { color: var(--sun) !important; }
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Arizona</span>
-          <span class="trip-price">From $926<span class="trip-pp">/person</span></span>
+          <span class="trip-state">Arizona</span></span>
         </div>
         <h2 class="trip-name">Scottsdale</h2>
         <p class="trip-tagline">One of the greatest golf destinations in America.</p>
@@ -668,7 +652,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3–4 Days</div>
         </div>
-        <a href="#" class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">Read The Guide &rarr;</a>
       </div>
     </div>
 
@@ -680,8 +664,7 @@ nav .active { color: var(--sun) !important; }
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Wisconsin</span>
-          <span class="trip-price">Custom Pricing<span class="trip-pp"></span></span>
+          <span class="trip-state">Wisconsin</span></span>
         </div>
         <h2 class="trip-name">SentryWorld</h2>
         <p class="trip-tagline">The flower hole. Need we say more.</p>
@@ -690,7 +673,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">On-Site Golf</div>
           <div class="trip-pill">Full Resort</div>
         </div>
-        <a href="#" class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">Read The Guide &rarr;</a>
       </div>
     </div>
 
@@ -702,8 +685,7 @@ nav .active { color: var(--sun) !important; }
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Utah</span>
-          <span class="trip-price">From $1,138<span class="trip-pp">/person</span></span>
+          <span class="trip-state">Utah</span></span>
         </div>
         <h2 class="trip-name">St. George</h2>
         <p class="trip-tagline">Red rock. Black lava. Zero bad holes.</p>
@@ -712,20 +694,18 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3–4 Days</div>
         </div>
-        <a href="#" class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">Read The Guide &rarr;</a>
       </div>
     </div>
 
     <div class="trip-card r" onclick="openTrip('tucson')" data-type="desert">
       <div class="trip-img-wrap bgi7" style="background-image:url('https://res.cloudinary.com/dak67vton/image/upload/v1777739477/Screenshot_2026-05-02_at_11.31.06_AM_mmtpto.png');background-size:cover;background-position:center;">
         <div class="trip-overlay"></div>
-        <div class="trip-badge badge-book">Book Now</div>
         <div class="trip-type-pill">Desert</div>
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Arizona</span>
-          <span class="trip-price">From $697<span class="trip-pp">/person</span></span>
+          <span class="trip-state">Arizona</span></span>
         </div>
         <h2 class="trip-name">Tucson</h2>
         <p class="trip-tagline">Desert golf at The Kennedy Hotel.</p>
@@ -734,7 +714,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">4 Nights</div>
         </div>
-        <a href="#" class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">Read The Guide &rarr;</a>
       </div>
     </div>
 
@@ -746,8 +726,7 @@ nav .active { color: var(--sun) !important; }
       </div>
       <div class="trip-body">
         <div class="trip-meta-top">
-          <span class="trip-state">Virginia</span>
-          <span class="trip-price">From $586<span class="trip-pp">/person</span></span>
+          <span class="trip-state">Virginia</span></span>
         </div>
         <h2 class="trip-name">Williamsburg</h2>
         <p class="trip-tagline">History, charm, and elite golf.</p>
@@ -756,7 +735,7 @@ nav .active { color: var(--sun) !important; }
           <div class="trip-pill">4 Rounds</div>
           <div class="trip-pill">3–4 Days</div>
         </div>
-        <a href="#" class="trip-cta">View Trip &rarr;</a>
+        <a href="#" class="trip-cta">Read The Guide &rarr;</a>
       </div>
     </div>
   </div>
