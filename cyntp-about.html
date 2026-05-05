@@ -331,11 +331,25 @@ body { background: var(--ink); color: #fff; font-family: var(--font-body); overf
   .social-stat { margin-left: 0; }
 }
 @media (max-width: 700px) {
-  .about-hero, .mission-section, .team-section { padding: 100px 24px 60px; }
+  .about-hero { padding: 100px 24px 60px; }
+  .about-hero::before { font-size: 100px; }
+  .mission-section, .team-section { padding: 80px 24px 60px; }
   .social-strip { padding: 32px 24px; }
   .about-cta-band { padding: 48px 24px; }
   .about-footer { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
   .cta-btns { flex-direction: column; width: 100%; }
+  /* Footer inline-style overrides on mobile */
+  footer > div:first-child {
+    grid-template-columns: 1fr 1fr !important;
+    padding: 48px 24px 40px !important;
+    gap: 32px !important;
+  }
+  footer > div:last-child {
+    padding: 16px 24px !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    text-align: center !important;
+  }
 }
 
 nav .active { color: var(--sun) !important; }

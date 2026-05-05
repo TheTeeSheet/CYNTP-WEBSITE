@@ -21,8 +21,8 @@
   --muted: rgba(0,0,0,0.4);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { background: var(--ink); color: var(--paper); font-family: var(--font-body); min-height: 100vh; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { background: var(--ink); color: var(--paper); font-family: var(--font-body); min-height: 100vh; overflow-x: hidden; }
 a { text-decoration: none; color: inherit; cursor: pointer; }
 
 /* ── NAV ── */
@@ -278,6 +278,7 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
   .favorites-section { padding-top: 40px; padding-bottom: 40px; }
   .trips-section { padding-top: 40px; padding-bottom: 60px; }
   .page-header { padding-top: 48px; padding-bottom: 48px; }
+  .page-header::before { font-size: 110px; }
   .footer-band { flex-direction: column; align-items: flex-start; gap: 28px; padding-top: 48px; padding-bottom: 48px; }
   .fb-left h3 { font-size: 26px; }
   .fb-cta { width: 100%; text-align: center; display: block; box-sizing: border-box; }
@@ -304,7 +305,7 @@ nav .active { color: var(--sun) !important; }
 .mobile-menu a:last-child { border-bottom: none; }
 .mobile-menu a:hover { color: var(--sun); }
 .mobile-menu.open { display: flex; }
-@media(max-width:960px) { .nav-hamburger { display: flex; } .nav-center-home { display: none !important; } .nav-ctas .cta-sm-ghost { display: none; } }
+@media(max-width:960px) { nav { padding: 14px 20px; } .nav-hamburger { display: flex; } .nav-center-home { display: none !important; } .nav-ctas .cta-sm-ghost { display: none; } }
 </style>
 <meta property="og:title" content="Golf Trips | Scottsdale, Hilton Head, St. George & More — CYNTP">
 <meta property="og:description" content="Curated golf trip packages to Scottsdale, Myrtle Beach, Ireland, and more. Real pricing, hand-picked courses, and zero guesswork.">

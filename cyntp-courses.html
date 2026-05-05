@@ -99,7 +99,7 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
   border-bottom: 1px solid var(--paper3);
   border-top: 1px solid rgba(255,255,255,0.07);
   display: flex; align-items: center;
-  height: 60px; position: sticky; top: 0; z-index: 200;
+  height: 60px; position: sticky; top: 64px; z-index: 150;
   padding: 0;
   box-shadow: none;
 }
@@ -240,8 +240,8 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 .panel-rating-badge-num { font-family: var(--font-head); font-size: 22px; color: var(--sun); letter-spacing: 0.5px; display: block; text-align: center; }
 .panel-rating-badge-label { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--sun); font-weight: 600; margin-top: 3px; display: block; text-align: center; }
 .panel-close {
-  position: absolute; top: 16px; right: 16px;
-  width: 36px; height: 36px; border-radius: 50%;
+  position: absolute; top: 12px; right: 12px;
+  width: 44px; height: 44px; border-radius: 50%;
   background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
   border: none; color: #fff; font-size: 18px; display: flex; align-items: center; justify-content: center;
   transition: background 0.2s;
@@ -354,7 +354,9 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 /* RESPONSIVE */
 @media (max-width: 960px) {
   nav, .filter-bar { padding-left: 20px; padding-right: 20px; }
+  .filter-tabs-wrap { padding-left: 16px; }
   .page-header { padding: 48px 20px 40px; }
+  .page-header::before { font-size: 120px; }
   .course-grid-wrap { padding: 32px 20px 60px; }
   .course-grid { grid-template-columns: 1fr 1fr; }
   .filter-tabs { overflow-x: auto; }
@@ -373,6 +375,12 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
   .ph-stat-n { font-size: 26px; }
   .page-header { padding: 40px 20px 36px; }
   .card-name { font-size: 13px; }
+  /* Fix 12: Filter readability on mobile */
+  .filter-tabs-wrap { padding-left: 16px; }
+  .ftab { font-size: 13px; padding: 0 14px; }
+  .filter-right { padding: 0 12px 0 10px; gap: 8px; }
+  .sort-select { display: none; }
+  .sort-label { display: none; }
 }
 
 
@@ -1701,18 +1709,18 @@ function openCourse(id) {
       ${heroInner}
       <div class="panel-hero-overlay"></div>
       <button class="panel-close" onclick="closeOverlay()">&times;</button>
-      ${course.cyntp_rating != null ? `<div class="panel-rating-badge"><span class="panel-rating-badge-num">${course.cyntp_rating.toFixed(1)}</span><span class="panel-rating-badge-label">CYNTP</span></div>` : ''}
       <div class="panel-hero-body">
         <div class="panel-dest">${course.destLabel}</div>
         <div class="panel-name">${course.name}</div>
       </div>
     </div>
     <div class="panel-body">
-      <div class="panel-price-tag" style="margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--paper3);display:flex;align-items:center;gap:32px;">
+      <div class="panel-price-tag" style="margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--paper3);display:flex;align-items:center;justify-content:space-between;">
         <div>
           <div class="panel-price">${course.price}</div>
           <div class="panel-price-label">Green Fee</div>
         </div>
+        ${course.cyntp_rating != null ? `<div class="panel-rating-badge" style="position:static;box-shadow:none;"><span class="panel-rating-badge-num">${course.cyntp_rating.toFixed(1)}</span><span class="panel-rating-badge-label">CYNTP</span></div>` : ''}
       </div>
 
       <div class="verdict-block">
@@ -1734,6 +1742,19 @@ function closeOverlay() {
   document.body.style.overflow = '';
   currentCourseId = null;
 }
+
+// Swipe-down-to-dismiss on mobile
+(function() {
+  let _startY = 0;
+  const panel = document.getElementById('overlayPanel');
+  panel.addEventListener('touchstart', e => { _startY = e.touches[0].clientY; }, { passive: true });
+  panel.addEventListener('touchend', e => {
+    const dy = e.changedTouches[0].clientY - _startY;
+    const body = panel.querySelector('.panel-body');
+    const atTop = !body || body.scrollTop === 0;
+    if (dy > 70 && atTop) closeOverlay();
+  });
+})();
 
 function shiftCourseImage(dir) {
   const img = document.getElementById('panelHeroImg');

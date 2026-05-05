@@ -16,7 +16,7 @@
   --sun: #d4a055; --sun2: #b8843a; --white: #ffffff; --muted: #6b6560; --coral: #e85d3a;
   --font-head: 'Anton', sans-serif; --font-serif: 'Instrument Serif', serif; --font-body: 'Outfit', sans-serif;
 }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background: var(--ink); overflow-x: hidden; }
 body { background: var(--paper); color: var(--ink); font-family: var(--font-body); overflow-x: hidden; }
 ::selection { background: var(--sun); color: var(--ink); }
 ::-webkit-scrollbar { width: 3px; }
@@ -268,7 +268,7 @@ footer { background: #111; }
 
 @media (max-width: 860px) {
   /* NAV */
-  #nav { padding: 0 24px; }
+  #nav { padding: 14px 20px; }
   .nav-center-home { display: none; }
   .nav-ctas .cta-sm-ghost { display: none; }
 
@@ -308,11 +308,12 @@ footer { background: #111; }
   .partner-split-content { padding: 52px 28px; }
   .pstats { flex-wrap: wrap; }
   .pstat { flex: 1 1 45%; padding: 20px 16px; }
+  .pctas { justify-content: center; }
 
   /* SOCIAL */
   .social { padding: 64px 24px; }
-  .social-grid { grid-template-columns: repeat(3, 1fr); }
-  .social-grid .sgrid-tile:nth-child(n+4) { display: none; }
+  .social-grid { grid-template-columns: repeat(2, 1fr); }
+  .social-grid .sgrid-tile:nth-child(n+5) { display: none; }
   .social-handles { flex-direction: column; align-items: center; }
 
   /* FOOTER */
