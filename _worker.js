@@ -134,9 +134,11 @@ export default {
     }
 
     if (url.pathname.startsWith('/destinations/')) {
-      const rawSlug = url.pathname.slice('/destinations/'.length).replace(/\/$/, '').replace(/\.html$/, '');
-      const slug = rawSlug.replace(/[^a-z0-9-]/g, '');
-      if (slug) return handleDestinationPage(slug, request, env);
+      const rawSlug = url.pathname.slice('/destinations/'.length).replace(/\/$/, '');
+      if (rawSlug && !rawSlug.includes('.')) {
+        const slug = rawSlug.replace(/[^a-z0-9-]/g, '');
+        if (slug) return handleDestinationPage(slug, request, env);
+      }
     }
 
     /* Pass everything else through to static assets */
