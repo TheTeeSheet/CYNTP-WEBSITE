@@ -139,11 +139,9 @@ nav.scrolled {
 .tcard:hover .tcard-bg { transform: scale(1.04); }
 .tcard-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.08) 55%, transparent 100%); }
 .tcard-body { position: absolute; bottom: 0; left: 0; right: 0; padding: 22px 24px; }
-.tcard-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; }
+.tcard-foot { display: flex; align-items: center; margin-top: 10px; }
 .tcard-loc { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.5); font-weight: 600; margin-bottom: 5px; }
 .tcard-name { font-family: var(--font-head); font-size: 26px; letter-spacing: 1px; line-height: 1; }
-.tcard-price { font-size: 13px; color: var(--sun); font-weight: 600; }
-.tcard-price span { color: rgba(255,255,255,0.45); font-weight: 400; font-size: 11px; }
 .tcard-btn { background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 8px 16px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 1px; white-space: nowrap; transition: background 0.2s; }
 .tcard:hover .tcard-btn { background: rgba(255,255,255,0.28); }
 .tcard-featured { position: absolute; top: 18px; left: 18px; background: var(--sun); color: var(--ink); font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; padding: 5px 12px; border-radius: 3px; }
@@ -154,11 +152,11 @@ nav.scrolled {
 .trips-viewall { text-align: center; margin-top: 40px; }
 .btn-viewall { display: inline-flex; align-items: center; gap: 10px; background: var(--ink); color: #fff; padding: 18px 48px; border-radius: 100px; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: all 0.25s; }
 .btn-viewall:hover { background: #2a2a2a; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.2); }
-.tg1 { background-image: url('https://res.cloudinary.com/dak67vton/image/upload/v1777693417/Screenshot_2026-05-01_at_10.40.37_PM_p2vdx9.png'); background-size: cover; background-position: center; }
-.tg2 { background-image: url('https://res.cloudinary.com/dak67vton/image/upload/v1777700209/Screenshot_2026-05-02_at_12.36.39_AM_bkucgt.png'); background-size: cover; background-position: center; }
-.tg3 { background-image: url('https://res.cloudinary.com/dak67vton/image/upload/v1777737412/Screenshot_2026-05-02_at_10.56.18_AM_fxk3lx.png'); background-size: cover; background-position: center; }
-.tg4 { background-image: url('https://res.cloudinary.com/dak67vton/image/upload/v1777700314/DJI_20250118120703_0565_D_c43jpz.jpg'); background-size: cover; background-position: center; }
-.tg5 { background-image: url('https://res.cloudinary.com/dak67vton/image/upload/v1777699841/Screenshot_2026-05-02_at_12.29.02_AM_suftxo.png'); background-size: cover; background-position: center; }
+.tg1 { background-image: url('https://res.cloudinary.com/dak67vton/image/upload/v1777730867/Screenshot_2026-05-02_at_9.07.33_AM_ibzv4l.png'); background-size: cover; background-position: center; }
+.tg2 { background-image: url('https://res.cloudinary.com/dak67vton/image/upload/v1777700314/DJI_20250118120703_0565_D_c43jpz.jpg'); background-size: cover; background-position: center; }
+.tg3 { background-image: url('https://res.cloudinary.com/dak67vton/image/upload/v1777752084/Screenshot_2026-05-02_at_3.01.13_PM_vvq1fj.png'); background-size: cover; background-position: center; }
+.tg4 { background-image: url('https://res.cloudinary.com/dak67vton/image/upload/v1777731564/Screenshot_2026-05-02_at_9.19.12_AM_lkc11o.png'); background-size: cover; background-position: center; }
+.tg5 { background-image: url('https://res.cloudinary.com/dak67vton/image/upload/v1777731765/Screenshot_2026-05-02_at_9.22.35_AM_s8be9k.png'); background-size: cover; background-position: center; }
 
 /* EMAIL / GUIDE CAPTURE */
 .email-band { background: var(--grass); padding: 90px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; overflow: hidden; }
@@ -529,69 +527,64 @@ footer { background: #111; }
     </div>
   </div>
   <div class="trips-bento">
-    <!-- Featured: Scottsdale -->
-    <a href="/destinations/scottsdale" class="tcard tc-featured r">
+    <!-- Big Cedar Lodge: featured -->
+    <a href="/destinations/big-cedar-lodge" class="tcard tc-featured r">
       <div class="tcard-bg tg1"></div>
       <div class="tcard-overlay"></div>
-      <div class="tcard-featured">Featured</div>
+      <div class="tcard-featured">CYNTP Favorite</div>
       <div class="tcard-body">
-        <div class="tcard-loc">Desert &middot; Arizona</div>
-        <div class="tcard-name">Scottsdale</div>
+        <div class="tcard-loc">Ozarks &middot; Missouri</div>
+        <div class="tcard-name">Big Cedar Lodge</div>
         <div class="tcard-foot">
-          <div class="tcard-price">from $926 <span>/ person</span></div>
-          <div class="tcard-btn">View →</div>
-        </div>
-      </div>
-    </a>
-    <!-- Dominican Republic -->
-    <a href="/destinations/dominican-republic" class="tcard r d1">
-      <div class="tcard-bg tg3"></div>
-      <div class="tcard-overlay"></div>
-      <div class="tcard-body">
-        <div class="tcard-loc">International</div>
-        <div class="tcard-name">Dominican Republic</div>
-        <div class="tcard-foot">
-          <div class="tcard-price">from $1,799 <span>/ person</span></div>
-          <div class="tcard-btn">View →</div>
-        </div>
-      </div>
-    </a>
-    <!-- Las Vegas: tall right column -->
-    <a href="/destinations/las-vegas" class="tcard tc-tall r d2">
-      <div class="tcard-bg tg5"></div>
-      <div class="tcard-overlay"></div>
-      <div class="tcard-body">
-        <div class="tcard-loc">Desert &middot; Nevada</div>
-        <div class="tcard-name">Las Vegas</div>
-        <div class="tcard-foot">
-          <div class="tcard-price">from $986 <span>/ person</span></div>
-          <div class="tcard-btn">View →</div>
-        </div>
-      </div>
-    </a>
-    <!-- Myrtle Beach -->
-    <a href="/destinations/myrtle-beach" class="tcard r d1">
-      <div class="tcard-bg tg2"></div>
-      <div class="tcard-overlay"></div>
-      <div class="tcard-body">
-        <div class="tcard-loc">Beach &middot; South Carolina</div>
-        <div class="tcard-name">Myrtle Beach</div>
-        <div class="tcard-foot">
-          <div class="tcard-price">from $679 <span>/ person</span></div>
-          <div class="tcard-btn">View →</div>
+          <div class="tcard-btn">Read The Guide →</div>
         </div>
       </div>
     </a>
     <!-- Palm Springs -->
-    <a href="/destinations/palm-springs" class="tcard r d2">
-      <div class="tcard-bg tg4"></div>
+    <a href="/destinations/palm-springs" class="tcard r d1">
+      <div class="tcard-bg tg2"></div>
       <div class="tcard-overlay"></div>
       <div class="tcard-body">
         <div class="tcard-loc">Desert &middot; California</div>
         <div class="tcard-name">Palm Springs</div>
         <div class="tcard-foot">
-          <div class="tcard-price">from $968 <span>/ person</span></div>
-          <div class="tcard-btn">View →</div>
+          <div class="tcard-btn">Read The Guide →</div>
+        </div>
+      </div>
+    </a>
+    <!-- St. George: tall right column -->
+    <a href="/destinations/st-george" class="tcard tc-tall r d2">
+      <div class="tcard-bg tg3"></div>
+      <div class="tcard-overlay"></div>
+      <div class="tcard-body">
+        <div class="tcard-loc">Desert &middot; Utah</div>
+        <div class="tcard-name">St. George</div>
+        <div class="tcard-foot">
+          <div class="tcard-btn">Read The Guide →</div>
+        </div>
+      </div>
+    </a>
+    <!-- Gamble Sands -->
+    <a href="/destinations/gamble-sands" class="tcard r d1">
+      <div class="tcard-bg tg4"></div>
+      <div class="tcard-overlay"></div>
+      <div class="tcard-body">
+        <div class="tcard-loc">High Desert &middot; Washington</div>
+        <div class="tcard-name">Gamble Sands</div>
+        <div class="tcard-foot">
+          <div class="tcard-btn">Read The Guide →</div>
+        </div>
+      </div>
+    </a>
+    <!-- SentryWorld -->
+    <a href="/destinations/sentryworld" class="tcard r d2">
+      <div class="tcard-bg tg5"></div>
+      <div class="tcard-overlay"></div>
+      <div class="tcard-body">
+        <div class="tcard-loc">Resort &middot; Wisconsin</div>
+        <div class="tcard-name">SentryWorld</div>
+        <div class="tcard-foot">
+          <div class="tcard-btn">Read The Guide →</div>
         </div>
       </div>
     </a>
