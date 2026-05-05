@@ -1,0 +1,276 @@
+[
+  {
+    "slug": "big-cedar-lodge",
+    "trip_id": "big-cedar",
+    "name": "Big Cedar Lodge",
+    "state": "Missouri",
+    "location_tags": ["MISSOURI", "OZARKS", "RESORT"],
+    "tagline": "Bass Pro's Ozark fever dream — and the most ambitious resort experience in American golf right now.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777730867/Screenshot_2026-05-02_at_9.07.33_AM_ibzv4l.png",
+    "meta_description": "Big Cedar Lodge golf trip guide — six courses including Ozarks National, Payne's Valley, and Top of the Rock in the Missouri Ozarks.",
+    "the_take": [
+      "If you'd told us five years ago that the most exciting golf resort in the country would be in southern Missouri, owned by the guy who sells fishing lures, we'd have laughed. We're not laughing now.",
+      "Big Cedar isn't a golf trip — it's a destination. Six courses ranging from a Tom Fazio par-3 stunner to a Coore-Crenshaw masterpiece that quietly earned its place in everyone's top 100. Throw in a Tiger Woods design with a par 3 inside an actual canyon and a brand-new cliffside layout that just opened, and you're looking at a place where you genuinely can't play it all in one trip.",
+      "The commitment to scale is what sets it apart. Helicopter rides between courses. Bass Pro empire money poured into making this thing one of the best resorts in the country. It shouldn't work. It absolutely does."
+    ],
+    "courses": [
+      {
+        "name": "Ozarks National",
+        "designer": "Coore & Crenshaw, 2019",
+        "description": "Our pick for best on property. Walking-only, fast and firm, the kind of design that rewards smart golf instead of bombing it. Worth the trip on its own."
+      },
+      {
+        "name": "Payne's Valley",
+        "designer": "Tiger Woods Design, 2020",
+        "description": "Tiger's first U.S. public-access course. Wide fairways, dramatic features, and the now-famous 19th hole — a par 3 inside a canyon. Built for visiting golfers, not tour pros."
+      },
+      {
+        "name": "Top of the Rock",
+        "designer": "Jack Nicklaus, par-3 course",
+        "description": "Don't skip it just because it's \"only\" a par-3. Views over Table Rock Lake are bucket list. Play it at golden hour."
+      },
+      {
+        "name": "Buffalo Ridge",
+        "designer": "Tom Fazio",
+        "description": "Solid, scenic, and holds up next to the bigger names without trying to compete with them."
+      },
+      {
+        "name": "Mountain Top & Cliffhangers",
+        "designer": "Two par-3 layouts",
+        "description": "Both walking-only and both worth squeezing in. Cliffhangers is the new must-add — perched on a cliff edge, dramatic from the first tee."
+      }
+    ],
+    "where_to_stay": "Stay on property. The Lodges at Big Cedar give you full resort access and save the shuttle time. Cabins for groups, lodge rooms for couples and buddies trips. Skip the off-property rentals unless budget is the priority — you'll miss too much of what makes Big Cedar Big Cedar.",
+    "booking_link": "https://www.big-cedar.com/lodging/",
+    "booking_text": "Book a stay at Big Cedar Lodge →",
+    "setup": [
+      {
+        "label": "3 DAYS",
+        "itinerary": "Ozarks National (walking) → Payne's Valley → Cliffhangers + Buffalo Ridge"
+      },
+      {
+        "label": "4 DAYS",
+        "itinerary": "Same as above, plus Top of the Rock at golden hour and Mountain Top as a fun palate cleanser"
+      },
+      {
+        "label": "5+ DAYS",
+        "itinerary": "Play it all. Take the helicopter ride to Payne's Valley. Yes, the helicopter ride."
+      }
+    ],
+    "know_before": [
+      { "label": "BEST TIME", "value": "May–October. Spring is ideal — pristine courses, mild weather." },
+      { "label": "FLY INTO", "value": "Springfield-Branson (SGF), 45 minutes from the resort." },
+      { "label": "BUDGET", "value": "$750–1,200 per person per night, all-in." },
+      { "label": "PACE", "value": "Don't try 36 holes a day. The walking and the Ozark heat will catch up with you." }
+    ],
+    "what_to_skip": [
+      {
+        "lead": "The \"all six in two days\" attempt.",
+        "detail": "People try. People suffer. Three days minimum, four is right."
+      },
+      {
+        "lead": "The fancy steakhouse on property.",
+        "detail": "Overpriced. The casual restaurants are better and have more atmosphere."
+      }
+    ],
+    "gallery": []
+  },
+  {
+    "slug": "gamble-sands",
+    "trip_id": "gamble-sands",
+    "name": "Gamble Sands",
+    "state": "Washington",
+    "location_tags": ["WASHINGTON", "HIGH DESERT", "RESORT"],
+    "tagline": "The best new public course in America.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777731564/Screenshot_2026-05-02_at_9.19.12_AM_lkc11o.png",
+    "meta_description": "Gamble Sands golf trip guide — the best new public course in America, perched above the Columbia River in central Washington.",
+    "gallery": []
+  },
+  {
+    "slug": "palm-springs",
+    "trip_id": "palm-springs",
+    "name": "Palm Springs",
+    "state": "California",
+    "location_tags": ["CALIFORNIA", "DESERT", "COACHELLA VALLEY"],
+    "tagline": "Desert golf in the Coachella Valley.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777700314/DJI_20250118120703_0565_D_c43jpz.jpg",
+    "meta_description": "Palm Springs golf trip guide — mountain backdrops, perfect weather, and a corridor packed with elite desert tracks.",
+    "gallery": []
+  },
+  {
+    "slug": "sentryworld",
+    "trip_id": "sentryworld",
+    "name": "SentryWorld",
+    "state": "Wisconsin",
+    "location_tags": ["WISCONSIN", "RESORT", "MIDWEST"],
+    "tagline": "The flower hole. Need we say more.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777731765/Screenshot_2026-05-02_at_9.22.35_AM_s8be9k.png",
+    "meta_description": "SentryWorld golf trip guide — Robert Trent Jones Jr.'s masterpiece in Stevens Point, Wisconsin.",
+    "gallery": []
+  },
+  {
+    "slug": "st-george",
+    "trip_id": "st-george",
+    "name": "St. George",
+    "state": "Utah",
+    "location_tags": ["UTAH", "DESERT", "RED ROCK"],
+    "tagline": "Red rock. Black lava. Zero bad holes.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777752084/Screenshot_2026-05-02_at_3.01.13_PM_vvq1fj.png",
+    "meta_description": "St. George Utah golf trip guide — the most visually dramatic golf in America, with red rock canyons and ancient lava fields.",
+    "gallery": []
+  },
+  {
+    "slug": "tucson",
+    "trip_id": "tucson",
+    "name": "Tucson",
+    "state": "Arizona",
+    "location_tags": ["ARIZONA", "DESERT", "4 NIGHTS"],
+    "tagline": "Desert golf at The Kennedy Hotel.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777739477/Screenshot_2026-05-02_at_11.31.06_AM_mmtpto.png",
+    "meta_description": "Tucson golf trip guide — 4 nights and 4 rounds all-in at $697 per person, staying at The Kennedy Hotel.",
+    "gallery": []
+  },
+  {
+    "slug": "dominican-republic",
+    "trip_id": "dominican-republic",
+    "name": "Dominican Republic",
+    "state": "Dominican Republic",
+    "location_tags": ["CARIBBEAN", "INTERNATIONAL", "BEACH"],
+    "tagline": "Teeth of the Dog. Enough said.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777737412/Screenshot_2026-05-02_at_10.56.18_AM_fxk3lx.png",
+    "meta_description": "Dominican Republic golf trip guide — Teeth of the Dog, Dye Fore, Corales, and La Cana in one trip.",
+    "gallery": []
+  },
+  {
+    "slug": "evermore",
+    "trip_id": "evermore",
+    "name": "Evermore",
+    "state": "Florida",
+    "location_tags": ["FLORIDA", "RESORT", "ORLANDO"],
+    "tagline": "Two Jack Nicklaus courses next to Disney.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777731271/Screenshot_2026-05-02_at_9.13.40_AM_pe6ldo.png",
+    "meta_description": "Evermore Orlando golf trip guide — two Jack Nicklaus championship courses including a St. Andrews tribute layout.",
+    "gallery": []
+  },
+  {
+    "slug": "gulf-shores",
+    "trip_id": "gulf-shores",
+    "name": "Gulf Shores",
+    "state": "Alabama",
+    "location_tags": ["ALABAMA", "BEACH", "GULF COAST"],
+    "tagline": "Alabama's best kept golf secret.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777738442/Screenshot_2026-05-02_at_11.13.51_AM_ihmb3i.png",
+    "meta_description": "Gulf Shores Alabama golf trip guide — 3 nights and 4 rounds all-in at $959 per person on the Gulf Coast.",
+    "gallery": []
+  },
+  {
+    "slug": "grand-traverse-resort",
+    "trip_id": "grand-traverse",
+    "name": "Grand Traverse Resort",
+    "state": "Michigan",
+    "location_tags": ["MICHIGAN", "RESORT", "NORTHERN MICHIGAN"],
+    "tagline": "Northern Michigan golf at its finest.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777751948/Screenshot_2026-05-02_at_2.58.29_PM_wffkcp.png",
+    "meta_description": "Grand Traverse Resort golf trip guide — three championship courses including The Bear by Jack Nicklaus.",
+    "gallery": []
+  },
+  {
+    "slug": "hammock-beach",
+    "trip_id": "hammock-beach",
+    "name": "Hammock Beach",
+    "state": "Florida",
+    "location_tags": ["FLORIDA", "BEACH", "RESORT"],
+    "tagline": "A Florida resort trip worth every penny.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777739562/Screenshot_2026-05-02_at_11.19.05_AM_noc4lg.png",
+    "meta_description": "Hammock Beach Florida golf trip guide — 3 nights in a villa and 4 rounds across Hammock Beach Resort and World Golf Village.",
+    "gallery": []
+  },
+  {
+    "slug": "hilton-head",
+    "trip_id": "hilton-head",
+    "name": "Hilton Head",
+    "state": "South Carolina",
+    "location_tags": ["SOUTH CAROLINA", "BEACH", "LOWCOUNTRY"],
+    "tagline": "Lowcountry golf at its finest.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777699416/Screenshot_2026-05-02_at_12.22.11_AM_cunmv9.png",
+    "meta_description": "Hilton Head golf trip guide — salt marsh views, live oaks, and four of the best courses on the East Coast.",
+    "gallery": []
+  },
+  {
+    "slug": "las-vegas",
+    "trip_id": "las-vegas",
+    "name": "Las Vegas",
+    "state": "Nevada",
+    "location_tags": ["NEVADA", "DESERT", "LAS VEGAS"],
+    "tagline": "Golf in the desert. Everything else after dark.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777699841/Screenshot_2026-05-02_at_12.29.02_AM_suftxo.png",
+    "meta_description": "Las Vegas golf trip guide — world-class desert tracks at Cascata, TPC Las Vegas, Reflection Bay, and Serket.",
+    "gallery": []
+  },
+  {
+    "slug": "miami",
+    "trip_id": "miami",
+    "name": "Miami",
+    "state": "Florida",
+    "location_tags": ["FLORIDA", "PARKLAND", "SOUTH FLORIDA"],
+    "tagline": "PGA Tour golf. South Beach energy.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777732609/Screenshot_2026-05-02_at_9.35.14_AM_rmxrxj.png",
+    "meta_description": "Miami golf trip guide — Doral Blue Monster, world-class conditions and a city to match.",
+    "gallery": []
+  },
+  {
+    "slug": "myrtle-beach",
+    "trip_id": "myrtle-beach",
+    "name": "Myrtle Beach",
+    "state": "South Carolina",
+    "location_tags": ["SOUTH CAROLINA", "BEACH", "GOLF CAPITAL"],
+    "tagline": "The golf capital of the East Coast.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777700209/Screenshot_2026-05-02_at_12.36.39_AM_bkucgt.png",
+    "meta_description": "Myrtle Beach golf trip guide — more courses per square mile than anywhere in the country.",
+    "gallery": []
+  },
+  {
+    "slug": "orlando",
+    "trip_id": "orlando",
+    "name": "Orlando",
+    "state": "Florida",
+    "location_tags": ["FLORIDA", "PARKLAND", "CENTRAL FLORIDA"],
+    "tagline": "Florida golf done right.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777700738/Screenshot_2026-05-02_at_12.44.01_AM_jkibks.png",
+    "meta_description": "Orlando golf trip guide — skip the theme parks, Orlando has some of the best resort golf in the country.",
+    "gallery": []
+  },
+  {
+    "slug": "pursell-farms",
+    "trip_id": "pursell-farms",
+    "name": "Pursell Farms",
+    "state": "Alabama",
+    "location_tags": ["ALABAMA", "RESORT", "HIDDEN GEM"],
+    "tagline": "Hidden gem of the South.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777752371/Screenshot_2026-05-02_at_3.03.39_PM_fvbuwr.png",
+    "meta_description": "Pursell Farms golf trip guide — a secluded Alabama resort with Farmlinks Golf Club and a full lodge experience.",
+    "gallery": []
+  },
+  {
+    "slug": "scottsdale",
+    "trip_id": "scottsdale",
+    "name": "Scottsdale",
+    "state": "Arizona",
+    "location_tags": ["ARIZONA", "DESERT", "PHOENIX METRO"],
+    "tagline": "One of the greatest golf destinations in America.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777693417/Screenshot_2026-05-01_at_10.40.37_PM_p2vdx9.png",
+    "meta_description": "Scottsdale golf trip guide — world-class courses, desert sunsets, and buddy trip stories you'll tell forever.",
+    "gallery": []
+  },
+  {
+    "slug": "williamsburg",
+    "trip_id": "williamsburg",
+    "name": "Williamsburg",
+    "state": "Virginia",
+    "location_tags": ["VIRGINIA", "PARKLAND", "HISTORIC"],
+    "tagline": "History, charm, and elite golf.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777700821/Screenshot_2026-05-02_at_12.46.55_AM_fgulzi.png",
+    "meta_description": "Williamsburg Virginia golf trip guide — four legendary courses and the best price-to-quality ratio of any trip we've been on.",
+    "gallery": []
+  }
+]

@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>__META_TITLE__</title>
+<meta name="description" content="__META_DESC__">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="__META_CANONICAL__">
+
+<meta property="og:title" content="__META_TITLE__">
+<meta property="og:description" content="__META_DESC__">
+<meta property="og:url" content="__META_CANONICAL__">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CYNTP">
+<meta property="og:image" content="__META_OG_IMAGE__">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@coursesyouneedtoplay">
+<meta name="twitter:title" content="__META_TITLE__">
+<meta name="twitter:description" content="__META_DESC__">
+<meta name="twitter:image" content="__META_OG_IMAGE__">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css">
+<link rel="stylesheet" href="/email-capture.css">
+
+<style>
+:root {
+  --ink: #0d0d0d; --ink2: #141414; --ink3: #1a1a1a;
+  --paper: #f4f0e8; --paper2: #ede8dc;
+  --grass: #2d6a3f;
+  --sun: #d4a055; --sun2: #b8843a;
+  --font-head: 'Anton', sans-serif;
+  --font-serif: 'Instrument Serif', serif;
+  --font-body: 'Outfit', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--ink); color: var(--paper); font-family: var(--font-body); min-height: 100vh; }
+a { text-decoration: none; color: inherit; cursor: pointer; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  padding: 16px 52px; display: flex; align-items: center; justify-content: space-between;
+  background: rgba(13,13,13,0.96); backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.nav-center-home { display: flex; align-items: center; gap: 6px; position: absolute; left: 50%; transform: translateX(-50%); z-index: 1; }
+.nav-center-home a { color: rgba(255,255,255,0.55); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 6px 12px; border-radius: 100px; text-decoration: none; transition: all 0.2s; white-space: nowrap; }
+.nav-center-home a:hover { color: #fff; background: rgba(255,255,255,0.08); }
+nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); }
+.nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; width: 32px; height: 32px; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s; }
+.mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: rgba(13,13,13,0.97); backdrop-filter: blur(16px); z-index: 999; padding: 24px 32px 32px; flex-direction: column; gap: 4px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.mobile-menu a { font-size: 22px; font-family: var(--font-head); letter-spacing: 3px; color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); transition: color 0.2s; }
+.mobile-menu a:hover { color: var(--sun); }
+.mobile-menu.open { display: flex; }
+@media(max-width:960px) { .nav-hamburger { display: flex; } .nav-center-home { display: none !important; } }
+
+/* ── HERO ── */
+.dest-hero {
+  position: relative; min-height: 88vh;
+  display: flex; align-items: flex-end;
+  padding: 0 80px 80px;
+  overflow: hidden;
+}
+.dest-hero-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  transition: transform 0.6s ease;
+}
+.dest-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(13,13,13,0.55) 0%, rgba(13,13,13,0.88) 100%);
+}
+.dest-hero-content { position: relative; z-index: 2; max-width: 860px; }
+.dest-location-tags { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+.dest-location-tag {
+  background: rgba(212,160,85,0.15); color: var(--sun);
+  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 5px 13px; border-radius: 4px; font-weight: 600;
+}
+.dest-hero-name {
+  font-family: var(--font-head);
+  font-size: clamp(52px, 8vw, 110px);
+  line-height: 0.9; letter-spacing: 2px; color: var(--paper);
+  margin-bottom: 20px;
+}
+.dest-hero-tagline {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: clamp(16px, 2vw, 22px); color: var(--sun);
+  line-height: 1.45; max-width: 640px;
+}
+
+/* ── SECTION CHROME ── */
+.dest-section {
+  padding: 64px 80px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.dest-section-label-wrap {
+  display: flex; align-items: center; gap: 14px; margin-bottom: 32px;
+}
+.dest-section-label-wrap::before {
+  content: ''; display: block;
+  width: 24px; height: 2px; background: var(--sun); flex-shrink: 0;
+}
+.dest-section-label {
+  font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--sun); font-weight: 600; font-family: var(--font-body);
+}
+
+/* ── THE TAKE ── */
+.dest-take-body p {
+  font-size: 17px; color: #e8e4d8; line-height: 1.78;
+  max-width: 720px; margin-bottom: 22px;
+}
+.dest-take-body p:last-child { margin-bottom: 0; }
+
+/* ── COURSES ── */
+.dest-courses-list { display: flex; flex-direction: column; gap: 32px; }
+.dest-course-item {
+  border-left: 2px solid var(--grass); padding-left: 22px;
+}
+.dest-course-name {
+  font-family: var(--font-head); font-size: 20px; letter-spacing: 1px;
+  color: var(--paper); margin-bottom: 4px;
+}
+.dest-course-designer {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 14px; color: var(--sun); margin-bottom: 10px;
+}
+.dest-course-desc { font-size: 15px; color: #d4d0c4; line-height: 1.68; }
+
+/* ── WHERE TO STAY ── */
+.dest-stay-body {
+  font-size: 17px; color: #e8e4d8; line-height: 1.78;
+  max-width: 720px; margin-bottom: 28px;
+}
+.dest-booking-btn {
+  display: inline-flex; align-items: center;
+  background: transparent; color: var(--sun);
+  border: 1.5px solid var(--sun);
+  font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+  font-weight: 600; padding: 14px 30px; border-radius: 8px;
+  transition: background 0.2s, color 0.2s; font-family: var(--font-body);
+}
+.dest-booking-btn:hover { background: var(--sun); color: var(--ink); }
+
+/* ── THE SETUP ── */
+.dest-setup-items { display: flex; flex-direction: column; gap: 14px; max-width: 720px; }
+.dest-setup-item {
+  background: rgba(212,160,85,0.06); border-radius: 10px;
+  padding: 22px 26px;
+}
+.dest-setup-label {
+  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--sun); font-weight: 600; margin-bottom: 8px;
+}
+.dest-setup-text { font-size: 15px; color: #e8e4d8; line-height: 1.65; }
+
+/* ── KNOW BEFORE YOU GO ── */
+.dest-kbyg-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+}
+.dest-kbyg-item {
+  border-top: 1px solid var(--sun); padding: 20px 24px 20px 0;
+}
+.dest-kbyg-label {
+  font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--sun); font-weight: 600; margin-bottom: 8px;
+}
+.dest-kbyg-value { font-size: 14px; color: #fff; line-height: 1.55; }
+
+/* ── WHAT TO SKIP ── */
+.dest-skip-items { display: flex; flex-direction: column; gap: 22px; max-width: 720px; }
+.dest-skip-lead {
+  font-size: 16px; color: var(--sun); font-weight: 600; margin-bottom: 4px;
+}
+.dest-skip-detail { font-size: 15px; color: #d4d0c4; line-height: 1.68; }
+
+/* ── GALLERY ── */
+.dest-gallery-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+}
+.dest-gallery-item {
+  aspect-ratio: 1; overflow: hidden; border-radius: 8px;
+  position: relative; cursor: pointer; display: block;
+}
+.dest-gallery-item img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.dest-gallery-item:hover img { transform: scale(1.05); }
+.gallery-more-overlay {
+  position: absolute; inset: 0; background: rgba(13,13,13,0.68);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head); font-size: 30px; color: #fff; letter-spacing: 2px;
+  pointer-events: none;
+}
+.dest-gallery-empty {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 15px; color: rgba(255,255,255,0.3);
+}
+
+/* ── EMAIL CTA ── */
+.dest-email-cta-section { padding: 80px; }
+.dest-email-cta-inner {
+  max-width: 600px; margin: 0 auto;
+  background: rgba(212,160,85,0.08);
+  border: 1px solid rgba(212,160,85,0.3);
+  border-radius: 16px; padding: 56px 48px; text-align: center;
+}
+.dest-cta-eyebrow {
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--sun); margin-bottom: 12px;
+}
+.dest-cta-headline {
+  font-family: var(--font-head); font-size: clamp(26px, 3.5vw, 38px);
+  color: var(--paper); letter-spacing: 2px; margin-bottom: 12px;
+}
+.dest-cta-sub {
+  font-size: 15px; color: rgba(255,255,255,0.45); line-height: 1.6; margin-bottom: 28px;
+}
+.dest-cta-form { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.dest-cta-input {
+  flex: 1; min-width: 200px; max-width: 280px;
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px; color: #fff; font-family: var(--font-body); font-size: 14px;
+  padding: 13px 16px; outline: none;
+}
+.dest-cta-input:focus { border-color: rgba(212,160,85,0.5); }
+.dest-cta-btn {
+  background: var(--sun); color: var(--ink);
+  border: none; cursor: pointer; border-radius: 6px;
+  font-family: var(--font-head); font-size: 13px; letter-spacing: 2px;
+  padding: 13px 24px; transition: background 0.2s; white-space: nowrap;
+}
+.dest-cta-btn:hover { background: var(--sun2); }
+.dest-cta-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.dest-cta-success-wrap {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.dest-cta-check {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1.5px solid var(--sun); display: flex; align-items: center; justify-content: center;
+  font-size: 20px; color: var(--sun); margin-bottom: 4px;
+}
+.dest-cta-success-hed {
+  font-family: var(--font-head); font-size: 28px; letter-spacing: 2px; color: var(--paper);
+}
+.dest-cta-success-body { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+.dest-cta-signoff { font-family: var(--font-serif); font-style: italic; font-size: 13px; color: rgba(255,255,255,0.3); }
+
+/* ── COMING SOON ── */
+.dest-coming-soon-body { padding: 80px; }
+.dest-coming-soon-inner {
+  max-width: 520px; text-align: center;
+  padding: 64px 48px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  margin: 0 auto;
+}
+.dest-cs-eyebrow {
+  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--sun); margin-bottom: 14px;
+}
+.dest-cs-text {
+  font-size: 16px; color: rgba(255,255,255,0.4); line-height: 1.65; margin-bottom: 28px;
+}
+.dest-cs-back {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--sun); font-weight: 600;
+  border-bottom: 1px solid rgba(212,160,85,0.3); padding-bottom: 2px;
+}
+.dest-cs-back:hover { border-bottom-color: var(--sun); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .dest-kbyg-grid { grid-template-columns: repeat(2, 1fr); }
+  .dest-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 680px) {
+  nav { padding: 14px 24px; }
+  .dest-hero { padding: 0 24px 56px; min-height: 72vh; }
+  .dest-hero-name { font-size: clamp(40px, 12vw, 72px); }
+  .dest-section { padding: 48px 24px; }
+  .dest-email-cta-section { padding: 48px 24px; }
+  .dest-email-cta-inner { padding: 40px 24px; }
+  .dest-coming-soon-body { padding: 48px 24px; }
+  .dest-coming-soon-inner { padding: 40px 24px; }
+  .dest-kbyg-grid { grid-template-columns: 1fr; }
+  .dest-gallery-grid { grid-template-columns: 1fr; }
+  .dest-cta-form { flex-direction: column; align-items: stretch; }
+  .dest-cta-input { max-width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/index.html" class="logo"><img src="/logo.png" style="height:48px;width:auto;display:block;" alt="CYNTP"></a>
+  <div class="nav-center-home">
+    <a href="/index.html">Home</a>
+    <a href="/cyntp-trips.html" class="active">Trips</a>
+    <a href="/cyntp-courses.html">Courses</a>
+    <a href="/cyntp-turn.html">The Turn</a>
+    <a href="/cyntp-about.html">About</a>
+    <a href="/cyntp-partner.html">Partner</a>
+  </div>
+  <div class="nav-ctas">
+    <button class="nav-join-btn" onclick="openEmailModal()">Join the Community</button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/index.html">Home</a>
+  <a href="/cyntp-trips.html">Trips</a>
+  <a href="/cyntp-courses.html">Courses</a>
+  <a href="/cyntp-turn.html">The Turn</a>
+  <a href="/cyntp-about.html">About</a>
+  <a href="/cyntp-partner.html">Partner</a>
+  <button class="mobile-join-btn" onclick="openEmailModal()">Join the Community</button>
+</div>
+
+<div id="dest-page" style="padding-top:80px;"></div>
+
+<script>window.__DEST_SLUG__ = '__DEST_SLUG__';</script>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/umd/photoswipe-lightbox.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/umd/photoswipe.umd.min.js"></script>
+
+<script>
+(async function() {
+  const slug = window.__DEST_SLUG__;
+  let destinations = [];
+  try {
+    const res = await fetch('/destinations/data.json');
+    destinations = await res.json();
+  } catch(e) {}
+
+  const dest = destinations.find(d => d.slug === slug);
+
+  if (dest && dest.the_take) {
+    renderFull(dest);
+  } else {
+    renderComingSoon(dest || { slug });
+  }
+
+  // Nav scroll + hamburger
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 80); }, { passive: true });
+  document.getElementById('navHamburger').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+
+  // Inject JSON-LD for full destinations
+  if (dest && dest.the_take) injectJsonLd(dest);
+})();
+
+/* ─────────────────────────────────────────────
+   FULL DESTINATION RENDER
+───────────────────────────────────────────── */
+function renderFull(dest) {
+  const page = document.getElementById('dest-page');
+  page.innerHTML = [
+    heroHTML(dest),
+    takeSectionHTML(dest),
+    coursesSectionHTML(dest),
+    staySectionHTML(dest),
+    setupSectionHTML(dest),
+    kbygSectionHTML(dest),
+    skipSectionHTML(dest),
+    gallerySectionHTML(dest),
+    ctaSectionHTML()
+  ].join('');
+
+  wireCtaForm();
+  initGallery(dest.gallery || []);
+}
+
+/* ─────────────────────────────────────────────
+   COMING SOON RENDER
+───────────────────────────────────────────── */
+function renderComingSoon(dest) {
+  const heroUrl = dest.hero_image || '';
+  const bgStyle = heroUrl ? ` style="background-image:url('${heroUrl}')"` : '';
+  const tags = (dest.location_tags || []).map(t => `<span class="dest-location-tag">${t}</span>`).join('');
+  const name = dest.name || 'Coming Soon';
+
+  document.getElementById('dest-page').innerHTML = `
+    <div class="dest-hero">
+      <div class="dest-hero-bg"${bgStyle}></div>
+      <div class="dest-hero-overlay"></div>
+      <div class="dest-hero-content">
+        ${tags ? `<div class="dest-location-tags">${tags}</div>` : ''}
+        <h1 class="dest-hero-name">${esc(name.toUpperCase())}</h1>
+        ${dest.tagline ? `<p class="dest-hero-tagline">${esc(dest.tagline)}</p>` : ''}
+      </div>
+    </div>
+    <div class="dest-coming-soon-body">
+      <div class="dest-coming-soon-inner">
+        <div class="dest-cs-eyebrow">Guide Coming Soon</div>
+        <p class="dest-cs-text">We've been here. The full breakdown — courses, where to stay, the setup, what to skip — is on its way.</p>
+        <a href="/cyntp-trips.html" class="dest-cs-back">&larr; Back to All Trips</a>
+      </div>
+    </div>
+    ${ctaSectionHTML()}
+  `;
+  wireCtaForm();
+}
+
+/* ─────────────────────────────────────────────
+   SECTION HTML BUILDERS
+───────────────────────────────────────────── */
+function heroHTML(dest) {
+  const bgStyle = dest.hero_image ? ` style="background-image:url('${dest.hero_image}')"` : '';
+  const tags = (dest.location_tags || []).map(t => `<span class="dest-location-tag">${t}</span>`).join('');
+  return `
+    <div class="dest-hero">
+      <div class="dest-hero-bg"${bgStyle}></div>
+      <div class="dest-hero-overlay"></div>
+      <div class="dest-hero-content">
+        ${tags ? `<div class="dest-location-tags">${tags}</div>` : ''}
+        <h1 class="dest-hero-name">${esc(dest.name.toUpperCase())}</h1>
+        ${dest.tagline ? `<p class="dest-hero-tagline">${esc(dest.tagline)}</p>` : ''}
+      </div>
+    </div>`;
+}
+
+function sectionLabel(label) {
+  return `<div class="dest-section-label-wrap"><span class="dest-section-label">${label}</span></div>`;
+}
+
+function takeSectionHTML(dest) {
+  const paras = (dest.the_take || []).map(p => `<p>${esc(p)}</p>`).join('');
+  return `
+    <section class="dest-section">
+      ${sectionLabel('The Take')}
+      <div class="dest-take-body">${paras}</div>
+    </section>`;
+}
+
+function coursesSectionHTML(dest) {
+  if (!dest.courses || !dest.courses.length) return '';
+  const items = dest.courses.map(c => `
+    <div class="dest-course-item">
+      <div class="dest-course-name">${esc(c.name)}</div>
+      <div class="dest-course-designer">${esc(c.designer)}</div>
+      <p class="dest-course-desc">${esc(c.description)}</p>
+    </div>`).join('');
+  return `
+    <section class="dest-section">
+      ${sectionLabel('The Courses')}
+      <div class="dest-courses-list">${items}</div>
+    </section>`;
+}
+
+function staySectionHTML(dest) {
+  if (!dest.where_to_stay) return '';
+  const btn = dest.booking_link
+    ? `<a href="${dest.booking_link}" target="_blank" rel="noopener noreferrer" class="dest-booking-btn">${esc(dest.booking_text || 'Book Your Stay →')}</a>`
+    : '';
+  return `
+    <section class="dest-section">
+      ${sectionLabel('Where to Stay')}
+      <p class="dest-stay-body">${esc(dest.where_to_stay)}</p>
+      ${btn}
+    </section>`;
+}
+
+function setupSectionHTML(dest) {
+  if (!dest.setup || !dest.setup.length) return '';
+  const items = dest.setup.map(s => `
+    <div class="dest-setup-item">
+      <div class="dest-setup-label">${esc(s.label)}</div>
+      <p class="dest-setup-text">${esc(s.itinerary)}</p>
+    </div>`).join('');
+  return `
+    <section class="dest-section">
+      ${sectionLabel('The Setup')}
+      <div class="dest-setup-items">${items}</div>
+    </section>`;
+}
+
+function kbygSectionHTML(dest) {
+  if (!dest.know_before || !dest.know_before.length) return '';
+  const items = dest.know_before.map(k => `
+    <div class="dest-kbyg-item">
+      <div class="dest-kbyg-label">${esc(k.label)}</div>
+      <div class="dest-kbyg-value">${esc(k.value)}</div>
+    </div>`).join('');
+  return `
+    <section class="dest-section">
+      ${sectionLabel('Know Before You Go')}
+      <div class="dest-kbyg-grid">${items}</div>
+    </section>`;
+}
+
+function skipSectionHTML(dest) {
+  if (!dest.what_to_skip || !dest.what_to_skip.length) return '';
+  const items = dest.what_to_skip.map(s => `
+    <div>
+      <div class="dest-skip-lead">${esc(s.lead)}</div>
+      <p class="dest-skip-detail">${esc(s.detail)}</p>
+    </div>`).join('');
+  return `
+    <section class="dest-section">
+      ${sectionLabel('What to Skip')}
+      <div class="dest-skip-items">${items}</div>
+    </section>`;
+}
+
+function gallerySectionHTML(dest) {
+  const photos = dest.gallery || [];
+  let gridHTML;
+  if (!photos.length) {
+    gridHTML = `<p class="dest-gallery-empty">Photos coming soon.</p>`;
+  } else {
+    const display = photos.slice(0, 9);
+    const remaining = photos.length - 9;
+    gridHTML = '<div class="dest-gallery-grid" id="destGallery">' +
+      display.map((p, i) => {
+        const thumb = cloudinaryThumb(p.url);
+        const full = cloudinaryFull(p.url);
+        const alt = esc(p.caption || 'Trip photo');
+        const overlay = (i === 8 && remaining > 0)
+          ? `<div class="gallery-more-overlay">+${remaining} more</div>` : '';
+        return `<a class="dest-gallery-item" href="${full}" data-pswp-width="1600" data-pswp-height="1067" target="_blank">
+          <img src="${thumb}" alt="${alt}" loading="lazy">${overlay}</a>`;
+      }).join('') +
+    '</div>';
+  }
+  return `
+    <section class="dest-section">
+      ${sectionLabel('From the Trip')}
+      ${gridHTML}
+    </section>`;
+}
+
+function ctaSectionHTML() {
+  return `
+    <section class="dest-email-cta-section">
+      <div class="dest-email-cta-inner" id="destEmailCta">
+        <div class="dest-cta-eyebrow">Weekly Golf Intel</div>
+        <h2 class="dest-cta-headline">JOIN THE COMMUNITY</h2>
+        <p class="dest-cta-sub">Every Thursday — trip breakdowns, course intel, and travel finds from the CYNTP crew.</p>
+        <form class="dest-cta-form" id="destCtaForm" novalidate>
+          <input type="email" class="dest-cta-input" id="destCtaEmail" placeholder="your@email.com" autocomplete="email">
+          <button type="submit" class="dest-cta-btn">JOIN THE COMMUNITY</button>
+        </form>
+      </div>
+    </section>`;
+}
+
+/* ─────────────────────────────────────────────
+   EMAIL CTA WIRING
+───────────────────────────────────────────── */
+function wireCtaForm() {
+  const form = document.getElementById('destCtaForm');
+  if (!form) return;
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const email = (document.getElementById('destCtaEmail') || {}).value || '';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) return;
+    const btn = form.querySelector('button');
+    btn.disabled = true; btn.textContent = 'Joining…';
+    try {
+      await fetch('/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.trim().toLowerCase() })
+      });
+    } catch(_) {}
+    document.getElementById('destEmailCta').innerHTML = `
+      <div class="dest-cta-success-wrap">
+        <div class="dest-cta-check">&#10003;</div>
+        <h3 class="dest-cta-success-hed">You&rsquo;re in.</h3>
+        <p class="dest-cta-success-body">See you Thursday with the best in golf travel.</p>
+        <p class="dest-cta-signoff">&mdash; Cameron, Noah &amp; Beau</p>
+      </div>`;
+  });
+}
+
+/* ─────────────────────────────────────────────
+   PHOTOSWIPE GALLERY
+───────────────────────────────────────────── */
+function initGallery(photos) {
+  if (!photos.length) return;
+  if (typeof PhotoSwipeLightbox === 'undefined') return;
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '#destGallery',
+    children: 'a.dest-gallery-item',
+    pswpModule: PhotoSwipe
+  });
+  lightbox.init();
+}
+
+/* ─────────────────────────────────────────────
+   JSON-LD
+───────────────────────────────────────────── */
+function injectJsonLd(dest) {
+  const ld = {
+    '@context': 'https://schema.org',
+    '@type': 'TouristAttraction',
+    name: dest.name,
+    description: dest.meta_description || dest.tagline,
+    url: 'https://www.coursesyouneedtoplay.com/destinations/' + dest.slug,
+    image: dest.hero_image,
+    touristType: 'Golfers',
+    address: {
+      '@type': 'PostalAddress',
+      addressRegion: dest.state,
+      addressCountry: 'US'
+    }
+  };
+  const s = document.createElement('script');
+  s.type = 'application/ld+json';
+  s.textContent = JSON.stringify(ld);
+  document.head.appendChild(s);
+}
+
+/* ─────────────────────────────────────────────
+   HELPERS
+───────────────────────────────────────────── */
+function esc(s) {
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function cloudinaryThumb(url) {
+  if (url.includes('/upload/')) return url.replace('/upload/', '/upload/w_600,c_fill,ar_1:1,q_auto,f_auto/');
+  return url;
+}
+
+function cloudinaryFull(url) {
+  if (url.includes('/upload/')) return url.replace('/upload/', '/upload/w_1600,q_auto,f_auto/');
+  return url;
+}
+</script>
+
+<script src="/email-capture.js"></script>
+</body>
+</html>
