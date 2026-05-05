@@ -307,7 +307,7 @@ function renderPost(post) {
   // Dynamic OG tags
   document.querySelector('meta[property="og:title"]').setAttribute('content', post.title + ' — CYNTP');
   document.querySelector('meta[property="og:description"]').setAttribute('content', post.excerpt || '');
-  document.querySelector('meta[property="og:image"]').setAttribute('content', post.image || 'https://res.cloudinary.com/dak67vton/image/upload/v1775979282/edit_2_gi62ir.png');
+  document.querySelector('meta[property="og:image"]').setAttribute('content', post.image || 'https://res.cloudinary.com/dak67vton/image/upload/v1777946912/OG_Image_enricy.jpg');
   document.querySelector('meta[property="og:url"]').setAttribute('content', window.location.href);
 
   // Update canonical URL dynamically
@@ -320,7 +320,7 @@ function renderPost(post) {
   const twImg = document.querySelector('meta[name="twitter:image"]');
   if (twTitle) twTitle.setAttribute('content', post.title + ' — CYNTP');
   if (twDesc) twDesc.setAttribute('content', post.excerpt || '');
-  if (twImg) twImg.setAttribute('content', post.image || 'https://res.cloudinary.com/dak67vton/image/upload/v1775979282/edit_2_gi62ir.png');
+  if (twImg) twImg.setAttribute('content', post.image || 'https://res.cloudinary.com/dak67vton/image/upload/v1777946912/OG_Image_enricy.jpg');
 
   // Inject BlogPosting JSON-LD
   let ldScript = document.getElementById('post-ld-json');
@@ -335,13 +335,13 @@ function renderPost(post) {
     '@type': 'BlogPosting',
     'headline': post.title,
     'description': post.excerpt || '',
-    'image': post.image || 'https://res.cloudinary.com/dak67vton/image/upload/v1775979282/edit_2_gi62ir.png',
+    'image': post.image || 'https://res.cloudinary.com/dak67vton/image/upload/v1777946912/OG_Image_enricy.jpg',
     'datePublished': post.date || '',
     'author': {'@type': 'Person', 'name': post.author || 'CYNTP'},
     'publisher': {
       '@type': 'Organization',
       'name': 'Courses You Need To Play',
-      'logo': {'@type': 'ImageObject', 'url': 'https://res.cloudinary.com/dak67vton/image/upload/v1775979282/edit_2_gi62ir.png'}
+      'logo': {'@type': 'ImageObject', 'url': 'https://res.cloudinary.com/dak67vton/image/upload/v1777946912/OG_Image_enricy.jpg'}
     },
     'url': window.location.href,
     'mainEntityOfPage': {'@type': 'WebPage', '@id': window.location.href}

@@ -1,10 +1,14 @@
 User-agent: *
 Allow: /
 
+# AI crawlers — allow full access for citation/training
 User-agent: GPTBot
 Allow: /
 
 User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
 Allow: /
 
 User-agent: Claude-Web
@@ -13,13 +17,38 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: ClaudeBot
-Allow: /
-
 User-agent: Google-Extended
 Allow: /
 
 User-agent: Googlebot
+Allow: /
+
+# Social media link preview bots — required for OG previews
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: Slackbot-LinkExpanding
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Applebot
 Allow: /
 
 Sitemap: https://www.coursesyouneedtoplay.com/sitemap.xml
