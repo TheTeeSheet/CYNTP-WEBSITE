@@ -339,14 +339,12 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 
 <div id="dest-page" style="padding-top:80px;"></div>
 
-<script>window.__DEST_SLUG__ = '__DEST_SLUG__';</script>
-
 <script src="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/umd/photoswipe-lightbox.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/umd/photoswipe.umd.min.js"></script>
 
 <script>
 (async function() {
-  const slug = window.__DEST_SLUG__;
+  const slug = window.location.pathname.replace('/destinations/', '').replace(/\/$/, '');
   let destinations = [];
   try {
     const res = await fetch('/destinations/data.json');
