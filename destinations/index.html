@@ -262,6 +262,19 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 .dest-cta-success-body { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.6; }
 .dest-cta-signoff { font-family: var(--font-serif); font-style: italic; font-size: 13px; color: rgba(255,255,255,0.3); }
 
+/* ── BACK BUTTON ── */
+.dest-back-btn {
+  position: absolute; top: 32px; left: 80px; z-index: 10;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  font-weight: 600; color: rgba(255,255,255,0.75);
+  background: rgba(13,13,13,0.5); backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 8px 18px; border-radius: 100px;
+  transition: color 0.2s, background 0.2s;
+}
+.dest-back-btn:hover { color: #fff; background: rgba(13,13,13,0.72); }
+
 /* ── COMING SOON ── */
 .dest-coming-soon-body { padding: 80px; }
 .dest-coming-soon-inner {
@@ -293,6 +306,7 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 }
 @media (max-width: 680px) {
   nav { padding: 14px 24px; }
+  .dest-back-btn { top: 20px; left: 24px; }
   .dest-hero { padding: 0 24px 56px; min-height: 72vh; }
   .dest-hero-name { font-size: clamp(40px, 12vw, 72px); }
   .dest-section { padding: 48px 24px; }
@@ -404,6 +418,7 @@ function renderComingSoon(dest) {
     <div class="dest-hero">
       <div class="dest-hero-bg"${bgStyle}></div>
       <div class="dest-hero-overlay"></div>
+      <a href="/cyntp-trips.html" class="dest-back-btn">← All Trips</a>
       <div class="dest-hero-content">
         ${tags ? `<div class="dest-location-tags">${tags}</div>` : ''}
         <h1 class="dest-hero-name">${esc(name.toUpperCase())}</h1>
@@ -431,6 +446,7 @@ function heroHTML(dest) {
     <div class="dest-hero">
       <div class="dest-hero-bg"${bgStyle}></div>
       <div class="dest-hero-overlay"></div>
+      <a href="/cyntp-trips.html" class="dest-back-btn">← All Trips</a>
       <div class="dest-hero-content">
         ${tags ? `<div class="dest-location-tags">${tags}</div>` : ''}
         <h1 class="dest-hero-name">${esc(dest.name.toUpperCase())}</h1>
