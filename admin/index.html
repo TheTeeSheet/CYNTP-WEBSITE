@@ -389,31 +389,61 @@ function showPanel(name) {
   if (name === 'drafts') renderDraftsList();
 }
 
-// ─── Storage (localStorage as stand-in for file system) ─────────────────────
-async function loadPosts() {
-  const stored = localStorage.getItem('cyntp_posts');
-  const localPosts = stored ? JSON.parse(stored) : [];
+// ─── Draft KV API (shared storage across all admin users) ─────────────────────
+async function apiSaveDraft(data) {
+  const res = await fetch('/api/drafts/save', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ password: PASSWORD, post: data }),
+  });
+  if (!res.ok) throw new Error('API error ' + res.status);
+}
 
-  // Fetch published posts from the actual repo index
+async function apiLoadDrafts() {
+  const res = await fetch('/api/drafts?pw=' + encodeURIComponent(PASSWORD));
+  if (!res.ok) throw new Error('API error ' + res.status);
+  const data = await res.json();
+  return data.drafts || [];
+}
+
+async function apiDeleteDraft(slug) {
+  await fetch('/api/drafts/' + slug, {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ password: PASSWORD }),
+  });
+}
+
+// ─── Local cache for published post bodies (edit / re-download) ───────────────
+function cachePublishedPost(post) {
+  const stored = localStorage.getItem('cyntp_posts');
+  const local = stored ? JSON.parse(stored) : [];
+  const idx = local.findIndex(p => p.slug === post.slug);
+  if (idx >= 0) local[idx] = post; else local.unshift(post);
+  localStorage.setItem('cyntp_posts', JSON.stringify(local));
+}
+
+// ─── Load posts ───────────────────────────────────────────────────────────────
+async function loadPosts() {
   let indexPosts = [];
   try {
     const res = await fetch('/_posts/index.json');
     if (res.ok) indexPosts = (await res.json()).map(p => ({ ...p, status: 'published' }));
-  } catch (e) { /* offline or local dev — fall back to localStorage only */ }
+  } catch (e) {}
 
-  // Merge: prefer localStorage version (has full body) if available, else use index entry
-  const localBySlug = Object.fromEntries(localPosts.map(p => [p.slug, p]));
+  let kvDrafts = [];
+  try {
+    kvDrafts = await apiLoadDrafts();
+  } catch (e) {
+    // KV not yet configured — fall back to localStorage drafts
+    const stored = localStorage.getItem('cyntp_posts');
+    const local = stored ? JSON.parse(stored) : [];
+    kvDrafts = local.filter(p => p.status === 'draft');
+  }
+
   const indexSlugs = new Set(indexPosts.map(p => p.slug));
-
-  const published = indexPosts.map(p => localBySlug[p.slug] || p);
-  const draftsOnly = localPosts.filter(p => p.status === 'draft' && !indexSlugs.has(p.slug));
-
-  posts = [...published, ...draftsOnly];
+  posts = [...indexPosts, ...kvDrafts.filter(d => !indexSlugs.has(d.slug))];
   renderPostsList();
-}
-
-function savePosts() {
-  localStorage.setItem('cyntp_posts', JSON.stringify(posts));
 }
 
 // ─── Slug ─────────────────────────────────────────────────────────────────────
@@ -503,39 +533,59 @@ function getFormData(status) {
   };
 }
 
-function saveDraft() {
+async function saveDraft() {
   const data = getFormData('draft');
   if (!data) return;
-  savePostData(data);
-  showToast('Draft saved ✓', 'success');
-  resetEditor();
-  showPanel('drafts');
+  try {
+    await apiSaveDraft(data);
+    const idx = posts.findIndex(p => p.slug === data.slug);
+    if (idx >= 0) posts[idx] = data; else posts.unshift(data);
+    editingSlug = data.slug;
+    document.getElementById('deleteBtn').style.display = 'flex';
+    showToast('Draft saved ✓', 'success');
+    resetEditor();
+    showPanel('drafts');
+  } catch (e) {
+    showToast('Failed to save draft — check connection', 'error');
+  }
 }
 
-function publishPost() {
+async function publishPost() {
   const data = getFormData('published');
   if (!data) return;
-  savePostData(data);
+  const existing = posts.find(p => p.slug === data.slug);
+  if (existing?.status === 'draft') {
+    try { await apiDeleteDraft(data.slug); } catch (e) {}
+  }
+  cachePublishedPost(data);
+  const idx = posts.findIndex(p => p.slug === data.slug);
+  if (idx >= 0) posts[idx] = data; else posts.unshift(data);
+  editingSlug = data.slug;
+  document.getElementById('deleteBtn').style.display = 'flex';
   generateDownload(data);
   showToast('Post published! Download the files below.', 'success');
   resetEditor();
   showPanel('posts');
 }
 
-function savePostData(data) {
-  const idx = posts.findIndex(p => p.slug === data.slug);
-  if (idx >= 0) posts[idx] = data;
-  else posts.unshift(data);
-  savePosts();
-  editingSlug = data.slug;
-  document.getElementById('deleteBtn').style.display = 'flex';
-}
-
-function deletePost() {
+async function deletePost() {
   if (!editingSlug) return;
   if (!confirm('Delete this post?')) return;
+  const post = posts.find(p => p.slug === editingSlug);
+  if (post?.status === 'draft') {
+    try {
+      await apiDeleteDraft(editingSlug);
+    } catch (e) {
+      showToast('Failed to delete draft', 'error');
+      return;
+    }
+  } else {
+    const stored = localStorage.getItem('cyntp_posts');
+    let local = stored ? JSON.parse(stored) : [];
+    local = local.filter(p => p.slug !== editingSlug);
+    localStorage.setItem('cyntp_posts', JSON.stringify(local));
+  }
   posts = posts.filter(p => p.slug !== editingSlug);
-  savePosts();
   showToast('Post deleted');
   resetEditor();
   showPanel('posts');
@@ -631,11 +681,12 @@ function redownload(slug) {
   if (post) generateDownload(post);
 }
 
-function publishFromDraft(slug) {
+async function publishFromDraft(slug) {
   const post = posts.find(p => p.slug === slug);
   if (!post) return;
   post.status = 'published';
-  savePosts();
+  try { await apiDeleteDraft(slug); } catch (e) {}
+  cachePublishedPost(post);
   generateDownload(post);
   showToast('Draft published! Download the files.', 'success');
   renderDraftsList();

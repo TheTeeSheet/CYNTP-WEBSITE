@@ -1,8 +1,10 @@
 const CORS = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type',
 };
+
+const ADMIN_PASSWORD = 'cyntp2026';
 
 function addSecurityHeaders(response) {
   const newResponse = new Response(response.body, response);
@@ -61,6 +63,53 @@ async function handleDestinationPage(slug, request, env) {
   return addSecurityHeaders(new Response(html, {
     headers: { 'Content-Type': 'text/html; charset=utf-8' },
   }));
+}
+
+async function handleDraftsAPI(request, env) {
+  const url = new URL(request.url);
+  const kv = env.CYNTP_DRAFTS_KV;
+  const pw = env.ADMIN_PASSWORD || ADMIN_PASSWORD;
+
+  if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: CORS });
+
+  if (!kv) return json({ error: 'Drafts storage not configured' }, 503);
+
+  if (request.method === 'GET') {
+    const reqPw = url.searchParams.get('pw');
+    if (reqPw !== pw) return json({ error: 'Unauthorized' }, 401);
+    const list = await kv.list({ prefix: 'draft:' });
+    const drafts = await Promise.all(
+      list.keys.map(async ({ name }) => {
+        const val = await kv.get(name);
+        try { return JSON.parse(val); } catch { return null; }
+      })
+    );
+    return json({ drafts: drafts.filter(Boolean) });
+  }
+
+  if (request.method === 'POST') {
+    let body;
+    try { body = await request.json(); } catch { return json({ error: 'Invalid body' }, 400); }
+    if (body.password !== pw) return json({ error: 'Unauthorized' }, 401);
+    const post = body.post;
+    if (!post?.slug) return json({ error: 'Missing slug' }, 400);
+    const slug = post.slug.replace(/[^a-z0-9-]/g, '');
+    if (!slug) return json({ error: 'Invalid slug' }, 400);
+    await kv.put(`draft:${slug}`, JSON.stringify({ ...post, slug }));
+    return json({ success: true });
+  }
+
+  if (request.method === 'DELETE') {
+    const slug = url.pathname.slice('/api/drafts/'.length).replace(/[^a-z0-9-]/g, '');
+    if (!slug) return json({ error: 'Missing slug' }, 400);
+    let body;
+    try { body = await request.json(); } catch { return json({ error: 'Invalid body' }, 400); }
+    if (body.password !== pw) return json({ error: 'Unauthorized' }, 401);
+    await kv.delete(`draft:${slug}`);
+    return json({ success: true });
+  }
+
+  return json({ error: 'Method not allowed' }, 405);
 }
 
 async function handleSubscribe(request, env) {
@@ -131,6 +180,10 @@ export default {
 
     if (url.pathname === '/subscribe') {
       return handleSubscribe(request, env);
+    }
+
+    if (url.pathname.startsWith('/api/drafts')) {
+      return addSecurityHeaders(await handleDraftsAPI(request, env));
     }
 
     if (url.pathname.startsWith('/destinations/')) {
