@@ -548,6 +548,9 @@ nav .active { color: var(--sun) !important; }
 @media (max-width: 768px) {
   #courseMap { height: 400px; }
 }
+
+/* ── Hide list-only controls in MAP view ────────────────────────────── */
+body.view-map .filter-bar { display: none !important; }
 </style>
 <meta property="og:title" content="Golf Course Directory | Reviews & Ratings — CYNTP">
 <meta property="og:description" content="Honest golf course reviews from courses we've actually played.">
@@ -576,7 +579,7 @@ nav .active { color: var(--sun) !important; }
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
 </head>
-<body>
+<body><!-- fix_map_applied -->
 
 <!-- ── NAV ── -->
 <nav id="nav">
@@ -1952,7 +1955,6 @@ document.querySelectorAll('.r').forEach(el => obs.observe(el));
 // ── INIT ──────────────────────────────────────────────────────────────
 loadData();
 renderGrid();
-setView('map');
 window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 80); }, { passive: true });
 
 // Live counters
@@ -1984,7 +1986,9 @@ document.getElementById('navHamburger').addEventListener('click', () => {
 });
 </script>
 
-
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script>
 // ── MAP COORDS (id → [lat, lng]) ──────────────────────────────────────
 const COORDS = {
   1:  [30.256, -87.713],   2:  [33.174, -86.252],   3:  [34.669, -86.430],
@@ -2043,6 +2047,8 @@ let initialBounds = null;
 
 function setView(view) {
   activeView = view;
+  document.body.classList.toggle('view-map',  view === 'map');
+  document.body.classList.toggle('view-list', view === 'list');
   document.getElementById('vtogMap').classList.toggle('active', view === 'map');
   document.getElementById('vtogList').classList.toggle('active', view === 'list');
   document.getElementById('vtogMap').setAttribute('aria-pressed', String(view === 'map'));
@@ -2253,8 +2259,9 @@ function renderStatsFooter(count) {
     '<strong>' + countries + '</strong>&nbsp;Countries';
 }
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+// kick off default MAP view
+setView('map');
+</script>
 <script src="/email-capture.js"></script>
 </body>
 </html>
