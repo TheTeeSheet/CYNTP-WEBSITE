@@ -264,9 +264,12 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 .panel-score-label {
   font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-top: 2px;
 }
-.panel-price-tag { display: flex; flex-direction: column; gap: 3px; }
-.panel-price { font-size: 18px; font-weight: 700; color: var(--grass); }
-.panel-price-label { font-size: 11px; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; }
+.panel-stats-row { display: flex; align-items: center; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--paper3); }
+.panel-stat { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.panel-stat-divider { width: 1px; height: 44px; background: var(--paper3); flex-shrink: 0; }
+.panel-price { font-family: var(--font-head); font-size: 28px; font-weight: 700; color: var(--grass); letter-spacing: 0.5px; line-height: 1; }
+.panel-price-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+.panel-rating-num { font-family: var(--font-head); font-size: 28px; color: var(--sun); letter-spacing: 0.5px; line-height: 1; }
 
 /* CYNTP Verdict */
 .verdict-block {
@@ -1715,12 +1718,17 @@ function openCourse(id) {
       </div>
     </div>
     <div class="panel-body">
-      <div class="panel-price-tag" style="margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--paper3);display:flex;align-items:center;justify-content:space-between;">
-        <div>
+      <div class="panel-stats-row">
+        <div class="panel-stat">
           <div class="panel-price">${course.price}</div>
           <div class="panel-price-label">Green Fee</div>
         </div>
-        ${course.cyntp_rating != null ? `<div class="panel-rating-badge" style="position:static;box-shadow:none;"><span class="panel-rating-badge-num">${course.cyntp_rating.toFixed(1)}</span><span class="panel-rating-badge-label">CYNTP</span></div>` : ''}
+        ${course.cyntp_rating != null ? `
+        <div class="panel-stat-divider"></div>
+        <div class="panel-stat">
+          <div class="panel-rating-num">${course.cyntp_rating.toFixed(1)}<span style="font-size:14px;color:var(--muted);font-family:var(--font-body);font-weight:500;letter-spacing:0">/10</span></div>
+          <div class="panel-price-label">CYNTP Rating</div>
+        </div>` : ''}
       </div>
 
       <div class="verdict-block">
