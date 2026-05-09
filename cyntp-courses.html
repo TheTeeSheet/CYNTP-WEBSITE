@@ -641,6 +641,20 @@ body.view-map .filter-bar { display: none !important; }
   </div>
 </div>
 
+<!-- ── VIEW TOGGLE ── -->
+<div class="view-toggle-bar">
+  <div class="vtog-wrap" role="group" aria-label="View mode">
+    <button class="vtog-btn active" id="vtogMap" aria-pressed="true" onclick="setView('map')">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2l4 2v10l-4-2-4 2-4-2V2l4 2 4-2z"/><path d="M6 4v10M10 2v10"/></svg>
+      Map
+    </button>
+    <button class="vtog-btn" id="vtogList" aria-pressed="false" onclick="setView('list')">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="4" y1="4" x2="14" y2="4"/><line x1="4" y1="8" x2="14" y2="8"/><line x1="4" y1="12" x2="14" y2="12"/><circle cx="1.5" cy="4" r="1" fill="currentColor" stroke="none"/><circle cx="1.5" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="1.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg>
+      List
+    </button>
+  </div>
+</div>
+
 <!-- ── FILTER BAR ── -->
 <div class="filter-bar">
   <div class="filter-tabs-wrap">
@@ -674,21 +688,6 @@ body.view-map .filter-bar { display: none !important; }
       <option value="newest">Newest</option>
     </select>
     <span class="course-count" id="courseCount">12 courses</span>
-  </div>
-</div>
-
-
-<!-- ── VIEW TOGGLE ── -->
-<div class="view-toggle-bar">
-  <div class="vtog-wrap" role="group" aria-label="View mode">
-    <button class="vtog-btn active" id="vtogMap" aria-pressed="true" onclick="setView('map')">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2l4 2v10l-4-2-4 2-4-2V2l4 2 4-2z"/><path d="M6 4v10M10 2v10"/></svg>
-      Map
-    </button>
-    <button class="vtog-btn" id="vtogList" aria-pressed="false" onclick="setView('list')">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="4" y1="4" x2="14" y2="4"/><line x1="4" y1="8" x2="14" y2="8"/><line x1="4" y1="12" x2="14" y2="12"/><circle cx="1.5" cy="4" r="1" fill="currentColor" stroke="none"/><circle cx="1.5" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="1.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg>
-      List
-    </button>
   </div>
 </div>
 
@@ -2065,7 +2064,7 @@ function initMap() {
   mapInitialized = true;
 
   mapInstance = L.map('courseMap', {
-    scrollWheelZoom: false,
+    scrollWheelZoom: true,
     zoomControl: true,
     attributionControl: false,
     maxZoom: 18
