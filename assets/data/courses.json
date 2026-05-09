@@ -1,0 +1,1312 @@
+[
+  {
+    "id": 1,
+    "name": "Craft Farms Golf Club",
+    "dest": "alabama",
+    "destLabel": "Alabama",
+    "city": "Gulf Shores, AL",
+    "cyntp_rating": null,
+    "lat": 30.2935,
+    "lng": -87.7012
+  },
+  {
+    "id": 2,
+    "name": "FarmLinks Golf Club",
+    "dest": "alabama",
+    "destLabel": "Alabama",
+    "city": "Sylacauga, AL",
+    "cyntp_rating": null,
+    "lat": 33.1732,
+    "lng": -86.2516
+  },
+  {
+    "id": 3,
+    "name": "Hampton Cove Golf Club",
+    "dest": "alabama",
+    "destLabel": "Alabama",
+    "city": "Huntsville, AL",
+    "cyntp_rating": null,
+    "lat": 34.7537,
+    "lng": -86.5088
+  },
+  {
+    "id": 4,
+    "name": "Kiva Dunes Golf Club",
+    "dest": "alabama",
+    "destLabel": "Alabama",
+    "city": "Gulf Shores, AL",
+    "cyntp_rating": null,
+    "lat": 30.2511,
+    "lng": -87.9103
+  },
+  {
+    "id": 5,
+    "name": "Peninsula Golf Club",
+    "dest": "alabama",
+    "destLabel": "Alabama",
+    "city": "Gulf Shores, AL",
+    "cyntp_rating": null,
+    "lat": 30.3018,
+    "lng": -87.7468
+  },
+  {
+    "id": 6,
+    "name": "Ross Bridge Golf Course",
+    "dest": "alabama",
+    "destLabel": "Alabama",
+    "city": "Hoover, AL",
+    "cyntp_rating": null,
+    "lat": 33.3915,
+    "lng": -86.8814
+  },
+  {
+    "id": 7,
+    "name": "The Lakewood Club",
+    "dest": "alabama",
+    "destLabel": "Alabama",
+    "city": "Point Clear, AL",
+    "cyntp_rating": null,
+    "lat": 30.4965,
+    "lng": -87.9153
+  },
+  {
+    "id": 8,
+    "name": "The Shoals — Fighting Joe",
+    "dest": "alabama",
+    "destLabel": "Alabama",
+    "city": "Muscle Shoals, AL",
+    "cyntp_rating": null,
+    "lat": 34.8012,
+    "lng": -87.6683
+  },
+  {
+    "id": 9,
+    "name": "The Shoals — The Schoolmaster",
+    "dest": "alabama",
+    "destLabel": "Alabama",
+    "city": "Muscle Shoals, AL",
+    "cyntp_rating": null,
+    "lat": 34.8022,
+    "lng": -87.6693
+  },
+  {
+    "id": 10,
+    "name": "Ak-Chin Southern Dunes Golf Club",
+    "dest": "arizona",
+    "destLabel": "Arizona",
+    "city": "Maricopa, AZ",
+    "cyntp_rating": null,
+    "lat": 33.0553,
+    "lng": -112.0477
+  },
+  {
+    "id": 11,
+    "name": "Arizona National Golf Club",
+    "dest": "arizona",
+    "destLabel": "Arizona",
+    "city": "Tucson, AZ",
+    "cyntp_rating": null,
+    "lat": 32.2344,
+    "lng": -110.7832
+  },
+  {
+    "id": 12,
+    "name": "Eagle Mountain Golf Club",
+    "dest": "arizona",
+    "destLabel": "Arizona",
+    "city": "Fountain Hills, AZ",
+    "cyntp_rating": null,
+    "lat": 33.6112,
+    "lng": -111.7388
+  },
+  {
+    "id": 13,
+    "name": "Grayhawk — Raptor",
+    "dest": "arizona",
+    "destLabel": "Arizona",
+    "city": "Scottsdale, AZ",
+    "cyntp_rating": null,
+    "lat": 33.6839,
+    "lng": -111.9116
+  },
+  {
+    "id": 14,
+    "name": "Paradise Valley CC",
+    "dest": "arizona",
+    "destLabel": "Arizona",
+    "city": "Paradise Valley, AZ",
+    "cyntp_rating": null,
+    "lat": 33.5393,
+    "lng": -111.9428
+  },
+  {
+    "id": 15,
+    "name": "Quintero Golf and Country Club",
+    "dest": "arizona",
+    "destLabel": "Arizona",
+    "city": "Peoria, AZ",
+    "cyntp_rating": null,
+    "lat": 33.9472,
+    "lng": -112.4198
+  },
+  {
+    "id": 16,
+    "name": "Rancho Manana Golf Club",
+    "dest": "arizona",
+    "destLabel": "Arizona",
+    "city": "Cave Creek, AZ",
+    "cyntp_rating": null,
+    "lat": 33.8379,
+    "lng": -111.9514
+  },
+  {
+    "id": 17,
+    "name": "SaddleBrooke — Mountain View Golf Club",
+    "dest": "arizona",
+    "destLabel": "Arizona",
+    "city": "Tucson, AZ",
+    "cyntp_rating": null,
+    "lat": 32.5683,
+    "lng": -110.8822
+  },
+  {
+    "id": 18,
+    "name": "SaddleBrooke — The Preserve Golf Club",
+    "dest": "arizona",
+    "destLabel": "Arizona",
+    "city": "Tucson, AZ",
+    "cyntp_rating": null,
+    "lat": 32.5693,
+    "lng": -110.8832
+  },
+  {
+    "id": 19,
+    "name": "Sewailo Golf Club",
+    "dest": "arizona",
+    "destLabel": "Arizona",
+    "city": "Tucson, AZ",
+    "cyntp_rating": null,
+    "lat": 32.1498,
+    "lng": -111.0273
+  },
+  {
+    "id": 20,
+    "name": "Sunridge Canyon Golf Club",
+    "dest": "arizona",
+    "destLabel": "Arizona",
+    "city": "Fountain Hills, AZ",
+    "cyntp_rating": null,
+    "lat": 33.6023,
+    "lng": -111.7203
+  },
+  {
+    "id": 21,
+    "name": "Talking Stick Golf Club — O'odham Course",
+    "dest": "arizona",
+    "destLabel": "Arizona",
+    "city": "Scottsdale, AZ",
+    "cyntp_rating": null,
+    "lat": 33.5757,
+    "lng": -111.8928
+  },
+  {
+    "id": 22,
+    "name": "The Club at Starr Pass",
+    "dest": "arizona",
+    "destLabel": "Arizona",
+    "city": "Tucson, AZ",
+    "cyntp_rating": null,
+    "lat": 32.2073,
+    "lng": -111.0248
+  },
+  {
+    "id": 23,
+    "name": "Tubac Golf Resort",
+    "dest": "arizona",
+    "destLabel": "Arizona",
+    "city": "Tubac, AZ",
+    "cyntp_rating": null,
+    "lat": 31.6893,
+    "lng": -111.0489
+  },
+  {
+    "id": 24,
+    "name": "Verrado Golf Club — Founder's Course",
+    "dest": "arizona",
+    "destLabel": "Arizona",
+    "city": "Buckeye, AZ",
+    "cyntp_rating": null,
+    "lat": 33.4712,
+    "lng": -112.5688
+  },
+  {
+    "id": 25,
+    "name": "We-Ko-Pa Golf Club — Cholla",
+    "dest": "arizona",
+    "destLabel": "Arizona",
+    "city": "Fort McDowell, AZ",
+    "cyntp_rating": null,
+    "lat": 33.6038,
+    "lng": -111.6753
+  },
+  {
+    "id": 26,
+    "name": "We-Ko-Pa Golf Club — Saguaro",
+    "dest": "arizona",
+    "destLabel": "Arizona",
+    "city": "Fort McDowell, AZ",
+    "cyntp_rating": null,
+    "lat": 33.6048,
+    "lng": -111.6763
+  },
+  {
+    "id": 27,
+    "name": "Aviara Golf Club",
+    "dest": "california",
+    "destLabel": "California",
+    "city": "Carlsbad, CA",
+    "cyntp_rating": null,
+    "lat": 33.1213,
+    "lng": -117.3102
+  },
+  {
+    "id": 28,
+    "name": "Classic Club",
+    "dest": "california",
+    "destLabel": "California",
+    "city": "Palm Desert, CA",
+    "cyntp_rating": null,
+    "lat": 33.7493,
+    "lng": -116.3628
+  },
+  {
+    "id": 29,
+    "name": "Desert Willow Golf Resort — Firecliff",
+    "dest": "california",
+    "destLabel": "California",
+    "city": "Palm Desert, CA",
+    "cyntp_rating": null,
+    "lat": 33.7315,
+    "lng": -116.3477
+  },
+  {
+    "id": 30,
+    "name": "Desert Willow Golf Resort — Mountain View",
+    "dest": "california",
+    "destLabel": "California",
+    "city": "Palm Desert, CA",
+    "cyntp_rating": null,
+    "lat": 33.7325,
+    "lng": -116.3487
+  },
+  {
+    "id": 31,
+    "name": "Escena Golf Club",
+    "dest": "california",
+    "destLabel": "California",
+    "city": "Palm Springs, CA",
+    "cyntp_rating": null,
+    "lat": 33.8553,
+    "lng": -116.5518
+  },
+  {
+    "id": 32,
+    "name": "Indian Wells Golf Resort — Celebrity Course",
+    "dest": "california",
+    "destLabel": "California",
+    "city": "Indian Wells, CA",
+    "cyntp_rating": null,
+    "lat": 33.7138,
+    "lng": -116.3423
+  },
+  {
+    "id": 33,
+    "name": "Monarch Beach Golf Links",
+    "dest": "california",
+    "destLabel": "California",
+    "city": "Dana Point, CA",
+    "cyntp_rating": null,
+    "lat": 33.4783,
+    "lng": -117.7228
+  },
+  {
+    "id": 34,
+    "name": "PGA West — Pete Dye Mountain",
+    "dest": "california",
+    "destLabel": "California",
+    "city": "La Quinta, CA",
+    "cyntp_rating": null,
+    "lat": 33.6567,
+    "lng": -116.2988
+  },
+  {
+    "id": 35,
+    "name": "PGA West — Pete Dye Stadium",
+    "dest": "california",
+    "destLabel": "California",
+    "city": "La Quinta, CA",
+    "cyntp_rating": null,
+    "lat": 33.6557,
+    "lng": -116.2978
+  },
+  {
+    "id": 36,
+    "name": "Westin Rancho Mirage",
+    "dest": "california",
+    "destLabel": "California",
+    "city": "Rancho Mirage, CA",
+    "cyntp_rating": null,
+    "lat": 33.7423,
+    "lng": -116.4128
+  },
+  {
+    "id": 37,
+    "name": "Casa de Campo — Dye Fore",
+    "dest": "dominican-republic",
+    "destLabel": "Dominican Republic",
+    "city": "La Romana, Dominican Republic",
+    "cyntp_rating": null,
+    "lat": 18.4318,
+    "lng": -68.9143
+  },
+  {
+    "id": 38,
+    "name": "Casa de Campo — Teeth of the Dog",
+    "dest": "dominican-republic",
+    "destLabel": "Dominican Republic",
+    "city": "La Romana, Dominican Republic",
+    "cyntp_rating": null,
+    "lat": 18.4298,
+    "lng": -68.9133
+  },
+  {
+    "id": 39,
+    "name": "La Cana — Tortuga-Arricife",
+    "dest": "dominican-republic",
+    "destLabel": "Dominican Republic",
+    "city": "Punta Cana, Dominican Republic",
+    "cyntp_rating": null,
+    "lat": 18.5573,
+    "lng": -68.3712
+  },
+  {
+    "id": 40,
+    "name": "Puntacana Resort — Corales Golf",
+    "dest": "dominican-republic",
+    "destLabel": "Dominican Republic",
+    "city": "Punta Cana, Dominican Republic",
+    "cyntp_rating": null,
+    "lat": 18.5643,
+    "lng": -68.3633
+  },
+  {
+    "id": 41,
+    "name": "Forest Lake Golf Club of Ocoee",
+    "dest": "florida",
+    "destLabel": "Florida",
+    "city": "Ocoee, FL",
+    "cyntp_rating": null,
+    "lat": 28.5683,
+    "lng": -81.5447
+  },
+  {
+    "id": 42,
+    "name": "Grand Cypress Golf Club — Cypress Course",
+    "dest": "florida",
+    "destLabel": "Florida",
+    "city": "Orlando, FL",
+    "cyntp_rating": null,
+    "lat": 28.3748,
+    "lng": -81.5588
+  },
+  {
+    "id": 43,
+    "name": "Grand Cypress Golf Club — Links Course",
+    "dest": "florida",
+    "destLabel": "Florida",
+    "city": "Orlando, FL",
+    "cyntp_rating": null,
+    "lat": 28.3758,
+    "lng": -81.5598
+  },
+  {
+    "id": 44,
+    "name": "Hammock Beach Resort — The Ocean Course",
+    "dest": "florida",
+    "destLabel": "Florida",
+    "city": "Palm Coast, FL",
+    "cyntp_rating": null,
+    "lat": 29.5773,
+    "lng": -81.1963
+  },
+  {
+    "id": 45,
+    "name": "Hammock Beach — The Conservatory Course",
+    "dest": "florida",
+    "destLabel": "Florida",
+    "city": "Palm Coast, FL",
+    "cyntp_rating": null,
+    "lat": 29.5783,
+    "lng": -81.1973
+  },
+  {
+    "id": 46,
+    "name": "Miami Lakes Golf Club",
+    "dest": "florida",
+    "destLabel": "Florida",
+    "city": "Miami Lakes, FL",
+    "cyntp_rating": null,
+    "lat": 25.9078,
+    "lng": -80.3108
+  },
+  {
+    "id": 47,
+    "name": "Mission Resort — El Campeon",
+    "dest": "florida",
+    "destLabel": "Florida",
+    "city": "Howey-in-the-Hills, FL",
+    "cyntp_rating": null,
+    "lat": 28.7143,
+    "lng": -81.7688
+  },
+  {
+    "id": 48,
+    "name": "Shingle Creek Golf Club",
+    "dest": "florida",
+    "destLabel": "Florida",
+    "city": "Orlando, FL",
+    "cyntp_rating": null,
+    "lat": 28.4338,
+    "lng": -81.4688
+  },
+  {
+    "id": 49,
+    "name": "Trump National Doral — Silver Fox",
+    "dest": "florida",
+    "destLabel": "Florida",
+    "city": "Miami, FL",
+    "cyntp_rating": null,
+    "lat": 25.8178,
+    "lng": -80.3388
+  },
+  {
+    "id": 50,
+    "name": "McLemore — Highlands Course",
+    "dest": "georgia",
+    "destLabel": "Georgia",
+    "city": "Lookout Mountain, GA",
+    "cyntp_rating": null,
+    "lat": 34.7023,
+    "lng": -85.3748
+  },
+  {
+    "id": 51,
+    "name": "McLemore — The Keep",
+    "dest": "georgia",
+    "destLabel": "Georgia",
+    "city": "Lookout Mountain, GA",
+    "cyntp_rating": null,
+    "lat": 34.7033,
+    "lng": -85.3758
+  },
+  {
+    "id": 52,
+    "name": "The Coeur d'Alene Resort Golf Course",
+    "dest": "idaho",
+    "destLabel": "Idaho",
+    "city": "Coeur d'Alene, ID",
+    "cyntp_rating": null,
+    "lat": 47.6713,
+    "lng": -116.7738
+  },
+  {
+    "id": 53,
+    "name": "Dooks Golf Club",
+    "dest": "ireland",
+    "destLabel": "Ireland",
+    "city": "Killorglin, County Kerry, Ireland",
+    "cyntp_rating": null,
+    "lat": 52.0748,
+    "lng": -9.8883
+  },
+  {
+    "id": 54,
+    "name": "Lahinch Golf Club",
+    "dest": "ireland",
+    "destLabel": "Ireland",
+    "city": "Lahinch, County Clare, Ireland",
+    "cyntp_rating": null,
+    "lat": 52.9338,
+    "lng": -9.3443
+  },
+  {
+    "id": 55,
+    "name": "Old Head Golf Links",
+    "dest": "ireland",
+    "destLabel": "Ireland",
+    "city": "Kinsale, County Cork, Ireland",
+    "cyntp_rating": null,
+    "lat": 51.5983,
+    "lng": -8.5258
+  },
+  {
+    "id": 56,
+    "name": "Tralee Golf Club",
+    "dest": "ireland",
+    "destLabel": "Ireland",
+    "city": "Barrow, County Kerry, Ireland",
+    "cyntp_rating": null,
+    "lat": 52.3063,
+    "lng": -9.9318
+  },
+  {
+    "id": 57,
+    "name": "Trump International Golf Links Doonbeg",
+    "dest": "ireland",
+    "destLabel": "Ireland",
+    "city": "Doonbeg, County Clare, Ireland",
+    "cyntp_rating": null,
+    "lat": 52.7348,
+    "lng": -9.5338
+  },
+  {
+    "id": 58,
+    "name": "Waterville Golf Links",
+    "dest": "ireland",
+    "destLabel": "Ireland",
+    "city": "Waterville, County Kerry, Ireland",
+    "cyntp_rating": null,
+    "lat": 51.8293,
+    "lng": -10.1693
+  },
+  {
+    "id": 59,
+    "name": "Olde Stone Golf Club",
+    "dest": "kentucky",
+    "destLabel": "Kentucky",
+    "city": "Bowling Green, KY",
+    "cyntp_rating": null,
+    "lat": 36.9368,
+    "lng": -86.4683
+  },
+  {
+    "id": 60,
+    "name": "Grand Traverse Resort — Spruce Run",
+    "dest": "michigan",
+    "destLabel": "Michigan",
+    "city": "Acme, MI",
+    "cyntp_rating": null,
+    "lat": 44.7963,
+    "lng": -85.5293
+  },
+  {
+    "id": 61,
+    "name": "Grand Traverse Resort — The Bear",
+    "dest": "michigan",
+    "destLabel": "Michigan",
+    "city": "Acme, MI",
+    "cyntp_rating": null,
+    "lat": 44.7973,
+    "lng": -85.5303
+  },
+  {
+    "id": 62,
+    "name": "Grand Traverse Resort — The Wolverine",
+    "dest": "michigan",
+    "destLabel": "Michigan",
+    "city": "Acme, MI",
+    "cyntp_rating": null,
+    "lat": 44.7983,
+    "lng": -85.5313
+  },
+  {
+    "id": 63,
+    "name": "Mossy Oak Golf Club",
+    "dest": "mississippi",
+    "destLabel": "Mississippi",
+    "city": "West Point, MS",
+    "cyntp_rating": null,
+    "lat": 33.6258,
+    "lng": -88.6363
+  },
+  {
+    "id": 64,
+    "name": "Old Waverly Golf Club",
+    "dest": "mississippi",
+    "destLabel": "Mississippi",
+    "city": "West Point, MS",
+    "cyntp_rating": null,
+    "lat": 33.6133,
+    "lng": -88.6448
+  },
+  {
+    "id": 65,
+    "name": "Tunica National Golf Course",
+    "dest": "mississippi",
+    "destLabel": "Mississippi",
+    "city": "Tunica Resorts, MS",
+    "cyntp_rating": null,
+    "lat": 34.7093,
+    "lng": -90.3843
+  },
+  {
+    "id": 66,
+    "name": "Big Cedar Lodge — Mountain Top",
+    "dest": "missouri",
+    "destLabel": "Missouri",
+    "city": "Ridgedale, MO",
+    "cyntp_rating": null,
+    "lat": 36.5363,
+    "lng": -93.2733
+  },
+  {
+    "id": 67,
+    "name": "Big Cedar Lodge — Top of the Rock",
+    "dest": "missouri",
+    "destLabel": "Missouri",
+    "city": "Ridgedale, MO",
+    "cyntp_rating": null,
+    "lat": 36.5373,
+    "lng": -93.2743
+  },
+  {
+    "id": 68,
+    "name": "Buffalo Ridge Springs Course",
+    "dest": "missouri",
+    "destLabel": "Missouri",
+    "city": "Ridgedale, MO",
+    "cyntp_rating": null,
+    "lat": 36.5353,
+    "lng": -93.2723
+  },
+  {
+    "id": 69,
+    "name": "Ozarks National Course",
+    "dest": "missouri",
+    "destLabel": "Missouri",
+    "city": "Ridgedale, MO",
+    "cyntp_rating": null,
+    "lat": 36.5343,
+    "lng": -93.2713
+  },
+  {
+    "id": 70,
+    "name": "Payne's Valley",
+    "dest": "missouri",
+    "destLabel": "Missouri",
+    "city": "Ridgedale, MO",
+    "cyntp_rating": null,
+    "lat": 36.5383,
+    "lng": -93.2753
+  },
+  {
+    "id": 71,
+    "name": "Caledonia Golf & Fish Club",
+    "dest": "south-carolina",
+    "destLabel": "South Carolina",
+    "city": "Pawleys Island, SC",
+    "cyntp_rating": null,
+    "lat": 33.4483,
+    "lng": -79.1288
+  },
+  {
+    "id": 72,
+    "name": "Golden Bear Golf Club",
+    "dest": "south-carolina",
+    "destLabel": "South Carolina",
+    "city": "Hilton Head, SC",
+    "cyntp_rating": null,
+    "lat": 32.1613,
+    "lng": -80.7753
+  },
+  {
+    "id": 73,
+    "name": "Hilton Head National Golf Club",
+    "dest": "south-carolina",
+    "destLabel": "South Carolina",
+    "city": "Bluffton, SC",
+    "cyntp_rating": null,
+    "lat": 32.2243,
+    "lng": -80.9178
+  },
+  {
+    "id": 74,
+    "name": "Myrtle Beach National — King's North",
+    "dest": "south-carolina",
+    "destLabel": "South Carolina",
+    "city": "Myrtle Beach, SC",
+    "cyntp_rating": null,
+    "lat": 33.7738,
+    "lng": -78.8928
+  },
+  {
+    "id": 75,
+    "name": "Old South Golf Links",
+    "dest": "south-carolina",
+    "destLabel": "South Carolina",
+    "city": "Bluffton, SC",
+    "cyntp_rating": null,
+    "lat": 32.2033,
+    "lng": -80.9088
+  },
+  {
+    "id": 76,
+    "name": "Palmetto Dunes Resort — Jones Course",
+    "dest": "south-carolina",
+    "destLabel": "South Carolina",
+    "city": "Hilton Head, SC",
+    "cyntp_rating": null,
+    "lat": 32.1823,
+    "lng": -80.7388
+  },
+  {
+    "id": 77,
+    "name": "Pawleys Plantation Golf & Country Club",
+    "dest": "south-carolina",
+    "destLabel": "South Carolina",
+    "city": "Pawleys Island, SC",
+    "cyntp_rating": null,
+    "lat": 33.4333,
+    "lng": -79.1168
+  },
+  {
+    "id": 78,
+    "name": "Sequoyah National GC",
+    "dest": "south-carolina",
+    "destLabel": "South Carolina",
+    "city": "Whittier, NC",
+    "cyntp_rating": null,
+    "lat": 35.4573,
+    "lng": -83.2968
+  },
+  {
+    "id": 79,
+    "name": "True Blue Golf Club",
+    "dest": "south-carolina",
+    "destLabel": "South Carolina",
+    "city": "Pawleys Island, SC",
+    "cyntp_rating": null,
+    "lat": 33.4743,
+    "lng": -79.1008
+  },
+  {
+    "id": 80,
+    "name": "Franklin Bridge Golf Club",
+    "dest": "tennessee",
+    "destLabel": "Tennessee",
+    "city": "Franklin, TN",
+    "cyntp_rating": null,
+    "lat": 35.9553,
+    "lng": -86.8743
+  },
+  {
+    "id": 81,
+    "name": "Harpeth Hills Golf Course",
+    "dest": "tennessee",
+    "destLabel": "Tennessee",
+    "city": "Nashville, TN",
+    "cyntp_rating": null,
+    "lat": 36.0638,
+    "lng": -86.8988
+  },
+  {
+    "id": 82,
+    "name": "Hermitage Golf Course — General's Retreat",
+    "dest": "tennessee",
+    "destLabel": "Tennessee",
+    "city": "Old Hickory, TN",
+    "cyntp_rating": null,
+    "lat": 36.2588,
+    "lng": -86.6433
+  },
+  {
+    "id": 83,
+    "name": "Hermitage Golf Course — President's Reserve",
+    "dest": "tennessee",
+    "destLabel": "Tennessee",
+    "city": "Old Hickory, TN",
+    "cyntp_rating": null,
+    "lat": 36.2598,
+    "lng": -86.6443
+  },
+  {
+    "id": 84,
+    "name": "Nashboro Golf Club",
+    "dest": "tennessee",
+    "destLabel": "Tennessee",
+    "city": "Nashville, TN",
+    "cyntp_rating": null,
+    "lat": 36.0778,
+    "lng": -86.6028
+  },
+  {
+    "id": 85,
+    "name": "Nashville National Golf Links",
+    "dest": "tennessee",
+    "destLabel": "Tennessee",
+    "city": "Nashville, TN",
+    "cyntp_rating": null,
+    "lat": 36.1388,
+    "lng": -86.9248
+  },
+  {
+    "id": 86,
+    "name": "Old Natchez Country Club",
+    "dest": "tennessee",
+    "destLabel": "Tennessee",
+    "city": "Franklin, TN",
+    "cyntp_rating": null,
+    "lat": 35.9263,
+    "lng": -86.8523
+  },
+  {
+    "id": 87,
+    "name": "Sweetens Cove Golf Club",
+    "dest": "tennessee",
+    "destLabel": "Tennessee",
+    "city": "South Pittsburg, TN",
+    "cyntp_rating": null,
+    "lat": 35.0063,
+    "lng": -85.7268
+  },
+  {
+    "id": 88,
+    "name": "The Course at Sewanee",
+    "dest": "tennessee",
+    "destLabel": "Tennessee",
+    "city": "Sewanee, TN",
+    "cyntp_rating": null,
+    "lat": 35.2033,
+    "lng": -85.9208
+  },
+  {
+    "id": 89,
+    "name": "TN Golf Trail at Montgomery Bell",
+    "dest": "tennessee",
+    "destLabel": "Tennessee",
+    "city": "Burns, TN",
+    "cyntp_rating": null,
+    "lat": 36.0783,
+    "lng": -87.2948
+  },
+  {
+    "id": 90,
+    "name": "Two Rivers Golf Course",
+    "dest": "tennessee",
+    "destLabel": "Tennessee",
+    "city": "Nashville, TN",
+    "cyntp_rating": null,
+    "lat": 36.1923,
+    "lng": -86.7658
+  },
+  {
+    "id": 91,
+    "name": "Vanderbilt Legends Club — North Course",
+    "dest": "tennessee",
+    "destLabel": "Tennessee",
+    "city": "Franklin, TN",
+    "cyntp_rating": null,
+    "lat": 35.9083,
+    "lng": -86.8663
+  },
+  {
+    "id": 92,
+    "name": "Lost Pines Golf Club",
+    "dest": "texas",
+    "destLabel": "Texas",
+    "city": "Bastrop, TX",
+    "cyntp_rating": null,
+    "lat": 30.1068,
+    "lng": -97.3173
+  },
+  {
+    "id": 93,
+    "name": "Black Desert Resort Golf Course",
+    "dest": "utah",
+    "destLabel": "Utah",
+    "city": "Ivins, UT",
+    "cyntp_rating": null,
+    "lat": 37.1683,
+    "lng": -113.6878
+  },
+  {
+    "id": 94,
+    "name": "Mountain Dell GC — Lake Course",
+    "dest": "utah",
+    "destLabel": "Utah",
+    "city": "Salt Lake City, UT",
+    "cyntp_rating": null,
+    "lat": 40.7283,
+    "lng": -111.7088
+  },
+  {
+    "id": 95,
+    "name": "Old Mill Golf Course",
+    "dest": "utah",
+    "destLabel": "Utah",
+    "city": "Murray, UT",
+    "cyntp_rating": null,
+    "lat": 40.6548,
+    "lng": -111.8888
+  },
+  {
+    "id": 96,
+    "name": "Sky Mountain GC",
+    "dest": "utah",
+    "destLabel": "Utah",
+    "city": "Hurricane, UT",
+    "cyntp_rating": null,
+    "lat": 37.1733,
+    "lng": -113.2938
+  },
+  {
+    "id": 97,
+    "name": "Sleepy Ridge GC",
+    "dest": "utah",
+    "destLabel": "Utah",
+    "city": "Orem, UT",
+    "cyntp_rating": null,
+    "lat": 40.3223,
+    "lng": -111.7338
+  },
+  {
+    "id": 98,
+    "name": "Soldier Hollow — Gold Course",
+    "dest": "utah",
+    "destLabel": "Utah",
+    "city": "Midway, UT",
+    "cyntp_rating": null,
+    "lat": 40.5243,
+    "lng": -111.4778
+  },
+  {
+    "id": 99,
+    "name": "Colonial Heritage Club",
+    "dest": "virginia",
+    "destLabel": "Virginia",
+    "city": "Williamsburg, VA",
+    "cyntp_rating": null,
+    "lat": 37.2938,
+    "lng": -76.7548
+  },
+  {
+    "id": 100,
+    "name": "Ford's Colony Country Club — Blackheath Course",
+    "dest": "virginia",
+    "destLabel": "Virginia",
+    "city": "Williamsburg, VA",
+    "cyntp_rating": null,
+    "lat": 37.2748,
+    "lng": -76.7688
+  },
+  {
+    "id": 101,
+    "name": "Golden Horseshoe Golf Club — Gold Course",
+    "dest": "virginia",
+    "destLabel": "Virginia",
+    "city": "Williamsburg, VA",
+    "cyntp_rating": null,
+    "lat": 37.2713,
+    "lng": -76.7073
+  },
+  {
+    "id": 102,
+    "name": "Kingsmill Resort — Plantation Course",
+    "dest": "virginia",
+    "destLabel": "Virginia",
+    "city": "Williamsburg, VA",
+    "cyntp_rating": null,
+    "lat": 37.2388,
+    "lng": -76.6948
+  },
+  {
+    "id": 103,
+    "name": "Kingsmill Resort — River Course",
+    "dest": "virginia",
+    "destLabel": "Virginia",
+    "city": "Williamsburg, VA",
+    "cyntp_rating": null,
+    "lat": 37.2378,
+    "lng": -76.6938
+  },
+  {
+    "id": 104,
+    "name": "Royal New Kent Golf Club",
+    "dest": "virginia",
+    "destLabel": "Virginia",
+    "city": "Providence Forge, VA",
+    "cyntp_rating": null,
+    "lat": 37.4343,
+    "lng": -76.9958
+  },
+  {
+    "id": 105,
+    "name": "Stonehouse Golf Club",
+    "dest": "virginia",
+    "destLabel": "Virginia",
+    "city": "Toano, VA",
+    "cyntp_rating": null,
+    "lat": 37.3893,
+    "lng": -76.8278
+  },
+  {
+    "id": 106,
+    "name": "The Club at Viniterra",
+    "dest": "virginia",
+    "destLabel": "Virginia",
+    "city": "New Kent, VA",
+    "cyntp_rating": null,
+    "lat": 37.5143,
+    "lng": -77.0628
+  },
+  {
+    "id": 107,
+    "name": "Williamsburg National — Jamestown Course",
+    "dest": "virginia",
+    "destLabel": "Virginia",
+    "city": "Williamsburg, VA",
+    "cyntp_rating": null,
+    "lat": 37.2653,
+    "lng": -76.7523
+  },
+  {
+    "id": 108,
+    "name": "Gamble Sands",
+    "dest": "washington",
+    "destLabel": "Washington",
+    "city": "Brewster, WA",
+    "cyntp_rating": null,
+    "lat": 48.0963,
+    "lng": -119.7863
+  },
+  {
+    "id": 109,
+    "name": "Gamble Sands — Scarecrow",
+    "dest": "washington",
+    "destLabel": "Washington",
+    "city": "Brewster, WA",
+    "cyntp_rating": null,
+    "lat": 48.0973,
+    "lng": -119.7873
+  },
+  {
+    "id": 110,
+    "name": "Erin Hills",
+    "dest": "wisconsin",
+    "destLabel": "Wisconsin",
+    "city": "Hartford, WI",
+    "cyntp_rating": null,
+    "lat": 43.3133,
+    "lng": -88.3928
+  },
+  {
+    "id": 111,
+    "name": "SentryWorld",
+    "dest": "wisconsin",
+    "destLabel": "Wisconsin",
+    "city": "Stevens Point, WI",
+    "cyntp_rating": null,
+    "lat": 44.5243,
+    "lng": -89.5513
+  },
+  {
+    "id": 112,
+    "name": "Stevens Point Country Club",
+    "dest": "wisconsin",
+    "destLabel": "Wisconsin",
+    "city": "Stevens Point, WI",
+    "cyntp_rating": null,
+    "lat": 44.5233,
+    "lng": -89.5523
+  },
+  {
+    "id": 113,
+    "name": "The Club at Lac La Belle",
+    "dest": "wisconsin",
+    "destLabel": "Wisconsin",
+    "city": "Oconomowoc, WI",
+    "cyntp_rating": null,
+    "lat": 43.1163,
+    "lng": -88.4798
+  },
+  {
+    "id": 114,
+    "name": "Trump National Doral — Blue Monster",
+    "dest": "florida",
+    "destLabel": "Florida",
+    "city": "Miami, FL",
+    "cyntp_rating": null,
+    "lat": 25.8188,
+    "lng": -80.3378
+  },
+  {
+    "id": 115,
+    "name": "Barefoot Resort — Love Course",
+    "dest": "south-carolina",
+    "destLabel": "South Carolina",
+    "city": "North Myrtle Beach, SC",
+    "cyntp_rating": null,
+    "lat": 33.8413,
+    "lng": -78.7278
+  },
+  {
+    "id": 116,
+    "name": "Bali Hai Golf Club",
+    "dest": "nevada",
+    "destLabel": "Nevada",
+    "city": "Las Vegas, NV",
+    "cyntp_rating": null,
+    "lat": 36.0893,
+    "lng": -115.1738
+  },
+  {
+    "id": 117,
+    "name": "TPC Myrtle Beach",
+    "dest": "south-carolina",
+    "destLabel": "South Carolina",
+    "city": "Murrells Inlet, SC",
+    "cyntp_rating": null,
+    "lat": 33.6003,
+    "lng": -79.0238
+  },
+  {
+    "id": 118,
+    "name": "TPC Las Vegas",
+    "dest": "nevada",
+    "destLabel": "Nevada",
+    "city": "Las Vegas, NV",
+    "cyntp_rating": null,
+    "lat": 36.2013,
+    "lng": -115.2488
+  },
+  {
+    "id": 119,
+    "name": "Angel Park — Mountain Course",
+    "dest": "nevada",
+    "destLabel": "Nevada",
+    "city": "Las Vegas, NV",
+    "cyntp_rating": null,
+    "lat": 36.1843,
+    "lng": -115.2978
+  },
+  {
+    "id": 120,
+    "name": "Serket Golf Club",
+    "dest": "nevada",
+    "destLabel": "Nevada",
+    "city": "Las Vegas, NV",
+    "cyntp_rating": null,
+    "lat": 36.2133,
+    "lng": -115.2138
+  },
+  {
+    "id": 121,
+    "name": "Reflection Bay Golf Club",
+    "dest": "nevada",
+    "destLabel": "Nevada",
+    "city": "Henderson, NV",
+    "cyntp_rating": null,
+    "lat": 35.9743,
+    "lng": -114.8618
+  },
+  {
+    "id": 122,
+    "name": "Turnberry Isle — Miller Course",
+    "dest": "florida",
+    "destLabel": "Florida",
+    "city": "Aventura, FL",
+    "cyntp_rating": null,
+    "lat": 25.9573,
+    "lng": -80.1388
+  },
+  {
+    "id": 123,
+    "name": "Turnberry Isle — Soffer Course",
+    "dest": "florida",
+    "destLabel": "Florida",
+    "city": "Aventura, FL",
+    "cyntp_rating": null,
+    "lat": 25.9583,
+    "lng": -80.1398
+  },
+  {
+    "id": 124,
+    "name": "Pelican Hill Golf Club — Ocean North",
+    "dest": "california",
+    "destLabel": "California",
+    "city": "Newport Coast, CA",
+    "cyntp_rating": null,
+    "lat": 33.5863,
+    "lng": -117.8473
+  },
+  {
+    "id": 125,
+    "name": "Pelican Hill Golf Club — Ocean South",
+    "dest": "california",
+    "destLabel": "California",
+    "city": "Newport Coast, CA",
+    "cyntp_rating": null,
+    "lat": 33.5853,
+    "lng": -117.8463
+  },
+  {
+    "id": 126,
+    "name": "Eagle Creek Golf Club",
+    "dest": "florida",
+    "destLabel": "Florida",
+    "city": "Orlando, FL",
+    "cyntp_rating": null,
+    "lat": 28.3523,
+    "lng": -81.2388
+  },
+  {
+    "id": 127,
+    "name": "Copper Rock Golf Course",
+    "dest": "utah",
+    "destLabel": "Utah",
+    "city": "Hurricane, UT",
+    "cyntp_rating": null,
+    "lat": 37.1823,
+    "lng": -113.3128
+  },
+  {
+    "id": 128,
+    "name": "Coral Canyon Golf Course",
+    "dest": "utah",
+    "destLabel": "Utah",
+    "city": "Washington, UT",
+    "cyntp_rating": null,
+    "lat": 37.1303,
+    "lng": -113.5088
+  },
+  {
+    "id": 129,
+    "name": "Sand Hollow Resort — Championship Course",
+    "dest": "utah",
+    "destLabel": "Utah",
+    "city": "Hurricane, UT",
+    "cyntp_rating": null,
+    "lat": 37.1943,
+    "lng": -113.2738
+  },
+  {
+    "id": 130,
+    "name": "Wolf Creek Golf Club",
+    "dest": "nevada",
+    "destLabel": "Nevada",
+    "city": "Mesquite, NV",
+    "cyntp_rating": null,
+    "lat": 36.8143,
+    "lng": -114.0838
+  },
+  {
+    "id": 131,
+    "name": "Conestoga Golf Club",
+    "dest": "nevada",
+    "destLabel": "Nevada",
+    "city": "Mesquite, NV",
+    "cyntp_rating": null,
+    "lat": 36.8203,
+    "lng": -114.0928
+  }
+]
