@@ -544,6 +544,7 @@ nav .active { color: var(--sun) !important; }
 @media (max-width: 960px) {
   .ph-right { padding-top: 0; }
   .map-stats-footer { padding: 12px 20px; }
+  body.view-map .page-header { padding: 12px 20px; }
 }
 @media (max-width: 768px) {
   #courseMap { height: 400px; }
@@ -551,8 +552,12 @@ nav .active { color: var(--sun) !important; }
   .ph-right { padding-top: 28px; width: 100%; }
 }
 
-/* ── Hide list-only controls in MAP view ────────────────────────────── */
+/* ── MAP view: collapse hero to toggle-only strip, map fills viewport ── */
 body.view-map .filter-bar { display: none !important; }
+body.view-map .ph-left { display: none; }
+body.view-map .page-header { padding: 14px 80px; }
+body.view-map .page-header-inner { justify-content: flex-end; }
+body.view-map #courseMap { height: calc(100vh - 140px); min-height: 360px; }
 </style>
 <meta property="og:title" content="Golf Course Directory | Reviews & Ratings — CYNTP">
 <meta property="og:description" content="Honest golf course reviews from courses we've actually played.">
