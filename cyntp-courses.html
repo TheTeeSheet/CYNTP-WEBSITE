@@ -81,7 +81,9 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
   font-family: var(--font-head); font-size: 260px; line-height: 1;
   color: rgba(255,255,255,0.03); pointer-events: none; letter-spacing: -5px;
 }
-.page-header-inner { position: relative; z-index: 1; max-width: 700px; }
+.page-header-inner { position: relative; z-index: 1; display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; }
+.ph-left { flex: 1; min-width: 0; max-width: 640px; }
+.ph-right { flex-shrink: 0; display: flex; align-items: center; }
 .ph-eyebrow { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--sun); font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
 .ph-eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--sun); border-radius: 2px; }
 .ph-title { font-family: var(--font-head); font-size: clamp(48px, 7vw, 100px); color: #fff; letter-spacing: 2px; line-height: 0.9; margin-bottom: 20px; }
@@ -412,22 +414,20 @@ nav .active { color: var(--sun) !important; }
 
 
 /* ── VIEW TOGGLE ─────────────────────────────────────────────────────── */
-.view-toggle-bar {
-  background: var(--paper); border-bottom: 1px solid var(--paper3);
-  padding: 14px 80px; display: flex; align-items: center;
-}
 .vtog-wrap {
-  display: flex; background: var(--paper2); border-radius: 8px; padding: 3px; gap: 2px;
+  display: flex; border: 1px solid #d4a055; border-radius: 8px; overflow: hidden;
 }
 .vtog-btn {
   display: flex; align-items: center; gap: 7px;
-  padding: 9px 20px; border: none; border-radius: 5px;
+  padding: 10px 22px; border: none; border-radius: 0;
   font-family: var(--font-body); font-size: 11px; font-weight: 700;
   letter-spacing: 2px; text-transform: uppercase;
-  color: var(--muted); background: transparent;
+  color: #d4a055; background: transparent;
   cursor: pointer; transition: all 0.2s; min-height: 44px;
 }
-.vtog-btn.active { background: var(--ink); color: #fff; }
+.vtog-btn + .vtog-btn { border-left: 1px solid #d4a055; }
+.vtog-btn:hover { background: rgba(212,160,85,0.15); }
+.vtog-btn.active { background: #d4a055; color: #0d0d0d; }
 .vtog-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
 
 /* ── MAP SECTION ─────────────────────────────────────────────────────── */
@@ -542,11 +542,13 @@ nav .active { color: var(--sun) !important; }
 
 /* ── RESPONSIVE ──────────────────────────────────────────────────────── */
 @media (max-width: 960px) {
-  .view-toggle-bar { padding: 12px 20px; }
+  .ph-right { padding-top: 0; }
   .map-stats-footer { padding: 12px 20px; }
 }
 @media (max-width: 768px) {
   #courseMap { height: 400px; }
+  .page-header-inner { flex-direction: column; align-items: flex-start; }
+  .ph-right { padding-top: 28px; width: 100%; }
 }
 
 /* ── Hide list-only controls in MAP view ────────────────────────────── */
@@ -625,33 +627,33 @@ body.view-map .filter-bar { display: none !important; }
 <!-- ── PAGE HEADER ── -->
 <div class="page-header">
   <div class="page-header-inner">
-    <div class="ph-eyebrow">Course Catalogue</div>
-    <h1 class="ph-title">EVERY <em>COURSE</em><br>WE'VE PLAYED.</h1>
-    <p class="ph-sub">Every course we've stepped foot on — rated, reviewed, and told straight. 131 courses across 20 destinations. Start exploring.</p>
-    <div class="ph-stats">
-      <div>
-        <div class="ph-stat-n"><span class="counter" data-target="131" data-decimal="0">131</span><span>+</span></div>
-        <div class="ph-stat-l">Courses Reviewed</div>
-      </div>
-      <div>
-        <div class="ph-stat-n"><span class="counter" data-target="20" data-decimal="0">20</span></div>
-        <div class="ph-stat-l">Destinations</div>
+    <div class="ph-left">
+      <div class="ph-eyebrow">Course Catalogue</div>
+      <h1 class="ph-title">EVERY <em>COURSE</em><br>WE'VE PLAYED.</h1>
+      <p class="ph-sub">Every course we've stepped foot on — rated, reviewed, and told straight. 131 courses across 20 destinations. Start exploring.</p>
+      <div class="ph-stats">
+        <div>
+          <div class="ph-stat-n"><span class="counter" data-target="131" data-decimal="0">131</span><span>+</span></div>
+          <div class="ph-stat-l">Courses Reviewed</div>
+        </div>
+        <div>
+          <div class="ph-stat-n"><span class="counter" data-target="20" data-decimal="0">20</span></div>
+          <div class="ph-stat-l">Destinations</div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- ── VIEW TOGGLE ── -->
-<div class="view-toggle-bar">
-  <div class="vtog-wrap" role="group" aria-label="View mode">
-    <button class="vtog-btn active" id="vtogMap" aria-pressed="true" onclick="setView('map')">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2l4 2v10l-4-2-4 2-4-2V2l4 2 4-2z"/><path d="M6 4v10M10 2v10"/></svg>
-      Map
-    </button>
-    <button class="vtog-btn" id="vtogList" aria-pressed="false" onclick="setView('list')">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="4" y1="4" x2="14" y2="4"/><line x1="4" y1="8" x2="14" y2="8"/><line x1="4" y1="12" x2="14" y2="12"/><circle cx="1.5" cy="4" r="1" fill="currentColor" stroke="none"/><circle cx="1.5" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="1.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg>
-      List
-    </button>
+    <div class="ph-right">
+      <div class="vtog-wrap" role="group" aria-label="View mode">
+        <button class="vtog-btn active" id="vtogMap" aria-pressed="true" onclick="setView('map')">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2l4 2v10l-4-2-4 2-4-2V2l4 2 4-2z"/><path d="M6 4v10M10 2v10"/></svg>
+          Map
+        </button>
+        <button class="vtog-btn" id="vtogList" aria-pressed="false" onclick="setView('list')">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="4" y1="4" x2="14" y2="4"/><line x1="4" y1="8" x2="14" y2="8"/><line x1="4" y1="12" x2="14" y2="12"/><circle cx="1.5" cy="4" r="1" fill="currentColor" stroke="none"/><circle cx="1.5" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="1.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg>
+          List
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1945,6 +1947,32 @@ function shiftCourseImage(dir) {
   document.querySelectorAll('.panel-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
 }
 
+// ── MAP VIEW STATE (early – so toggle works before CDN finishes loading) ──
+let activeView = 'map';
+let mapInitialized = false;
+let mapInstance = null;
+let clusterGroup = null;
+let courseMarkers = {};
+let initialBounds = null;
+
+function setView(view) {
+  activeView = view;
+  document.body.classList.toggle('view-map',  view === 'map');
+  document.body.classList.toggle('view-list', view === 'list');
+  const vMap  = document.getElementById('vtogMap');
+  const vList = document.getElementById('vtogList');
+  if (vMap)  { vMap.classList.toggle('active',  view === 'map');  vMap.setAttribute('aria-pressed',  String(view === 'map')); }
+  if (vList) { vList.classList.toggle('active', view === 'list'); vList.setAttribute('aria-pressed', String(view === 'list')); }
+  const mapView  = document.getElementById('mapView');
+  const gridWrap = document.getElementById('courseGridWrap');
+  if (mapView)  mapView.style.display  = view === 'map'  ? 'block' : 'none';
+  if (gridWrap) gridWrap.style.display = view === 'list' ? 'block' : 'none';
+  if (view === 'map') {
+    if (typeof initMap === 'function' && !mapInitialized) initMap();
+    else if (typeof filterMap === 'function' && mapInitialized) filterMap(activeDest);
+  }
+}
+
 // ── SCROLL REVEAL ─────────────────────────────────────────────────────
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
@@ -1954,6 +1982,7 @@ document.querySelectorAll('.r').forEach(el => obs.observe(el));
 // ── INIT ──────────────────────────────────────────────────────────────
 loadData();
 renderGrid();
+setView('map');
 window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 80); }, { passive: true });
 
 // Live counters
@@ -2037,26 +2066,8 @@ const COORDS = {
 };
 
 // ── VIEW STATE ────────────────────────────────────────────────────────
-let activeView = 'map';
-let mapInitialized = false;
-let mapInstance = null;
-let clusterGroup = null;
-let courseMarkers = {};
-let initialBounds = null;
+// (activeView, mapInitialized, mapInstance, etc. + setView() defined in main script)
 
-function setView(view) {
-  activeView = view;
-  document.body.classList.toggle('view-map',  view === 'map');
-  document.body.classList.toggle('view-list', view === 'list');
-  document.getElementById('vtogMap').classList.toggle('active', view === 'map');
-  document.getElementById('vtogList').classList.toggle('active', view === 'list');
-  document.getElementById('vtogMap').setAttribute('aria-pressed', String(view === 'map'));
-  document.getElementById('vtogList').setAttribute('aria-pressed', String(view === 'list'));
-  document.getElementById('mapView').style.display = view === 'map' ? 'block' : 'none';
-  document.getElementById('courseGridWrap').style.display = view === 'list' ? 'block' : 'none';
-  if (view === 'map' && !mapInitialized) initMap();
-  else if (view === 'map') filterMap(activeDest);
-}
 
 // ── MAP INIT ──────────────────────────────────────────────────────────
 function initMap() {
