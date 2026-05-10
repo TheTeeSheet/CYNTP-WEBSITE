@@ -431,7 +431,7 @@ nav .active { color: var(--sun) !important; }
 .vtog-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
 
 /* ── MAP SECTION ─────────────────────────────────────────────────────── */
-.map-section { position: relative; }
+.map-section { position: relative; background: var(--ink); padding: 40px 0; }
 .map-inner {
   position: relative;
   margin: 0 80px;
@@ -538,7 +538,7 @@ nav .active { color: var(--sun) !important; }
 
 /* ── MAP STATS FOOTER ────────────────────────────────────────────────── */
 .map-stats-footer {
-  background: var(--ink); padding: 14px 80px; margin: 0 80px; border-radius: 0 0 14px 14px;
+  background: rgba(255,255,255,0.04); padding: 14px 80px; margin: 0 80px; border-radius: 0 0 14px 14px; border: 1px solid rgba(212,160,85,0.1); border-top: none;
   display: flex; align-items: center; gap: 14px;
   font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
   color: rgba(255,255,255,0.3);
@@ -568,7 +568,7 @@ nav .active { color: var(--sun) !important; }
 /* ── RESPONSIVE ──────────────────────────────────────────────────────── */
 @media (max-width: 960px) {
   .ph-right { padding-top: 0; }
-  .map-stats-footer { padding: 12px 20px; margin: 0 16px; border-radius: 0 0 8px 8px; }
+  .map-stats-footer { padding: 12px 20px; margin: 0 16px; border-radius: 0 0 8px 8px; border: 1px solid rgba(212,160,85,0.1); border-top: none; }
   body.view-map .ph-right { right: 20px; top: 76px; }
 }
 @media (max-width: 768px) {
