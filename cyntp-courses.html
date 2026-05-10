@@ -81,15 +81,15 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
   font-family: var(--font-head); font-size: 260px; line-height: 1;
   color: rgba(255,255,255,0.03); pointer-events: none; letter-spacing: -5px;
 }
-.page-header-inner { position: relative; z-index: 1; display: flex; align-items: flex-end; justify-content: flex-start; gap: 48px; }
-.ph-left { flex: 1; min-width: 0; max-width: 640px; }
+.page-header-inner { position: relative; z-index: 1; }
+.ph-left { max-width: 640px; }
 .ph-right { flex-shrink: 0; display: flex; align-items: center; }
 .ph-eyebrow { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--sun); font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
 .ph-eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--sun); border-radius: 2px; }
 .ph-title { font-family: var(--font-head); font-size: clamp(48px, 7vw, 100px); color: #fff; letter-spacing: 2px; line-height: 0.9; margin-bottom: 20px; }
 .ph-title em { font-family: var(--font-serif); font-style: italic; color: var(--sun); -webkit-text-stroke: 0; }
 .ph-sub { font-size: 16px; color: rgba(255,255,255,0.5); line-height: 1.75; }
-.ph-stats { display: flex; gap: 40px; margin-top: 36px; padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.08); }
+.ph-stats { display: flex; align-items: center; gap: 40px; margin-top: 36px; padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.08); }
 .ph-stat-n { font-family: var(--font-head); font-size: 32px; color: #fff; }
 .ph-stat-n span { color: var(--sun); }
 .ph-stat-n span.counter { color: #fff; }
@@ -429,6 +429,7 @@ nav .active { color: var(--sun) !important; }
 .vtog-btn:hover { background: rgba(212,160,85,0.15); }
 .vtog-btn.active { background: #d4a055; color: #0d0d0d; }
 .vtog-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+.ph-stats .vtog-wrap { margin-left: auto; }
 
 /* ── MAP SECTION ─────────────────────────────────────────────────────── */
 .map-section { position: relative; background: var(--ink); padding: 16px 0; }
@@ -536,17 +537,7 @@ nav .active { color: var(--sun) !important; }
 .mpc-dest-count { color: #d4a055; font-weight: 700; font-size: 12px; }
 .mpc-cluster-more { font-size: 11px; color: rgba(255,255,255,0.3); margin-bottom: 12px; font-style: italic; }
 
-/* ── MAP STATS FOOTER ────────────────────────────────────────────────── */
-.map-stats-footer {
-  background: rgba(255,255,255,0.04); padding: 14px 24px; width: calc(100% - 160px); max-width: 1280px; margin: 0 auto; border-radius: 0 0 14px 14px; border: 1px solid rgba(212,160,85,0.1); border-top: none;
-  display: flex; align-items: center; gap: 14px;
-  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
-}
-.map-stats-footer strong {
-  color: #d4a055; font-family: var(--font-head); font-size: 15px; letter-spacing: 1px;
-}
-.msd-dot { color: rgba(255,255,255,0.15); }
+
 
 /* ── LEAFLET CONTROL OVERRIDES ───────────────────────────────────────── */
 .leaflet-control-zoom {
@@ -566,32 +557,15 @@ nav .active { color: var(--sun) !important; }
 .leaflet-tile-pane { filter: brightness(0.85); }
 
 /* ── RESPONSIVE ──────────────────────────────────────────────────────── */
-@media (max-width: 960px) {
-  .ph-right { padding-top: 0; }
-  .map-stats-footer { padding: 12px 20px; margin: 0 16px; border-radius: 0 0 8px 8px; border: 1px solid rgba(212,160,85,0.1); border-top: none; }
-  body.view-map .ph-right { right: 20px; top: 76px; }
-}
+
 @media (max-width: 768px) {
   #courseMap { height: 400px; }
   .map-inner { width: calc(100% - 32px); max-width: none; margin: 0 auto; border-radius: 8px; }
-  .page-header-inner { flex-direction: column; align-items: flex-start; }
-  .ph-right { padding-top: 28px; width: 100%; }
 }
 
 /* ── Hide list-only controls in MAP view ────────────────────────────── */
 body.view-map .filter-bar { display: none !important; }
-/* Toggle floats fixed in top-right while map is shown */
-body.view-map .ph-right {
-  position: fixed;
-  top: 80px;
-  right: 80px;
-  z-index: 500;
-}
-body.view-map .vtog-wrap {
-  background: rgba(13,13,13,0.88);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
+
 </style>
 <meta property="og:title" content="Golf Course Directory | Reviews & Ratings — CYNTP">
 <meta property="og:description" content="Honest golf course reviews from courses we've actually played.">
@@ -670,28 +644,29 @@ body.view-map .vtog-wrap {
       <div class="ph-eyebrow">Course Catalogue</div>
       <h1 class="ph-title">EVERY <em>COURSE</em><br>WE'VE PLAYED.</h1>
       <p class="ph-sub">Every course we've stepped foot on — rated, reviewed, and told straight. 131 courses across 20 destinations. Start exploring.</p>
-      <div class="ph-stats">
-        <div>
-          <div class="ph-stat-n"><span class="counter" data-target="131" data-decimal="0">131</span><span>+</span></div>
-          <div class="ph-stat-l">Courses Reviewed</div>
-        </div>
-        <div>
-          <div class="ph-stat-n"><span class="counter" data-target="20" data-decimal="0">20</span></div>
-          <div class="ph-stat-l">Destinations</div>
-        </div>
-      </div>
     </div>
-    <div class="ph-right">
-      <div class="vtog-wrap" role="group" aria-label="View mode">
-        <button class="vtog-btn active" id="vtogMap" aria-pressed="true" onclick="setView('map')">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2l4 2v10l-4-2-4 2-4-2V2l4 2 4-2z"/><path d="M6 4v10M10 2v10"/></svg>
-          Map
-        </button>
-        <button class="vtog-btn" id="vtogList" aria-pressed="false" onclick="setView('list')">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="4" y1="4" x2="14" y2="4"/><line x1="4" y1="8" x2="14" y2="8"/><line x1="4" y1="12" x2="14" y2="12"/><circle cx="1.5" cy="4" r="1" fill="currentColor" stroke="none"/><circle cx="1.5" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="1.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg>
-          List
-        </button>
-      </div>
+  <div class="ph-stats">
+    <div>
+      <div class="ph-stat-n"><span id="statCourses" class="counter" data-target="131" data-decimal="0">131</span></div>
+      <div class="ph-stat-l">Courses Played</div>
+    </div>
+    <div>
+      <div class="ph-stat-n"><span id="statDests" class="counter" data-target="20" data-decimal="0">20</span></div>
+      <div class="ph-stat-l">Destinations</div>
+    </div>
+    <div>
+      <div class="ph-stat-n"><span id="statCountries" class="counter" data-target="3" data-decimal="0">3</span></div>
+      <div class="ph-stat-l">Countries</div>
+    </div>
+    <div class="vtog-wrap" role="group" aria-label="View mode">
+      <button class="vtog-btn active" id="vtogMap" aria-pressed="true" onclick="setView('map')">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2l4 2v10l-4-2-4 2-4-2V2l4 2 4-2z"/><path d="M6 4v10M10 2v10"/></svg>
+        Map
+      </button>
+      <button class="vtog-btn" id="vtogList" aria-pressed="false" onclick="setView('list')">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="4" y1="4" x2="14" y2="4"/><line x1="4" y1="8" x2="14" y2="8"/><line x1="4" y1="12" x2="14" y2="12"/><circle cx="1.5" cy="4" r="1" fill="currentColor" stroke="none"/><circle cx="1.5" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="1.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg>
+        List
+      </button>
     </div>
   </div>
 </div>
@@ -742,7 +717,6 @@ body.view-map .vtog-wrap {
       Reset View
     </button>
   </div>
-  <div class="map-stats-footer" id="mapStatsFooter"></div>
 </div>
 
 <!-- ── COURSE GRID ── -->
@@ -2021,8 +1995,26 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.r').forEach(el => obs.observe(el));
 
+// ── HERO STATS (dynamic from COURSES data) ────────────────────────────
+function updateHeroStats() {
+  const total = COURSES.length;
+  const dests = new Set(COURSES.map(c => c.dest)).size;
+  const countries = new Set(COURSES.map(function(c) {
+    if (c.dest === 'ireland') return 'IE';
+    if (c.dest === 'dominican-republic') return 'DR';
+    return 'US';
+  })).size;
+  const sc = document.getElementById('statCourses');
+  const sd = document.getElementById('statDests');
+  const sk = document.getElementById('statCountries');
+  if (sc) { sc.dataset.target = total; sc.textContent = total; }
+  if (sd) { sd.dataset.target = dests; sd.textContent = dests; }
+  if (sk) { sk.dataset.target = countries; sk.textContent = countries; }
+}
+
 // ── INIT ──────────────────────────────────────────────────────────────
 loadData();
+updateHeroStats();
 renderGrid();
 setView('map');
 window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 80); }, { passive: true });
@@ -2253,7 +2245,6 @@ function initMap() {
 
   // Reset button
   mapInstance.on('moveend zoomend', checkResetBtn);
-  renderStatsFooter();
 }
 
 function checkResetBtn() {
@@ -2286,31 +2277,9 @@ function filterMap(dest) {
     const b = clusterGroup.getBounds();
     if (b.isValid()) mapInstance.flyToBounds(b, { padding: [40, 40], duration: 0.6 });
   }
-  renderStatsFooter(filtered.length);
 }
 
-function renderStatsFooter(count) {
-  const el = document.getElementById('mapStatsFooter');
-  if (!el) return;
-  const total  = (count !== undefined) ? count : COURSES.length;
-  const dests  = new Set(
-    (count !== undefined && activeDest !== 'all'
-      ? COURSES.filter(c => c.dest === activeDest)
-      : COURSES
-    ).map(c => c.dest)
-  ).size;
-  const countries = new Set(COURSES.map(function(c) {
-    if (c.dest === 'ireland') return 'IE';
-    if (c.dest === 'dominican-republic') return 'DR';
-    return 'US';
-  })).size;
-  el.innerHTML =
-    '<strong>' + total + '</strong>&nbsp;Courses Played' +
-    ' <span class="msd-dot">&middot;</span> ' +
-    '<strong>' + dests + '</strong>&nbsp;Destination' + (dests !== 1 ? 's' : '') +
-    ' <span class="msd-dot">&middot;</span> ' +
-    '<strong>' + countries + '</strong>&nbsp;Countries';
-}
+
 
 // kick off default MAP view
 setView('map');
