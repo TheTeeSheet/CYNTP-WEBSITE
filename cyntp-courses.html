@@ -457,24 +457,6 @@ nav .active { color: var(--sun) !important; }
 .map-reset-btn:hover:not(:disabled) { background: rgba(212,160,85,0.14); }
 .map-reset-btn:disabled { opacity: 0.35; pointer-events: none; }
 
-/* ── MAP SCROLL STRIP ────────────────────────────────────────────────── */
-.map-scroll-strip {
-  position: absolute; right: 0; top: 0; bottom: 0; width: 18px;
-  z-index: 400; cursor: ns-resize;
-  background: rgba(13,13,13,0.45);
-  border-left: 1px solid rgba(212,160,85,0.15);
-  transition: background 0.2s, border-color 0.2s;
-  display: flex; align-items: center; justify-content: center;
-}
-.map-scroll-strip:hover {
-  background: rgba(13,13,13,0.78);
-  border-left-color: rgba(212,160,85,0.42);
-}
-.map-scroll-strip::after {
-  content: '';
-  width: 2px; height: 44px; border-radius: 2px;
-  background: linear-gradient(to bottom, transparent, rgba(212,160,85,0.55) 30%, rgba(212,160,85,0.55) 70%, transparent);
-}
 
 /* ── MAP PIN & CLUSTER ───────────────────────────────────────────────── */
 .map-pin {
@@ -711,7 +693,6 @@ body.view-map .filter-bar { display: none !important; }
 <div id="mapView" class="map-section">
   <div class="map-inner">
     <div id="courseMap" role="application" aria-label="Interactive map of all the courses we've played"></div>
-    <div class="map-scroll-strip" aria-hidden="true" title="Scroll here to navigate the page"></div>
     <button class="map-reset-btn" id="mapResetBtn" aria-label="Reset map view to show all courses" onclick="resetMapView()" disabled>
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><polyline points="1,5 5,1 5,3.5 11,3.5 11,6.5 5,6.5 5,9"/></svg>
       Reset View
