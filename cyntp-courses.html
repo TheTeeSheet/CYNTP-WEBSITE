@@ -432,6 +432,12 @@ nav .active { color: var(--sun) !important; }
 
 /* ── MAP SECTION ─────────────────────────────────────────────────────── */
 .map-section { position: relative; }
+.map-inner {
+  position: relative;
+  margin: 0 80px;
+  border-radius: 14px;
+  overflow: hidden;
+}
 #courseMap {
   height: 560px; width: 100%;
   background: #0d0d0d;
@@ -532,7 +538,7 @@ nav .active { color: var(--sun) !important; }
 
 /* ── MAP STATS FOOTER ────────────────────────────────────────────────── */
 .map-stats-footer {
-  background: var(--ink); padding: 14px 80px;
+  background: var(--ink); padding: 14px 80px; margin: 0 80px; border-radius: 0 0 14px 14px;
   display: flex; align-items: center; gap: 14px;
   font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
   color: rgba(255,255,255,0.3);
@@ -562,11 +568,12 @@ nav .active { color: var(--sun) !important; }
 /* ── RESPONSIVE ──────────────────────────────────────────────────────── */
 @media (max-width: 960px) {
   .ph-right { padding-top: 0; }
-  .map-stats-footer { padding: 12px 20px; }
+  .map-stats-footer { padding: 12px 20px; margin: 0 16px; border-radius: 0 0 8px 8px; }
   body.view-map .ph-right { right: 20px; top: 76px; }
 }
 @media (max-width: 768px) {
   #courseMap { height: 400px; }
+  .map-inner { margin: 0 16px; border-radius: 8px; }
   .page-header-inner { flex-direction: column; align-items: flex-start; }
   .ph-right { padding-top: 28px; width: 100%; }
 }
@@ -727,12 +734,14 @@ body.view-map .vtog-wrap {
 
 <!-- ── MAP VIEW ── -->
 <div id="mapView" class="map-section">
-  <div id="courseMap" role="application" aria-label="Interactive map of all the courses we've played"></div>
-  <div class="map-scroll-strip" aria-hidden="true" title="Scroll here to navigate the page"></div>
-  <button class="map-reset-btn" id="mapResetBtn" aria-label="Reset map view to show all courses" onclick="resetMapView()" disabled>
-    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><polyline points="1,5 5,1 5,3.5 11,3.5 11,6.5 5,6.5 5,9"/></svg>
-    Reset View
-  </button>
+  <div class="map-inner">
+    <div id="courseMap" role="application" aria-label="Interactive map of all the courses we've played"></div>
+    <div class="map-scroll-strip" aria-hidden="true" title="Scroll here to navigate the page"></div>
+    <button class="map-reset-btn" id="mapResetBtn" aria-label="Reset map view to show all courses" onclick="resetMapView()" disabled>
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><polyline points="1,5 5,1 5,3.5 11,3.5 11,6.5 5,6.5 5,9"/></svg>
+      Reset View
+    </button>
+  </div>
   <div class="map-stats-footer" id="mapStatsFooter"></div>
 </div>
 
