@@ -366,6 +366,7 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
   .course-grid { grid-template-columns: 1fr 1fr; }
   .filter-tabs { overflow-x: auto; }
   .ph-stats { gap: 24px; flex-wrap: wrap; }
+  .map-inner { margin: 0 20px; }
 }
 @media (max-width: 640px) {
   .course-grid { grid-template-columns: 1fr; }
@@ -435,7 +436,7 @@ nav .active { color: var(--sun) !important; }
 .map-section { position: relative; background: var(--ink); padding: 16px 0; }
 .map-inner {
   position: relative;
-  width: calc(100% - 160px); max-width: 1280px; margin: 0 auto;
+  margin: 0 80px;
   display: flex; gap: 24px; align-items: stretch;
 }
 .map-col {
@@ -617,7 +618,7 @@ nav .active { color: var(--sun) !important; }
 }
 @media (max-width: 768px) {
   #courseMap { height: 400px; }
-  .map-inner { width: calc(100% - 32px); max-width: none; margin: 0 auto; }
+  .map-inner { margin: 0 16px; }
   .map-col { border-radius: 8px; }
 }
 
