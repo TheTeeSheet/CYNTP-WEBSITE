@@ -436,8 +436,10 @@ nav .active { color: var(--sun) !important; }
 .map-inner {
   position: relative;
   width: calc(100% - 160px); max-width: 1280px; margin: 0 auto;
-  border-radius: 14px;
-  overflow: hidden;
+  display: flex; gap: 24px; align-items: stretch;
+}
+.map-col {
+  flex: 1; position: relative; border-radius: 14px; overflow: hidden;
 }
 #courseMap {
   height: 560px; width: 100%;
@@ -456,6 +458,75 @@ nav .active { color: var(--sun) !important; }
 }
 .map-reset-btn:hover:not(:disabled) { background: rgba(212,160,85,0.14); }
 .map-reset-btn:disabled { opacity: 0.35; pointer-events: none; }
+
+/* ── LEADERBOARD PANEL ───────────────────────────────────────────────── */
+.lb-panel {
+  width: 360px; max-width: 360px; flex-shrink: 0;
+  background: #0a0a0a;
+  border: 1px solid rgba(212,160,85,0.15);
+  border-radius: 12px;
+  padding: 24px;
+  height: 560px;
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+.lb-eyebrow {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #d4a055; font-weight: 600; margin-bottom: 10px; flex-shrink: 0;
+}
+.lb-eyebrow::before {
+  content: ''; width: 20px; height: 2px;
+  background: #d4a055; border-radius: 2px; flex-shrink: 0;
+}
+.lb-title {
+  font-family: var(--font-head); font-size: 28px; color: #f4f0e8;
+  letter-spacing: 1px; line-height: 1; margin-bottom: 10px; flex-shrink: 0;
+}
+.lb-subtitle {
+  font-size: 12px; color: #a8a39d; line-height: 1.5; margin: 0; flex-shrink: 0;
+}
+.lb-divider {
+  height: 1px; background: rgba(212,160,85,0.15);
+  margin: 14px 0 0; flex-shrink: 0;
+}
+.lb-list { flex: 1; overflow-y: auto; padding-top: 4px; }
+.lb-list::-webkit-scrollbar { width: 3px; }
+.lb-list::-webkit-scrollbar-track { background: transparent; }
+.lb-list::-webkit-scrollbar-thumb { background: rgba(212,160,85,0.2); border-radius: 2px; }
+.lb-row {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: 12px; align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(244,240,232,0.05);
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.lb-row:last-child { border-bottom: none; }
+.lb-row:hover { transform: translateX(2px); }
+.lb-row:hover .lb-name { color: #d4a055; }
+.lb-rank {
+  font-size: 13px; font-variant-numeric: tabular-nums;
+  color: rgba(212,160,85,0.55); font-weight: 500;
+}
+.lb-rank-top { color: #d4a055; font-weight: 700; }
+.lb-course { min-width: 0; }
+.lb-dest { font-size: 11px; color: #a8a39d; margin-bottom: 2px; }
+.lb-name {
+  font-size: 14px; color: #f4f0e8; font-weight: 500;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  transition: color 0.15s;
+}
+.lb-rating {
+  font-size: 14px; color: #d4a055; font-weight: 600;
+  font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap;
+}
+.lb-row.lb-active {
+  box-shadow: inset 2px 0 0 #d4a055;
+  background: rgba(212,160,85,0.07);
+  border-radius: 0 4px 4px 0;
+}
 
 
 /* ── MAP PIN & CLUSTER ───────────────────────────────────────────────── */
@@ -540,9 +611,14 @@ nav .active { color: var(--sun) !important; }
 
 /* ── RESPONSIVE ──────────────────────────────────────────────────────── */
 
+@media (max-width: 1024px) {
+  .map-inner { flex-direction: column; }
+  .lb-panel { width: 100%; max-width: none; height: auto; max-height: 480px; }
+}
 @media (max-width: 768px) {
   #courseMap { height: 400px; }
-  .map-inner { width: calc(100% - 32px); max-width: none; margin: 0 auto; border-radius: 8px; }
+  .map-inner { width: calc(100% - 32px); max-width: none; margin: 0 auto; }
+  .map-col { border-radius: 8px; }
 }
 
 /* ── Hide list-only controls in MAP view ────────────────────────────── */
@@ -692,11 +768,20 @@ body.view-map .filter-bar { display: none !important; }
 <!-- ── MAP VIEW ── -->
 <div id="mapView" class="map-section">
   <div class="map-inner">
-    <div id="courseMap" role="application" aria-label="Interactive map of all the courses we've played"></div>
-    <button class="map-reset-btn" id="mapResetBtn" aria-label="Reset map view to show all courses" onclick="resetMapView()" disabled>
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><polyline points="1,5 5,1 5,3.5 11,3.5 11,6.5 5,6.5 5,9"/></svg>
-      Reset View
-    </button>
+    <div class="map-col">
+      <div id="courseMap" role="application" aria-label="Interactive map of all the courses we've played"></div>
+      <button class="map-reset-btn" id="mapResetBtn" aria-label="Reset map view to show all courses" onclick="resetMapView()" disabled>
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><polyline points="1,5 5,1 5,3.5 11,3.5 11,6.5 5,6.5 5,9"/></svg>
+        Reset View
+      </button>
+    </div>
+    <div class="lb-panel" id="lbPanel">
+      <div class="lb-eyebrow">Editorial Picks</div>
+      <div class="lb-title">CYNTP Top 10</div>
+      <p class="lb-subtitle">The 10 highest-rated courses we&#39;ve played, by us. Click any course to see it on the map.</p>
+      <div class="lb-divider"></div>
+      <div class="lb-list" id="lbList"></div>
+    </div>
   </div>
 </div>
 
@@ -1993,9 +2078,57 @@ function updateHeroStats() {
   if (sk) { sk.dataset.target = countries; sk.textContent = countries; }
 }
 
+// ── LEADERBOARD ──────────────────────────────────────────────────────
+function getLeaderboardLocation(c) {
+  if (c.dest === 'ireland') return 'Ireland';
+  if (c.dest === 'dominican-republic') return 'Dominican Republic';
+  return c.destLabel;
+}
+
+function buildLeaderboard() {
+  const top10 = COURSES
+    .filter(function(c) { return c.cyntp_rating != null; })
+    .sort(function(a, b) {
+      return b.cyntp_rating - a.cyntp_rating || a.name.localeCompare(b.name);
+    })
+    .slice(0, 10);
+  const list = document.getElementById('lbList');
+  if (!list) return;
+  list.innerHTML = top10.map(function(c, i) {
+    const rank = String(i + 1).padStart(2, '0');
+    const isTop3 = i < 3;
+    const dest = getLeaderboardLocation(c);
+    const name = c.name.replace(/&mdash;/g, '—').replace(/&amp;/g, '&');
+    return '<div class="lb-row" data-id="' + c.id + '" onclick="lbClick(' + c.id + ')">' +
+      '<div class="lb-rank' + (isTop3 ? ' lb-rank-top' : '') + '">' + rank + '</div>' +
+      '<div class="lb-course">' +
+        '<div class="lb-dest">' + dest + '</div>' +
+        '<div class="lb-name">' + name + '</div>' +
+      '</div>' +
+      '<div class="lb-rating">' + c.cyntp_rating.toFixed(1) + '</div>' +
+      '</div>';
+  }).join('');
+}
+
+function lbClick(courseId) {
+  if (!mapInstance) return;
+  const coords = COORDS[courseId];
+  if (!coords) return;
+  document.querySelectorAll('.lb-row').forEach(function(r) { r.classList.remove('lb-active'); });
+  const row = document.querySelector('.lb-row[data-id="' + courseId + '"]');
+  if (row) row.classList.add('lb-active');
+  const course = COURSES.find(function(c) { return c.id === courseId; });
+  if (!course) return;
+  mapInstance.once('moveend', function() {
+    if (window._lbShowPreview) window._lbShowPreview(course, L.latLng(coords[0], coords[1]));
+  });
+  mapInstance.flyTo(coords, 13, { animate: true, duration: 0.8 });
+}
+
 // ── INIT ──────────────────────────────────────────────────────────────
 loadData();
 updateHeroStats();
+buildLeaderboard();
 renderGrid();
 setView('map');
 window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 80); }, { passive: true });
@@ -2154,6 +2287,7 @@ function initMap() {
       '</div>';
     previewEl.style.display = 'block';
   }
+  window._lbShowPreview = showCoursePreview;
 
   function showClusterPreview(cluster, latlng) {
     cancelHide();
