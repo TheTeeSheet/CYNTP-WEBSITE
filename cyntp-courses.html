@@ -128,7 +128,7 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 .course-count { font-size: 12px; color: var(--muted); padding-left: 12px; border-left: 1px solid var(--paper3); }
 
 /* ── COURSE GRID ── */
-.course-grid-wrap { padding: 48px 80px 80px; }
+.course-grid-wrap { padding: 0; }
 .dest-group { margin-bottom: 64px; }
 .dest-heading {
   display: flex; align-items: center; gap: 16px; margin-bottom: 24px;
@@ -362,7 +362,7 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
   .filter-tabs-wrap { padding-left: 16px; }
   .page-header { padding: 96px 20px 20px; }
   .page-header::before { font-size: 120px; }
-  .course-grid-wrap { padding: 32px 20px 60px; }
+  .all-courses-section { padding: 48px 20px 60px; }
   .course-grid { grid-template-columns: 1fr 1fr; }
   .filter-tabs { overflow-x: auto; }
   .ph-stats { gap: 24px; flex-wrap: wrap; }
@@ -421,23 +421,7 @@ nav .active { color: var(--sun) !important; }
 .video-btn-wrap { margin-bottom: 32px; }
 
 
-/* ── VIEW TOGGLE ─────────────────────────────────────────────────────── */
-.vtog-wrap {
-  display: flex; border: 1px solid #d4a055; border-radius: 8px; overflow: hidden;
-}
-.vtog-btn {
-  display: flex; align-items: center; gap: 7px;
-  padding: 10px 22px; border: none; border-radius: 0;
-  font-family: var(--font-body); font-size: 11px; font-weight: 700;
-  letter-spacing: 2px; text-transform: uppercase;
-  color: #d4a055; background: transparent;
-  cursor: pointer; transition: all 0.2s; min-height: 44px;
-}
-.vtog-btn + .vtog-btn { border-left: 1px solid #d4a055; }
-.vtog-btn:hover { background: rgba(212,160,85,0.15); }
-.vtog-btn.active { background: #d4a055; color: #0d0d0d; }
-.vtog-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
-.ph-stats .vtog-wrap { margin-left: auto; }
+
 
 /* ── MAP SECTION ─────────────────────────────────────────────────────── */
 .map-section { position: relative; background: var(--ink); padding: 16px 0; }
@@ -550,6 +534,19 @@ footer { background: #111; }
 .footer-bottom span { font-size: 12px; color: rgba(255,255,255,0.2); }
 .footer-bottom strong { color: rgba(255,255,255,0.55); font-weight: 700; }
 
+/* ── ALL COURSES SECTION ────────────────────────────────────────────── */
+.all-courses-section { background: var(--ink); padding: 64px 80px 80px; }
+.ac-eyebrow {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #d4a055; font-weight: 600; margin-bottom: 20px;
+}
+.ac-eyebrow::before {
+  content: ''; width: 20px; height: 2px;
+  background: #d4a055; border-radius: 2px; flex-shrink: 0;
+}
+.ac-divider { height: 1px; background: rgba(255,255,255,0.08); margin-bottom: 40px; }
+
 /* ── MAP PIN & CLUSTER ───────────────────────────────────────────────── */
 .map-pin {
   width: 14px; height: 14px; border-radius: 50%;
@@ -642,8 +639,7 @@ footer { background: #111; }
   .map-col { border-radius: 8px; }
 }
 
-/* ── Hide list-only controls in MAP view ────────────────────────────── */
-body.view-map .filter-bar { display: none !important; }
+
 
 </style>
 <meta property="og:title" content="Golf Course Directory | Reviews & Ratings — CYNTP">
@@ -737,16 +733,7 @@ body.view-map .filter-bar { display: none !important; }
       <div class="ph-stat-n"><span id="statCountries" class="counter" data-target="3" data-decimal="0">3</span></div>
       <div class="ph-stat-l">Countries</div>
     </div>
-    <div class="vtog-wrap" role="group" aria-label="View mode">
-      <button class="vtog-btn active" id="vtogMap" aria-pressed="true" onclick="setView('map')">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2l4 2v10l-4-2-4 2-4-2V2l4 2 4-2z"/><path d="M6 4v10M10 2v10"/></svg>
-        Map
-      </button>
-      <button class="vtog-btn" id="vtogList" aria-pressed="false" onclick="setView('list')">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="4" y1="4" x2="14" y2="4"/><line x1="4" y1="8" x2="14" y2="8"/><line x1="4" y1="12" x2="14" y2="12"/><circle cx="1.5" cy="4" r="1" fill="currentColor" stroke="none"/><circle cx="1.5" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="1.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg>
-        List
-      </button>
-    </div>
+
   </div>
 </div>
 </div>
@@ -788,7 +775,7 @@ body.view-map .filter-bar { display: none !important; }
 </div>
 
 <!-- ── MAP VIEW ── -->
-<div id="mapView" class="map-section">
+<div class="map-section">
   <div class="map-inner">
     <div class="map-col">
       <div id="courseMap" role="application" aria-label="Interactive map of all the courses we've played"></div>
@@ -807,8 +794,12 @@ body.view-map .filter-bar { display: none !important; }
   </div>
 </div>
 
-<!-- ── COURSE GRID ── -->
-<div class="course-grid-wrap" id="courseGridWrap"></div>
+<!-- ── ALL COURSES ── -->
+<section class="all-courses-section">
+  <div class="ac-eyebrow">All Courses</div>
+  <div class="ac-divider"></div>
+  <div class="course-grid-wrap" id="courseGridWrap"></div>
+</section>
 
 <!-- ── COURSE DETAIL OVERLAY ── -->
 <div class="overlay" id="overlay">
@@ -1975,8 +1966,9 @@ document.querySelectorAll('.ftab').forEach(btn => {
     document.querySelectorAll('.ftab').forEach(b => b.classList.remove('on'));
     this.classList.add('on');
     activeDest = this.dataset.dest;
-    if (activeView === 'map') filterMap(activeDest);
-    else renderGrid();
+    filterMap(activeDest);
+    buildLeaderboard(activeDest);
+    renderGrid();
   });
 });
 function sortCourses(val) {
@@ -2093,31 +2085,12 @@ function shiftCourseImage(dir) {
   document.querySelectorAll('.panel-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
 }
 
-// ── MAP VIEW STATE (early – so toggle works before CDN finishes loading) ──
-let activeView = 'map';
+// ── MAP STATE ──────────────────────────────────────────────────────────
 let mapInitialized = false;
 let mapInstance = null;
 let clusterGroup = null;
 let courseMarkers = {};
 let initialBounds = null;
-
-function setView(view) {
-  activeView = view;
-  document.body.classList.toggle('view-map',  view === 'map');
-  document.body.classList.toggle('view-list', view === 'list');
-  const vMap  = document.getElementById('vtogMap');
-  const vList = document.getElementById('vtogList');
-  if (vMap)  { vMap.classList.toggle('active',  view === 'map');  vMap.setAttribute('aria-pressed',  String(view === 'map')); }
-  if (vList) { vList.classList.toggle('active', view === 'list'); vList.setAttribute('aria-pressed', String(view === 'list')); }
-  const mapView  = document.getElementById('mapView');
-  const gridWrap = document.getElementById('courseGridWrap');
-  if (mapView)  mapView.style.display  = view === 'map'  ? 'block' : 'none';
-  if (gridWrap) gridWrap.style.display = view === 'list' ? 'block' : 'none';
-  if (view === 'map') {
-    if (typeof initMap === 'function' && !mapInitialized) initMap();
-    else if (typeof filterMap === 'function' && mapInitialized) filterMap(activeDest);
-  }
-}
 
 // ── SCROLL REVEAL ─────────────────────────────────────────────────────
 const obs = new IntersectionObserver(entries => {
@@ -2149,8 +2122,11 @@ function getLeaderboardLocation(c) {
   return c.destLabel;
 }
 
-function buildLeaderboard() {
-  const top10 = COURSES
+function buildLeaderboard(dest) {
+  const pool = (!dest || dest === 'all')
+    ? COURSES
+    : COURSES.filter(function(c) { return c.dest === dest; });
+  const top10 = pool
     .filter(function(c) { return c.cyntp_rating != null; })
     .sort(function(a, b) {
       return b.cyntp_rating - a.cyntp_rating || a.name.localeCompare(b.name);
@@ -2194,7 +2170,6 @@ loadData();
 updateHeroStats();
 buildLeaderboard();
 renderGrid();
-setView('map');
 window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 80); }, { passive: true });
 
 // Live counters
@@ -2277,8 +2252,6 @@ const COORDS = {
   130:[36.809, -114.110],  131:[36.818, -114.077],
 };
 
-// ── VIEW STATE ────────────────────────────────────────────────────────
-// (activeView, mapInitialized, mapInstance, etc. + setView() defined in main script)
 
 
 // ── MAP INIT ──────────────────────────────────────────────────────────
@@ -2460,8 +2433,8 @@ function filterMap(dest) {
 
 
 
-// kick off default MAP view
-setView('map');
+// initialise map on page load
+initMap();
 </script>
 <script src="/email-capture.js"></script>
 </body>
