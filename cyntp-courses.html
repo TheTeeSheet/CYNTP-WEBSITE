@@ -2419,6 +2419,14 @@ function checkResetBtn() {
 
 function resetMapView() {
   if (!mapInstance || !initialBounds) return;
+  // Clear active filter back to ALL
+  document.querySelectorAll('.ftab').forEach(b => b.classList.remove('on'));
+  const allTab = document.querySelector('.ftab[data-dest="all"]');
+  if (allTab) allTab.classList.add('on');
+  activeDest = 'all';
+  buildLeaderboard('all');
+  renderGrid();
+  filterMap('all');
   mapInstance.flyToBounds(initialBounds, { padding: [40, 40], duration: 0.8 });
 }
 
