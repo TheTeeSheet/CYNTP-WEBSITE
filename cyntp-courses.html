@@ -387,6 +387,9 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
   .filter-right { padding: 0 12px 0 10px; gap: 8px; }
   .sort-select { display: none; }
   .sort-label { display: none; }
+  .footer-band { flex-direction: column; align-items: flex-start; gap: 28px; padding: 48px 20px; }
+  .fb-left h3 { font-size: 26px; }
+  .fb-cta { width: 100%; text-align: center; display: block; box-sizing: border-box; }
 }
 
 
@@ -529,6 +532,17 @@ nav .active { color: var(--sun) !important; }
   border-radius: 0 4px 4px 0;
 }
 
+
+/* ── FOOTER BAND ─────────────────────────────────────────────────────── */
+.footer-band {
+  background: var(--grass); padding: 60px 80px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.fb-left h3 { font-family: var(--font-head); font-size: 36px; letter-spacing: 2px; color: #fff; }
+.fb-left h3 em { font-family: var(--font-serif); font-style: italic; color: rgba(255,255,255,0.8); }
+.fb-left p { margin-top: 8px; font-size: 14px; color: rgba(255,255,255,0.7); }
+.fb-cta { background: #fff; color: var(--grass); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; padding: 16px 32px; border-radius: 8px; transition: opacity 0.2s; text-decoration: none; display: inline-block; }
+.fb-cta:hover { opacity: 0.85; }
 
 /* ── MAP PIN & CLUSTER ───────────────────────────────────────────────── */
 .map-pin {
@@ -831,6 +845,15 @@ body.view-map .filter-bar { display: none !important; }
       <div class="backend-flag">Connect to Supabase Auth or Firebase to persist sessions and handle password reset.</div>
     </div>
   </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<div class="footer-band">
+  <div class="fb-left">
+    <h3>READY TO PLAN YOUR <em>Next Round?</em></h3>
+    <p>Tell us where you want to play. We&#39;ll help you build the perfect trip.</p>
+  </div>
+  <a href="https://www.coursesyouneedtoplay.com/contact" rel="noopener noreferrer" class="fb-cta">Get In Touch &rarr;</a>
 </div>
 
 <script>
