@@ -119,12 +119,7 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 .ftab.on { color: #d4a055; border-bottom-color: #d4a055; }
 .ftab:hover { color: rgba(255,255,255,0.8); }
 .filter-right { display: flex; align-items: center; gap: 12px; padding: 0 24px 0 16px; border-left: 1px solid rgba(255,255,255,0.08); background: #0d0d0d; flex-shrink: 0; height: 100%; }
-.sort-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); }
-.sort-select {
-  background: transparent; border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 8px; padding: 6px 12px; font-family: var(--font-body);
-  font-size: 12px; color: rgba(255,255,255,0.6); cursor: pointer; outline: none;
-}
+
 .course-count { font-size: 12px; color: rgba(255,255,255,0.35); padding-left: 12px; border-left: 1px solid rgba(255,255,255,0.08); }
 
 /* ── COURSE GRID ── */
@@ -387,8 +382,7 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
   .filter-tabs-wrap { padding-left: 16px; }
   .ftab { font-size: 13px; padding: 0 14px; }
   .filter-right { padding: 0 12px 0 10px; gap: 8px; }
-  .sort-select { display: none; }
-  .sort-label { display: none; }
+
   .footer-main { grid-template-columns: 1fr 1fr; gap: 40px; padding: 40px 24px 32px; }
   .footer-bottom { padding: 18px 24px; flex-direction: column; gap: 8px; text-align: center; }
 }
@@ -766,11 +760,7 @@ footer { background: #111; }
   </div>
   </div>
   <div class="filter-right">
-<select class="sort-select" onchange="sortCourses(this.value)">
-      <option value="dest">By Destination</option>
-      <option value="newest">Newest</option>
-    </select>
-    <span class="course-count" id="courseCount">12 courses</span>
+<span class="course-count" id="courseCount">12 courses</span>
   </div>
 </div>
 
@@ -1971,14 +1961,6 @@ document.querySelectorAll('.ftab').forEach(btn => {
     renderGrid();
   });
 });
-function sortCourses(val) {
-  if (val === 'newest') {
-    courseData.sort((a, b) => b.id - a.id);
-  } else {
-    courseData.sort((a, b) => a.dest.localeCompare(b.dest));
-  }
-  renderGrid();
-}
 
 // ── COURSE OVERLAY ────────────────────────────────────────────────────
 const COURSE_IMAGES = {
