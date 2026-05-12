@@ -97,9 +97,9 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 
 /* ── FILTER BAR ── */
 .filter-bar {
-  background: var(--paper2);
-  border-bottom: 1px solid var(--paper3);
-  border-top: 1px solid rgba(255,255,255,0.07);
+  background: #0d0d0d;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid rgba(255,255,255,0.06);
   display: flex; align-items: center;
   height: 60px; position: sticky; top: 64px; z-index: 150;
   padding: 0;
@@ -113,19 +113,19 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 .ftab {
   padding: 0 20px; height: 60px; border: none; background: transparent;
   font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--muted); border-bottom: 2px solid transparent;
+  color: rgba(255,255,255,0.4); border-bottom: 2px solid transparent;
   transition: all 0.2s; white-space: nowrap;
 }
-.ftab.on { color: var(--ink); border-bottom-color: var(--grass); }
-.ftab:hover { color: var(--ink); }
-.filter-right { display: flex; align-items: center; gap: 12px; padding: 0 24px 0 16px; border-left: 1px solid var(--paper3); background: var(--paper2); flex-shrink: 0; height: 100%; }
-.sort-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+.ftab.on { color: #d4a055; border-bottom-color: #d4a055; }
+.ftab:hover { color: rgba(255,255,255,0.8); }
+.filter-right { display: flex; align-items: center; gap: 12px; padding: 0 24px 0 16px; border-left: 1px solid rgba(255,255,255,0.08); background: #0d0d0d; flex-shrink: 0; height: 100%; }
+.sort-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); }
 .sort-select {
-  background: transparent; border: 1px solid rgba(15,15,15,0.15);
+  background: transparent; border: 1px solid rgba(255,255,255,0.12);
   border-radius: 8px; padding: 6px 12px; font-family: var(--font-body);
-  font-size: 12px; color: var(--ink); cursor: pointer; outline: none;
+  font-size: 12px; color: rgba(255,255,255,0.6); cursor: pointer; outline: none;
 }
-.course-count { font-size: 12px; color: var(--muted); padding-left: 12px; border-left: 1px solid var(--paper3); }
+.course-count { font-size: 12px; color: rgba(255,255,255,0.35); padding-left: 12px; border-left: 1px solid rgba(255,255,255,0.08); }
 
 /* ── COURSE GRID ── */
 .course-grid-wrap { padding: 0; }
@@ -133,9 +133,9 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 .dest-heading {
   display: flex; align-items: center; gap: 16px; margin-bottom: 24px;
 }
-.dest-name { font-family: var(--font-head); font-size: 28px; letter-spacing: 2px; color: var(--ink); }
-.dest-count { font-size: 12px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; background: var(--paper3); border-radius: 4px; }
-.dest-line { flex: 1; height: 1px; background: var(--paper3); }
+.dest-name { font-family: var(--font-head); font-size: 28px; letter-spacing: 2px; color: #a8a39d; }
+.dest-count { font-size: 12px; color: rgba(255,255,255,0.35); letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; background: rgba(255,255,255,0.06); border-radius: 4px; }
+.dest-line { flex: 1; height: 1px; background: rgba(255,255,255,0.08); }
 .course-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 
 /* ── COURSE CARD ── */
@@ -362,7 +362,7 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
   .filter-tabs-wrap { padding-left: 16px; }
   .page-header { padding: 96px 20px 20px; }
   .page-header::before { font-size: 120px; }
-  .all-courses-section { padding: 48px 20px 60px; }
+  .all-courses-section { padding: 32px 20px 60px; }
   .course-grid { grid-template-columns: 1fr 1fr; }
   .filter-tabs { overflow-x: auto; }
   .ph-stats { gap: 24px; flex-wrap: wrap; }
@@ -424,7 +424,7 @@ nav .active { color: var(--sun) !important; }
 
 
 /* ── MAP SECTION ─────────────────────────────────────────────────────── */
-.map-section { position: relative; background: var(--ink); padding: 16px 0; }
+.map-section { position: relative; background: var(--ink); padding: 16px 0; isolation: isolate; }
 .map-inner {
   position: relative;
   margin: 0 80px;
@@ -535,7 +535,7 @@ footer { background: #111; }
 .footer-bottom strong { color: rgba(255,255,255,0.55); font-weight: 700; }
 
 /* ── ALL COURSES SECTION ────────────────────────────────────────────── */
-.all-courses-section { background: var(--ink); padding: 64px 80px 80px; }
+.all-courses-section { background: var(--ink); padding: 32px 80px 80px; }
 .ac-eyebrow {
   display: flex; align-items: center; gap: 10px;
   font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
@@ -786,8 +786,8 @@ footer { background: #111; }
     </div>
     <div class="lb-panel" id="lbPanel">
       <div class="lb-eyebrow">Editorial Picks</div>
-      <div class="lb-title">CYNTP Top 10</div>
-      <p class="lb-subtitle">The 10 highest-rated courses we&#39;ve played, by us. Click any course to see it on the map.</p>
+      <div class="lb-title">Highest Rated</div>
+      <p class="lb-subtitle">Sorted by our rating. Click any course to see it on the map.</p>
       <div class="lb-divider"></div>
       <div class="lb-list" id="lbList"></div>
     </div>
@@ -2126,15 +2126,14 @@ function buildLeaderboard(dest) {
   const pool = (!dest || dest === 'all')
     ? COURSES
     : COURSES.filter(function(c) { return c.dest === dest; });
-  const top10 = pool
+  const sorted = pool
     .filter(function(c) { return c.cyntp_rating != null; })
     .sort(function(a, b) {
       return b.cyntp_rating - a.cyntp_rating || a.name.localeCompare(b.name);
-    })
-    .slice(0, 10);
+    });
   const list = document.getElementById('lbList');
   if (!list) return;
-  list.innerHTML = top10.map(function(c, i) {
+  list.innerHTML = sorted.map(function(c, i) {
     const rank = String(i + 1).padStart(2, '0');
     const isTop3 = i < 3;
     const dest = getLeaderboardLocation(c);
