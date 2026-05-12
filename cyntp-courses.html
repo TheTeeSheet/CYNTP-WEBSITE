@@ -367,6 +367,8 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
   .filter-tabs { overflow-x: auto; }
   .ph-stats { gap: 24px; flex-wrap: wrap; }
   .map-inner { margin: 0 20px; }
+  .footer-main { padding: 60px 40px 48px; }
+  .footer-bottom { padding: 20px 40px; }
 }
 @media (max-width: 640px) {
   .course-grid { grid-template-columns: 1fr; }
@@ -387,12 +389,14 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
   .filter-right { padding: 0 12px 0 10px; gap: 8px; }
   .sort-select { display: none; }
   .sort-label { display: none; }
-  .footer-band { flex-direction: column; align-items: flex-start; gap: 28px; padding: 48px 20px; }
-  .fb-left h3 { font-size: 26px; }
-  .fb-cta { width: 100%; text-align: center; display: block; box-sizing: border-box; }
+  .footer-main { grid-template-columns: 1fr 1fr; gap: 40px; padding: 40px 24px 32px; }
+  .footer-bottom { padding: 18px 24px; flex-direction: column; gap: 8px; text-align: center; }
 }
 
 
+@media (max-width: 480px) {
+  .footer-main { grid-template-columns: 1fr; }
+}
 
 nav .active { color: var(--sun) !important; }
 .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; width: 32px; height: 32px; }
@@ -533,16 +537,18 @@ nav .active { color: var(--sun) !important; }
 }
 
 
-/* ── FOOTER BAND ─────────────────────────────────────────────────────── */
-.footer-band {
-  background: var(--grass); padding: 60px 80px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.fb-left h3 { font-family: var(--font-head); font-size: 36px; letter-spacing: 2px; color: #fff; }
-.fb-left h3 em { font-family: var(--font-serif); font-style: italic; color: rgba(255,255,255,0.8); }
-.fb-left p { margin-top: 8px; font-size: 14px; color: rgba(255,255,255,0.7); }
-.fb-cta { background: #fff; color: var(--grass); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; padding: 16px 32px; border-radius: 8px; transition: opacity 0.2s; text-decoration: none; display: inline-block; }
-.fb-cta:hover { opacity: 0.85; }
+/* ── FOOTER ─────────────────────────────────────────────────────────── */
+footer { background: #111; }
+.footer-main { padding: 72px 80px 60px; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; }
+.footer-brand-name { font-family: var(--font-head); font-size: 28px; letter-spacing: 4px; color: #fff; margin-bottom: 20px; }
+.footer-brand-desc { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.8; max-width: 260px; }
+.footer-col-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--sun); font-weight: 700; margin-bottom: 20px; }
+.footer-links { display: flex; flex-direction: column; gap: 12px; }
+.footer-links a { font-size: 14px; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: #fff; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding: 20px 80px; display: flex; align-items: center; justify-content: space-between; }
+.footer-bottom span { font-size: 12px; color: rgba(255,255,255,0.2); }
+.footer-bottom strong { color: rgba(255,255,255,0.55); font-weight: 700; }
 
 /* ── MAP PIN & CLUSTER ───────────────────────────────────────────────── */
 .map-pin {
@@ -848,13 +854,46 @@ body.view-map .filter-bar { display: none !important; }
 </div>
 
 <!-- ── FOOTER ── -->
-<div class="footer-band">
-  <div class="fb-left">
-    <h3>READY TO PLAN YOUR <em>Next Round?</em></h3>
-    <p>Tell us where you want to play. We&#39;ll help you build the perfect trip.</p>
+<footer>
+  <div class="footer-main">
+    <div>
+      <div class="footer-brand-name">CYNTP</div>
+      <p class="footer-brand-desc">Honest golf course reviews and trip guides for everyday golfers. We play it, we rate it, we tell you the truth.</p>
+    </div>
+    <div>
+      <div class="footer-col-label">Explore</div>
+      <div class="footer-links">
+        <a href="cyntp-trips.html">Golf Trips</a>
+        <a href="cyntp-turn.html">Insider Guide</a>
+        <a href="cyntp-about.html">About Us</a>
+        <a href="cyntp-partner.html">Partner</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-label">Destinations</div>
+      <div class="footer-links">
+        <a href="cyntp-trips.html">Scottsdale</a>
+        <a href="cyntp-trips.html">Hilton Head</a>
+        <a href="cyntp-trips.html">Myrtle Beach</a>
+        <a href="cyntp-trips.html">Las Vegas</a>
+        <a href="cyntp-trips.html">Palm Springs</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-label">Connect</div>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/coursesyouneedtoplay" rel="noopener noreferrer" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@coursesyouneedtoplay" rel="noopener noreferrer" target="_blank">TikTok</a>
+        <a href="https://www.youtube.com/@coursesyouneedtoplay" rel="noopener noreferrer" target="_blank">YouTube</a>
+        <a href="/cdn-cgi/l/email-protection#c9b9a8bbbda7acbbba89aaa6bcbbbaacbab0a6bca7acacadbda6b9a5a8b0e7aaa6a4">Email Us</a>
+      </div>
+    </div>
   </div>
-  <a href="https://www.coursesyouneedtoplay.com/contact" rel="noopener noreferrer" class="fb-cta">Get In Touch &rarr;</a>
-</div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Sharp Golf LLC. All Rights Reserved.</span>
+    <span>Built for golfers who play hard and <strong>plan smarter.</strong></span>
+  </div>
+</footer>
 
 <script>
 // ── DATA ──────────────────────────────────────────────────────────────
