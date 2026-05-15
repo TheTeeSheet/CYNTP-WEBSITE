@@ -1959,7 +1959,7 @@ function renderGrid() {
           ${c.city ? `<div class="card-city">${c.city}</div>` : ''}
           <div class="card-verdict">${c.cyntp}</div>
           <div class="card-meta">
-            ${c.greenFee ? `<div class="card-price">${c.greenFee}</div>` : ''}
+            ${c.greenFee ? `<div class="card-price">Green Fee: ${c.greenFee}</div>` : ''}
           </div>
           <div class="card-footer">
             <div class="card-view-btn">Read Review &rarr;</div>
@@ -2326,7 +2326,7 @@ function initMap() {
         '<div class="mpc-name">' + course.name.replace(/&mdash;/g,'—').replace(/&amp;/g,'&') + '</div>' +
         '<div class="mpc-location">' + (course.city || course.destLabel) + '</div>' +
         (stars ? '<div class="mpc-rating">' + stars + '</div>' : '') +
-        (course.greenFee ? '<div class="mpc-fee">' + course.greenFee + '</div>' : '') +
+        (course.greenFee ? '<div class="mpc-fee">Green Fee: ' + course.greenFee + '</div>' : '') +
         '<button class="mpc-view-btn" onclick="openCourse(' + course.id + ')">VIEW COURSE &#8594;</button>' +
       '</div>';
     previewEl.style.display = 'block';
