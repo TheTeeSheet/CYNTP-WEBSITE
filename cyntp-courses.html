@@ -582,7 +582,8 @@ footer { background: #111; }
   font-size: 10px; color: rgba(255,255,255,0.4);
   letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px;
 }
-.mpc-rating { font-size: 13px; color: #d4a055; font-weight: 700; margin-bottom: 12px; }
+.mpc-rating { font-size: 13px; color: #d4a055; font-weight: 700; margin-bottom: 4px; }
+.mpc-fee { font-size: 12px; color: #2d6a3f; font-weight: 700; margin-bottom: 10px; }
 .mpc-view-btn, .mpc-zoom-btn {
   display: block; width: 100%; padding: 9px; text-align: center;
   border: 1px solid rgba(212,160,85,0.45); border-radius: 6px;
@@ -883,7 +884,7 @@ footer { background: #111; }
 const COURSES = [
   {
     id:1,dest:"alabama",destLabel:"Alabama",thumbClass:"ct4",
-    name:"Craft Farms Golf Club",price:"$55&ndash;$95",
+    name:"Craft Farms Golf Club",price:"$55&ndash;$95",greenFee:"$",
     cyntp:"Two solid tracks in Gulf Shores. The Cotton Creek course is the standout &mdash; tree-lined, strategic, and a good contrast to the coastal layouts nearby.",
     review:"Craft Farms offers two courses &mdash; Cotton Creek and Woodlands &mdash; that provide a wooded contrast to the open coastal layouts around Gulf Shores. Cotton Creek is the stronger of the two with tree-lined fairways and a layout that demands accuracy off the tee. Well-maintained and a reliable option to round out a Gulf Shores golf trip.",
     cyntp_rating:6.5,cyntp_tag:null,city:"Gulf Shores, AL",comments:[]
@@ -891,14 +892,14 @@ const COURSES = [
   {
     id:2,dest:"alabama",destLabel:"Alabama",thumbClass:"ct5",
     tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1777752371/Screenshot_2026-05-02_at_3.03.39_PM_fvbuwr.png",
-    name:"FarmLinks Golf Club",price:"$80&ndash;$140",
+    name:"FarmLinks Golf Club",price:"$80&ndash;$140",greenFee:"$$",
     cyntp:"Hidden gem in Sylacauga. The agronomy research farm setting makes this one of the most unique layouts you'll ever play.",
     review:"FarmLinks is a genuinely one-of-a-kind experience. The course sits on an agricultural research farm and the layout uses the working farm landscape in creative ways. The conditioning is impeccable &mdash; it's literally a research facility for turf science.",
     cyntp_rating:8.5,cyntp_tag:"Hidden Gem",city:"Sylacauga, AL",comments:[]
   },
   {
     id:3,dest:"alabama",destLabel:"Alabama",thumbClass:"ct6",
-    name:"Hampton Cove Golf Club",price:"$55&ndash;$95",
+    name:"Hampton Cove Golf Club",price:"$55&ndash;$95",greenFee:"$",
     cyntp:"Three nines on the RTJ Trail in Huntsville. The River course is the standout &mdash; flat, fast, and lined with hardwoods along the Flint River.",
     review:"Hampton Cove is the RTJ Trail stop in Huntsville and it offers 27 holes spread across three distinct nines &mdash; Highlands, River, and Short. The River nine is the highlight, running along the Flint River with beautiful hardwood scenery and a layout that rewards smart course management. The Short course is a great warm-up option. Well-maintained and a solid value for the quality of the RTJ Trail experience.",
     cyntp_rating:6.1,cyntp_tag:null,city:"Huntsville, AL",comments:[]
@@ -906,154 +907,154 @@ const COURSES = [
   {
     id:4,dest:"alabama",destLabel:"Alabama",thumbClass:"ct3",
     tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1777738442/Screenshot_2026-05-02_at_11.13.51_AM_ihmb3i.png",
-    name:"Kiva Dunes Golf Club",price:"$60&ndash;$100",
+    name:"Kiva Dunes Golf Club",price:"$60&ndash;$100",greenFee:"$",
     cyntp:"Gulf Shores' best links-style track. Right on the Gulf with dunes, sea breezes, and some of the most fun golf on the Alabama coast.",
     review:"Kiva Dunes is the most distinctive course on the Alabama Gulf Coast. The links-style layout sits right on the Gulf of Mexico with natural dune terrain, persistent sea breezes, and wide-open views that make it feel more like a coastal Carolina track than a typical Alabama resort course. The conditions are excellent and the experience is genuinely memorable. A must-play on any Gulf Shores golf trip.",
     cyntp_rating:8.2,cyntp_tag:"Must Play",city:"Gulf Shores, AL",comments:[]
   },
   {
     id:5,dest:"alabama",destLabel:"Alabama",thumbClass:"ct1",
-    name:"Peninsula Golf Club",price:"$60&ndash;$110",
+    name:"Peninsula Golf Club",price:"$60&ndash;$110",greenFee:"$",
     cyntp:"Gulf Shores golf at its finest. 27 holes carved through coastal marshes and pines &mdash; the Marsh and Lakes nines are a must. A hidden gem on the Alabama coast.",
     review:"Peninsula Golf Club is one of the best surprises on the Gulf Coast. The 27-hole layout winds through coastal marshland, pine forests, and alongside scenic water features that make every round feel like a proper golf experience. The Marsh and Lakes combination is the one to play. The conditions are consistently excellent and the price point is very reasonable for the quality. A must-play if you're spending any time in Gulf Shores.",
     cyntp_rating:7.8,cyntp_tag:"Must Play",city:"Gulf Shores, AL",comments:[]
   },
   {
     id:6,dest:"alabama",destLabel:"Alabama",thumbClass:"ct3",
-    name:"Ross Bridge Golf Course",price:"$75&ndash;$130",
+    name:"Ross Bridge Golf Course",price:"$75&ndash;$130",greenFee:"$$",
     cyntp:"RTJ Trail in Birmingham. Long, demanding, and beautifully maintained. The rolling terrain makes this one of the more scenic Trail courses.",
     review:"Ross Bridge is among the most scenic courses on the Robert Trent Jones Trail. The rolling Birmingham terrain gives it elevation changes that most Alabama courses lack, and the conditioning is consistently excellent.",
     cyntp_rating:8.4,cyntp_tag:null,city:"Hoover, AL",comments:[]
   },
   {
     id:7,dest:"alabama",destLabel:"Alabama",thumbClass:"ct2",
-    name:"The Lakewood Club",price:"$65&ndash;$110",
+    name:"The Lakewood Club",price:"$65&ndash;$110",greenFee:"$",
     cyntp:"RTJ Trail in Point Clear on Mobile Bay. The Dogwood and Azalea courses are both excellent &mdash; the bay views make this one of the most scenic stops on the entire Trail.",
     review:"The Lakewood Club at The Grand Hotel in Point Clear is one of the most beautiful settings on the Robert Trent Jones Golf Trail. The Dogwood and Azalea courses wind through moss-draped oaks along the shores of Mobile Bay and the scenery is genuinely stunning. The layout is challenging without being punishing and the overall experience &mdash; especially with the Grand Hotel backdrop &mdash; feels a cut above a typical RTJ Trail stop.",
     cyntp_rating:7.1,cyntp_tag:"Must Play",city:"Point Clear, AL",comments:[]
   },
   {
     id:8,dest:"alabama",destLabel:"Alabama",thumbClass:"ct5",
-    name:"The Shoals &mdash; Fighting Joe",price:"$65&ndash;$110",
+    name:"The Shoals &mdash; Fighting Joe",price:"$65&ndash;$110",greenFee:"$",
     cyntp:"The bigger, bolder sibling to the Schoolmaster. Fighting Joe is the RTJ Trail at its most dramatic &mdash; long, demanding, and spectacular along the Tennessee River.",
     review:"Fighting Joe is widely considered the crown jewel of The Shoals complex and one of the best courses on the entire Robert Trent Jones Golf Trail. At over 8,000 yards from the tips it's one of the longest courses in the world, and the routing along the Tennessee River is genuinely spectacular. The elevation changes and water views make this a bucket-list round for any serious golfer visiting Alabama.",
     cyntp_rating:7.2,cyntp_tag:"Bucket List",city:"Muscle Shoals, AL",comments:[]
   },
   {
     id:9,dest:"alabama",destLabel:"Alabama",thumbClass:"ct2",
-    name:"The Shoals &mdash; The Schoolmaster",price:"$65&ndash;$110",
+    name:"The Shoals &mdash; The Schoolmaster",price:"$65&ndash;$110",greenFee:"$",
     cyntp:"One of Robert Trent Jones Golf Trail's best. The Tennessee River setting is dramatic and the course demands respect.",
     review:"The Schoolmaster at The Shoals is one of the standout tracks on the Robert Trent Jones Golf Trail. The Tennessee River provides a dramatic backdrop and the course uses the riverside terrain beautifully.",
     cyntp_rating:7.0,cyntp_tag:"Must Play",city:"Muscle Shoals, AL",comments:[]
   },
   {
     id:10,dest:"arizona",destLabel:"Arizona",thumbClass:"ct2",
-    name:"Ak-Chin Southern Dunes Golf Club",price:"$90&ndash;$160",
+    name:"Ak-Chin Southern Dunes Golf Club",price:"$90&ndash;$160",greenFee:"$$",
     cyntp:"One of the most underrated courses in Arizona. Links-style in the desert &mdash; it shouldn't work but it absolutely does.",
     review:"Southern Dunes is a surprise. The links-influenced design with massive dunes and rolling fairways feels completely out of place in the Arizona desert, which is exactly what makes it memorable. The wind is almost always a factor and the course rewards creativity. Don't sleep on this one.",
     cyntp_rating:8.5,cyntp_tag:"Hidden Gem",city:"Maricopa, AZ",comments:[]
   },
   {
     id:11,dest:"arizona",destLabel:"Arizona",thumbClass:"ct1",
-    name:"Arizona National Golf Club",price:"$70&ndash;$96",
+    name:"Arizona National Golf Club",price:"$70&ndash;$96",greenFee:"$",
     cyntp:"RTJ Jr. design in the Catalina foothills. Immaculate conditions, dramatic elevation changes, and some of the best views in Tucson. Consistently one of the top-rated courses in the state.",
     review:"Arizona National is the best-kept secret in Tucson. The Robert Trent Jones Jr. design delivers dramatic elevation changes, forced carries over desert washes, and Catalina Mountain views at a fraction of Scottsdale prices. Consistently ranked top 5 in Arizona and immaculately conditioned year-round.",
     cyntp_rating:8.4,cyntp_tag:null,city:"Tucson, AZ",comments:[]
   },
   {
     id:12,dest:"arizona",destLabel:"Arizona",thumbClass:"ct4",
-    name:"Eagle Mountain Golf Club",price:"$70&ndash;$130",
+    name:"Eagle Mountain Golf Club",price:"$70&ndash;$130",greenFee:"$$",
     cyntp:"Perched above Fountain Hills with sweeping desert and mountain views. The elevation changes are dramatic and the layout rewards smart play.",
     review:"Eagle Mountain lives up to its name &mdash; the course sits high above Fountain Hills with panoramic views of the McDowell Mountains and the Valley below. The layout uses the natural desert terrain well with elevation changes that make every hole feel distinct. A solid and scenic round at a price point that makes it easy to add to any Arizona trip.",
     cyntp_rating:7.3,cyntp_tag:null,city:"Fountain Hills, AZ",comments:[]
   },
   {
     id:13,dest:"arizona",destLabel:"Arizona",thumbClass:"ct4",
-    name:"Grayhawk &mdash; Raptor",price:"$150&ndash;$250",
+    name:"Grayhawk &mdash; Raptor",price:"$150&ndash;$250",greenFee:"$$",
     cyntp:"Classic Scottsdale layout with real teeth. The Raptor rewards smart play and punishes mistakes. One of the best maintained tracks in the valley.",
     review:"Grayhawk Raptor is Scottsdale golf at its most classic. The desert terrain is fully in play and the course demands precision. The conditioning is always excellent and the clubhouse experience is top notch. A reliable must-play on any Scottsdale trip.",
     cyntp_rating:7.4,cyntp_tag:"Must Play",city:"Scottsdale, AZ",comments:[]
   },
   {
     id:14,dest:"arizona",destLabel:"Arizona",thumbClass:"ct4",
-    name:"Paradise Valley CC",price:"$45&ndash;$75",
+    name:"Paradise Valley CC",price:"$45&ndash;$75",greenFee:"$",
     cyntp:"Classic Utah valley layout. Reliable conditions and a traditional design that rewards course management.",
     review:"Paradise Valley CC is a solid traditional layout in the Utah Valley. The course is well-maintained and the classic design rewards smart golf over raw power. A reliable option for a more laid-back round on a Utah trip.",
     cyntp_rating:7.3,cyntp_tag:null,city:"Paradise Valley, AZ",comments:[]
   },
   {
     id:15,dest:"arizona",destLabel:"Arizona",thumbClass:"ct5",
-    name:"Quintero Golf and Country Club",price:"$120&ndash;$200",
+    name:"Quintero Golf and Country Club",price:"$120&ndash;$200",greenFee:"$$",
     cyntp:"Tucked up in the hills north of Phoenix. Dramatic elevation changes and mountain views that rival anything in Scottsdale.",
     review:"Quintero is the kind of hidden gem that serious Arizona golfers know about and casual visitors miss entirely. The course climbs through the Hieroglyphic Mountains with dramatic elevation changes and panoramic views. The layout is genuinely challenging and the experience feels far more exclusive than the price suggests.",
     cyntp_rating:8.6,cyntp_tag:"Hidden Gem",city:"Peoria, AZ",comments:[]
   },
   {
     id:16,dest:"arizona",destLabel:"Arizona",thumbClass:"ct6",
-    name:"Rancho Manana Golf Club",price:"$70&ndash;$130",
+    name:"Rancho Manana Golf Club",price:"$70&ndash;$130",greenFee:"$$",
     cyntp:"Chill desert track with good bones. The surrounding saguaro forest makes every hole feel like a postcard.",
     review:"Rancho Manana is a relaxed alternative to the high-end Scottsdale resort tracks. The saguaro-lined fairways are visually stunning and the layout is fun without being punishing. Great option for a morning warm-up round or if you're looking for a more laid-back pace.",
     cyntp_rating:7.8,cyntp_tag:null,city:"Cave Creek, AZ",comments:[]
   },
   {
     id:17,dest:"arizona",destLabel:"Arizona",thumbClass:"ct2",
-    name:"SaddleBrooke &mdash; Mountain View Golf Club",price:"$45&ndash;$80",
+    name:"SaddleBrooke &mdash; Mountain View Golf Club",price:"$45&ndash;$80",greenFee:"$",
     cyntp:"Beautifully set against the Catalina Mountains north of Tucson. Reliable conditions, great value, and a solid public track with mountain views throughout.",
     review:"Mountain View at SaddleBrooke is a public track in the Santa Catalina Mountain foothills. Troon-managed and open to the public, it plays more conventionally than its neighbor The Preserve but the mountain backdrop makes it one of the more scenic rounds near Tucson.",
     cyntp_rating:7.4,cyntp_tag:null,city:"Tucson, AZ",comments:[]
   },
   {
     id:18,dest:"arizona",destLabel:"Arizona",thumbClass:"ct3",
-    name:"SaddleBrooke &mdash; The Preserve Golf Club",price:"$45&ndash;$80",
+    name:"SaddleBrooke &mdash; The Preserve Golf Club",price:"$45&ndash;$80",greenFee:"$",
     cyntp:"The star of the SaddleBrooke complex. Dramatic elevation drops, canyon views, and forced carries make this one of the most unique layouts in southern Arizona. A genuine hidden gem.",
     review:"The Preserve at SaddleBrooke winds through the Santa Catalina Mountain foothills with dramatic elevation changes and canyon terrain that makes every hole feel distinct. Locals consistently rank it in their Tucson top five. Troon-managed and open to the public at a great price.",
     cyntp_rating:7.5,cyntp_tag:null,city:"Tucson, AZ",comments:[]
   },
   {
     id:19,dest:"arizona",destLabel:"Arizona",thumbClass:"ct4",
-    name:"Sewailo Golf Club",price:"$70&ndash;$160",
+    name:"Sewailo Golf Club",price:"$70&ndash;$160",greenFee:"$$",
     cyntp:"Notah Begay III’s design at Casino del Sol is one of Tucson’s best. Water in play on nearly every hole, fast greens, and a layout that plays tougher than it looks. Top 25 in Arizona for a reason.",
     review:"Sewailo is the standout public course in Tucson. Designed by Notah Begay III on the Pasqua Yaqui Tribe’s reservation, the course weaves water hazards through nearly every hole &mdash; unusual for the Arizona desert. Demanding, precise, and consistently one of the top-rated public tracks in the state.",
     cyntp_rating:7.4,cyntp_tag:null,city:"Tucson, AZ",comments:[]
   },
   {
     id:20,dest:"arizona",destLabel:"Arizona",thumbClass:"ct3",
-    name:"Sunridge Canyon Golf Club",price:"$80&ndash;$150",
+    name:"Sunridge Canyon Golf Club",price:"$80&ndash;$150",greenFee:"$$",
     cyntp:"One of Fountain Hills' best kept secrets. The canyon terrain makes for dramatic elevation changes and some genuinely memorable holes.",
     review:"Sunridge Canyon is a standout in the Fountain Hills area east of Scottsdale. The course drops into and climbs out of a natural canyon, creating dramatic elevation changes and views that rival anything on the more famous Scottsdale corridor. The layout is challenging and creative, and the conditions are consistently solid. A great option when you want something different from the standard resort experience.",
     cyntp_rating:7.3,cyntp_tag:"Hidden Gem",city:"Fountain Hills, AZ",comments:[]
   },
   {
     id:21,dest:"arizona",destLabel:"Arizona",thumbClass:"ct3",
-    name:"Talking Stick Golf Club &mdash; O'odham Course",price:"$65&ndash;$120",
+    name:"Talking Stick Golf Club &mdash; O'odham Course",price:"$65&ndash;$120",greenFee:"$",
     cyntp:"Best bang for your buck on the Scottsdale corridor. Flat, fast, and well-conditioned. Great warm-up round.",
     review:"Talking Stick's O'odham Course is the accessible entry point to Scottsdale golf &mdash; the price is right, the conditions are always solid, and the flat layout is forgiving enough for all skill levels. It's not the most dramatic course in the area but it's reliable and well-run.",
     cyntp_rating:7.5,cyntp_tag:"Best Value",city:"Scottsdale, AZ",comments:[]
   },
   {
     id:22,dest:"arizona",destLabel:"Arizona",thumbClass:"ct5",
-    name:"The Club at Starr Pass",price:"$80&ndash;$160",
+    name:"The Club at Starr Pass",price:"$80&ndash;$160",greenFee:"$$",
     cyntp:"27 holes carved into the Tucson Mountains at the JW Marriott. Arnold Palmer’s design uses the rugged terrain beautifully &mdash; bring extra balls and enjoy the views.",
     review:"The Club at Starr Pass sits in the Tucson Mountains at the JW Marriott Starr Pass Resort with 27 holes across three nines &mdash; Gambler, Pioneer, and Palmer. It hosted Phil Mickelson’s first PGA Tour win as an amateur in 1987. A 2024 renovation refreshed all bunkers and installed new Bermuda greens.",
     cyntp_rating:8.4,cyntp_tag:null,city:"Tucson, AZ",comments:[]
   },
   {
     id:23,dest:"arizona",destLabel:"Arizona",thumbClass:"ct6",
-    name:"Tubac Golf Resort",price:"$60&ndash;$110",
+    name:"Tubac Golf Resort",price:"$60&ndash;$110",greenFee:"$",
     cyntp:"27 holes on a historic ranch south of Tucson. The Tin Cup course. Mountain views, riverbed terrain, and some genuinely memorable holes.",
     review:"Tubac Golf Resort sits on the historic Otero Ranch along the Santa Cruz River with 27 holes across three nines &mdash; Anza, Rancho, and Otero. The Rancho nine is where Tin Cup was filmed. The Anza nine features an island-green par 3. The Santa Rita and Tumacacori mountain ranges frame every round.",
     cyntp_rating:7.4,cyntp_tag:null,city:"Tubac, AZ",comments:[]
   },
   {
     id:24,dest:"arizona",destLabel:"Arizona",thumbClass:"ct1",
-    name:"Verrado Golf Club &mdash; Founder's Course",price:"$80&ndash;$140",
+    name:"Verrado Golf Club &mdash; Founder's Course",price:"$80&ndash;$140",greenFee:"$$",
     cyntp:"Underrated West Valley gem. The mountain views are incredible and the layout is more interesting than most resort tracks.",
     review:"Verrado is out in the West Valley away from the Scottsdale crowds and that's exactly what makes it special. The Founder's Course has real character &mdash; the White Tank Mountains frame the entire round and the layout uses the terrain intelligently. Significantly more affordable than the Scottsdale marquee names.",
     cyntp_rating:7.3,cyntp_tag:null,city:"Buckeye, AZ",comments:[]
   },
   {
     id:25,dest:"arizona",destLabel:"Arizona",thumbClass:"ct6",
-    name:"We-Ko-Pa Golf Club &mdash; Cholla",price:"$110&ndash;$180",
+    name:"We-Ko-Pa Golf Club &mdash; Cholla",price:"$110&ndash;$180",greenFee:"$$",
     cyntp:"Flatter than the Saguaro but the greens will eat you alive. Sneaky tough and worth playing both tracks back to back.",
     review:"The Cholla course at We-Ko-Pa is a different animal from the Saguaro &mdash; flatter terrain but the course design compensates with strategically placed hazards and some of the trickiest greens on the property. Play this one after the Saguaro for the full We-Ko-Pa experience.",
     cyntp_rating:8.5,cyntp_tag:null,city:"Fort McDowell, AZ",comments:[]
@@ -1061,70 +1062,70 @@ const COURSES = [
   {
     id:26,dest:"arizona",destLabel:"Arizona",thumbClass:"ct5",
     tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1777693417/Screenshot_2026-05-01_at_10.40.37_PM_p2vdx9.png",
-    name:"We-Ko-Pa Golf Club &mdash; Saguaro",price:"$130&ndash;$200",
+    name:"We-Ko-Pa Golf Club &mdash; Saguaro",price:"$130&ndash;$200",greenFee:"$$",
     cyntp:"Two completely different tracks, both world-class. The Saguaro is more dramatic with elevation and desert terrain that'll take your breath away.",
     review:"We-Ko-Pa might be the best value in Scottsdale. The Saguaro course winds through dramatic desert terrain with elevation changes you don't expect. The views are stunning and the conditions are consistently excellent. Most people overlook this place in favor of TPC and Troon &mdash; that's a mistake.",
     cyntp_rating:8.6,cyntp_tag:"Best Value",city:"Fort McDowell, AZ",comments:[]
   },
   {
     id:27,dest:"california",destLabel:"California",thumbClass:"ct4",
-    name:"Aviara Golf Club",price:"$175&ndash;$300",
+    name:"Aviara Golf Club",price:"$175&ndash;$300",greenFee:"$$$",
     cyntp:"Arnold Palmer’s only San Diego design. Rolling hillsides, native wildflowers, and immaculate conditions at the Park Hyatt Aviara. Former LPGA Tour host and one of SoCal’s finest resort courses.",
     review:"Aviara Golf Club at the Park Hyatt Aviara in Carlsbad is the only Arnold Palmer design in San Diego County. The 7,007-yard layout meanders through rolling hillsides overlooking the Batiquitos Lagoon ecological reserve, with native wildflowers lining the fairways. A former LPGA Tour host and Golf Digest regularly places it among the best resort courses in America. Conditions are immaculate. At peak rates it’s expensive but the experience justifies it.",
     cyntp_rating:8.6,cyntp_tag:null,city:"Carlsbad, CA",comments:[]
   },
   {
     id:28,dest:"california",destLabel:"California",thumbClass:"ct5",
-    name:"Classic Club",price:"$80&ndash;$150",
+    name:"Classic Club",price:"$80&ndash;$150",greenFee:"$$",
     cyntp:"Former PGA Tour host that holds up beautifully. Arnold Palmer design with great conditioning and a layout that rewards skilled play.",
     review:"Classic Club hosted the Bob Hope Classic for several years and the Tour-quality conditioning has carried through. Arnold Palmer's design is engaging and varied with a good mix of risk-reward holes.",
     cyntp_rating:8.1,cyntp_tag:null,city:"Palm Desert, CA",comments:[]
   },
   {
     id:29,dest:"california",destLabel:"California",thumbClass:"ct4",
-    name:"Desert Willow Golf Resort &mdash; Firecliff",price:"$95&ndash;$165",
+    name:"Desert Willow Golf Resort &mdash; Firecliff",price:"$95&ndash;$165",greenFee:"$$",
     cyntp:"The more demanding Desert Willow track. The firecliff terrain makes for dramatic golf and some genuinely memorable holes.",
     review:"Firecliff is the bigger sibling to Desert Willow Mountain View &mdash; more demanding, more dramatic, and more memorable. The firecliff terrain creates visually stunning holes and the overall layout is one of the better designs in the Coachella Valley.",
     cyntp_rating:8.0,cyntp_tag:"Must Play",city:"Palm Desert, CA",comments:[]
   },
   {
     id:30,dest:"california",destLabel:"California",thumbClass:"ct3",
-    name:"Desert Willow Golf Resort &mdash; Mountain View",price:"$85&ndash;$150",
+    name:"Desert Willow Golf Resort &mdash; Mountain View",price:"$85&ndash;$150",greenFee:"$$",
     cyntp:"The more playable of the two Desert Willow tracks. Excellent conditions and beautiful desert landscape throughout.",
     review:"Desert Willow Mountain View is a beautifully maintained Palm Desert track. The desert landscape is fully in play but the layout is more forgiving than some of the more punishing desert tracks in the valley.",
     cyntp_rating:7.9,cyntp_tag:null,city:"Palm Desert, CA",comments:[]
   },
   {
     id:31,dest:"california",destLabel:"California",thumbClass:"ct1",
-    name:"Escena Golf Club",price:"$60&ndash;$110",
+    name:"Escena Golf Club",price:"$60&ndash;$110",greenFee:"$",
     cyntp:"Best value in Palm Springs. The views of San Jacinto Mountain are incredible and the Nicklaus design is solid throughout.",
     review:"Escena is Palm Springs golf at an accessible price point. The Jack Nicklaus design is well-executed and the backdrop of San Jacinto Mountain makes every hole visually spectacular.",
     cyntp_rating:7.7,cyntp_tag:"Best Value",city:"Palm Springs, CA",comments:[]
   },
   {
     id:32,dest:"california",destLabel:"California",thumbClass:"ct6",
-    name:"Indian Wells Golf Resort &mdash; Celebrity Course",price:"$70&ndash;$130",
+    name:"Indian Wells Golf Resort &mdash; Celebrity Course",price:"$70&ndash;$130",greenFee:"$$",
     cyntp:"Classic desert resort golf in the heart of Indian Wells. Well-maintained and a solid addition to any Coachella Valley trip.",
     review:"The Celebrity Course at Indian Wells is a reliable Coachella Valley track. The resort conditioning is excellent and the layout has enough variety to keep things interesting.",
     cyntp_rating:8.2,cyntp_tag:null,city:"Indian Wells, CA",comments:[]
   },
   {
     id:33,dest:"california",destLabel:"California",thumbClass:"ct5",
-    name:"Monarch Beach Golf Links",price:"$185&ndash;$370",
+    name:"Monarch Beach Golf Links",price:"$185&ndash;$370",greenFee:"$$$",
     cyntp:"Robert Trent Jones Jr. on the bluffs above the Pacific in Dana Point. Ocean views on four holes, links-style layout, and one of the few true oceanfront courses in California.",
     review:"Monarch Beach Golf Links sits on the dramatic coastal bluffs of Dana Point, designed by Robert Trent Jones Jr. in the Scottish links tradition. Four holes play directly along the Pacific Ocean and the views are genuinely stunning. The par-70 layout is shorter than most but the undulating greens and coastal winds make it play tougher than the yardage suggests. Maintained by Troon and attached to the Waldorf Astoria Monarch Beach. One of the select few true oceanfront tracks in California.",
     cyntp_rating:8.1,cyntp_tag:null,city:"Dana Point, CA",comments:[]
   },
   {
     id:124,dest:"california",destLabel:"California",thumbClass:"ct3",
-    name:"Pelican Hill Golf Club &mdash; Ocean North",price:"$250&ndash;$450",
+    name:"Pelican Hill Golf Club &mdash; Ocean North",price:"$250&ndash;$450",greenFee:"$$$$",
     cyntp:"Tom Fazio carved two world-class courses into the Newport Coast bluffs above the Pacific. The North is the longer, more demanding track.",
     review:"Pelican Hill's Ocean North Course is Tom Fazio at his most spectacular. Perched on the coastal bluffs of Newport Coast with panoramic views of the Pacific Ocean on nearly every hole, this is bucket-list California golf. The layout is longer and more demanding than its South sibling, with wide fairways that funnel into well-defended greens. Attached to the Pelican Hill Resort — pricey, but the setting is unmatched in Southern California.",
     cyntp_rating:8.6,cyntp_tag:"Bucket List",city:"Newport Coast, CA",comments:[]
   },
   {
     id:125,dest:"california",destLabel:"California",thumbClass:"ct4",
-    name:"Pelican Hill Golf Club &mdash; Ocean South",price:"$250&ndash;$450",
+    name:"Pelican Hill Golf Club &mdash; Ocean South",price:"$250&ndash;$450",greenFee:"$$$$",
     cyntp:"The more playable of the two Pelican Hill tracks but just as stunning. Pacific views on every hole and immaculate Fazio conditioning.",
     review:"The Ocean South Course at Pelican Hill is slightly more forgiving than the North but loses nothing in terms of beauty. Tom Fazio's routing hugs the same Newport Coast bluffs with the Pacific as a constant backdrop. The par-70 layout plays shorter but the bunkering and green complexes keep the scoring honest. If you're only playing one Pelican Hill course, the South is the better introduction.",
     cyntp_rating:8.5,cyntp_tag:null,city:"Newport Coast, CA",comments:[]
@@ -1132,28 +1133,28 @@ const COURSES = [
   {
     id:34,dest:"california",destLabel:"California",thumbClass:"ct2",
     tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1777700314/DJI_20250118120703_0565_D_c43jpz.jpg",
-    name:"PGA West &mdash; Pete Dye Mountain",price:"$150&ndash;$260",
+    name:"PGA West &mdash; Pete Dye Mountain",price:"$150&ndash;$260",greenFee:"$$",
     cyntp:"The Mountain Course is the more playable of the two Dye tracks at PGA West. Still demands your best but won't break your spirit.",
     review:"The Mountain Course at PGA West is a slightly more forgiving alternative to the Stadium beast next door. The desert terrain is still fully in play and the layout has plenty of teeth, but the Mountain Course rewards good golf rather than just punishing bad shots.",
     cyntp_rating:8.9,cyntp_tag:null,city:"La Quinta, CA",comments:[]
   },
   {
     id:35,dest:"california",destLabel:"California",thumbClass:"ct1",
-    name:"PGA West &mdash; Pete Dye Stadium",price:"$200&ndash;$350",
+    name:"PGA West &mdash; Pete Dye Stadium",price:"$200&ndash;$350",greenFee:"$$$",
     cyntp:"Pete Dye built a monster. The island green on 17 is one of the most famous holes in the world. Bring extra balls and your patience.",
     review:"PGA West Stadium is equal parts brilliant and brutal. Pete Dye clearly had a vendetta against golfers when he designed it. The famous 17th island green will collect more balls than you want to count. For a higher handicap, play here for the experience not the scorecard.",
     cyntp_rating:8.8,cyntp_tag:"Bucket List",city:"La Quinta, CA",comments:[]
   },
   {
     id:36,dest:"california",destLabel:"California",thumbClass:"ct2",
-    name:"Westin Rancho Mirage",price:"$70&ndash;$130",
+    name:"Westin Rancho Mirage",price:"$70&ndash;$130",greenFee:"$$",
     cyntp:"Classic Coachella Valley resort golf. The mountain views are excellent and the layout is a fair test for all skill levels.",
     review:"Westin Rancho Mirage delivers the classic Palm Springs resort golf experience. The mountain backdrop is stunning from every hole and the layout is well-designed for players of all levels.",
     cyntp_rating:7.1,cyntp_tag:null,city:"Rancho Mirage, CA",comments:[]
   },
   {
     id:37,dest:"dominican-republic",destLabel:"Dominican Republic",thumbClass:"ct2",
-    name:"Casa de Campo &mdash; Dye Fore",price:"$150&ndash;$250",
+    name:"Casa de Campo &mdash; Dye Fore",price:"$150&ndash;$250",greenFee:"$$",
     cyntp:"The Chavon-Marina routing is the one to play. Dramatic cliffside golf above the Chavon River gorge. Absolutely spectacular.",
     review:"Dye Fore is the sleeper at Casa de Campo. While Teeth of the Dog gets all the attention, Dye Fore's Chavon-Marina routing offers some of the most dramatic golf we've ever played. The cliffside holes above the Chavon River gorge are genuinely jaw-dropping.",
     cyntp_rating:8.7,cyntp_tag:"Must Play",city:"La Romana, DR",comments:[]
@@ -1161,49 +1162,49 @@ const COURSES = [
   {
     id:38,dest:"dominican-republic",destLabel:"Dominican Republic",thumbClass:"ct1",
     tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1777737412/Screenshot_2026-05-02_at_10.56.18_AM_fxk3lx.png",
-    name:"Casa de Campo &mdash; Teeth of the Dog",price:"$250&ndash;$400",
+    name:"Casa de Campo &mdash; Teeth of the Dog",price:"$250&ndash;$400",greenFee:"$$$",
     cyntp:"One of the greatest courses in the world. Seven holes on the Caribbean Sea. If you ever get the chance to play this, drop everything and go.",
     review:"Teeth of the Dog is on a short list of the greatest golf courses in the world and playing it lives up to every superlative. Pete Dye's masterpiece in La Romana has seven holes directly on the Caribbean and the other eleven are exceptional. The conditioning is immaculate.",
     cyntp_rating:9.4,cyntp_tag:"Bucket List",city:"La Romana, DR",comments:[]
   },
   {
     id:39,dest:"dominican-republic",destLabel:"Dominican Republic",thumbClass:"ct3",
-    name:"La Cana &mdash; Tortuga-Arricife",price:"$120&ndash;$200",
+    name:"La Cana &mdash; Tortuga-Arricife",price:"$120&ndash;$200",greenFee:"$$",
     cyntp:"Puntacana's best combination. The oceanside holes are world-class and the layout blends jungle and coastline beautifully.",
     review:"La Cana's Tortuga-Arricife combination is the best routing at the Puntacana Resort complex. The oceanside holes are genuinely spectacular and the contrast between the jungle interior and the Caribbean coastline gives the round enormous variety.",
     cyntp_rating:8.2,cyntp_tag:"Must Play",city:"Punta Cana, DR",comments:[]
   },
   {
     id:40,dest:"dominican-republic",destLabel:"Dominican Republic",thumbClass:"ct4",
-    name:"Puntacana Resort &mdash; Corales Golf",price:"$200&ndash;$350",
+    name:"Puntacana Resort &mdash; Corales Golf",price:"$200&ndash;$350",greenFee:"$$$",
     cyntp:"PGA Tour venue. The finishing stretch along the ocean bluffs is one of the most dramatic in professional golf. Absolutely elite.",
     review:"Corales hosts the PGA Tour's Corales Puntacana Championship and the finishing holes are genuinely Tour-worthy. The back nine runs along dramatic ocean bluffs and the 16th, 17th, and 18th holes are a closing stretch that rivals anything in professional golf.",
     cyntp_rating:9.0,cyntp_tag:"Bucket List",city:"Punta Cana, DR",comments:[]
   },
   {
     id:126,dest:"florida",destLabel:"Florida",thumbClass:"ct1",
-    name:"Eagle Creek Golf Club",price:"$40&ndash;$80",
+    name:"Eagle Creek Golf Club",price:"$40&ndash;$80",greenFee:"$",
     cyntp:"One of Orlando's best-kept secrets. Ron Garl's layout winds through natural wetlands and mature oaks — more character than you'd expect at this price point.",
     review:"Eagle Creek is a semi-private gem tucked away in southeast Orlando. Ron Garl's design works the natural wetlands and oak hammocks beautifully, with water in play on most holes but never in a punishing way. The conditions are consistently solid and the layout has enough variety to keep better players interested. For the money, it's one of the strongest values in the Orlando market.",
     cyntp_rating:6.4,cyntp_tag:"Best Value",city:"Orlando, FL",comments:[]
   },
   {
     id:41,dest:"florida",destLabel:"Florida",thumbClass:"ct4",
-    name:"Forest Lake Golf Club of Ocoee",price:"$40&ndash;$70",
+    name:"Forest Lake Golf Club of Ocoee",price:"$40&ndash;$70",greenFee:"$",
     cyntp:"Best value in the Orlando area. A hidden gem that locals know and tourists miss entirely.",
     review:"Forest Lake is one of those courses that locals guard jealously. The layout is more interesting than the price suggests and the conditions are consistently solid. If you're in Orlando and want to avoid the resort price tags, this is where you go.",
     cyntp_rating:5.8,cyntp_tag:"Best Value",city:"Ocoee, FL",comments:[]
   },
   {
     id:42,dest:"florida",destLabel:"Florida",thumbClass:"ct1",
-    name:"Grand Cypress Golf Club &mdash; Cypress Course",price:"$110&ndash;$180",
+    name:"Grand Cypress Golf Club &mdash; Cypress Course",price:"$110&ndash;$180",greenFee:"$$",
     cyntp:"The Cypress Course complements the Links nicely. More of a traditional resort layout but the conditioning is always immaculate.",
     review:"The Cypress Course at Grand Cypress is a more conventional resort track compared to the Links but it delivers a premium experience. The conditioning is excellent and the layout plays through classic Florida scenery &mdash; water, palms, and well-manicured Bermuda fairways.",
     cyntp_rating:7.5,cyntp_tag:null,city:"Orlando, FL",comments:[]
   },
   {
     id:43,dest:"florida",destLabel:"Florida",thumbClass:"ct6",
-    name:"Grand Cypress Golf Club &mdash; Links Course",price:"$120&ndash;$200",
+    name:"Grand Cypress Golf Club &mdash; Links Course",price:"$120&ndash;$200",greenFee:"$$",
     cyntp:"Scottish links design in Orlando. It works way better than it has any right to. The pot bunkers and mounding are legit.",
     review:"The Links Course at Grand Cypress is an homage to the Old Course at St Andrews and it's executed remarkably well. The pot bunkers, double greens, and dramatic mounding transport you somewhere completely different from typical Florida resort golf.",
     cyntp_rating:7.4,cyntp_tag:"Must Play",city:"Orlando, FL",comments:[]
@@ -1211,28 +1212,28 @@ const COURSES = [
   {
     id:44,dest:"florida",destLabel:"Florida",thumbClass:"ct2",
     tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1777738442/Screenshot_2026-05-02_at_11.13.51_AM_ihmb3i.png",
-    name:"Hammock Beach Resort &mdash; The Ocean Course",price:"$150&ndash;$250",
+    name:"Hammock Beach Resort &mdash; The Ocean Course",price:"$150&ndash;$250",greenFee:"$$",
     cyntp:"One of Florida's best resort tracks. The oceanside holes on the back nine are genuinely world-class.",
     review:"The Ocean Course at Hammock Beach delivers the kind of Florida resort golf experience that justifies the green fee. The back nine plays along the Atlantic and several holes offer dramatic ocean views. The conditioning is impeccable and the overall experience is first-rate.",
     cyntp_rating:7.4,cyntp_tag:"Must Play",city:"Palm Coast, FL",comments:[]
   },
   {
     id:45,dest:"florida",destLabel:"Florida",thumbClass:"ct2",
-    name:"Hammock Beach &mdash; The Conservatory Course",price:"$120&ndash;$200",
+    name:"Hammock Beach &mdash; The Conservatory Course",price:"$120&ndash;$200",greenFee:"$$",
     cyntp:"Tom Watson’s inland masterpiece at Hammock Beach. 140 bunkers, an island-green par 3, and one of the most unique clubhouses in Florida. Consistently ranked among the best in the state.",
     review:"The Conservatory Course is Tom Watson’s only Florida design &mdash; and it shows his love of British links golf in every detail. 140 bunkers including sod-faced pot bunkers, elaborate stonework, waterfalls, and wave-like greens. The signature par-3 8th is a near-200-yard island green. The 18th tee sits almost 200 feet above the course. Golf Digest Editors’ Choice and consistently ranked one of Florida’s top tracks.",
     cyntp_rating:6.9,cyntp_tag:null,city:"Palm Coast, FL",comments:[]
   },
   {
     id:46,dest:"florida",destLabel:"Florida",thumbClass:"ct3",
-    name:"Miami Lakes Golf Club",price:"$50&ndash;$90",
+    name:"Miami Lakes Golf Club",price:"$50&ndash;$90",greenFee:"$",
     cyntp:"Accessible Miami track with a traditional layout. Good option if you want to play golf without the resort price tag in South Florida.",
     review:"Miami Lakes is a straightforward public track that delivers consistent conditions at an accessible price point. The layout is traditional and well-maintained. Not the most glamorous option in South Florida but reliable and well-run.",
     cyntp_rating:7.6,cyntp_tag:null,city:"Miami Lakes, FL",comments:[]
   },
   {
     id:47,dest:"florida",destLabel:"Florida",thumbClass:"ct5",
-    name:"Mission Resort &mdash; El Campeon",price:"$80&ndash;$140",
+    name:"Mission Resort &mdash; El Campeon",price:"$80&ndash;$140",greenFee:"$$",
     cyntp:"Florida's oldest 18-hole course and it wears its history well. The elevation changes are unlike anything else in the state.",
     review:"El Campeon at Mission Resort is genuinely unique in Florida &mdash; real elevation changes in the Ocala highlands and mature oaks and citrus trees create an atmosphere you simply don't find on most Florida tracks. The history here is palpable and the layout still holds up beautifully.",
     cyntp_rating:7.4,cyntp_tag:"Hidden Gem",city:"Howey-in-the-Hills, FL",comments:[]
@@ -1240,7 +1241,7 @@ const COURSES = [
   {
     id:48,dest:"florida",destLabel:"Florida",thumbClass:"ct3",
     tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1777700738/Screenshot_2026-05-02_at_12.44.01_AM_jkibks.png",
-    name:"Shingle Creek Golf Club",price:"$60&ndash;$100",
+    name:"Shingle Creek Golf Club",price:"$60&ndash;$100",greenFee:"$",
     cyntp:"Solid Orlando track near the convention corridor. More interesting than it looks on the map &mdash; the creek comes into play more than you expect.",
     review:"Shingle Creek is a reliable Orlando option that gets overlooked because of its proximity to the tourist strip. The creek winds throughout the layout and creates genuinely interesting approach shots. The conditions are well-maintained and the pace of play is usually good.",
     cyntp_rating:7.7,cyntp_tag:null,city:"Orlando, FL",comments:[]
@@ -1248,105 +1249,105 @@ const COURSES = [
   {
     id:114,dest:"florida",destLabel:"Florida",thumbClass:"ct5",
     tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1777733765/Screenshot_2026-05-02_at_9.55.39_AM_l8fn57.png",
-    name:"Trump National Doral &mdash; Blue Monster",price:"$200&ndash;$350",
+    name:"Trump National Doral &mdash; Blue Monster",price:"$200&ndash;$350",greenFee:"$$$",
     cyntp:"One of the most iconic resort courses in America. The Blue Monster has hosted the WGC-Cadillac Championship and demands your best ball-striking.",
     review:"The Blue Monster lives up to the hype. Wide fairways lull you in before the water and length punish any mistakes. The conditioning is impeccable and the history here is real — this is a PGA Tour venue and it plays like one. A bucket-list Florida round.",
     cyntp_rating:8.3,cyntp_tag:"Bucket List",city:"Doral, FL",comments:[]
   },
   {
     id:49,dest:"florida",destLabel:"Florida",thumbClass:"ct4",
-    name:"Trump National Doral &mdash; Silver Fox",price:"$80&ndash;$140",
+    name:"Trump National Doral &mdash; Silver Fox",price:"$80&ndash;$140",greenFee:"$$",
     cyntp:"Best value on the Doral property. Great warm-up round before you tackle the Blue Monster.",
     review:"The Silver Fox is a smart pairing with the Blue Monster on the same Doral property. Shorter and more scoring-friendly, which makes it ideal for a morning warm-up. The price is significantly more accessible than the marquee Blue Monster and the conditions are well-maintained.",
     cyntp_rating:7.6,cyntp_tag:"Best Value",city:"Doral, FL",comments:[]
   },
   {
     id:122,dest:"florida",destLabel:"Florida",thumbClass:"ct1",
-    name:"Turnberry Isle &mdash; Miller Course",price:"$120&ndash;$200",
+    name:"Turnberry Isle &mdash; Miller Course",price:"$120&ndash;$200",greenFee:"$$",
     cyntp:"One of two championship tracks at the JW Marriott Turnberry Resort in Aventura. The Miller Course is the more player-friendly of the pair with a classic resort feel.",
     review:"The Miller Course at Turnberry Isle is a polished resort round in the heart of Aventura. The layout is well-maintained and playable for a range of handicaps, with enough challenge to keep better players engaged. The resort setting is first-class and the overall experience is exactly what you'd expect from a JW Marriott property.",
     cyntp_rating:7.7,cyntp_tag:null,city:"Aventura, FL",comments:[]
   },
   {
     id:123,dest:"florida",destLabel:"Florida",thumbClass:"ct4",
-    name:"Turnberry Isle &mdash; Soffer Course",price:"$150&ndash;$250",
+    name:"Turnberry Isle &mdash; Soffer Course",price:"$150&ndash;$250",greenFee:"$$",
     cyntp:"The marquee track at Turnberry Isle. The Soffer Course is longer and more demanding than the Miller with water in play throughout and a true resort championship feel.",
     review:"The Soffer Course is the flagship at Turnberry Isle and it delivers. Longer and more strategic than its sister course, the Soffer demands precise ball-striking with water hazards in play on the majority of holes. The conditioning is impeccable and the South Florida resort atmosphere makes it a memorable experience from the first tee to the 18th green.",
     cyntp_rating:7.8,cyntp_tag:null,city:"Aventura, FL",comments:[]
   },
   {
     id:50,dest:"georgia",destLabel:"Georgia",thumbClass:"ct1",
-    name:"McLemore &mdash; Highlands Course",price:"$120&ndash;$200",
+    name:"McLemore &mdash; Highlands Course",price:"$120&ndash;$200",greenFee:"$$",
     cyntp:"Perched on Lookout Mountain with jaw-dropping views over Chattanooga and the Tennessee Valley. One of the most dramatic settings in the Southeast &mdash; full stop.",
     review:"McLemore's Highlands Course is one of the most visually stunning rounds in the entire Southeast. The course sits atop Lookout Mountain on the Georgia-Tennessee border with sweeping views of Chattanooga and the Tennessee Valley that stretch for miles. The layout by Gil Hanse is thoughtful and challenging, using the dramatic ridge-top terrain to create holes you'll be talking about for years. A genuine destination course that deserves far more national attention.",
     cyntp_rating:8.6,cyntp_tag:"Bucket List",city:"Rising Fawn, GA",comments:[]
   },
   {
     id:51,dest:"georgia",destLabel:"Georgia",thumbClass:"ct2",
-    name:"McLemore &mdash; The Keep",price:"$60&ndash;$100",
+    name:"McLemore &mdash; The Keep",price:"$60&ndash;$100",greenFee:"$",
     cyntp:"The short course at McLemore. Par-3s with those same incredible Lookout Mountain views. A perfect warm-up or sunset round.",
     review:"The Keep is McLemore's short course and it's a brilliant complement to the Highlands. All par-3s set along the ridgeline with the same panoramic views that make the main course so special. It's playable in a couple of hours and perfect for an evening round after the Highlands. The combination of both courses in one day is one of the best golf experiences in the South.",
     cyntp_rating:9.1,cyntp_tag:"Hidden Gem",city:"Rising Fawn, GA",comments:[]
   },
   {
     id:52,dest:"idaho",destLabel:"Idaho",thumbClass:"ct1",
-    name:"The Coeur d'Alene Resort Golf Course",price:"$200&ndash;$350",
+    name:"The Coeur d'Alene Resort Golf Course",price:"$200&ndash;$350",greenFee:"$$$",
     cyntp:"The floating green is the most famous hole in Idaho and it lives up to the legend. The boat ride out is part of the experience. Do it.",
     review:"Coeur d'Alene Resort is one of those once-in-a-lifetime golf experiences. The famous 14th hole with its floating island green and boat shuttle is unlike anything else in golf. The rest of the course is beautiful in its own right &mdash; the lake views are stunning throughout.",
     cyntp_rating:8.1,cyntp_tag:"Bucket List",city:"Coeur d'Alene, ID",comments:[]
   },
   {
     id:53,dest:"ireland",destLabel:"Ireland",thumbClass:"ct5",
-    name:"Dooks Golf Club",price:"$80&ndash;$140",
+    name:"Dooks Golf Club",price:"$80&ndash;$140",greenFee:"$$",
     cyntp:"The hidden gem of the Kerry coast. Classic links golf without the crowds or the price tag of its famous neighbors. Don't miss it.",
     review:"Dooks is the under-the-radar masterpiece of a Kerry golf trip. Sandwiched between the more famous names of Tralee and Waterville, it gets overlooked &mdash; which is a massive mistake. The traditional links layout plays through duneland along Dingle Bay with mountain views in every direction. Genuinely special golf at a fraction of the cost of its neighbors.",
     cyntp_rating:8.7,cyntp_tag:"Hidden Gem",city:"Glenbeigh, Ireland",comments:[]
   },
   {
     id:54,dest:"ireland",destLabel:"Ireland",thumbClass:"ct1",
-    name:"Lahinch Golf Club",price:"$150&ndash;$250",
+    name:"Lahinch Golf Club",price:"$150&ndash;$250",greenFee:"$$",
     cyntp:"One of the great links courses on earth. The blind shots and dune-land terrain are unlike anything in the States. This is what golf was meant to be.",
     review:"Lahinch is a pilgrimage for any serious golfer. The Old Course dates back to 1893 and the links layout winds through massive sand dunes along the Atlantic coast of County Clare. The blind shots are legendary &mdash; the Klondyke and the Dell are two of the most famous holes in Irish golf. Come here humbled and leave a convert.",
     cyntp_rating:9.4,cyntp_tag:"Bucket List",city:"Lahinch, Ireland",comments:[]
   },
   {
     id:55,dest:"ireland",destLabel:"Ireland",thumbClass:"ct4",
-    name:"Old Head Golf Links",price:"$250&ndash;$450",
+    name:"Old Head Golf Links",price:"$250&ndash;$450",greenFee:"$$$$",
     cyntp:"Built on a headland jutting into the Atlantic &mdash; ocean views on every single hole. The most dramatic course we've ever set foot on. Worth every euro.",
     review:"Old Head is unlike any golf course in the world. The layout sits on a dramatic 220-acre headland that drops sheer to the Atlantic on three sides, and there is literally not a single hole where you can't see the ocean. The golf is excellent but the setting is the reason people fly from every corner of the world to play here. A once-in-a-lifetime experience.",
     cyntp_rating:9.2,cyntp_tag:"Bucket List",city:"Kinsale, Ireland",comments:[]
   },
   {
     id:56,dest:"ireland",destLabel:"Ireland",thumbClass:"ct3",
-    name:"Tralee Golf Club",price:"$130&ndash;$220",
+    name:"Tralee Golf Club",price:"$130&ndash;$220",greenFee:"$$",
     cyntp:"Arnold Palmer's only Irish design and he nailed it. The back nine along the Kerry coast is some of the most dramatic golf scenery on the planet.",
     review:"Tralee divides into two completely different nines &mdash; the front is a relatively gentle links warm-up, and then the back nine drops to the cliff edge above the Kerry coastline and everything changes. The views are staggering and several holes rank among the most visually spectacular we've ever played. Don't let the front nine fool you.",
     cyntp_rating:9.3,cyntp_tag:"Must Play",city:"Tralee, Ireland",comments:[]
   },
   {
     id:57,dest:"ireland",destLabel:"Ireland",thumbClass:"ct2",
-    name:"Trump International Golf Links Doonbeg",price:"$200&ndash;$350",
+    name:"Trump International Golf Links Doonbeg",price:"$200&ndash;$350",greenFee:"$$$",
     cyntp:"Tucked into a natural amphitheater of dunes on the Atlantic. Greg Norman's design feels like it was carved out of the land, not built on it. Spectacular.",
     review:"Doonbeg is one of the most dramatic settings in golf. The course occupies a narrow strip of land between towering sand dunes and the Atlantic Ocean, and Greg Norman's design uses every inch of it brilliantly. The wind is almost always howling and no two rounds play the same. The lodge and post-round experience are exceptional.",
     cyntp_rating:9.4,cyntp_tag:"Must Play",city:"Doonbeg, Ireland",comments:[]
   },
   {
     id:58,dest:"ireland",destLabel:"Ireland",thumbClass:"ct6",
-    name:"Waterville Golf Links",price:"$150&ndash;$280",
+    name:"Waterville Golf Links",price:"$150&ndash;$280",greenFee:"$$$",
     cyntp:"Massie Tom Watson's favorite course on earth. Massive dunes, wild terrain, and holes that will stay with you for years. A must on any Ireland trip.",
     review:"Waterville is regularly cited as one of the top links courses in the world and it earns every bit of that reputation. The course plays through enormous dunes along the Iveragh Peninsula with the Atlantic and the Ring of Kerry mountains as backdrop. The back nine is extraordinary &mdash; hole 17, Mulcahy's Peak, is one of the most memorable par-3s in golf. Tom Watson called it his favorite course. Hard to argue.",
     cyntp_rating:9.1,cyntp_tag:"Must Play",city:"Waterville, Ireland",comments:[]
   },
   {
     id:59,dest:"kentucky",destLabel:"Kentucky",thumbClass:"ct1",
-    name:"Olde Stone Golf Club",price:"$80&ndash;$140",
+    name:"Olde Stone Golf Club",price:"$80&ndash;$140",greenFee:"$$",
     cyntp:"One of the best courses in Kentucky. The limestone karst terrain creates dramatic natural features you won't find anywhere else. A genuine hidden gem.",
     review:"Olde Stone is the crown jewel of Kentucky golf. The course sits atop a karst plateau near Bowling Green and the natural limestone formations, dramatic drop-offs, and bold routing make it completely unlike any other track in the region. The conditioning is excellent and the layout rewards creative shot-making. An absolute must if you're anywhere near southern Kentucky.",
     cyntp_rating:7.9,cyntp_tag:"Must Play",city:"Bowling Green, KY",comments:[]
   },
   {
     id:60,dest:"michigan",destLabel:"Michigan",thumbClass:"ct1",
-    name:"Grand Traverse Resort &mdash; Spruce Run",price:"$50&ndash;$90",
+    name:"Grand Traverse Resort &mdash; Spruce Run",price:"$50&ndash;$90",greenFee:"$",
     cyntp:"The value track at Grand Traverse. Great for a warm-up round before tackling The Bear or Wolverine.",
     review:"Spruce Run is the accessible option in the Grand Traverse lineup &mdash; shorter, more forgiving, and priced to match. Perfect as a warm-up round the day before you take on The Bear.",
     cyntp_rating:7.8,cyntp_tag:"Best Value",city:"Acme, MI",comments:[]
@@ -1354,35 +1355,35 @@ const COURSES = [
   {
     id:61,dest:"michigan",destLabel:"Michigan",thumbClass:"ct5",
     tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1777751948/Screenshot_2026-05-02_at_2.58.29_PM_wffkcp.png",
-    name:"Grand Traverse Resort &mdash; The Bear",price:"$120&ndash;$200",
+    name:"Grand Traverse Resort &mdash; The Bear",price:"$120&ndash;$200",greenFee:"$$",
     cyntp:"Jack Nicklaus signature and one of the most demanding courses in the Midwest. The Bear will humble even good golfers. Absolutely worth it.",
     review:"The Bear at Grand Traverse is exactly what Jack Nicklaus intended &mdash; an uncompromising test of golf that rewards only the best shots. The northern Michigan forest setting is stunning and the course uses every natural feature to maximum effect.",
     cyntp_rating:8.2,cyntp_tag:"Must Play",city:"Acme, MI",comments:[]
   },
   {
     id:62,dest:"michigan",destLabel:"Michigan",thumbClass:"ct6",
-    name:"Grand Traverse Resort &mdash; The Wolverine",price:"$90&ndash;$160",
+    name:"Grand Traverse Resort &mdash; The Wolverine",price:"$90&ndash;$160",greenFee:"$$",
     cyntp:"Gary Player design that's a more enjoyable round than The Bear without sacrificing quality. The better of the two for most golfers.",
     review:"The Wolverine is the more approachable companion to The Bear at Grand Traverse. Gary Player's design is still demanding but rewards good golf rather than just punishing mistakes. Most golfers will have more fun here than on The Bear.",
     cyntp_rating:7.6,cyntp_tag:null,city:"Acme, MI",comments:[]
   },
   {
     id:63,dest:"mississippi",destLabel:"Mississippi",thumbClass:"ct4",
-    name:"Mossy Oak Golf Club",price:"$70&ndash;$120",
+    name:"Mossy Oak Golf Club",price:"$70&ndash;$120",greenFee:"$",
     cyntp:"Outstanding track in the Columbus area. The Rees Jones design is demanding and the conditioning is consistently excellent.",
     review:"Mossy Oak is one of Mississippi's finest public tracks. The Rees Jones design is thoughtful and demanding &mdash; wide enough to be enjoyable but tight enough to reward precision. The conditioning is consistently excellent and the overall experience feels well above the price point.",
     cyntp_rating:8.2,cyntp_tag:"Must Play",city:"West Point, MS",comments:[]
   },
   {
     id:64,dest:"mississippi",destLabel:"Mississippi",thumbClass:"ct2",
-    name:"Old Waverly Golf Club",price:"$80&ndash;$140",
+    name:"Old Waverly Golf Club",price:"$80&ndash;$140",greenFee:"$$",
     cyntp:"One of the South's best kept secrets. The US Women's Open has been here twice and you'll understand why the moment you play it.",
     review:"Old Waverly is a world-class track hiding in West Point, Mississippi. The course has hosted the US Women's Open twice and the quality shows. The routing through the Mississippi pines is beautiful and the greens are among the best-conditioned in the South.",
     cyntp_rating:8.1,cyntp_tag:"Bucket List",city:"West Point, MS",comments:[]
   },
   {
     id:65,dest:"mississippi",destLabel:"Mississippi",thumbClass:"ct3",
-    name:"Tunica National Golf Course",price:"$45&ndash;$75",
+    name:"Tunica National Golf Course",price:"$45&ndash;$75",greenFee:"$",
     cyntp:"Solid track in the Tunica casino corridor. More interesting than you'd expect given the surroundings.",
     review:"Tunica National is a pleasant surprise in the casino resort corridor. The layout is more thoughtful than the typical resort track and the conditioning is solid. If you're spending time in Tunica, this is the golf option that won't disappoint.",
     cyntp_rating:7.5,cyntp_tag:null,city:"Tunica, MS",comments:[]
@@ -1390,35 +1391,35 @@ const COURSES = [
   {
     id:66,dest:"missouri",destLabel:"Missouri",thumbClass:"ct1",
     tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1777730867/Screenshot_2026-05-02_at_9.07.33_AM_ibzv4l.png",
-    name:"Big Cedar Lodge &mdash; Mountain Top",price:"$75&ndash;$125",
+    name:"Big Cedar Lodge &mdash; Mountain Top",price:"$75&ndash;$125",greenFee:"$$",
     cyntp:"Gary Player’s 13-hole walking-only course perched on an Ozark ridgeline. Short, scenic, and surprisingly great. Walking only, no carts &mdash; exactly how it should be played.",
     review:"Mountain Top is a Gary Player design at Big Cedar Lodge that plays across an Ozark ridgeline with sweeping views in every direction. At 13 holes it’s not a full round but it’s a genuinely fun, walkable experience with bentgrass greens and Zoysia fairways in excellent condition. No carts allowed &mdash; walking only &mdash; which actually enhances the experience. A great warm-up or wind-down round to pair with one of Big Cedar’s full 18-hole courses.",
     cyntp_rating:8.3,cyntp_tag:null,city:"Hollister, MO",comments:[]
   },
   {
     id:67,dest:"missouri",destLabel:"Missouri",thumbClass:"ct2",
-    name:"Big Cedar Lodge &mdash; Top of the Rock",price:"$100&ndash;$175",
+    name:"Big Cedar Lodge &mdash; Top of the Rock",price:"$100&ndash;$175",greenFee:"$$",
     cyntp:"Nine par 3s by Jack Nicklaus perched above Table Rock Lake. The only par-3 course ever used for a PGA Tour event. Holes inspired by Augusta and TPC Sawgrass, views that don’t quit. Don’t skip it.",
     review:"Top of the Rock is unlike any par-3 course you’ve ever played. Jack Nicklaus designed nine holes on a ridgetop above Table Rock Lake at Big Cedar Lodge &mdash; the first and only par-3 layout ever used in a PGA Tour championship event. Holes range from 100 to over 200 yards with island greens, limestone cliffs, waterfall features, and views of the Ozarks that justify the green fee on their own. The famous 6th is a TPC Sawgrass-inspired island green. Arnie’s Barn &mdash; Arnold Palmer’s actual 150-year-old barn relocated from Latrobe, PA &mdash; serves as the clubhouse. This is a bucket list experience, not just a par-3 course.",
     cyntp_rating:8.5,cyntp_tag:null,city:"Ridgedale, MO",comments:[]
   },
   {
     id:68,dest:"missouri",destLabel:"Missouri",thumbClass:"ct5",
-    name:"Buffalo Ridge Springs Course",price:"$120&ndash;$200",
+    name:"Buffalo Ridge Springs Course",price:"$120&ndash;$200",greenFee:"$$",
     cyntp:"Breathtaking Ozarks terrain. If Payne's Valley is the headliner, Buffalo Ridge is the undercard that might actually steal the show.",
     review:"Buffalo Ridge is the original marquee track at Big Cedar and it's still outstanding. The routing through the Ozarks uses dramatic elevation changes and ridge-top views that make every hole memorable. It plays differently from Payne's Valley &mdash; more rugged and raw.",
     cyntp_rating:8.8,cyntp_tag:"Must Play",city:"Hollister, MO",comments:[]
   },
   {
     id:69,dest:"missouri",destLabel:"Missouri",thumbClass:"ct6",
-    name:"Ozarks National Course",price:"$150&ndash;$250",
+    name:"Ozarks National Course",price:"$150&ndash;$250",greenFee:"$$",
     cyntp:"Bill Coore and Ben Crenshaw in the Ozarks. Minimalist design that works in perfect harmony with the landscape. A genuine masterpiece.",
     review:"Ozarks National is the hidden gem of the Big Cedar complex. Coore &amp; Crenshaw's minimalist approach lets the natural Ozarks terrain do the heavy lifting &mdash; the routing flows seamlessly through the landscape and the course feels as if it's always been there.",
     cyntp_rating:8.7,cyntp_tag:"Hidden Gem",city:"Hollister, MO",comments:[]
   },
   {
     id:70,dest:"missouri",destLabel:"Missouri",thumbClass:"ct4",
-    name:"Payne's Valley",price:"$195&ndash;$295",
+    name:"Payne's Valley",price:"$195&ndash;$295",greenFee:"$$$",
     cyntp:"Tiger's first public design and it delivers. The 19th hole waterfall par-3 is one of the most dramatic in the country. This one lives up to the hype.",
     review:"Payne's Valley is the centerpiece of Big Cedar Lodge and Tiger Woods' first public course design. The layout is routed through the Ozarks landscape beautifully and the finishing 19th bonus hole &mdash; a par-3 with a dramatic waterfall green &mdash; is genuinely special.",
     cyntp_rating:8.8,cyntp_tag:"Bucket List",city:"Hollister, MO",comments:[]
@@ -1426,42 +1427,42 @@ const COURSES = [
   {
     id:115,dest:"south-carolina",destLabel:"South Carolina",thumbClass:"ct3",
     tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1777700209/Screenshot_2026-05-02_at_12.36.39_AM_bkucgt.png",
-    name:"Barefoot Resort &mdash; Fazio Course",price:"$70&ndash;$120",
+    name:"Barefoot Resort &mdash; Fazio Course",price:"$70&ndash;$120",greenFee:"$",
     cyntp:"Tom Fazio design in North Myrtle Beach. One of four Barefoot courses with the classic Fazio touch — wide fairways, strategic bunkering, and immaculate conditioning. Great value and easy to walk.",
     review:"The Fazio Course at Barefoot Resort is a polished, player-friendly design that showcases what Myrtle Beach resort golf does well. Tom Fazio's trademark wide corridors and well-positioned bunkers give the layout a clean, strategic feel without being punishing. The conditions are reliable, the price-to-quality ratio is excellent, and it walks well. A smart add-on to any Myrtle Beach trip.",
     cyntp_rating:7.4,cyntp_tag:null,city:"North Myrtle Beach, SC",comments:[]
   },
   {
     id:71,dest:"south-carolina",destLabel:"South Carolina",thumbClass:"ct1",
-    name:"Caledonia Golf &amp; Fish Club",price:"$130&ndash;$200",
+    name:"Caledonia Golf &amp; Fish Club",price:"$130&ndash;$200",greenFee:"$$",
     cyntp:"The prettiest course in Myrtle by a mile. Spanish moss, live oaks, rice fields. If you play one course in Myrtle, make it this one.",
     review:"Caledonia is not a typical Myrtle Beach resort course and that's exactly what makes it special. The property was a former rice plantation and the design works with the landscape rather than bulldozing it. The tree-lined corridors, moss-draped oaks, and rice field hazards create an atmosphere you won't find anywhere else on the Strand.",
     cyntp_rating:8.4,cyntp_tag:"Must Play",city:"Pawleys Island, SC",comments:[]
   },
   {
     id:72,dest:"south-carolina",destLabel:"South Carolina",thumbClass:"ct4",
-    name:"Golden Bear Golf Club",price:"$45&ndash;$80",
+    name:"Golden Bear Golf Club",price:"$45&ndash;$80",greenFee:"$",
     cyntp:"Solid Alabama track at a fair price. More interesting than your typical public course and well-maintained.",
     review:"Golden Bear is a reliable public option in Alabama. The layout is more thoughtful than many courses in the same price range and the conditioning is consistently solid.",
     cyntp_rating:7.1,cyntp_tag:null,city:"Hilton Head, SC",comments:[]
   },
   {
     id:73,dest:"south-carolina",destLabel:"South Carolina",thumbClass:"ct3",
-    name:"Hilton Head National Golf Club",price:"$60&ndash;$100",
+    name:"Hilton Head National Golf Club",price:"$60&ndash;$100",greenFee:"$",
     cyntp:"Solid HHI track at a price that doesn't hurt. Good option to round out a Hilton Head trip without the resort green fees.",
     review:"Hilton Head National fits perfectly as a third or fourth round on a Hilton Head trip when you've already spent big on Harbour Town and Sea Pines. The layout is well-maintained and enjoyable without demanding the premium green fee.",
     cyntp_rating:6.9,cyntp_tag:"Best Value",city:"Bluffton, SC",comments:[]
   },
   {
     id:74,dest:"south-carolina",destLabel:"South Carolina",thumbClass:"ct2",
-    name:"Myrtle Beach National &mdash; King's North",price:"$60&ndash;$110",
+    name:"Myrtle Beach National &mdash; King's North",price:"$60&ndash;$110",greenFee:"$",
     cyntp:"The best of the three MBN tracks and one of the top values on the entire Strand. The Gambler hole is unlike anything else in Myrtle.",
     review:"King's North is a legitimate contender for best value in Myrtle Beach. Arnold Palmer's design is creative and varied, and the famous Gambler par-5 island green is a bucket-list hole. The conditioning is solid and the price is always reasonable.",
     cyntp_rating:7.8,cyntp_tag:"Best Value",city:"Myrtle Beach, SC",comments:[]
   },
   {
     id:75,dest:"south-carolina",destLabel:"South Carolina",thumbClass:"ct4",
-    name:"Old South Golf Links",price:"$55&ndash;$90",
+    name:"Old South Golf Links",price:"$55&ndash;$90",greenFee:"$",
     cyntp:"Marshy Lowcountry layout with some of the best views in Hilton Head. The back nine along the water is excellent.",
     review:"Old South is one of Hilton Head's hidden values. The Lowcountry marshland setting gives it a character that the resort courses can't replicate at twice the price. The back nine along the water is genuinely memorable and the overall layout rewards smart play.",
     cyntp_rating:6.8,cyntp_tag:"Hidden Gem",city:"Bluffton, SC",comments:[]
@@ -1469,126 +1470,126 @@ const COURSES = [
   {
     id:76,dest:"south-carolina",destLabel:"South Carolina",thumbClass:"ct5",
     tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1777699416/Screenshot_2026-05-02_at_12.22.11_AM_cunmv9.png",
-    name:"Palmetto Dunes Resort &mdash; Jones Course",price:"$80&ndash;$140",
+    name:"Palmetto Dunes Resort &mdash; Jones Course",price:"$80&ndash;$140",greenFee:"$$",
     cyntp:"The best of the Palmetto Dunes trio. The Robert Trent Jones design is a classic Hilton Head layout with water in play throughout.",
     review:"The Jones Course at Palmetto Dunes is a Hilton Head institution. Robert Trent Jones Sr.'s design winds through the resort community with lagoons and water features throughout. The layout has great variety and the Hilton Head atmosphere is at its best here.",
     cyntp_rating:7.3,cyntp_tag:null,city:"Hilton Head, SC",comments:[]
   },
   {
     id:77,dest:"south-carolina",destLabel:"South Carolina",thumbClass:"ct6",
-    name:"Pawleys Plantation Golf &amp; Country Club",price:"$70&ndash;$120",
+    name:"Pawleys Plantation Golf &amp; Country Club",price:"$70&ndash;$120",greenFee:"$",
     cyntp:"Jack Nicklaus design in a gorgeous Lowcountry setting. Salt marsh views and well-conditioned Bermuda fairways. A sleeper on the Strand.",
     review:"Pawleys Plantation is the kind of Myrtle Beach course that serious golfers know and the resort crowd overlooks. The Jack Nicklaus design uses the salt marsh setting beautifully and several holes offer views that rival anything on the Strand.",
     cyntp_rating:8.2,cyntp_tag:"Hidden Gem",city:"Pawleys Island, SC",comments:[]
   },
   {
     id:78,dest:"south-carolina",destLabel:"South Carolina",thumbClass:"ct6",
-    name:"Sequoyah National GC",price:"$65&ndash;$100",
+    name:"Sequoyah National GC",price:"$65&ndash;$100",greenFee:"$",
     cyntp:"Stunning mountain golf in the western SC mountains. One of the most scenic courses we've played in the Southeast.",
     review:"Sequoyah National is a revelation if you think the Southeast is all flat Lowcountry golf. The course climbs through the Cherokee Foothills with dramatic mountain views and elevation changes that make every hole feel different. A genuine hidden gem.",
     cyntp_rating:8.7,cyntp_tag:"Hidden Gem",city:"Whittier, NC",comments:[]
   },
   {
     id:117,dest:"south-carolina",destLabel:"South Carolina",thumbClass:"ct2",
-    name:"TPC Myrtle Beach",price:"$80&ndash;$140",
+    name:"TPC Myrtle Beach",price:"$80&ndash;$140",greenFee:"$$",
     cyntp:"Tom Fazio design that hosted the Senior PGA Tour for years. One of the most polished layouts in Myrtle Beach with immaculate conditions and a real PGA Tour feel.",
     review:"TPC Myrtle Beach is the most buttoned-up course on the Grand Strand. Tom Fazio's design is strategic without being brutal, and the conditioning is consistently among the best in the area. If you want a tournament-quality round without flying to a major market, this is it.",
     cyntp_rating:7.4,cyntp_tag:null,city:"Murrells Inlet, SC",comments:[]
   },
   {
     id:79,dest:"south-carolina",destLabel:"South Carolina",thumbClass:"ct5",
-    name:"True Blue Golf Club",price:"$80&ndash;$140",
+    name:"True Blue Golf Club",price:"$80&ndash;$140",greenFee:"$$",
     cyntp:"Mike Strantz at his absolute best. Dramatic, artistic, and completely different from every other Myrtle Beach track. A must-play.",
     review:"True Blue is the course that makes you realize Myrtle Beach has more depth than the typical resort corridor. Mike Strantz created something genuinely artistic here &mdash; dramatic bunkering, unexpected elevation, and holes that demand creative shot-making. It's not the most forgiving round but it's the most memorable.",
     cyntp_rating:8.5,cyntp_tag:"Must Play",city:"Pawleys Island, SC",comments:[]
   },
   {
     id:80,dest:"tennessee",destLabel:"Tennessee",thumbClass:"ct2",
-    name:"Franklin Bridge Golf Club",price:"$45&ndash;$70",
+    name:"Franklin Bridge Golf Club",price:"$45&ndash;$70",greenFee:"$",
     cyntp:"Fun layout south of Nashville. The front and back are very different characters &mdash; the back nine is the one you'll remember.",
     review:"Franklin Bridge is a well-kept secret south of Nashville. The front nine is open and scoring-friendly; the back tightens up considerably with more elevation and tighter fairways. The back nine finishing holes are legitimate and the course is always in good shape.",
     cyntp_rating:5.9,cyntp_tag:null,city:"Franklin, TN",comments:[]
   },
   {
     id:81,dest:"tennessee",destLabel:"Tennessee",thumbClass:"ct1",
-    name:"Harpeth Hills Golf Course",price:"$30&ndash;$50",
+    name:"Harpeth Hills Golf Course",price:"$30&ndash;$50",greenFee:"$",
     cyntp:"A Nashville staple. Hilly, wooded, and way more fun than the price tag suggests. One of the best public tracks in the state.",
     review:"Harpeth Hills is one of those courses that sneaks up on you. The terrain is rolling and the tree-lined fairways demand accuracy off the tee. For a municipal course it's remarkably well-maintained and the layout has real character. If you're in Nashville and want a no-frills round that still delivers, this is your spot.",
     cyntp_rating:5.3,cyntp_tag:"Best Value",city:"Nashville, TN",comments:[]
   },
   {
     id:82,dest:"tennessee",destLabel:"Tennessee",thumbClass:"ct4",
-    name:"Hermitage Golf Course &mdash; General's Retreat",price:"$45&ndash;$75",
+    name:"Hermitage Golf Course &mdash; General's Retreat",price:"$45&ndash;$75",greenFee:"$",
     cyntp:"Slightly shorter and more forgiving than the President's Reserve. Good option if you want to play both Hermitage tracks in a day.",
     review:"The General's Retreat is a solid complement to the President's Reserve on the same property. A touch shorter and more forgiving, it rewards placement over power. Pair both tracks for a full Nashville golf day &mdash; the price makes it very doable.",
     cyntp_rating:6.9,cyntp_tag:null,city:"Old Hickory, TN",comments:[]
   },
   {
     id:83,dest:"tennessee",destLabel:"Tennessee",thumbClass:"ct3",
-    name:"Hermitage Golf Course &mdash; President's Reserve",price:"$55&ndash;$85",
+    name:"Hermitage Golf Course &mdash; President's Reserve",price:"$55&ndash;$85",greenFee:"$",
     cyntp:"The better of the two Hermitage tracks. Longer, more demanding, and the finishing stretch along the Cumberland River is legitimately great.",
     review:"The President's Reserve at Hermitage is one of Nashville's best public rounds. The back nine along the Cumberland River is the highlight &mdash; water in play on several holes and a closing stretch that demands your best. The course is in consistently good shape and the price point makes it easy to recommend over and over.",
     cyntp_rating:7.3,cyntp_tag:"Must Play",city:"Old Hickory, TN",comments:[]
   },
   {
     id:84,dest:"tennessee",destLabel:"Tennessee",thumbClass:"ct1",
-    name:"Nashboro Golf Club",price:"$35&ndash;$60",
+    name:"Nashboro Golf Club",price:"$35&ndash;$60",greenFee:"$",
     cyntp:"Classic Nashville muni with more charm than its reputation suggests. A reliable card for a casual round.",
     review:"Nashboro doesn't get a lot of buzz but it's a solid municipal layout with some interesting holes. The course plays through mature trees and has enough variety to keep things interesting. Good value for a casual round in Nashville.",
     cyntp_rating:4.1,cyntp_tag:null,city:"Nashville, TN",comments:[]
   },
   {
     id:85,dest:"tennessee",destLabel:"Tennessee",thumbClass:"ct5",
-    name:"Nashville National Golf Links",price:"$50&ndash;$80",
+    name:"Nashville National Golf Links",price:"$50&ndash;$80",greenFee:"$",
     cyntp:"Underrated Nashville track. Open, links-style layout that plays completely different from the wooded courses around town.",
     review:"Nashville National is a breath of fresh air among the tree-lined tracks that dominate the Nashville scene. The open, links-influenced layout means wind is always a factor and the wide fairways invite aggressive play off the tee. Worth a round if you want something different.",
     cyntp_rating:5.3,cyntp_tag:null,city:"Smyrna, TN",comments:[]
   },
   {
     id:86,dest:"tennessee",destLabel:"Tennessee",thumbClass:"ct4",
-    name:"Old Natchez Country Club",price:"$50&ndash;$80",
+    name:"Old Natchez Country Club",price:"$50&ndash;$80",greenFee:"$",
     cyntp:"Classic, quiet, and well-maintained. The kind of old-school layout that rewards course management over raw distance.",
     review:"Old Natchez is a traditional layout that values shot-making over power. The mature trees and classic design give it a timeless feel. It's not flashy but it's well-maintained and a genuinely enjoyable round if you appreciate traditional golf architecture.",
     cyntp_rating:7.2,cyntp_tag:null,city:"Franklin, TN",comments:[]
   },
   {
     id:87,dest:"tennessee",destLabel:"Tennessee",thumbClass:"ct3",
-    name:"Sweetens Cove Golf Club",price:"$100&ndash;$175",
+    name:"Sweetens Cove Golf Club",price:"$100&ndash;$175",greenFee:"$$",
     cyntp:"Nine holes. No clubhouse. No dress code. Bring a cooler. One of the most talked-about courses in America &mdash; the green complexes are unlike anything you’ve ever seen. A bucket list round.",
     review:"Sweetens Cove is a golf anomaly. Nine holes in the Sequatchie Valley 30 minutes from Chattanooga, with massive undulating greens, elaborate bunkering, and wide-open links-style fairways. Multiple routings &mdash; different tee boxes, two flags per hole &mdash; mean 27 holes never plays the same way twice. Gravel parking lot, portable bathrooms, no clubhouse. The vibe is completely anti-country club and that’s exactly the point. Backed by Peyton Manning and consistently one of the buzziest courses in the country. Passes sell out fast &mdash; plan well ahead.",
     cyntp_rating:8.2,cyntp_tag:null,city:"South Pittsburg, TN",comments:[]
   },
   {
     id:88,dest:"tennessee",destLabel:"Tennessee",thumbClass:"ct5",
-    name:"The Course at Sewanee",price:"$40&ndash;$70",
+    name:"The Course at Sewanee",price:"$40&ndash;$70",greenFee:"$",
     cyntp:"Tucked into the Cumberland Plateau at the University of the South. One of the most unique and scenic rounds in Tennessee &mdash; old-school charm and mountain views you won't find anywhere else.",
     review:"The Course at Sewanee sits atop the Cumberland Plateau on the campus of the University of the South and it's one of the most distinctive rounds in Tennessee. The layout is classic and unhurried, the scenery through the hardwood forest is genuinely beautiful, and the whole experience feels like stepping back in time. It's not the most demanding track you'll ever play but the setting and atmosphere make it completely memorable. A must for anyone who appreciates golf with character.",
     cyntp_rating:6.2,cyntp_tag:"Hidden Gem",city:"Sewanee, TN",comments:[]
   },
   {
     id:89,dest:"tennessee",destLabel:"Tennessee",thumbClass:"ct3",
-    name:"TN Golf Trail at Montgomery Bell",price:"$40&ndash;$65",
+    name:"TN Golf Trail at Montgomery Bell",price:"$40&ndash;$65",greenFee:"$",
     cyntp:"State park golf done right. The setting alone is worth the drive &mdash; fall colors here are unreal.",
     review:"Montgomery Bell is one of those places that reminds you golf doesn't need to be expensive to be memorable. The state park setting means you're surrounded by genuine Tennessee woodland and the course works naturally with the landscape. Best played in October when the fall foliage is at its peak.",
     cyntp_rating:6.0,cyntp_tag:null,city:"Burns, TN",comments:[]
   },
   {
     id:90,dest:"tennessee",destLabel:"Tennessee",thumbClass:"ct2",
-    name:"Two Rivers Golf Course",price:"$25&ndash;$45",
+    name:"Two Rivers Golf Course",price:"$25&ndash;$45",greenFee:"$",
     cyntp:"Flat, open, and easy to walk. Great warm-up round or a casual afternoon track. Don't expect fireworks but it delivers for the price.",
     review:"Two Rivers is a solid public option in Nashville. The layout is relatively straightforward compared to some of the hillier courses in the area, which makes it a good choice for a relaxed round. Well maintained for a municipal and the staff are always friendly.",
     cyntp_rating:5.5,cyntp_tag:null,city:"Nashville, TN",comments:[]
   },
   {
     id:91,dest:"tennessee",destLabel:"Tennessee",thumbClass:"ct6",
-    name:"Vanderbilt Legends Club &mdash; North Course",price:"$60&ndash;$95",
+    name:"Vanderbilt Legends Club &mdash; North Course",price:"$60&ndash;$95",greenFee:"$",
     cyntp:"One of the nicest layouts in Middle Tennessee. The North Course has real teeth &mdash; don't show up without your A-game.",
     review:"The Legends Club North Course is among the best tracks in the Nashville area. The layout is demanding and well-designed, with a good variety of holes that test every part of your game. The conditioning is consistently excellent. A proper golf experience at a reasonable price for the quality.",
     cyntp_rating:7.8,cyntp_tag:null,city:"Franklin, TN",comments:[]
   },
   {
     id:92,dest:"texas",destLabel:"Texas",thumbClass:"ct6",
-    name:"Lost Pines Golf Club",price:"$80&ndash;$140",
+    name:"Lost Pines Golf Club",price:"$80&ndash;$140",greenFee:"$$",
     cyntp:"Hyatt Regency Lost Pines resort track in the Hill Country. The loblolly pines and creek crossings make it feel like genuine Texas golf.",
     review:"Lost Pines is a beautiful resort track in the Texas Hill Country east of Austin. The loblolly pine forest setting is distinctive and several holes cross the Colorado River tributary with memorable approach shots.",
     cyntp_rating:6.9,cyntp_tag:null,city:"Bastrop, TX",comments:[]
@@ -1596,77 +1597,77 @@ const COURSES = [
   {
     id:93,dest:"utah",destLabel:"Utah",thumbClass:"ct6",
     tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1777752084/Screenshot_2026-05-02_at_3.01.13_PM_vvq1fj.png",
-    name:"Black Desert Resort Golf Course",price:"$150&ndash;$250",
+    name:"Black Desert Resort Golf Course",price:"$150&ndash;$250",greenFee:"$$",
     cyntp:"Lava fields, red rock, and some of the most visually dramatic golf on earth. A new classic and an absolute must-play.",
     review:"Black Desert is the newest marquee course in Utah and it's already a sensation. The layout winds through ancient lava flows and red rock formations in a way that makes every hole look like a photo from another planet.",
     cyntp_rating:9.0,cyntp_tag:"Bucket List",city:"Ivins, UT",comments:[]
   },
   {
     id:127,dest:"utah",destLabel:"Utah",thumbClass:"ct4",
-    name:"Copper Rock Golf Course",price:"$50&ndash;$95",
+    name:"Copper Rock Golf Course",price:"$50&ndash;$95",greenFee:"$",
     cyntp:"One of the best new courses in the St. George corridor. Gene Bates design with sweeping red rock views and a layout that rewards every skill level.",
     review:"Copper Rock is a standout in the crowded St. George golf market. The Gene Bates design uses the natural desert terrain beautifully with dramatic elevation changes and red rock backdrops on almost every hole. The conditioning is consistently excellent and the layout has enough variety to hold up over multiple rounds. A strong option to build any St. George trip around.",
     cyntp_rating:8.2,cyntp_tag:null,city:"Hurricane, UT",comments:[]
   },
   {
     id:128,dest:"utah",destLabel:"Utah",thumbClass:"ct1",
-    name:"Coral Canyon Golf Course",price:"$45&ndash;$85",
+    name:"Coral Canyon Golf Course",price:"$45&ndash;$85",greenFee:"$",
     cyntp:"Keith Foster design carved through the red rock desert just outside St. George. One of the most visually dramatic public tracks in Utah.",
     review:"Coral Canyon is a stunning desert layout that holds its own against the bigger names in the St. George area. The Keith Foster design winds through canyon terrain with red rock formations framing nearly every hole. The course is challenging but fair and the pace of play is generally well-managed. A must-add to any serious St. George golf itinerary.",
     cyntp_rating:8.0,cyntp_tag:null,city:"Washington, UT",comments:[]
   },
   {
     id:94,dest:"utah",destLabel:"Utah",thumbClass:"ct3",
-    name:"Mountain Dell GC &mdash; Lake Course",price:"$35&ndash;$60",
+    name:"Mountain Dell GC &mdash; Lake Course",price:"$35&ndash;$60",greenFee:"$",
     cyntp:"Parley's Canyon gem just outside Salt Lake. The mountain setting and reservoir views make this one of Utah's most scenic cheap rounds.",
     review:"Mountain Dell's Lake Course is one of Utah's best-kept secrets. Tucked into Parley's Canyon just outside Salt Lake City, the mountain backdrop and reservoir views make this a visually stunning round at a price that's almost unreasonably good.",
     cyntp_rating:7.0,cyntp_tag:"Best Value",city:"Salt Lake City, UT",comments:[]
   },
   {
     id:95,dest:"utah",destLabel:"Utah",thumbClass:"ct2",
-    name:"Old Mill Golf Course",price:"$25&ndash;$45",
+    name:"Old Mill Golf Course",price:"$25&ndash;$45",greenFee:"$",
     cyntp:"Salt Lake's best kept secret. Tucked along the Jordan River with the Wasatch as your backdrop. Great conditions for a municipal and impossible to beat for the price.",
     review:"Old Mill is a gem hiding in plain sight in the Salt Lake Valley. The course runs along the Jordan River with the Wasatch Mountains framing every hole and the conditions are consistently impressive for a public track at this price point. It's not the longest or most demanding course in Utah but the setting is beautiful and it's a genuinely enjoyable round. A perfect early morning option on any Salt Lake trip.",
     cyntp_rating:6.6,cyntp_tag:"Best Value",city:"Salt Lake City, UT",comments:[]
   },
   {
     id:129,dest:"utah",destLabel:"Utah",thumbClass:"ct5",
-    name:"Sand Hollow Resort &mdash; Championship Course",price:"$80&ndash;$160",
+    name:"Sand Hollow Resort &mdash; Championship Course",price:"$80&ndash;$160",greenFee:"$$",
     cyntp:"The marquee St. George track right now. John Fought's red-and-white sand design is unlike anything else in Utah — wide open, dramatic, and built for big numbers or a highlight reel.",
     review:"Sand Hollow has quickly become the must-play course in the St. George area. John Fought's design features the bright white sand waste areas contrasted against the red rock desert in a way that looks like nothing else in golf. The layout is open off the tee but the waste areas and undulating greens keep the scorecard honest. A genuine bucket-list Utah round.",
     cyntp_rating:9.0,cyntp_tag:"Must Play",city:"Hurricane, UT",comments:[]
   },
   {
     id:96,dest:"utah",destLabel:"Utah",thumbClass:"ct1",
-    name:"Sky Mountain GC",price:"$45&ndash;$80",
+    name:"Sky Mountain GC",price:"$45&ndash;$80",greenFee:"$",
     cyntp:"Red rock canyon golf at its most accessible. The St. George scenery is world-class and the price is very right.",
     review:"Sky Mountain is the gateway drug to St. George golf. The red rock canyon backdrop is stunning and the course uses the natural terrain effectively. An exceptional value in a destination known for premium resort courses.",
     cyntp_rating:7.1,cyntp_tag:"Best Value",city:"Hurricane, UT",comments:[]
   },
   {
     id:97,dest:"utah",destLabel:"Utah",thumbClass:"ct5",
-    name:"Sleepy Ridge GC",price:"$40&ndash;$70",
+    name:"Sleepy Ridge GC",price:"$40&ndash;$70",greenFee:"$",
     cyntp:"Stunning views of Utah Lake and the Wasatch Mountains. Excellent conditions and great value for the quality.",
     review:"Sleepy Ridge consistently punches above its weight in Utah. The views across Utah Lake to the Wasatch Mountains are genuinely spectacular and the course conditioning is excellent. One of the best value rounds in the state.",
     cyntp_rating:6.1,cyntp_tag:"Best Value",city:"Orem, UT",comments:[]
   },
   {
     id:98,dest:"utah",destLabel:"Utah",thumbClass:"ct2",
-    name:"Soldier Hollow &mdash; Gold Course",price:"$55&ndash;$90",
+    name:"Soldier Hollow &mdash; Gold Course",price:"$55&ndash;$90",greenFee:"$",
     cyntp:"Olympic venue golf in the Heber Valley. The mountain setting is dramatic and the layout is more interesting than you'd expect.",
     review:"Soldier Hollow hosted the 2002 Olympic biathlon but the golf course is the attraction now. The Gold Course plays through the Heber Valley with panoramic mountain views throughout. A unique Utah experience away from the St. George desert scene.",
     cyntp_rating:7.4,cyntp_tag:null,city:"Midway, UT",comments:[]
   },
   {
     id:99,dest:"virginia",destLabel:"Virginia",thumbClass:"ct5",
-    name:"Colonial Heritage Club",price:"$70&ndash;$120",
+    name:"Colonial Heritage Club",price:"$70&ndash;$120",greenFee:"$",
     cyntp:"A newer addition to the Williamsburg scene. Arthur Hills design with great variety and usually excellent conditions.",
     review:"Colonial Heritage has quickly established itself as one of the better public tracks in Williamsburg. The Arthur Hills design is thoughtfully laid out with good variety between holes and the conditioning is consistently strong.",
     cyntp_rating:6.6,cyntp_tag:null,city:"Williamsburg, VA",comments:[]
   },
   {
     id:100,dest:"virginia",destLabel:"Virginia",thumbClass:"ct4",
-    name:"Ford's Colony Country Club &mdash; Blackheath Course",price:"$80&ndash;$140",
+    name:"Ford's Colony Country Club &mdash; Blackheath Course",price:"$80&ndash;$140",greenFee:"$$",
     cyntp:"Classic Dan Maples design in the Williamsburg corridor. Wooded, precise, and more demanding than the price suggests.",
     review:"Ford's Colony Blackheath is a well-kept secret in the Williamsburg area. The Dan Maples design winds through mature hardwoods and demands accuracy off the tee. The conditioning is consistently excellent and the layout rewards course management.",
     cyntp_rating:6.1,cyntp_tag:null,city:"Williamsburg, VA",comments:[]
@@ -1674,56 +1675,56 @@ const COURSES = [
   {
     id:101,dest:"virginia",destLabel:"Virginia",thumbClass:"ct3",
     tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1777700821/Screenshot_2026-05-02_at_12.46.55_AM_fgulzi.png",
-    name:"Golden Horseshoe Golf Club &mdash; Gold Course",price:"$100&ndash;$170",
+    name:"Golden Horseshoe Golf Club &mdash; Gold Course",price:"$100&ndash;$170",greenFee:"$$",
     cyntp:"Robert Trent Jones Sr. classic on the Colonial Williamsburg property. The Gold Course is legitimately great and the history is unlike anything else.",
     review:"The Gold Course at Golden Horseshoe is one of the most underrated tracks on the East Coast. Robert Trent Jones Sr. designed it in 1963 and it still holds up beautifully. Playing in the shadow of Colonial Williamsburg adds a historical dimension you don't get anywhere else.",
     cyntp_rating:8.5,cyntp_tag:"Must Play",city:"Williamsburg, VA",comments:[]
   },
   {
     id:102,dest:"virginia",destLabel:"Virginia",thumbClass:"ct2",
-    name:"Kingsmill Resort &mdash; Plantation Course",price:"$70&ndash;$130",
+    name:"Kingsmill Resort &mdash; Plantation Course",price:"$70&ndash;$130",greenFee:"$$",
     cyntp:"The quieter sibling to the River Course. More relaxed but still beautifully maintained. Good option to round out a Williamsburg trip.",
     review:"The Plantation Course is a solid complement to the River Course on the same Kingsmill property. Less demanding but well-designed and always in good condition. Pairs perfectly with the River Course for a two-round day.",
     cyntp_rating:7.2,cyntp_tag:null,city:"Williamsburg, VA",comments:[]
   },
   {
     id:103,dest:"virginia",destLabel:"Virginia",thumbClass:"ct1",
-    name:"Kingsmill Resort &mdash; River Course",price:"$100&ndash;$180",
+    name:"Kingsmill Resort &mdash; River Course",price:"$100&ndash;$180",greenFee:"$$",
     cyntp:"Hosts a PGA Tour event for a reason. The James River holes are iconic and the conditioning is always tournament-ready.",
     review:"The River Course at Kingsmill is the real deal. The PGA Tour comes here annually and you can feel why the moment you step on the first tee. The routing along the James River is exceptional &mdash; particularly the stretch of par-3s over the water. The conditioning is always immaculate.",
     cyntp_rating:7.3,cyntp_tag:"Must Play",city:"Williamsburg, VA",comments:[]
   },
   {
     id:104,dest:"virginia",destLabel:"Virginia",thumbClass:"ct2",
-    name:"Royal New Kent Golf Club",price:"$60&ndash;$100",
+    name:"Royal New Kent Golf Club",price:"$60&ndash;$100",greenFee:"$",
     cyntp:"Strantz's other Virginia masterpiece. Links-style design that plays nothing like anything else in the region.",
     review:"Royal New Kent is the companion piece to Stonehouse &mdash; both Mike Strantz designs in the same region and both completely different from each other. The links-style layout with dramatic mounding and deep bunkers transports you somewhere between Ireland and Virginia.",
     cyntp_rating:8.6,cyntp_tag:null,city:"Providence Forge, VA",comments:[]
   },
   {
     id:105,dest:"virginia",destLabel:"Virginia",thumbClass:"ct1",
-    name:"Stonehouse Golf Club",price:"$65&ndash;$110",
+    name:"Stonehouse Golf Club",price:"$65&ndash;$110",greenFee:"$",
     cyntp:"Mike Strantz design in the Virginia Peninsula. Dramatic and unconventional &mdash; very different from the Williamsburg resort tracks.",
     review:"Stonehouse is Mike Strantz doing what Mike Strantz does best &mdash; creating a course that's visually dramatic and strategically demanding. The layout is unconventional and some holes will genuinely stop you in your tracks.",
     cyntp_rating:7.6,cyntp_tag:"Hidden Gem",city:"Toano, VA",comments:[]
   },
   {
     id:106,dest:"virginia",destLabel:"Virginia",thumbClass:"ct3",
-    name:"The Club at Viniterra",price:"$70&ndash;$120",
+    name:"The Club at Viniterra",price:"$70&ndash;$120",greenFee:"$",
     cyntp:"Vineyard setting makes it one of the most scenic courses in Virginia. The golf is good but the setting is the star.",
     review:"Viniterra is where golf meets Virginia wine country. The layout winds through vineyards and hardwood forests and the aesthetic is genuinely beautiful. The post-round wine tasting situation is a legitimate bonus.",
     cyntp_rating:7.3,cyntp_tag:null,city:"New Kent, VA",comments:[]
   },
   {
     id:107,dest:"virginia",destLabel:"Virginia",thumbClass:"ct6",
-    name:"Williamsburg National &mdash; Jamestown Course",price:"$55&ndash;$90",
+    name:"Williamsburg National &mdash; Jamestown Course",price:"$55&ndash;$90",greenFee:"$",
     cyntp:"Best value in Williamsburg. Solid layout, great conditions for the price, and none of the resort crowds.",
     review:"Williamsburg National's Jamestown Course is the smart value play in a corridor full of resort pricing. The layout is well-designed and maintained, and the pace of play is usually excellent. A perfect option to fill out a Williamsburg trip without blowing the budget.",
     cyntp_rating:6.5,cyntp_tag:"Best Value",city:"Williamsburg, VA",comments:[]
   },
   {
     id:108,dest:"washington",destLabel:"Washington",thumbClass:"ct5",
-    name:"Gamble Sands",price:"$120&ndash;$200",
+    name:"Gamble Sands",price:"$120&ndash;$200",greenFee:"$$",
     cyntp:"Links golf in the high desert of eastern Washington. David McLay Kidd at his best. One of the best public courses in the Pacific Northwest &mdash; period.",
     review:"Gamble Sands is a revelation. The high desert of eastern Washington seems like an unlikely location for world-class golf but David McLay Kidd used the terrain masterfully. The fescue fairways, dramatic landforms, and wide-open skies create a links experience that's genuinely special.",
     cyntp_rating:9.0,cyntp_tag:"Bucket List",city:"Brewster, WA",comments:[]
@@ -1731,14 +1732,14 @@ const COURSES = [
   {
     id:109,dest:"washington",destLabel:"Washington",thumbClass:"ct6",
     tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1777731564/Screenshot_2026-05-02_at_9.19.12_AM_lkc11o.png",
-    name:"Gamble Sands &mdash; Scarecrow",price:"$40&ndash;$60",
+    name:"Gamble Sands &mdash; Scarecrow",price:"$40&ndash;$60",greenFee:"$",
     cyntp:"The short course companion to the main track. Pure fun &mdash; great for an afternoon round or warming up your short game.",
     review:"The Scarecrow is the par-3 short course at Gamble Sands and it's exactly what a short course should be &mdash; creative, fun, and playable in under two hours. A great add-on to a Gamble Sands trip.",
     cyntp_rating:9.1,cyntp_tag:null,city:"Brewster, WA",comments:[]
   },
   {
     id:110,dest:"wisconsin",destLabel:"Wisconsin",thumbClass:"ct3",
-    name:"Erin Hills",price:"$95&ndash;$145",
+    name:"Erin Hills",price:"$95&ndash;$145",greenFee:"$$",
     cyntp:"US Open host. Walking only, bucket-list worthy, and the fescue rough will make you appreciate fairways. One of the best courses in the country.",
     review:"Erin Hills hosted the 2017 US Open and walking the same ground is a genuine bucket-list experience. The fescue-lined fairways, expansive Wisconsin landscape, and sheer scale of the property are unlike anything else in the Midwest. Walking only &mdash; which adds to the experience significantly.",
     cyntp_rating:8.8,cyntp_tag:"Bucket List",city:"Erin, WI",comments:[]
@@ -1746,28 +1747,28 @@ const COURSES = [
   {
     id:111,dest:"wisconsin",destLabel:"Wisconsin",thumbClass:"ct1",
     tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1777731765/Screenshot_2026-05-02_at_9.22.35_AM_s8be9k.png",
-    name:"SentryWorld",price:"$85&ndash;$140",
+    name:"SentryWorld",price:"$85&ndash;$140",greenFee:"$$",
     cyntp:"The flower hole is one of the most photographed in golf. But don't let Instagram fool you &mdash; the whole course is exceptional.",
     review:"SentryWorld is consistently ranked among the best public courses in the Midwest and the reputation is deserved. Robert Trent Jones Jr.'s design is thoughtful and varied, and the famous flower hole is even more impressive in person than in photos.",
     cyntp_rating:9.0,cyntp_tag:"Must Play",city:"Stevens Point, WI",comments:[]
   },
   {
     id:112,dest:"wisconsin",destLabel:"Wisconsin",thumbClass:"ct2",
-    name:"Stevens Point Country Club",price:"$50&ndash;$80",
+    name:"Stevens Point Country Club",price:"$50&ndash;$80",greenFee:"$",
     cyntp:"Charming traditional club layout in central Wisconsin. The kind of course that reminds you what golf is really about.",
     review:"Stevens Point CC is a classic Midwest country club layout &mdash; well-maintained, traditionally designed, and a genuinely enjoyable round. The membership course atmosphere adds to the experience and the course has more character than most resort tracks twice the price.",
     cyntp_rating:7.4,cyntp_tag:null,comments:[]
   },
   {
     id:113,dest:"wisconsin",destLabel:"Wisconsin",thumbClass:"ct4",
-    name:"The Club at Lac La Belle",price:"$60&ndash;$100",
+    name:"The Club at Lac La Belle",price:"$60&ndash;$100",greenFee:"$",
     cyntp:"Gorgeous lakeside setting and a classic layout. The views across Lac La Belle on the back nine are hard to beat in Wisconsin.",
     review:"Lac La Belle is one of Wisconsin's most scenic rounds. The course hugs the lakeshore and several holes offer dramatic water views. The traditional layout is well-maintained and the setting makes every hole feel special.",
     cyntp_rating:7.9,cyntp_tag:null,city:"Oconomowoc, WI",comments:[]
   },
   {
     id:119,dest:"nevada",destLabel:"Nevada",thumbClass:"ct4",
-    name:"Angel Park &mdash; Mountain Course",price:"$75&ndash;$130",
+    name:"Angel Park &mdash; Mountain Course",price:"$75&ndash;$130",greenFee:"$$",
     cyntp:"Arnold Palmer design with dramatic elevation changes and sweeping views of the Las Vegas valley. The Mountain Course is the more scenic and challenging of the two Angel Park tracks.",
     review:"The Mountain Course at Angel Park is one of the better public-access rounds in Las Vegas. Arnold Palmer's design uses the terrain well with uphill and downhill shots that demand creativity. The views of the Strip from the higher elevations are genuinely spectacular and the experience is well worth the green fee.",
     cyntp_rating:7.6,cyntp_tag:null,city:"Las Vegas, NV",comments:[]
@@ -1775,63 +1776,63 @@ const COURSES = [
   {
     id:116,dest:"nevada",destLabel:"Nevada",thumbClass:"ct6",
     tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1777699841/Screenshot_2026-05-02_at_12.29.02_AM_suftxo.png",
-    name:"Bali Hai Golf Club",price:"$100&ndash;$175",
+    name:"Bali Hai Golf Club",price:"$100&ndash;$175",greenFee:"$$",
     cyntp:"Lush tropical design right on the Las Vegas Strip. The only grass course within walking distance of the casinos — a unique experience you won't find anywhere else.",
     review:"Bali Hai is a genuinely fun round that leans into the Las Vegas experience. The tropical landscaping, water features, and Strip-adjacent location make it unlike any other desert course in the valley. Not the most challenging track but the setting is unmatched and the production value is high.",
     cyntp_rating:6.3,cyntp_tag:null,city:"Las Vegas, NV",comments:[]
   },
   {
     id:131,dest:"nevada",destLabel:"Nevada",thumbClass:"ct5",
-    name:"Conestoga Golf Club",price:"$50&ndash;$100",
+    name:"Conestoga Golf Club",price:"$50&ndash;$100",greenFee:"$",
     cyntp:"The best course in Mesquite and a legitimate sleeper in the region. Links-style layout with dramatic desert terrain just 80 miles from Las Vegas.",
     review:"Conestoga is the standout track in Mesquite and one of the most underrated courses in the Southwest. The links-style layout uses the desert terrain with real creativity — think elevation, wind exposure, and wide-open fairways that demand strategic thinking. At Mesquite prices with Las Vegas-quality conditions, it's one of the best values in the region. A worthwhile detour on any Nevada golf trip.",
     cyntp_rating:null,cyntp_tag:"Hidden Gem",city:"Mesquite, NV",comments:[]
   },
   {
     id:121,dest:"nevada",destLabel:"Nevada",thumbClass:"ct3",
-    name:"Reflection Bay Golf Club",price:"$90&ndash;$160",
+    name:"Reflection Bay Golf Club",price:"$90&ndash;$160",greenFee:"$$",
     cyntp:"Jack Nicklaus design on the shores of Lake Las Vegas. The most visually stunning course in the valley with water in play on almost every hole.",
     review:"Reflection Bay is unlike anything else in Las Vegas. The Jack Nicklaus layout wraps around Lake Las Vegas with dramatic water views and a Mediterranean resort setting that feels a world away from the Strip. The course is challenging but fair, and the scenery makes every hole memorable. One of the premier public rounds in Nevada.",
     cyntp_rating:8.3,cyntp_tag:null,city:"Henderson, NV",comments:[]
   },
   {
     id:120,dest:"nevada",destLabel:"Nevada",thumbClass:"ct1",
-    name:"Serket Golf Club",price:"$40&ndash;$80",
+    name:"Serket Golf Club",price:"$40&ndash;$80",greenFee:"$",
     cyntp:"A modern desert golf experience with a distinctive personality. Great value for Las Vegas and a fresh alternative to the resort corridor tracks.",
     review:"Serket Golf Club offers something different in the Las Vegas golf scene — a well-maintained, affordable round that doesn't feel like a budget compromise. The desert setting is well-utilized and the course has genuine character. A smart play if you want to squeeze in an extra round without blowing the budget.",
     cyntp_rating:7.5,cyntp_tag:null,city:"Las Vegas, NV",comments:[]
   },
   {
     id:118,dest:"nevada",destLabel:"Nevada",thumbClass:"ct2",
-    name:"TPC Las Vegas",price:"$80&ndash;$150",
+    name:"TPC Las Vegas",price:"$80&ndash;$150",greenFee:"$$",
     cyntp:"Bobby Weed design cut through the Mojave Desert. Wide landing areas off the tee give way to demanding approaches with desert waste everywhere. Great PGA Tour pedigree.",
     review:"TPC Las Vegas is a desert course that rewards smart play over power. The fairways are generous but the desert waste areas are penal and the greens are quick. It hosted the Las Vegas Invitational for years and the tournament conditioning shows. A must-play for any serious golfer visiting the valley.",
     cyntp_rating:7.6,cyntp_tag:null,city:"Las Vegas, NV",comments:[]
   },
   {
     id:130,dest:"nevada",destLabel:"Nevada",thumbClass:"ct3",
-    name:"Wolf Creek Golf Club",price:"$80&ndash;$175",
+    name:"Wolf Creek Golf Club",price:"$80&ndash;$175",greenFee:"$$",
     cyntp:"Consistently ranked one of the best public courses in America. The dramatic red rock canyon setting in Mesquite makes this a bucket-list round that rivals anything in Las Vegas.",
     review:"Wolf Creek is the crown jewel of Mesquite golf and one of the most spectacular public courses in the country. The Denis Griffiths design carves through red rock canyons with dramatic elevation changes and views that are genuinely jaw-dropping. Golf Digest and Golf Magazine both rank it among the top public courses in the nation — the hype is fully deserved. An easy add to any Las Vegas or St. George golf trip.",
     cyntp_rating:null,cyntp_tag:"Bucket List",city:"Mesquite, NV",comments:[]
   },
   {
     id:132,dest:"illinois",destLabel:"Illinois",thumbClass:"ct1",
-    name:"Cog Hill Golf &amp; Country Club &mdash; Dubsdread",price:"$85&ndash;$165",
+    name:"Cog Hill Golf &amp; Country Club &mdash; Dubsdread",price:"$85&ndash;$165",greenFee:"$$",
     cyntp:"The most storied public course in the Midwest. Dubsdread hosted the Western Open and BMW Championship for decades — big greens, heavy rough, and a championship pedigree that demands your best game.",
     review:"Cog Hill No. 4, Dubsdread, is the crown jewel of Midwest public golf. The Tom Bendelow original design — heavily renovated by Roger Rulewich — is a proper championship test with undulating greens, demanding rough, and tree-lined corridors that reward precision. It hosted the Western Open more than any other course and has a PGA Tour track record to match. If you're playing golf near Chicago, Dubsdread is a must.",
     cyntp_rating:8.7,cyntp_tag:null,city:"Lemont, IL",comments:[]
   },
   {
     id:133,dest:"illinois",destLabel:"Illinois",thumbClass:"ct2",
-    name:"Bolingbrook Golf Club",price:"$55&ndash;$100",
+    name:"Bolingbrook Golf Club",price:"$55&ndash;$100",greenFee:"$",
     cyntp:"One of the best municipal courses in the country. A legitimate championship layout 30 miles from downtown Chicago that punches well above its price point.",
     review:"Bolingbrook Golf Club is a genuine surprise — a municipal course that plays and presents like a private club. The Rick Jacobson design is strategic and well-conditioned, with elevation changes and water features that give it a real personality. The value is outstanding, and for Chicago-area golfers looking for a quality public round that won't break the bank, Bolingbrook consistently delivers.",
     cyntp_rating:8.2,cyntp_tag:null,city:"Bolingbrook, IL",comments:[]
   },
   {
     id:134,dest:"illinois",destLabel:"Illinois",thumbClass:"ct3",
-    name:"Harborside International &mdash; Starboard Course",price:"$50&ndash;$95",
+    name:"Harborside International &mdash; Starboard Course",price:"$50&ndash;$95",greenFee:"$",
     cyntp:"A links-style gem on the south side of Chicago. Wind off Lake Michigan turns what looks like a straightforward layout into a genuine challenge. Great value and a unique Chicago golf experience.",
     review:"Harborside International's Starboard Course is Chicago's best-kept secret. The Dick Nugent design sits on the former site of a steel mill on the city's south side, and the open, links-inspired layout is routinely battered by Lake Michigan winds that add serious difficulty. Two great courses at one facility — both well-maintained and exceptionally priced for what you get. A must-visit for anyone exploring Chicago golf.",
     cyntp_rating:7.4,cyntp_tag:null,city:"Chicago, IL",comments:[]
@@ -1958,7 +1959,7 @@ function renderGrid() {
           ${c.city ? `<div class="card-city">${c.city}</div>` : ''}
           <div class="card-verdict">${c.cyntp}</div>
           <div class="card-meta">
-            <div class="card-price">${c.price}</div>
+            ${c.greenFee ? `<div class="card-price">${c.greenFee}</div>` : ''}
           </div>
           <div class="card-footer">
             <div class="card-view-btn">Read Review &rarr;</div>
@@ -2325,6 +2326,7 @@ function initMap() {
         '<div class="mpc-name">' + course.name.replace(/&mdash;/g,'—').replace(/&amp;/g,'&') + '</div>' +
         '<div class="mpc-location">' + (course.city || course.destLabel) + '</div>' +
         (stars ? '<div class="mpc-rating">' + stars + '</div>' : '') +
+        (course.greenFee ? '<div class="mpc-fee">' + course.greenFee + '</div>' : '') +
         '<button class="mpc-view-btn" onclick="openCourse(' + course.id + ')">VIEW COURSE &#8594;</button>' +
       '</div>';
     previewEl.style.display = 'block';
