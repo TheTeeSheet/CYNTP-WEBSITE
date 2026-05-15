@@ -2037,7 +2037,7 @@ function openCourse(id) {
     <div class="panel-body">
       <div class="panel-stats-row">
         <div class="panel-stat">
-          <div class="panel-price">${course.price}</div>
+          <div class="panel-price">${course.greenFee || course.price}</div>
           <div class="panel-price-label">Green Fee</div>
         </div>
         ${course.cyntp_rating != null ? `
