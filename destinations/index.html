@@ -718,7 +718,9 @@ function gallerySectionHTML(dest) {
         const alt = esc(p.caption || 'Trip photo');
         const overlay = (i === 8 && remaining > 0)
           ? `<div class="gallery-more-overlay">+${remaining} more</div>` : '';
-        return `<a class="dest-gallery-item" href="${full}" data-pswp-width="1600" data-pswp-height="1067" target="_blank">
+        // Use a reasonable square fallback; real dimensions are
+        // probed in initGallery so each photo opens at its own aspect.
+        return `<a class="dest-gallery-item" href="${full}" data-pswp-width="1600" data-pswp-height="1600" target="_blank">
           <img src="${thumb}" alt="${alt}" loading="lazy">${overlay}</a>`;
       }).join('') +
     '</div>';
@@ -782,6 +784,23 @@ function wireCtaForm() {
 function initGallery(photos) {
   if (!photos.length) return;
   if (typeof PhotoSwipeLightbox === 'undefined') return;
+
+  // Probe each full-size image so the lightbox opens at the photo's
+  // true aspect ratio instead of a hardcoded 3:2 frame. PhotoSwipe
+  // reads data-pswp-width/height when a tile is clicked, so updating
+  // them as each preload resolves is enough — and the warm browser
+  // cache makes the actual open instant.
+  document.querySelectorAll('#destGallery a.dest-gallery-item').forEach(a => {
+    const probe = new Image();
+    probe.onload = () => {
+      if (probe.naturalWidth && probe.naturalHeight) {
+        a.setAttribute('data-pswp-width', probe.naturalWidth);
+        a.setAttribute('data-pswp-height', probe.naturalHeight);
+      }
+    };
+    probe.src = a.getAttribute('href');
+  });
+
   const lightbox = new PhotoSwipeLightbox({
     gallery: '#destGallery',
     children: 'a.dest-gallery-item',
