@@ -704,7 +704,7 @@ function skipSectionHTML(dest) {
 }
 
 function gallerySectionHTML(dest) {
-  const photos = dest.gallery || [];
+  const photos = (dest.gallery || []).filter(p => p && p.url);
   let gridHTML;
   if (!photos.length) {
     gridHTML = `<p class="dest-gallery-empty">Photos coming soon.</p>`;
