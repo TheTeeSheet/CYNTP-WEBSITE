@@ -176,14 +176,26 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
   border: 1px solid rgba(255,255,255,0.06);
   border-left: 3px solid var(--grass);
   border-radius: 10px;
-  padding: 24px 26px;
-  transition: background 0.2s, border-color 0.2s;
+  overflow: hidden;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
 }
 .dest-course-card:hover {
   background: rgba(255,255,255,0.04);
   border-color: rgba(212,160,85,0.25);
   border-left-color: var(--sun);
 }
+.dest-course-image {
+  width: 100%; aspect-ratio: 16/9;
+  background-size: cover; background-position: center;
+  background-color: rgba(255,255,255,0.04);
+  transition: transform 0.4s ease;
+}
+.dest-course-card:hover .dest-course-image { transform: scale(1.03); }
+.dest-course-image-wrap {
+  width: 100%; overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.dest-course-body { padding: 22px 24px 24px; }
 .dest-course-name {
   font-family: var(--font-head); font-size: 22px; letter-spacing: 1px;
   color: var(--paper); margin-bottom: 4px;
@@ -605,12 +617,20 @@ function takeSectionHTML(dest) {
 
 function coursesSectionHTML(dest) {
   if (!dest.courses || !dest.courses.length) return '';
-  const items = dest.courses.map(c => `
+  const items = dest.courses.map(c => {
+    const img = c.image
+      ? `<div class="dest-course-image-wrap"><div class="dest-course-image" style="background-image:url('${esc(c.image)}')"></div></div>`
+      : '';
+    return `
     <div class="dest-course-card">
-      <div class="dest-course-name">${esc(c.name)}</div>
-      <div class="dest-course-designer">${esc(c.designer)}</div>
-      <p class="dest-course-desc">${esc(c.description)}</p>
-    </div>`).join('');
+      ${img}
+      <div class="dest-course-body">
+        <div class="dest-course-name">${esc(c.name)}</div>
+        <div class="dest-course-designer">${esc(c.designer)}</div>
+        <p class="dest-course-desc">${esc(c.description)}</p>
+      </div>
+    </div>`;
+  }).join('');
   return `
     <section class="dest-section">
       <div class="dest-section-inner">
