@@ -105,9 +105,11 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 
 /* ── SECTION CHROME ── */
 .dest-section {
-  padding: 64px 80px;
+  padding: 72px 80px;
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
+.dest-section-inner { max-width: 1180px; margin: 0 auto; }
+.dest-section--narrow .dest-section-inner { max-width: 860px; }
 .dest-section-label-wrap {
   display: flex; align-items: center; gap: 14px; margin-bottom: 32px;
 }
@@ -120,25 +122,67 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
   color: var(--sun); font-weight: 600; font-family: var(--font-body);
 }
 
+/* ── AT A GLANCE ── */
+.dest-glance-section {
+  padding: 36px 80px 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.015);
+}
+.dest-glance-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 12px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.dest-glance-cell {
+  background: var(--ink2);
+  padding: 22px 26px;
+  display: flex; flex-direction: column; gap: 6px; min-height: 110px;
+}
+.dest-glance-label {
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--sun); font-weight: 600;
+}
+.dest-glance-value {
+  font-family: var(--font-head); font-size: 22px; letter-spacing: 1px;
+  color: var(--paper); line-height: 1.15;
+}
+.dest-glance-detail {
+  font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.45;
+}
+
 /* ── THE TAKE ── */
 .dest-take-body p {
   font-size: 17px; color: #e8e4d8; line-height: 1.78;
-  max-width: 720px; margin-bottom: 22px;
+  margin-bottom: 22px;
 }
 .dest-take-body p:last-child { margin-bottom: 0; }
 
 /* ── COURSES ── */
-.dest-courses-list { display: flex; flex-direction: column; gap: 32px; }
-.dest-course-item {
-  border-left: 2px solid var(--grass); padding-left: 22px;
+.dest-courses-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px;
+}
+.dest-course-card {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-left: 3px solid var(--grass);
+  border-radius: 10px;
+  padding: 24px 26px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.dest-course-card:hover {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(212,160,85,0.25);
+  border-left-color: var(--sun);
 }
 .dest-course-name {
-  font-family: var(--font-head); font-size: 20px; letter-spacing: 1px;
+  font-family: var(--font-head); font-size: 22px; letter-spacing: 1px;
   color: var(--paper); margin-bottom: 4px;
 }
 .dest-course-designer {
   font-family: var(--font-serif); font-style: italic;
-  font-size: 14px; color: var(--sun); margin-bottom: 10px;
+  font-size: 14px; color: var(--sun); margin-bottom: 12px;
 }
 .dest-course-desc { font-size: 15px; color: #d4d0c4; line-height: 1.68; }
 
@@ -171,16 +215,20 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 
 /* ── KNOW BEFORE YOU GO ── */
 .dest-kbyg-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
 }
 .dest-kbyg-item {
-  border-top: 1px solid var(--sun); padding: 20px 24px 20px 0;
+  background: rgba(212,160,85,0.05);
+  border: 1px solid rgba(212,160,85,0.18);
+  border-radius: 10px;
+  padding: 22px 24px;
 }
 .dest-kbyg-label {
-  font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--sun); font-weight: 600; margin-bottom: 8px;
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--sun); font-weight: 600; margin-bottom: 10px;
+  padding-bottom: 10px; border-bottom: 1px solid rgba(212,160,85,0.2);
 }
-.dest-kbyg-value { font-size: 14px; color: #fff; line-height: 1.55; }
+.dest-kbyg-value { font-size: 14.5px; color: #f0ece0; line-height: 1.6; }
 
 /* ── WHAT TO SKIP ── */
 .dest-skip-items { display: flex; flex-direction: column; gap: 22px; max-width: 720px; }
@@ -301,6 +349,9 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
+  .dest-glance-section { padding: 32px 32px 36px; }
+  .dest-glance-grid { grid-template-columns: repeat(2, 1fr); }
+  .dest-courses-grid { grid-template-columns: 1fr; }
   .dest-kbyg-grid { grid-template-columns: repeat(2, 1fr); }
   .dest-gallery-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -309,7 +360,10 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
   .dest-back-btn { top: 20px; left: 24px; }
   .dest-hero { padding: 0 24px 56px; min-height: 72vh; }
   .dest-hero-name { font-size: clamp(40px, 12vw, 72px); }
-  .dest-section { padding: 48px 24px; }
+  .dest-section { padding: 56px 24px; }
+  .dest-glance-section { padding: 28px 24px 32px; }
+  .dest-glance-grid { grid-template-columns: 1fr; }
+  .dest-glance-cell { min-height: 0; padding: 18px 22px; }
   .dest-email-cta-section { padding: 48px 24px; }
   .dest-email-cta-inner { padding: 40px 24px; }
   .dest-coming-soon-body { padding: 48px 24px; }
@@ -391,6 +445,7 @@ function renderFull(dest) {
   const page = document.getElementById('dest-page');
   page.innerHTML = [
     heroHTML(dest),
+    glanceSectionHTML(dest),
     takeSectionHTML(dest),
     coursesSectionHTML(dest),
     staySectionHTML(dest),
@@ -459,27 +514,89 @@ function sectionLabel(label) {
   return `<div class="dest-section-label-wrap"><span class="dest-section-label">${label}</span></div>`;
 }
 
+function kbygValueByLabel(dest, labelKeywords) {
+  if (!dest.know_before || !dest.know_before.length) return null;
+  const keys = labelKeywords.map(k => k.toLowerCase());
+  return dest.know_before.find(k =>
+    keys.some(key => (k.label || '').toLowerCase().includes(key))
+  ) || null;
+}
+
+function firstSentence(text) {
+  if (!text) return '';
+  const m = String(text).match(/^[^.!?]+[.!?](?=\s|$)/);
+  return m ? m[0].trim() : String(text).trim();
+}
+
+function glanceSectionHTML(dest) {
+  const courseCount = (dest.courses || []).length;
+  const bestTime = kbygValueByLabel(dest, ['best time', 'season']);
+  const flyInto = kbygValueByLabel(dest, ['fly into', 'airport']);
+  const budget = kbygValueByLabel(dest, ['budget', 'cost']);
+
+  const cells = [];
+
+  if (courseCount) {
+    cells.push({
+      label: 'Courses',
+      value: `${courseCount} ${courseCount === 1 ? 'Course' : 'Courses'}`,
+      detail: dest.location_tags && dest.location_tags.length
+        ? dest.location_tags.slice(0, 2).join(' · ')
+        : ''
+    });
+  }
+  if (bestTime) {
+    cells.push({ label: 'Best Time', value: firstSentence(bestTime.value), detail: '' });
+  }
+  if (flyInto) {
+    cells.push({ label: 'Fly Into', value: firstSentence(flyInto.value), detail: '' });
+  }
+  if (budget) {
+    cells.push({ label: 'Budget', value: firstSentence(budget.value), detail: '' });
+  }
+
+  if (cells.length < 2) return '';
+
+  const html = cells.map(c => `
+    <div class="dest-glance-cell">
+      <div class="dest-glance-label">${esc(c.label)}</div>
+      <div class="dest-glance-value">${esc(c.value)}</div>
+      ${c.detail ? `<div class="dest-glance-detail">${esc(c.detail)}</div>` : ''}
+    </div>`).join('');
+
+  return `
+    <section class="dest-glance-section">
+      <div class="dest-section-inner">
+        <div class="dest-glance-grid">${html}</div>
+      </div>
+    </section>`;
+}
+
 function takeSectionHTML(dest) {
   const paras = (dest.the_take || []).map(p => `<p>${esc(p)}</p>`).join('');
   return `
-    <section class="dest-section">
-      ${sectionLabel('The Take')}
-      <div class="dest-take-body">${paras}</div>
+    <section class="dest-section dest-section--narrow">
+      <div class="dest-section-inner">
+        ${sectionLabel('The Take')}
+        <div class="dest-take-body">${paras}</div>
+      </div>
     </section>`;
 }
 
 function coursesSectionHTML(dest) {
   if (!dest.courses || !dest.courses.length) return '';
   const items = dest.courses.map(c => `
-    <div class="dest-course-item">
+    <div class="dest-course-card">
       <div class="dest-course-name">${esc(c.name)}</div>
       <div class="dest-course-designer">${esc(c.designer)}</div>
       <p class="dest-course-desc">${esc(c.description)}</p>
     </div>`).join('');
   return `
     <section class="dest-section">
-      ${sectionLabel('The Courses')}
-      <div class="dest-courses-list">${items}</div>
+      <div class="dest-section-inner">
+        ${sectionLabel('The Courses')}
+        <div class="dest-courses-grid">${items}</div>
+      </div>
     </section>`;
 }
 
@@ -489,10 +606,12 @@ function staySectionHTML(dest) {
     ? `<a href="${dest.booking_link}" target="_blank" rel="noopener noreferrer" class="dest-booking-btn">${esc(dest.booking_text || 'Book Your Stay →')}</a>`
     : '';
   return `
-    <section class="dest-section">
-      ${sectionLabel('Where to Stay')}
-      <p class="dest-stay-body">${esc(dest.where_to_stay)}</p>
-      ${btn}
+    <section class="dest-section dest-section--narrow">
+      <div class="dest-section-inner">
+        ${sectionLabel('Where to Stay')}
+        <p class="dest-stay-body">${esc(dest.where_to_stay)}</p>
+        ${btn}
+      </div>
     </section>`;
 }
 
@@ -504,9 +623,11 @@ function setupSectionHTML(dest) {
       <p class="dest-setup-text">${esc(s.itinerary)}</p>
     </div>`).join('');
   return `
-    <section class="dest-section">
-      ${sectionLabel('The Setup')}
-      <div class="dest-setup-items">${items}</div>
+    <section class="dest-section dest-section--narrow">
+      <div class="dest-section-inner">
+        ${sectionLabel('The Setup')}
+        <div class="dest-setup-items">${items}</div>
+      </div>
     </section>`;
 }
 
@@ -519,8 +640,10 @@ function kbygSectionHTML(dest) {
     </div>`).join('');
   return `
     <section class="dest-section">
-      ${sectionLabel('Know Before You Go')}
-      <div class="dest-kbyg-grid">${items}</div>
+      <div class="dest-section-inner">
+        ${sectionLabel('Know Before You Go')}
+        <div class="dest-kbyg-grid">${items}</div>
+      </div>
     </section>`;
 }
 
@@ -532,9 +655,11 @@ function skipSectionHTML(dest) {
       <p class="dest-skip-detail">${esc(s.detail)}</p>
     </div>`).join('');
   return `
-    <section class="dest-section">
-      ${sectionLabel('What to Skip')}
-      <div class="dest-skip-items">${items}</div>
+    <section class="dest-section dest-section--narrow">
+      <div class="dest-section-inner">
+        ${sectionLabel('What to Skip')}
+        <div class="dest-skip-items">${items}</div>
+      </div>
     </section>`;
 }
 
@@ -560,8 +685,10 @@ function gallerySectionHTML(dest) {
   }
   return `
     <section class="dest-section">
-      ${sectionLabel('From the Trip')}
-      ${gridHTML}
+      <div class="dest-section-inner">
+        ${sectionLabel('From the Trip')}
+        ${gridHTML}
+      </div>
     </section>`;
 }
 
