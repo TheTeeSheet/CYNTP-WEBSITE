@@ -4,73 +4,102 @@
     "trip_id": "big-cedar",
     "name": "Big Cedar Lodge",
     "state": "Missouri",
-    "location_tags": ["MISSOURI", "OZARKS", "RESORT"],
-    "tagline": "Bass Pro's Ozark fever dream — and the most ambitious resort experience in American golf right now.",
+    "location_tags": [
+      "MISSOURI",
+      "OZARKS",
+      "RESORT"
+    ],
+    "tagline": "Six courses, top-100 pedigree, and Ozark views that span for miles. Johnny Morris built a golfer's playground in the hills above Branson — and we're still not sure anywhere else in the country stacks up.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777730867/Screenshot_2026-05-02_at_9.07.33_AM_ibzv4l.png",
-    "meta_description": "Big Cedar Lodge golf trip guide — six courses including Ozarks National, Payne's Valley, and Top of the Rock in the Missouri Ozarks.",
+    "meta_description": "Big Cedar Lodge golf trip guide — six Ozark courses including Payne's Valley, Buffalo Ridge, Ozarks National, and the new Cliffhangers par 3.",
     "the_take": [
-      "If you'd told us five years ago that the most exciting golf resort in the country would be in southern Missouri, owned by the guy who sells fishing lures, we'd have laughed. We're not laughing now.",
-      "Big Cedar isn't a golf trip — it's a destination. Six courses ranging from a Tom Fazio par-3 stunner to a Coore-Crenshaw masterpiece that quietly earned its place in everyone's top 100. Throw in a Tiger Woods design with a par 3 inside an actual canyon and a brand-new cliffside layout that just opened, and you're looking at a place where you genuinely can't play it all in one trip.",
-      "The commitment to scale is what sets it apart. Helicopter rides between courses. Bass Pro empire money poured into making this thing one of the best resorts in the country. It shouldn't work. It absolutely does."
+      "Johnny Morris didn't bolt a few courses onto a hunting resort. He built six of them in the Ozarks, and three — Payne's Valley, Buffalo Ridge, and Ozarks National — sit on Golf Digest's top-100 list. The Ozark elevation is what sets it apart from anywhere else in the country. Every course at Big Cedar plays through the hills, and the views from the tee boxes stretch for miles in every direction.",
+      "Everyone shows up for Payne's Valley because that's the Tiger course. The surprise is that Buffalo Ridge and Ozarks National are right there with it. We walked off Payne's thinking we'd just played the best course on property, then teed up at Buffalo Ridge the next day and had to reconsider.",
+      "It feels like you showed up for a hunting trip and somebody handed you tee times on six top-tier courses instead."
     ],
     "courses": [
       {
-        "name": "Ozarks National",
-        "designer": "Coore & Crenshaw, 2019",
-        "description": "Our pick for best on property. Walking-only, fast and firm, the kind of design that rewards smart golf instead of bombing it. Worth the trip on its own."
+        "name": "Buffalo Ridge",
+        "designer": "Tom Fazio, 1999 (redesigned 2014)",
+        "description": "The first course built on the property and one of the most underrated stops in the country. The views start on the very first tee box and never let up. Conditioning was as good as anywhere we've played, and the bison-skull tee markers at the tips are the kind of detail that sticks with you. Tough but playable, with water features pulling the Ozark landscape into the routing. Must-play."
       },
       {
         "name": "Payne's Valley",
-        "designer": "Tiger Woods Design, 2020",
-        "description": "Tiger's first U.S. public-access course. Wide fairways, dramatic features, and the now-famous 19th hole — a par 3 inside a canyon. Built for visiting golfers, not tour pros."
+        "designer": "Tiger Woods / TGR Design, 2020",
+        "description": "The crew favorite. Wide off the tee and very playable, with the kind of risk-reward layout that keeps a buddies trip honest. Stop at the exclusive pro shop after the front nine for gear you can't get anywhere else. Then play the 19th — an island green tucked into a rock amphitheater with a waterfall behind it, money on the line for a hole-in-one. (Fun fact: Johnny Morris designed the 19th himself.) Must-play."
+      },
+      {
+        "name": "Ozarks National",
+        "designer": "Coore & Crenshaw, 2019",
+        "description": "Fast and firm, exactly what you'd expect from Coore & Crenshaw if you've played their other stuff. A lot of people on property will tell you this is the best course at Big Cedar. We don't agree, but it's still worth a round. Play it once."
+      },
+      {
+        "name": "Cliffhangers",
+        "designer": "Johnny Morris & John Paul Morris, 2025",
+        "description": "The newest course on property. An 18-hole par 3 carved into the limestone cliffs above the 19th hole at Payne's, with waterfalls and a cave system routed directly into the experience. Brand new and almost certainly going to climb every \"best par 3 course in America\" list within a year."
       },
       {
         "name": "Top of the Rock",
-        "designer": "Jack Nicklaus, par-3 course",
-        "description": "Don't skip it just because it's \"only\" a par-3. Views over Table Rock Lake are bucket list. Play it at golden hour."
+        "designer": "Jack Nicklaus, 1996 (9-hole par 3)",
+        "description": "Down the road from the main Payne's pro shop, with arguably the best views Big Cedar has to offer. A sunset round here is the move. Must-play par 3."
       },
       {
-        "name": "Buffalo Ridge",
-        "designer": "Tom Fazio",
-        "description": "Solid, scenic, and holds up next to the bigger names without trying to compete with them."
-      },
-      {
-        "name": "Mountain Top & Cliffhangers",
-        "designer": "Two par-3 layouts",
-        "description": "Both walking-only and both worth squeezing in. Cliffhangers is the new must-add — perched on a cliff edge, dramatic from the first tee."
+        "name": "Mountain Top",
+        "designer": "Gary Player, 2017 (walking-only par 3)",
+        "description": "A 13-hole walking-only par 3 that climbs up and around the Payne's Valley pro shop. Easy to skip when your itinerary's full. Don't. The views are some of the best on property and the walk is worth every step."
       }
     ],
-    "where_to_stay": "Stay on property. The Lodges at Big Cedar give you full resort access and save the shuttle time. Cabins for groups, lodge rooms for couples and buddies trips. Skip the off-property rentals unless budget is the priority — you'll miss too much of what makes Big Cedar Big Cedar.",
+    "where_to_stay": "We stayed at Angler's Lodge, a few minutes down the road from the main resort — easy access to all the courses and a noticeable step down in price from the on-property options. For a buddies trip on a normal budget, it was the right call. If you've got the budget, stay in one of the lodges right off Payne's Valley. They're bigger, more spacious, and you can practically roll out of bed into the pro shop. Couples should book a room inside the main Big Cedar Lodge.",
     "booking_link": "https://www.big-cedar.com/lodging/",
     "booking_text": "Book a stay at Big Cedar Lodge →",
     "setup": [
       {
+        "label": "2 DAYS",
+        "itinerary": "Payne's Valley one day, Buffalo Ridge the other. Squeeze in Cliffhangers and Top of the Rock around the main rounds — before tee time or after the back nine. Lunch at the main clubhouse on one of the days."
+      },
+      {
         "label": "3 DAYS",
-        "itinerary": "Ozarks National (walking) → Payne's Valley → Cliffhangers + Buffalo Ridge"
+        "itinerary": "Hit Payne's, Buffalo, and Ozarks once each. If you're a golf sicko, make one of the days a 36-hole day. Otherwise pair each main round with one of the par 3 courses (Mountain Top, Top of the Rock, or Cliffhangers)."
       },
       {
-        "label": "4 DAYS",
-        "itinerary": "Same as above, plus Top of the Rock at golden hour and Mountain Top as a fun palate cleanser"
-      },
-      {
-        "label": "5+ DAYS",
-        "itinerary": "Play it all. Take the helicopter ride to Payne's Valley. Yes, the helicopter ride."
+        "label": "4+ DAYS",
+        "itinerary": "Same as the 3-day plan with breathing room, or play Payne's and Buffalo Ridge twice. Both hold up to a second look. Time Top of the Rock for golden hour."
       }
     ],
     "know_before": [
-      { "label": "BEST TIME", "value": "May–October. Spring is ideal — pristine courses, mild weather." },
-      { "label": "FLY INTO", "value": "Springfield-Branson (SGF), 45 minutes from the resort." },
-      { "label": "BUDGET", "value": "$750–1,200 per person per night, all-in." },
-      { "label": "PACE", "value": "Don't try 36 holes a day. The walking and the Ozark heat will catch up with you." }
+      {
+        "label": "BEST TIME",
+        "value": "Late April through May, or September into October. The Ozarks get hot and sticky in summer and cold in winter — shoulder season is the sweet spot."
+      },
+      {
+        "label": "FLY INTO",
+        "value": "Springfield-Branson (SGF), about 45 minutes from the resort. Bentonville (XNA) is a workable backup if you can't get into SGF."
+      },
+      {
+        "label": "BUDGET",
+        "value": "Lodging runs $350–$1,500 per person per night depending on where you sleep. Golf: $250–$300 at Buffalo Ridge or Ozarks National, $400–$500 at Payne's Valley, $100–$150 at the par 3 courses. Food and snacks on the course are included with your tee time."
+      },
+      {
+        "label": "CART vs WALKING",
+        "value": "Mountain Top is walking-only. Everything else you can ride."
+      },
+      {
+        "label": "TERRAIN",
+        "value": "The Ozark elevation is real. Side-hill lies and uphill walks that don't show up on most resort courses. Bring shoes you can hike in, and a rain jacket in shoulder season."
+      },
+      {
+        "label": "TEE TIMES",
+        "value": "Resort guests can book well in advance. The public window is only 30 days out, which makes a same-trip slot a coin flip. Stay on-site and lock them early."
+      }
     ],
     "what_to_skip": [
       {
-        "lead": "The \"all six in two days\" attempt.",
-        "detail": "People try. People suffer. Three days minimum, four is right."
+        "lead": "A second round at Ozarks National.",
+        "detail": "A lot of people there will swear it's the best course on property. We don't agree. Play it once, then put that next round into Payne's or Buffalo Ridge."
       },
       {
-        "lead": "The fancy steakhouse on property.",
-        "detail": "Overpriced. The casual restaurants are better and have more atmosphere."
+        "lead": "Loading up on Payne's Valley merch.",
+        "detail": "The logo doesn't hit. Save your money for the pro shops at Buffalo Ridge and Ozarks National — better gear, better logos, better stories when somebody asks where you got it."
       }
     ],
     "gallery": []
@@ -80,7 +109,11 @@
     "trip_id": "gamble-sands",
     "name": "Gamble Sands",
     "state": "Washington",
-    "location_tags": ["WASHINGTON", "HIGH DESERT", "RESORT"],
+    "location_tags": [
+      "WASHINGTON",
+      "HIGH DESERT",
+      "RESORT"
+    ],
     "tagline": "The best new public course in America.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777731564/Screenshot_2026-05-02_at_9.19.12_AM_lkc11o.png",
     "meta_description": "Gamble Sands golf trip guide — the best new public course in America, perched above the Columbia River in central Washington.",
@@ -91,7 +124,11 @@
     "trip_id": "palm-springs",
     "name": "Palm Springs",
     "state": "California",
-    "location_tags": ["CALIFORNIA", "DESERT", "COACHELLA VALLEY"],
+    "location_tags": [
+      "CALIFORNIA",
+      "DESERT",
+      "COACHELLA VALLEY"
+    ],
     "tagline": "Desert golf in the Coachella Valley.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777700314/DJI_20250118120703_0565_D_c43jpz.jpg",
     "meta_description": "Palm Springs golf trip guide — mountain backdrops, perfect weather, and a corridor packed with elite desert tracks.",
@@ -102,7 +139,11 @@
     "trip_id": "sentryworld",
     "name": "SentryWorld",
     "state": "Wisconsin",
-    "location_tags": ["WISCONSIN", "RESORT", "MIDWEST"],
+    "location_tags": [
+      "WISCONSIN",
+      "RESORT",
+      "MIDWEST"
+    ],
     "tagline": "The flower hole. Need we say more.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777731765/Screenshot_2026-05-02_at_9.22.35_AM_s8be9k.png",
     "meta_description": "SentryWorld golf trip guide — Robert Trent Jones Jr.'s masterpiece in Stevens Point, Wisconsin.",
@@ -113,7 +154,11 @@
     "trip_id": "st-george",
     "name": "St. George",
     "state": "Utah",
-    "location_tags": ["UTAH", "DESERT", "RED ROCK"],
+    "location_tags": [
+      "UTAH",
+      "DESERT",
+      "RED ROCK"
+    ],
     "tagline": "Red rock. Black lava. Zero bad holes.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777752084/Screenshot_2026-05-02_at_3.01.13_PM_vvq1fj.png",
     "meta_description": "St. George Utah golf trip guide — the most visually dramatic golf in America, with red rock canyons and ancient lava fields.",
@@ -124,7 +169,11 @@
     "trip_id": "tucson",
     "name": "Tucson",
     "state": "Arizona",
-    "location_tags": ["ARIZONA", "DESERT", "4 NIGHTS"],
+    "location_tags": [
+      "ARIZONA",
+      "DESERT",
+      "4 NIGHTS"
+    ],
     "tagline": "Desert golf at The Kennedy Hotel.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777739477/Screenshot_2026-05-02_at_11.31.06_AM_mmtpto.png",
     "meta_description": "Tucson golf trip guide — 4 nights and 4 rounds all-in at $697 per person, staying at The Kennedy Hotel.",
@@ -135,10 +184,94 @@
     "trip_id": "dominican-republic",
     "name": "Dominican Republic",
     "state": "Dominican Republic",
-    "location_tags": ["CARIBBEAN", "INTERNATIONAL", "BEACH"],
-    "tagline": "Teeth of the Dog. Enough said.",
+    "location_tags": [
+      "CARIBBEAN",
+      "INTERNATIONAL",
+      "BEACH"
+    ],
+    "tagline": "Two resorts, four courses, and ocean holes that ruin you for anything back home. The DR sneaks up on you.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777737412/Screenshot_2026-05-02_at_10.56.18_AM_fxk3lx.png",
-    "meta_description": "Dominican Republic golf trip guide — Teeth of the Dog, Dye Fore, Corales, and La Cana in one trip.",
+    "meta_description": "Dominican Republic golf trip guide — Teeth of the Dog, Dye Fore, Corales, and La Cana across Casa de Campo and Puntacana.",
+    "the_take": [
+      "The DR punches way above its weight in golf. Pete Dye's Teeth of the Dog at Casa de Campo has been on every \"best courses in the world\" list for 50-plus years. Tom Fazio's Corales at Puntacana hosts a PGA Tour event with a finishing stretch (the Devil's Elbow) that rivals anything in the Caribbean. P.B. Dye's La Cana mixes inland and ocean holes across 27 holes. And then there's Dye Fore, sitting up on the cliffs above the Chavon River — which nobody talks about until they play it.",
+      "Dye Fore is the surprise. Nobody told us about this course before we booked. We figured Teeth of the Dog was the trip and the rest were bonus rounds. Then we played the Chavon 9 at Dye Fore — 300 feet above the Chavon River, mountains on one side, Caribbean off in the distance — and it ended up being the biggest change of pace on the trip. Think Big Cedar Lodge, but in the DR.",
+      "Caribbean ocean golf with enough variety that you're not playing the same view four days in a row."
+    ],
+    "courses": [
+      {
+        "name": "Teeth of the Dog",
+        "designer": "Pete Dye, 1971 (restored 2025)",
+        "description": "The reason you book this trip. Seven holes hug the ocean and the rest of the course earns its spot in the conversation. Pete Dye famously said he built 11 holes and God built the other seven, and he wasn't wrong. Just came out of a full restoration — re-grassed with Dynasty Paspalum, new sand on the fairways — so it's playing as good as it's looked in years. Tee one up at the island green on the back nine. Forecaddies mandatory. Must-play, and the best course on the trip."
+      },
+      {
+        "name": "Corales",
+        "designer": "Tom Fazio, 2010",
+        "description": "PGA Tour stop and one of the best ocean stretches we've ever played. The Devil's Elbow (holes 16, 17, and 18) is the kind of finish that makes you forget what you shot. Mandatory caddies — sounds like a tax until you're standing over a 6-iron with the Caribbean breeze pushing your ball toward a cliff. Trust them. Must-play."
+      },
+      {
+        "name": "Dye Fore",
+        "designer": "Pete Dye, 2003",
+        "description": "The sleeper. Don't skip it. The Chavon 9 plays 300 feet above the river with mountain views on one side and Caribbean glimpses off in the distance. It's basically Big Cedar in the DR. Forecaddies mandatory here too. Must-play."
+      },
+      {
+        "name": "La Cana",
+        "designer": "P.B. Dye (27 holes)",
+        "description": "Three nines — we played Tortuga and Arrecife. Both have ocean holes that hold their own against anything else on the trip. Conditioning wasn't quite at the level of Corales or Teeth, but we got the timing right on the finishing hole and watched the sun set over the Caribbean. Worth playing if you're at Puntacana."
+      }
+    ],
+    "where_to_stay": "Splitting between two resorts is basically required. You have to be checked in as a guest to play Teeth of the Dog and Dye Fore — hard rule at Casa de Campo. Same setup at Puntacana for Corales and La Cana. We did two nights at the Westin Puntacana for the Corales and La Cana days, then one night at Casa de Campo for Teeth of the Dog and Dye Fore. The Westin is the smaller, more intimate property with beach access right off the lobby — Traditional Rooms are fine, upgrade to ocean-view if the budget allows. Casa de Campo is a 7,000-acre compound; you'll need a golf cart to get anywhere. Superior Casita Rooms were comfortable. Going bigger? The villas include breakfast and a touring cart.",
+    "booking_link": "https://www.casadecampo.com.do/",
+    "booking_text": "Book a stay at Casa de Campo →",
+    "setup": [
+      {
+        "label": "2 DAYS",
+        "itinerary": "Stay at Casa de Campo. Teeth of the Dog one day, Dye Fore the next. Skip Puntacana if time's tight. The two Casa de Campo courses alone make the trip worth it."
+      },
+      {
+        "label": "3 DAYS",
+        "itinerary": "Add Corales. One night at the Westin for the Corales round, two at Casa de Campo for Teeth of the Dog and Dye Fore. La Cana becomes optional."
+      },
+      {
+        "label": "4+ DAYS",
+        "itinerary": "The full itinerary we played. Two nights at the Westin (Corales day, then La Cana with a sunset finish), then over to Casa de Campo for Teeth of the Dog and Dye Fore. Add a beach day at either resort if you've got the time."
+      }
+    ],
+    "know_before": [
+      {
+        "label": "BEST TIME",
+        "value": "January through April. We went in early January and the weather was perfect. Hurricane season runs June through November — avoid it unless you like rolling the dice."
+      },
+      {
+        "label": "FLY INTO",
+        "value": "Punta Cana International (PUJ). About 15 minutes from the Westin, about an hour from Casa de Campo. La Romana (LRM) is closer to Casa de Campo if you can find a flight."
+      },
+      {
+        "label": "BUDGET",
+        "value": "Greens fees stack up fast: Teeth of the Dog and Corales are each in the $400+ range; Dye Fore and La Cana run $200–$300. Caddies and forecaddies add $50–$80 per round, cash, plus tip. Lodging is $300–$500 per night in season at both properties (villas higher). Plan on roughly $700–$1,000 per person per day all-in."
+      },
+      {
+        "label": "CADDIES",
+        "value": "All four courses are cart-based with mandatory or strongly-encouraged caddies. Forecaddies on Teeth and Dye Fore. Caddies-with-carts at Corales (mandatory) and La Cana (optional for resort guests). Bring cash for tips on every round."
+      },
+      {
+        "label": "WEATHER",
+        "value": "The Caribbean breeze is real, especially at Corales and Teeth of the Dog. Bring an extra glove (you'll sweat through the first one) and expect the wind to take ten yards off every shot on the ocean holes."
+      },
+      {
+        "label": "FOOD",
+        "value": "The food at the Westin is excellent. Brassa (the steakhouse) and Bao (the Asian spot) are both worth a meal. Bao was our favorite."
+      }
+    ],
+    "what_to_skip": [
+      {
+        "lead": "Skipping Dye Fore for a second round at Teeth of the Dog.",
+        "detail": "Even if Teeth is the headliner, Dye Fore's Chavon 9 is the kind of change-of-pace that makes the trip more memorable. Play it once and you'll get it."
+      },
+      {
+        "lead": "Day-trips off the resorts.",
+        "detail": "You can, but you don't need to. Beach, food, and golf are all on property at both places. Save the excursions for a different kind of trip."
+      }
+    ],
     "gallery": []
   },
   {
@@ -146,7 +279,11 @@
     "trip_id": "evermore",
     "name": "Evermore",
     "state": "Florida",
-    "location_tags": ["FLORIDA", "RESORT", "ORLANDO"],
+    "location_tags": [
+      "FLORIDA",
+      "RESORT",
+      "ORLANDO"
+    ],
     "tagline": "Two Jack Nicklaus courses next to Disney.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777731271/Screenshot_2026-05-02_at_9.13.40_AM_pe6ldo.png",
     "meta_description": "Evermore Orlando golf trip guide — two Jack Nicklaus championship courses including a St. Andrews tribute layout.",
@@ -157,7 +294,11 @@
     "trip_id": "gulf-shores",
     "name": "Gulf Shores",
     "state": "Alabama",
-    "location_tags": ["ALABAMA", "BEACH", "GULF COAST"],
+    "location_tags": [
+      "ALABAMA",
+      "BEACH",
+      "GULF COAST"
+    ],
     "tagline": "Alabama's best kept golf secret.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777738442/Screenshot_2026-05-02_at_11.13.51_AM_ihmb3i.png",
     "meta_description": "Gulf Shores Alabama golf trip guide — 3 nights and 4 rounds all-in at $959 per person on the Gulf Coast.",
@@ -168,7 +309,11 @@
     "trip_id": "grand-traverse",
     "name": "Grand Traverse Resort",
     "state": "Michigan",
-    "location_tags": ["MICHIGAN", "RESORT", "NORTHERN MICHIGAN"],
+    "location_tags": [
+      "MICHIGAN",
+      "RESORT",
+      "NORTHERN MICHIGAN"
+    ],
     "tagline": "Northern Michigan golf at its finest.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777751948/Screenshot_2026-05-02_at_2.58.29_PM_wffkcp.png",
     "meta_description": "Grand Traverse Resort golf trip guide — three championship courses including The Bear by Jack Nicklaus.",
@@ -179,7 +324,11 @@
     "trip_id": "hammock-beach",
     "name": "Hammock Beach",
     "state": "Florida",
-    "location_tags": ["FLORIDA", "BEACH", "RESORT"],
+    "location_tags": [
+      "FLORIDA",
+      "BEACH",
+      "RESORT"
+    ],
     "tagline": "A Florida resort trip worth every penny.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777739562/Screenshot_2026-05-02_at_11.19.05_AM_noc4lg.png",
     "meta_description": "Hammock Beach Florida golf trip guide — 3 nights in a villa and 4 rounds across Hammock Beach Resort and World Golf Village.",
@@ -190,7 +339,11 @@
     "trip_id": "hilton-head",
     "name": "Hilton Head",
     "state": "South Carolina",
-    "location_tags": ["SOUTH CAROLINA", "BEACH", "LOWCOUNTRY"],
+    "location_tags": [
+      "SOUTH CAROLINA",
+      "BEACH",
+      "LOWCOUNTRY"
+    ],
     "tagline": "Lowcountry golf at its finest.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777699416/Screenshot_2026-05-02_at_12.22.11_AM_cunmv9.png",
     "meta_description": "Hilton Head golf trip guide — salt marsh views, live oaks, and four of the best courses on the East Coast.",
@@ -201,7 +354,11 @@
     "trip_id": "las-vegas",
     "name": "Las Vegas",
     "state": "Nevada",
-    "location_tags": ["NEVADA", "DESERT", "LAS VEGAS"],
+    "location_tags": [
+      "NEVADA",
+      "DESERT",
+      "LAS VEGAS"
+    ],
     "tagline": "Golf in the desert. Everything else after dark.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777699841/Screenshot_2026-05-02_at_12.29.02_AM_suftxo.png",
     "meta_description": "Las Vegas golf trip guide — world-class desert tracks at Cascata, TPC Las Vegas, Reflection Bay, and Serket.",
@@ -212,7 +369,11 @@
     "trip_id": "miami",
     "name": "Miami",
     "state": "Florida",
-    "location_tags": ["FLORIDA", "PARKLAND", "SOUTH FLORIDA"],
+    "location_tags": [
+      "FLORIDA",
+      "PARKLAND",
+      "SOUTH FLORIDA"
+    ],
     "tagline": "PGA Tour golf. South Beach energy.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777732609/Screenshot_2026-05-02_at_9.35.14_AM_rmxrxj.png",
     "meta_description": "Miami golf trip guide — Doral Blue Monster, world-class conditions and a city to match.",
@@ -223,7 +384,11 @@
     "trip_id": "myrtle-beach",
     "name": "Myrtle Beach",
     "state": "South Carolina",
-    "location_tags": ["SOUTH CAROLINA", "BEACH", "GOLF CAPITAL"],
+    "location_tags": [
+      "SOUTH CAROLINA",
+      "BEACH",
+      "GOLF CAPITAL"
+    ],
     "tagline": "The golf capital of the East Coast.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777700209/Screenshot_2026-05-02_at_12.36.39_AM_bkucgt.png",
     "meta_description": "Myrtle Beach golf trip guide — more courses per square mile than anywhere in the country.",
@@ -234,7 +399,11 @@
     "trip_id": "orlando",
     "name": "Orlando",
     "state": "Florida",
-    "location_tags": ["FLORIDA", "PARKLAND", "CENTRAL FLORIDA"],
+    "location_tags": [
+      "FLORIDA",
+      "PARKLAND",
+      "CENTRAL FLORIDA"
+    ],
     "tagline": "Florida golf done right.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777700738/Screenshot_2026-05-02_at_12.44.01_AM_jkibks.png",
     "meta_description": "Orlando golf trip guide — skip the theme parks, Orlando has some of the best resort golf in the country.",
@@ -245,7 +414,11 @@
     "trip_id": "pursell-farms",
     "name": "Pursell Farms",
     "state": "Alabama",
-    "location_tags": ["ALABAMA", "RESORT", "HIDDEN GEM"],
+    "location_tags": [
+      "ALABAMA",
+      "RESORT",
+      "HIDDEN GEM"
+    ],
     "tagline": "Hidden gem of the South.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777752371/Screenshot_2026-05-02_at_3.03.39_PM_fvbuwr.png",
     "meta_description": "Pursell Farms golf trip guide — a secluded Alabama resort with Farmlinks Golf Club and a full lodge experience.",
@@ -256,7 +429,11 @@
     "trip_id": "scottsdale",
     "name": "Scottsdale",
     "state": "Arizona",
-    "location_tags": ["ARIZONA", "DESERT", "PHOENIX METRO"],
+    "location_tags": [
+      "ARIZONA",
+      "DESERT",
+      "PHOENIX METRO"
+    ],
     "tagline": "One of the greatest golf destinations in America.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777693417/Screenshot_2026-05-01_at_10.40.37_PM_p2vdx9.png",
     "meta_description": "Scottsdale golf trip guide — world-class courses, desert sunsets, and buddy trip stories you'll tell forever.",
@@ -267,7 +444,11 @@
     "trip_id": "williamsburg",
     "name": "Williamsburg",
     "state": "Virginia",
-    "location_tags": ["VIRGINIA", "PARKLAND", "HISTORIC"],
+    "location_tags": [
+      "VIRGINIA",
+      "PARKLAND",
+      "HISTORIC"
+    ],
     "tagline": "History, charm, and elite golf.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777700821/Screenshot_2026-05-02_at_12.46.55_AM_fgulzi.png",
     "meta_description": "Williamsburg Virginia golf trip guide — four legendary courses and the best price-to-quality ratio of any trip we've been on.",
