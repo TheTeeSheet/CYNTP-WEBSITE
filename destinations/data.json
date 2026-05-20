@@ -144,9 +144,81 @@
       "HIGH DESERT",
       "RESORT"
     ],
-    "tagline": "The best new public course in America.",
+    "tagline": "Two David McLay Kidd courses above the Columbia River. Hard to get to, easy to fall for. Brewster might be the most underrated stop in American golf.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777731564/Screenshot_2026-05-02_at_9.19.12_AM_lkc11o.png",
-    "meta_description": "Gamble Sands golf trip guide — the best new public course in America, perched above the Columbia River in central Washington.",
+    "meta_description": "Gamble Sands golf trip guide — two David McLay Kidd courses above the Columbia River in Brewster, Washington, including the 2025 Golf Digest Best New Public Course.",
+    "the_take": [
+      "Gamble Sands is what happens when somebody decides to build world-class links golf on the high plains of central Washington and doesn't compromise. The original course opened in 2014 and has been climbing the rankings ever since. Then in 2025 they opened Scarecrow, a second David McLay Kidd design that picked up Golf Digest's Best New Public Course of the year. Two courses, same designer, same terrain, completely different rounds. The views over the Columbia River are the kind of thing you assume only exist in drone shots until you stand on a tee box and see it for yourself. There are also a few holes where you'll catch a look at the vineyards sitting on the slopes below the property.",
+      "Scarecrow. They opened it on the same property as the original, with the same designer, on the same kind of terrain. It should have felt like a copy. It doesn't. Walking off both courses we honestly couldn't pick a favorite.",
+      "Two of the best public courses in the country, sitting on a stretch of the Columbia River nobody else thought to build on."
+    ],
+    "courses": [
+      {
+        "name": "Gamble Sands",
+        "designer": "David McLay Kidd, 2014",
+        "description": "The original. Wide, rolling fairways that play firm and fast, with the Columbia River sitting below the property like a backdrop somebody painted in. Plays harder than it looks because the contours run in every direction. A little more forgiving off the tee than Scarecrow. Must-play.",
+        "image": null
+      },
+      {
+        "name": "Scarecrow",
+        "designer": "David McLay Kidd, 2025",
+        "description": "Named Golf Digest's Best New Public Course of 2025 and it earned every word of that. Sits on the same property as the original but plays completely differently — new routing, new contours, and a few risk-reward holes that'll make you wish you had a second ball in your pocket. Slightly better views for most of the round in our opinion. Must-play. If you only have time for one, flip a coin. You can't lose.",
+        "image": null
+      }
+    ],
+    "where_to_stay": "We stayed on-site at Gamble Sands — no question, this is the move. The rooms look out over the Columbia River with the putting green sitting below the deck. The lodge sits up a hill from the clubhouse, so you'll either drive down or grab the shuttle (a guy in a golf cart who runs people back and forth). Room type doesn't matter much — king rooms or doubles with two queens, most of them look out over the river either way. Nothing over the top, just nice and comfortable, exactly what you want after a day of golf. No reason to look at anything off-property.",
+    "booking_link": null,
+    "booking_text": null,
+    "setup": [
+      {
+        "label": "2 DAYS",
+        "itinerary": "Play one main course each day and pair each round with QuickSands, the on-property short course, in the afternoon. Best way to keep the short game sharp between rounds."
+      },
+      {
+        "label": "3 DAYS",
+        "itinerary": "Both main courses plus QuickSands. The original Gamble Sands is a little more forgiving off the tee. Scarecrow has slightly better views for most of the round. Play them both and pick your favorite."
+      },
+      {
+        "label": "4+ DAYS",
+        "itinerary": "Two rounds on each course, multiple loops at QuickSands, plus a Coeur d'Alene or Spokane stop on the front or back end. Get out for a sunset round or at least a sunset beer on the deck — the Columbia River light at the end of a summer day is the part you'll remember."
+      }
+    ],
+    "know_before": [
+      {
+        "label": "BEST TIME",
+        "value": "May through September is peak season for a reason. The eastern Washington summer is dry and hot, the golf is in great shape, and the long daylight lets you ride out into the evening. October is the sleeper move if you want lower lodging prices and don't mind cooler rounds."
+      },
+      {
+        "label": "FLY INTO",
+        "value": "Spokane (GEG) is the closest airport with real flight options. About a two-hour drive to Brewster. Use it as an excuse to add Coeur d'Alene Resort to the itinerary on the way in or out."
+      },
+      {
+        "label": "BUDGET",
+        "value": "Lodging swings hard with the season. Peak (May through September) runs around $600 per night. October drops as low as $150 per night for the same room. Greens fees run $300 per round in peak season, $200 off-peak."
+      },
+      {
+        "label": "WALKING vs CART",
+        "value": "Cart-based golf. We rode both rounds. The terrain is gentle enough that you could walk if you wanted to, but the carts are part of how everyone moves around the property."
+      },
+      {
+        "label": "WEATHER",
+        "value": "Eastern Washington is high desert. Dry, hot in summer, and the wind can show up unannounced. It does rain occasionally — we caught some on our trip — but nowhere near what Seattle or Portland get. Sunscreen and a wind shirt aren't optional in peak season."
+      }
+    ],
+    "what_to_skip": [
+      {
+        "lead": "Danny Boy's for a full sit-down meal.",
+        "detail": "It's fine, but we may have ordered wrong. The move is the Tower of Tots appetizer — best item on the menu. The Barn is the real food win on property. Don't sleep on it."
+      },
+      {
+        "lead": "Bringing non-golfers.",
+        "detail": "There's not much else to do here, and trying to make Brewster work as a couples weekend or family trip is going to leave somebody bored. This one's for the golf people."
+      },
+      {
+        "lead": "Treating this as a quick one-stop trip.",
+        "detail": "Brewster isn't easy to get to. Spokane is still about two hours away. Build in time, pair it with Coeur d'Alene or Spokane on the front end, and you'll get a lot more out of the journey."
+      }
+    ],
     "gallery": []
   },
   {
@@ -159,9 +231,93 @@
       "DESERT",
       "COACHELLA VALLEY"
     ],
-    "tagline": "Desert golf in the Coachella Valley.",
+    "tagline": "More world-class desert golf than you can play in a week. November weather, pristine conditioning, and Pete Dye fingerprints all over the Coachella Valley.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777700314/DJI_20250118120703_0565_D_c43jpz.jpg",
-    "meta_description": "Palm Springs golf trip guide — mountain backdrops, perfect weather, and a corridor packed with elite desert tracks.",
+    "meta_description": "Palm Springs golf trip guide — four Coachella Valley courses including PGA West Stadium, Desert Willow, Escena, and the Westin Rancho Mirage Dye Course.",
+    "the_take": [
+      "Palm Springs and the surrounding Coachella Valley have more good public courses than any single golf destination we've been to. The desert weather keeps the courses in pristine condition almost year-round, and the variety is the part that surprised us. Pete Dye stadium-style tracks, mountain-view layouts, Nicklaus designs, resort courses, all within a 30-minute drive of each other. November through April is peak season for a reason.",
+      "Two things. First, the number of top-tier courses crammed into the Coachella Valley is wild. You can fly out for a week and never run out of options. Second, PGA West Stadium plays way more fair in person than it looks on TV during the AMEX. We were braced for a beating and got a fun round instead.",
+      "A buddies trip golf factory. Show up in November, pick from a dozen great courses, and never wait on a tee box."
+    ],
+    "courses": [
+      {
+        "name": "PGA West — Pete Dye Stadium",
+        "designer": "Pete Dye, 1986",
+        "description": "The famous one. Host of the AMEX on the PGA Tour. We expected to get beat up after watching pros struggle here on TV, but it played surprisingly fair for mid-handicappers. Forced carries and big bunkers all over the property, but the lines are honest. The 17th — the Alcatraz island green — is the one you came for. Must-play.",
+        "image": null
+      },
+      {
+        "name": "Desert Willow — Mountain View",
+        "designer": "Hurdzan-Fry-Schmidt",
+        "description": "One of the two courses at Desert Willow and the one most people queue up for first. Conditioning was excellent and the layout makes you think on almost every shot. Less famous than PGA West but holds its own. Worth playing.",
+        "image": null
+      },
+      {
+        "name": "Escena Golf Club",
+        "designer": "Nicklaus Design, 2005",
+        "description": "Sits right next to the Palm Springs airport. Normally we'd write off a course this close to a runway, but somehow it wasn't distracting. The big jetliners coming in low against the mountain backdrop was actually a cool visual. Clean modern feel, views across the valley, layout that rewards smart play. Solid public option.",
+        "image": null
+      },
+      {
+        "name": "Westin Rancho Mirage",
+        "designer": "Pete Dye",
+        "description": "Right on property at the Westin, which made it the most convenient round of the trip. Classic Pete Dye routing that tries to mess with your head and tricky greens that follow through on the threat. Easy to add to your itinerary if you're staying at the Westin — which we recommend.",
+        "image": null
+      }
+    ],
+    "where_to_stay": "We stayed at the Westin Rancho Mirage — right on property of the Dye Course, which made one of the four rounds a walk from the lobby. Solid lodging with nothing to complain about. The amenities are big: pool with waterslides, pickleball courts, tennis, spa. Good food on property plus plenty of options outside the resort if you want to leave for dinner. Standard rooms were more than enough. If you're pairing it with a couples trip, look at rooms with patio access.",
+    "booking_link": "https://bit.ly/4mKx5Ps",
+    "booking_text": "Book the Palm Springs Package →",
+    "setup": [
+      {
+        "label": "2 DAYS",
+        "itinerary": "PGA West Stadium one day, then either Desert Willow Mountain View or Escena the next. You can't go wrong either way."
+      },
+      {
+        "label": "3 DAYS",
+        "itinerary": "Make one of the days a 36-hole day and get all four courses in. Most efficient way to do it."
+      },
+      {
+        "label": "4+ DAYS",
+        "itinerary": "Spread it out. Play all four we played and start working through the rest of the Coachella Valley list. Don't skip PGA West Stadium because of the price tag — you'll be happy you kept it in the itinerary. The number of good courses out here is the whole point."
+      }
+    ],
+    "know_before": [
+      {
+        "label": "BEST TIME",
+        "value": "November through April is peak for a reason. Perfect weather, courses are in their best shape. The rest of the year gets brutally hot. If you can stand the heat, summer and shoulder months will get you on the same courses for a fraction of the cost."
+      },
+      {
+        "label": "FLY INTO",
+        "value": "Palm Springs International (PSP) is right there, about 15 minutes to most of the courses. The catch is that PSP is small, so flight options can be limited. Ontario (ONT) or LAX are backups, but you're looking at a 90+ minute drive from either."
+      },
+      {
+        "label": "BUDGET",
+        "value": "The bundle is the move. Tee Times USA hosts a package with the four courses we played plus lodging at the Westin Rancho Mirage, starting at $837 per person. Outside the package, expect $200–$400+ per round on the headline tracks and $250–$500 per night for the resort in peak season."
+      },
+      {
+        "label": "WALKING vs CART",
+        "value": "Cart-based golf. Desert courses don't lend themselves to walking. Don't sweat it."
+      },
+      {
+        "label": "WEATHER",
+        "value": "The desert heat is real, even outside summer. Sunscreen, plenty of water, and an extra shirt aren't optional in midday rounds. The conditioning is the best part — every course we played was in great shape."
+      }
+    ],
+    "what_to_skip": [
+      {
+        "lead": "Flying into PSP at any cost.",
+        "detail": "The airport is convenient but small, which means flights can get pricey or awkward. Compare PSP, ONT, and LAX and pick the one that makes sense for your itinerary."
+      },
+      {
+        "lead": "Booking a Palm Springs trip in July.",
+        "detail": "The heat will undo any golf gains you came for. If you need off-season pricing, shoot for late October or early April instead of dead summer."
+      },
+      {
+        "lead": "Showing up at PGA West Stadium expecting to get beat up.",
+        "detail": "Watching the pros struggle there during the AMEX makes the course look gnarly, but it plays way more fair than that on a normal tee. Pick a tee that matches your game and you'll have a great round."
+      }
+    ],
     "gallery": []
   },
   {
@@ -314,9 +470,81 @@
       "RESORT",
       "ORLANDO"
     ],
-    "tagline": "Two Jack Nicklaus courses next to Disney.",
+    "tagline": "Two Nicklaus courses, a resort built for families, and Disney down the street. Easily one of the best stay-and-plays in Orlando.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777731271/Screenshot_2026-05-02_at_9.13.40_AM_pe6ldo.png",
-    "meta_description": "Evermore Orlando golf trip guide — two Jack Nicklaus championship courses including a St. Andrews tribute layout.",
+    "meta_description": "Evermore Orlando golf trip guide — two Nicklaus Design courses, Evermore Bay, and Disney World fifteen minutes away.",
+    "the_take": [
+      "Evermore is the rare stay-and-play that works for the whole family. Two Nicklaus Design courses sitting right next to a resort with amenities that hold up against anything in Orlando. Then there's Disney World just down the road, which makes it one of the only golf trips you can take where everyone in the family gets what they want out of it.",
+      "The resort itself. The pool has a massive waterslide and rope swings into Evermore Bay. Lodging scales from flats overlooking the water to full houses with private pools and golf carts to drive the property. And the golf still holds up against the best public tracks in the area. Easily one of the best stay-and-plays in Orlando.",
+      "A Florida resort that nailed the family golf trip. Golf in the morning, Evermore Bay in the afternoon, Disney World whenever you want it."
+    ],
+    "courses": [
+      {
+        "name": "Cypress Course",
+        "designer": "Nicklaus Design",
+        "description": "Plays through the property's cypress hammocks and waterways. The standout is Hole 3 — an island green par 3 that gives you a little taste of Sawgrass 17. Conditioning was excellent both times we played, pace of play was solid, and the on-course food is a step up from what you usually get at a Florida resort. Must-play.",
+        "image": null
+      },
+      {
+        "name": "Links Course",
+        "designer": "Nicklaus Design",
+        "description": "More open than the Cypress, with the wind playing a bigger role. Pair it back-to-back with Cypress and you get genuine variety between the two rounds. Worth playing.",
+        "image": null
+      }
+    ],
+    "where_to_stay": "We've done two trips here with two different setups. Year one: the flats overlooking Evermore Bay — spacious, full kitchen, living area, bunk room, three bedrooms, three full baths. Year two: one of the houses with a private pool and golf carts to drive the property. Both were great. The choice comes down to group size. Three to six people on a golf trip? The flats are more than enough. Bringing families? Get the house with the pool — the kids can run around without worrying about hotel hallways.",
+    "booking_link": null,
+    "booking_text": null,
+    "setup": [
+      {
+        "label": "2 DAYS",
+        "itinerary": "Both courses back-to-back. Cypress one day, Links the other. Hang at Evermore Bay in the afternoons if you've brought family along."
+      },
+      {
+        "label": "3 DAYS",
+        "itinerary": "Play both courses, then circle back to whichever one you liked better for a third round. Use day two as the Disney World detour if the family's with you."
+      },
+      {
+        "label": "4+ DAYS",
+        "itinerary": "The full family-and-golf setup. Two rounds on each Evermore course, a Disney day, and a dedicated pool day at Evermore Bay. The waterslide and rope swings into the water are worth doing at least once — you're paying for the amenities either way."
+      }
+    ],
+    "know_before": [
+      {
+        "label": "BEST TIME",
+        "value": "October through April. Florida summers are brutal and afternoon thunderstorms shut down golf almost daily from June through August. Shoulder months are the sweet spot."
+      },
+      {
+        "label": "FLY INTO",
+        "value": "Orlando International (MCO) is about 25 minutes away. Easy in, easy out."
+      },
+      {
+        "label": "BUDGET",
+        "value": "Each round at Evermore runs $200–$300 per person. Lodging swings widely — anywhere from $1,500 to $3,500 per night depending on whether you're in a flat or one of the bigger houses with a pool. Food on property is moderate to pricey. Plan on a chunky daily spend once you stack golf, lodging, and meals."
+      },
+      {
+        "label": "WALKING vs CART",
+        "value": "Cart-based golf, nothing weird."
+      },
+      {
+        "label": "WEATHER",
+        "value": "Florida summer storms are real. Check the radar before any round between June and August. Otherwise conditions are excellent year-round."
+      }
+    ],
+    "what_to_skip": [
+      {
+        "lead": "The fancy restaurant on property.",
+        "detail": "It's fine, but the food worth coming back for is over by the bay. That's where you want to eat."
+      },
+      {
+        "lead": "Treating it as a golf-only trip.",
+        "detail": "The whole point of Evermore is that you can mix family stuff with golf. If Disney World is in your radius of interest, work it in. Treat it like a stay-and-play only and you're leaving half the value on the table."
+      },
+      {
+        "lead": "Skipping the pool if you've got kids.",
+        "detail": "The waterslide and rope swings into Evermore Bay are the part everyone remembers. You're paying for the resort amenities whether you use them or not."
+      }
+    ],
     "gallery": []
   },
   {
