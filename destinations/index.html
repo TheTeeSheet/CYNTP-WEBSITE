@@ -194,7 +194,18 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 .dest-course-image-wrap {
   width: 100%; overflow: hidden;
   border-bottom: 1px solid rgba(255,255,255,0.06);
+  position: relative;
 }
+.dest-course-img-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(0,0,0,0.45); color: #fff; border: none;
+  width: 32px; height: 32px; border-radius: 50%; font-size: 18px;
+  cursor: pointer; z-index: 5; display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s; line-height: 1;
+}
+.dest-course-img-arrow:hover { background: rgba(0,0,0,0.7); }
+.dest-course-img-arrow--prev { left: 10px; }
+.dest-course-img-arrow--next { right: 10px; }
 .dest-course-body { padding: 22px 24px 24px; }
 .dest-course-name {
   font-family: var(--font-head); font-size: 22px; letter-spacing: 1px;
@@ -617,13 +628,19 @@ function takeSectionHTML(dest) {
 
 function coursesSectionHTML(dest) {
   if (!dest.courses || !dest.courses.length) return '';
-  const items = dest.courses.map(c => {
-    const img = c.image
-      ? `<div class="dest-course-image-wrap"><div class="dest-course-image" style="background-image:url('${esc(c.image)}')"></div></div>`
-      : '';
+  const items = dest.courses.map((c, i) => {
+    const imgs = (c.images && c.images.length) ? c.images : (c.image ? [c.image] : []);
+    let imgWrap = '';
+    if (imgs.length) {
+      const id = `destCourse${i}`;
+      const arrows = imgs.length > 1
+        ? `<button class="dest-course-img-arrow dest-course-img-arrow--prev" onclick="shiftDestCourseImg('${id}',-1)">&#8592;</button><button class="dest-course-img-arrow dest-course-img-arrow--next" onclick="shiftDestCourseImg('${id}',1)">&#8594;</button>`
+        : '';
+      imgWrap = `<div class="dest-course-image-wrap"><div id="${id}" class="dest-course-image" style="background-image:url('${esc(imgs[0])}')" data-imgs='${JSON.stringify(imgs)}' data-idx="0"></div>${arrows}</div>`;
+    }
     return `
     <div class="dest-course-card">
-      ${img}
+      ${imgWrap}
       <div class="dest-course-body">
         <div class="dest-course-name">${esc(c.name)}</div>
         <div class="dest-course-designer">${esc(c.designer)}</div>
@@ -831,6 +848,18 @@ function injectJsonLd(dest) {
   s.type = 'application/ld+json';
   s.textContent = JSON.stringify(ld);
   document.head.appendChild(s);
+}
+
+/* ─────────────────────────────────────────────
+   COURSE IMAGE CAROUSEL
+───────────────────────────────────────────── */
+function shiftDestCourseImg(id, dir) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const imgs = JSON.parse(el.dataset.imgs);
+  let idx = (parseInt(el.dataset.idx) + dir + imgs.length) % imgs.length;
+  el.dataset.idx = idx;
+  el.style.backgroundImage = `url('${imgs[idx]}')`;
 }
 
 /* ─────────────────────────────────────────────
