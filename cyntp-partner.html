@@ -16,7 +16,7 @@
   --sun: #d4a055; --sun2: #b8843a; --white: #ffffff; --muted: #6b6560; --coral: #e85d3a;
   --font-head: 'Anton', sans-serif; --font-serif: 'Instrument Serif', serif; --font-body: 'Outfit', sans-serif;
 }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body { background: var(--paper); color: var(--ink); font-family: var(--font-body); overflow-x: hidden; }
 ::selection { background: var(--sun); color: var(--ink); }
 ::-webkit-scrollbar { width: 3px; }
@@ -311,6 +311,36 @@ nav .active { color: var(--sun) !important; }
   .contact-form { padding: 28px 20px; }
   .partner-footer { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
 }
+
+/* ── SITE FOOTER ── */
+.site-footer { background: #111; }
+.footer-main {
+  padding: 72px 80px 60px;
+  display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 20px 80px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer-brand-name { font-family: var(--font-head); font-size: 28px; letter-spacing: 4px; color: #fff; margin-bottom: 20px; }
+.footer-brand-desc { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.8; max-width: 260px; }
+.footer-col-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--sun); font-weight: 700; margin-bottom: 20px; }
+.footer-links { display: flex; flex-direction: column; gap: 12px; }
+.footer-links a { font-size: 14px; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: #fff; }
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); }
+@media (max-width: 960px) {
+  .footer-main { padding: 60px 40px 48px; }
+  .footer-bottom { padding: 20px 40px; }
+}
+@media (max-width: 640px) {
+  .footer-main { grid-template-columns: 1fr 1fr; gap: 40px; padding: 40px 24px 32px; }
+  .footer-bottom { padding: 18px 24px; flex-direction: column; gap: 8px; text-align: center; }
+}
+@media (max-width: 480px) {
+  .footer-main { grid-template-columns: 1fr; }
+}
 </style>
 <meta property="og:title" content="Partner With CYNTP | Golf Brand & Course Partnerships">
 <meta property="og:description" content="Reach 300K+ engaged golfers actively planning their next trip.">
@@ -502,44 +532,44 @@ nav .active { color: var(--sun) !important; }
 </section>
 
 <!-- FOOTER -->
-<footer style="background:#111;">
-  <div style="padding:72px 80px 60px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;">
+<footer class="site-footer">
+  <div class="footer-main">
     <div>
-      <div style="font-family:var(--font-head);font-size:28px;letter-spacing:4px;color:#fff;margin-bottom:20px;">CYNTP</div>
-      <p style="font-size:13px;color:rgba(255,255,255,0.35);line-height:1.8;max-width:260px;">Honest golf course reviews and trip guides for everyday golfers. We play it, we rate it, we tell you the truth.</p>
+      <div class="footer-brand-name">CYNTP</div>
+      <p class="footer-brand-desc">Honest golf course reviews and trip guides for everyday golfers. We play it, we rate it, we tell you the truth.</p>
     </div>
     <div>
-      <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--sun);font-weight:700;margin-bottom:20px;">Explore</div>
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <a href="cyntp-trips.html" style="font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;">Golf Trips</a>
-        <a href="cyntp-courses.html" style="font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;">Courses</a>
-        <a href="cyntp-turn.html" style="font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;">Insider Guide</a>
-        <a href="cyntp-about.html" style="font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;">About Us</a>
+      <div class="footer-col-label">Explore</div>
+      <div class="footer-links">
+        <a href="cyntp-trips.html">Golf Trips</a>
+        <a href="cyntp-courses.html">Courses</a>
+        <a href="cyntp-turn.html">Insider Guide</a>
+        <a href="cyntp-about.html">About Us</a>
       </div>
     </div>
     <div>
-      <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--sun);font-weight:700;margin-bottom:20px;">Destinations</div>
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <a href="cyntp-trips.html" style="font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;">Scottsdale</a>
-        <a href="cyntp-trips.html" style="font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;">Hilton Head</a>
-        <a href="cyntp-trips.html" style="font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;">Myrtle Beach</a>
-        <a href="cyntp-trips.html" style="font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;">Las Vegas</a>
-        <a href="cyntp-trips.html" style="font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;">Palm Springs</a>
+      <div class="footer-col-label">Destinations</div>
+      <div class="footer-links">
+        <a href="cyntp-trips.html">Scottsdale</a>
+        <a href="cyntp-trips.html">Hilton Head</a>
+        <a href="cyntp-trips.html">Myrtle Beach</a>
+        <a href="cyntp-trips.html">Las Vegas</a>
+        <a href="cyntp-trips.html">Palm Springs</a>
       </div>
     </div>
     <div>
-      <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--sun);font-weight:700;margin-bottom:20px;">Connect</div>
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <a href="https://www.instagram.com/coursesyouneedtoplay" rel="noopener noreferrer" target="_blank" style="font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;">Instagram</a>
-        <a href="https://www.tiktok.com/@coursesyouneedtoplay" rel="noopener noreferrer" target="_blank" style="font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;">TikTok</a>
-        <a href="https://www.youtube.com/@coursesyouneedtoplay" rel="noopener noreferrer" target="_blank" style="font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;">YouTube</a>
-        <a href="mailto:coursesyouneedtoplay@gmail.com" style="font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;">Email Us</a>
+      <div class="footer-col-label">Connect</div>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/coursesyouneedtoplay" rel="noopener noreferrer" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@coursesyouneedtoplay" rel="noopener noreferrer" target="_blank">TikTok</a>
+        <a href="https://www.youtube.com/@coursesyouneedtoplay" rel="noopener noreferrer" target="_blank">YouTube</a>
+        <a href="mailto:coursesyouneedtoplay@gmail.com">Email Us</a>
       </div>
     </div>
   </div>
-  <div style="border-top:1px solid rgba(255,255,255,0.06);padding:20px 80px;display:flex;align-items:center;justify-content:space-between;">
-    <span style="font-size:12px;color:rgba(255,255,255,0.2);">&copy; 2026 Sharp Golf LLC. All Rights Reserved.</span>
-    <span style="font-size:12px;color:rgba(255,255,255,0.2);">Built for golfers who play hard and <strong style="color:rgba(255,255,255,0.55);">plan smarter.</strong></span>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2026 Sharp Golf LLC. All Rights Reserved.</span>
+    <span class="footer-copy">Built for golfers who play hard and <strong style="color:rgba(255,255,255,0.55);">plan smarter.</strong></span>
   </div>
 </footer>
 
