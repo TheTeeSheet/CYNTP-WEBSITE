@@ -545,7 +545,35 @@
         "detail": "The waterslide and rope swings into Evermore Bay are the part everyone remembers. You're paying for the resort amenities whether you use them or not."
       }
     ],
-    "gallery": []
+    "gallery": [
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779242651/Screenshot_2026-05-19_at_9.04.07_PM_ffyu2p.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779242792/Screenshot_2026-05-19_at_9.06.29_PM_onorg8.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779242905/Screenshot_2026-05-19_at_9.08.21_PM_pwuibm.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779243156/Screenshot_2026-05-19_at_9.12.32_PM_nvnpwf.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779244084/Screenshot_2026-05-19_at_9.27.57_PM_ymnbbl.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779244138/Screenshot_2026-05-19_at_9.28.52_PM_l1txa3.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779244255/Screenshot_2026-05-19_at_9.30.50_PM_bl8qdv.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779246155/Screenshot_2026-05-19_at_10.02.31_PM_hkn5gl.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779247423/Screenshot_2026-05-19_at_10.23.39_PM_iy1hpu.png"
+      }
+    ]
   },
   {
     "slug": "gulf-shores",
