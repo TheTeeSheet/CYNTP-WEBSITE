@@ -220,13 +220,13 @@
       }
     ],
     "gallery": [
-      "https://res.cloudinary.com/dak67vton/image/upload/v1779285490/Screenshot_2026-05-20_at_8.58.04_AM_kve2lt.png",
-      "https://res.cloudinary.com/dak67vton/image/upload/v1779285531/Screenshot_2026-05-20_at_8.58.46_AM_jplhbm.png",
-      "https://res.cloudinary.com/dak67vton/image/upload/v1779285329/Screenshot_2026-05-20_at_8.55.23_AM_cbeane.png",
-      "https://res.cloudinary.com/dak67vton/image/upload/v1779285083/Screenshot_2026-05-20_at_8.51.18_AM_wr4ws4.png",
-      "https://res.cloudinary.com/dak67vton/image/upload/v1779284925/Screenshot_2026-05-20_at_8.48.39_AM_grn6oj.png",
-      "https://res.cloudinary.com/dak67vton/image/upload/v1779284699/Screenshot_2026-05-20_at_8.44.52_AM_t9plvb.png",
-      "https://res.cloudinary.com/dak67vton/image/upload/v1779285400/Screenshot_2026-05-20_at_8.56.34_AM_pgfrny.png"
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779285490/Screenshot_2026-05-20_at_8.58.04_AM_kve2lt.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779285531/Screenshot_2026-05-20_at_8.58.46_AM_jplhbm.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779285329/Screenshot_2026-05-20_at_8.55.23_AM_cbeane.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779285083/Screenshot_2026-05-20_at_8.51.18_AM_wr4ws4.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779284925/Screenshot_2026-05-20_at_8.48.39_AM_grn6oj.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779284699/Screenshot_2026-05-20_at_8.44.52_AM_t9plvb.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779285400/Screenshot_2026-05-20_at_8.56.34_AM_pgfrny.png" }
     ]
   },
   {
