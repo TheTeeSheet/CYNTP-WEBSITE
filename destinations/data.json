@@ -338,9 +338,75 @@
       "RESORT",
       "MIDWEST"
     ],
-    "tagline": "The flower hole. Need we say more.",
+    "tagline": "The best-conditioned course we've ever played, sitting quietly in central Wisconsin.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777731765/Screenshot_2026-05-02_at_9.22.35_AM_s8be9k.png",
     "meta_description": "SentryWorld golf trip guide — Robert Trent Jones Jr.'s masterpiece in Stevens Point, Wisconsin.",
+    "the_take": [
+      "SentryWorld is Sentry Insurance's golf resort in Stevens Point. Robert Trent Jones Jr. designed it in the 80s, they redid the course in 2014, and the Inn at SentryWorld opened in 2022. You'll wonder how an insurance company ended up running one of the best resort experiences in the country. Spend a weekend there and you stop asking.",
+      "The green fee covers unlimited food and drinks. Not just water and bananas. Full meals, hot food, snacks, beer, cocktails. Two refreshment stations stocked like a hotel mini-bar that you pass multiple times during the round. $375 sounds steep until you realize lunch and a few drinks are baked in.",
+      "Tucked away, premium, never stuffy. The Inn feels like a really nice friend's renovated cabin. The course is the most pristine thing we've ever seen. When we put the drone up before our first round, we counted crews on basically every hole prepping for the first tee time. You leave feeling like you got the full Pebble or Pinehurst treatment for half the trip cost."
+    ],
+    "courses": [
+      {
+        "name": "SentryWorld",
+        "designer": "Robert Trent Jones Jr., 1982 (renovated 2014)",
+        "description": "The 16th is the famous Flowers Hole — 50,000+ flowers surrounding a par 3 — and it lives up to the hype. But the conditioning is what sets this place apart. Bunkers raked tight, fairways like carpet, greens true and quick. Worth playing twice on any trip: first round to figure out where you're going, second round to actually play it.",
+        "image": null
+      }
+    ],
+    "where_to_stay": "We stayed at the Inn at SentryWorld both years — no question, this is the right call. It's a five-minute walk to the first tee and the rooms feel like a beautifully renovated cabin. Staying off property means driving in from Stevens Point or Wausau and missing the whole point. If you stay on property there is no need to leave the entire time. They have amazing food at PJ's (the restaurant on site) and the breakfast spot right off the lobby of the Inn. King rooms are big, bathrooms are nice, fire pit out back.",
+    "booking_link": null,
+    "booking_text": null,
+    "setup": [
+      {
+        "label": "2 DAYS",
+        "itinerary": "Two rounds at SentryWorld, one night at the Inn. Arrive Friday afternoon, play that day, sleep, play again Saturday morning, drive out Sunday. Tight but it works."
+      },
+      {
+        "label": "3 DAYS",
+        "itinerary": "Three rounds at SentryWorld over two nights. First round to learn it, second to score, third just because you'll want to. By round three you'll know exactly which refreshment station has your favorite snacks."
+      },
+      {
+        "label": "4+ DAYS",
+        "itinerary": "Make it a Wisconsin trip. Two days at SentryWorld, then drive an hour west to Sand Valley for two more. The resorts don't have a partnership but they pair well. SentryWorld for the pristine resort feel, Sand Valley for rugged sand-country golf."
+      }
+    ],
+    "know_before": [
+      {
+        "label": "BEST TIME",
+        "value": "July"
+      },
+      {
+        "label": "FLY INTO",
+        "value": "Central Wisconsin (CWA) in Mosinee is closest, about 25 minutes away. If you can't get there direct, Milwaukee (MKE) is around 2.5 hours and Madison (MSN) is about 2 hours."
+      },
+      {
+        "label": "BUDGET",
+        "value": "$375 a round, includes unlimited food and drinks on course. A 2-night/2-round stay-and-play at the Inn runs about $1,000 per person. Not cheap, but you're not paying for food on top."
+      },
+      {
+        "label": "FOOD",
+        "value": "Do not skip eating at least two meals at PJ's — the food is excellent. The cheese curds are a must. The breakfast spot right off the Inn lobby is the right move before a morning round."
+      },
+      {
+        "label": "WEATHER",
+        "value": "Wisconsin in July sits mid-70s to mid-80s, mostly sunny. Light layer for early tee times. Rain can roll through but doesn't usually camp out."
+      }
+    ],
+    "what_to_skip": [
+      {
+        "lead": "Playing through the refreshment stations.",
+        "detail": "We've seen guys skip them and miss the point. The food alone is worth $50 of your green fee. They're stocked enough to be your lunch — don't book a big clubhouse meal afterward expecting to be hungry."
+      },
+      {
+        "lead": "Trying to score your first round.",
+        "detail": "You won't. The course is too tricky off the tee to figure out cold and you'll be too busy admiring how pure this place is. Just enjoy the first round and the atmosphere. Second round is for actually playing."
+      },
+      {
+        "lead": "Driving in for a single round.",
+        "detail": "Don't do it. Plan for two rounds minimum. SentryWorld stands on its own — two rounds and the Inn is a full weekend, no add-ons needed."
+      }
+    ],
     "gallery": []
   },
   {
@@ -758,6 +824,21 @@
     "tagline": "History, charm, and elite golf.",
     "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777700821/Screenshot_2026-05-02_at_12.46.55_AM_fgulzi.png",
     "meta_description": "Williamsburg Virginia golf trip guide — four legendary courses and the best price-to-quality ratio of any trip we've been on.",
+    "gallery": []
+  },
+  {
+    "slug": "aviara",
+    "trip_id": "aviara",
+    "name": "Aviara Golf Club",
+    "state": "California",
+    "location_tags": [
+      "CALIFORNIA",
+      "RESORT",
+      "SAN DIEGO"
+    ],
+    "tagline": "Arnold Palmer's resort masterpiece on the Southern California coast.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1779564916/Screenshot_2026-05-23_at_2.35.11_PM_eqpbez.png",
+    "meta_description": "Aviara Golf Club trip guide — Arnold Palmer's resort course in Carlsbad, California.",
     "gallery": []
   }
 ]

@@ -119,8 +119,8 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 .ftab.on { color: #d4a055; border-bottom-color: #d4a055; }
 .ftab:hover { color: rgba(255,255,255,0.8); }
 .filter-right { display: flex; align-items: center; gap: 12px; padding: 0 24px 0 16px; border-left: 1px solid rgba(255,255,255,0.08); background: #0d0d0d; flex-shrink: 0; height: 100%; }
-
 .course-count { font-size: 12px; color: rgba(255,255,255,0.35); padding-left: 12px; border-left: 1px solid rgba(255,255,255,0.08); }
+.filter-bar--inline { position: static; border-top-color: rgba(255,255,255,0.08); margin-bottom: 40px; }
 
 /* ── COURSE GRID ── */
 .course-grid-wrap { padding: 0; }
@@ -218,7 +218,7 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 }
 .panel-hero-bg { width: 100%; height: 100%; }
 .panel-hero-img { width: 100%; height: 100%; background-size: cover; background-position: center; }
-.panel-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(6,10,8,0.65) 0%, rgba(6,10,8,0.05) 55%, transparent 100%); }
+.panel-hero-overlay { display: none; }
 .panel-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.4); color: #fff; border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 18px; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
 .panel-arrow:hover { background: rgba(0,0,0,0.65); }
 .panel-arrow-prev { left: 14px; }
@@ -243,9 +243,9 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
   transition: background 0.2s;
 }
 .panel-close:hover { background: rgba(255,255,255,0.3); }
-.panel-hero-body { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px; }
-.panel-dest { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 6px; }
-.panel-name { font-family: var(--font-head); font-size: 36px; letter-spacing: 1px; color: #fff; line-height: 1; }
+.panel-hero-body { padding: 20px 28px 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.panel-dest { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(0,0,0,0.45); margin-bottom: 6px; }
+.panel-name { font-family: var(--font-head); font-size: 32px; letter-spacing: 1px; color: #0d0d0d; line-height: 1.1; }
 .panel-body { padding: 28px; flex: 1; overflow-y: auto; }
 
 .panel-score {
@@ -372,7 +372,7 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
   .overlay-panel { width: 100%; height: auto; max-height: 92vh; border-radius: 20px 20px 0 0; animation: panelSlideUp 0.35s cubic-bezier(0.16,1,0.3,1); }
   @keyframes panelSlideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
   .panel-hero { height: 220px; }
-  .panel-name { font-size: 26px; letter-spacing: 1px; }
+  .panel-name { font-size: 24px; letter-spacing: 1px; color: #0d0d0d; }
   .panel-price-big { font-size: 26px; }
   .panel-tagline { font-size: 16px; }
   .ph-stat-n { font-size: 26px; }
@@ -759,9 +759,6 @@ footer { background: #111; }
     <button class="ftab" data-dest="wisconsin">Wisconsin</button>
   </div>
   </div>
-  <div class="filter-right">
-<span class="course-count" id="courseCount">12 courses</span>
-  </div>
 </div>
 
 <!-- ── MAP VIEW ── -->
@@ -787,7 +784,34 @@ footer { background: #111; }
 <!-- ── ALL COURSES ── -->
 <section class="all-courses-section">
   <div class="ac-eyebrow">All Courses</div>
-  <div class="ac-divider"></div>
+  <div class="filter-bar filter-bar--inline">
+    <div class="filter-tabs-wrap">
+    <div class="filter-tabs">
+      <button class="ftab on" data-dest="all">ALL</button>
+      <button class="ftab" data-dest="alabama">Alabama</button>
+      <button class="ftab" data-dest="arizona">Arizona</button>
+      <button class="ftab" data-dest="california">California</button>
+      <button class="ftab" data-dest="dominican-republic">Dominican Republic</button>
+      <button class="ftab" data-dest="florida">Florida</button>
+      <button class="ftab" data-dest="georgia">Georgia</button>
+      <button class="ftab" data-dest="idaho">Idaho</button>
+      <button class="ftab" data-dest="illinois">Illinois</button>
+      <button class="ftab" data-dest="ireland">Ireland</button>
+      <button class="ftab" data-dest="kentucky">Kentucky</button>
+      <button class="ftab" data-dest="michigan">Michigan</button>
+      <button class="ftab" data-dest="mississippi">Mississippi</button>
+      <button class="ftab" data-dest="missouri">Missouri</button>
+      <button class="ftab" data-dest="nevada">Nevada</button>
+      <button class="ftab" data-dest="south-carolina">South Carolina</button>
+      <button class="ftab" data-dest="tennessee">Tennessee</button>
+      <button class="ftab" data-dest="texas">Texas</button>
+      <button class="ftab" data-dest="utah">Utah</button>
+      <button class="ftab" data-dest="virginia">Virginia</button>
+      <button class="ftab" data-dest="washington">Washington</button>
+      <button class="ftab" data-dest="wisconsin">Wisconsin</button>
+    </div>
+    </div>
+  </div>
   <div class="course-grid-wrap" id="courseGridWrap"></div>
 </section>
 
@@ -1034,6 +1058,7 @@ const COURSES = [
   },
   {
     id:27,dest:"california",destLabel:"California",thumbClass:"ct4",
+    tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1779565182/Screenshot_2026-05-23_at_2.35.11_PM_eqpbez.png",
     name:"Aviara Golf Club",price:"$175&ndash;$300",greenFee:"$$$$",
     cyntp:"Arnold Palmer’s only San Diego design. Rolling hillsides, native wildflowers, and immaculate conditions at the Park Hyatt Aviara. Former LPGA Tour host and one of SoCal’s finest resort courses.",
     cyntp_rating:8.6,cyntp_tag:null,city:"Carlsbad, CA",comments:[]
@@ -1834,14 +1859,13 @@ function renderGrid() {
   });
 
   wrap.innerHTML = html || '<div style="padding:60px;text-align:center;color:var(--muted)">No courses found for this destination yet.</div>';
-  document.getElementById('courseCount').textContent = `${filtered.length} course${filtered.length !== 1 ? 's' : ''}`;
 }
 
 // ── FILTER & SORT ─────────────────────────────────────────────────────
 document.querySelectorAll('.ftab').forEach(btn => {
   btn.addEventListener('click', function() {
     document.querySelectorAll('.ftab').forEach(b => b.classList.remove('on'));
-    this.classList.add('on');
+    document.querySelectorAll(`.ftab[data-dest="${this.dataset.dest}"]`).forEach(b => b.classList.add('on'));
     activeDest = this.dataset.dest;
     filterMap(activeDest);
     buildLeaderboard(activeDest);
@@ -1909,6 +1933,11 @@ const COURSE_IMAGES = {
     'https://res.cloudinary.com/dak67vton/image/upload/v1779246155/Screenshot_2026-05-19_at_10.02.31_PM_hkn5gl.png',
     'https://res.cloudinary.com/dak67vton/image/upload/v1779244255/Screenshot_2026-05-19_at_9.30.50_PM_bl8qdv.png',
   ],
+  27:  [
+    'https://res.cloudinary.com/dak67vton/image/upload/v1779565182/Screenshot_2026-05-23_at_2.35.11_PM_eqpbez.png',
+    'https://res.cloudinary.com/dak67vton/image/upload/v1779566517/Screenshot_2026-05-23_at_3.00.21_PM_cotdlv.png',
+    'https://res.cloudinary.com/dak67vton/image/upload/v1779566328/Screenshot_2026-05-23_at_2.58.44_PM_kvwyf5.png',
+  ],
 };
 
 function openCourse(id) {
@@ -1933,10 +1962,10 @@ function openCourse(id) {
       ${heroInner}
       <div class="panel-hero-overlay"></div>
       <button class="panel-close" onclick="closeOverlay()">&times;</button>
-      <div class="panel-hero-body">
-        <div class="panel-dest">${course.destLabel}</div>
-        <div class="panel-name">${course.name}</div>
-      </div>
+    </div>
+    <div class="panel-hero-body">
+      <div class="panel-dest">${course.destLabel}</div>
+      <div class="panel-name">${course.name}</div>
     </div>
     <div class="panel-body">
       <div class="panel-stats-row">
@@ -2325,8 +2354,7 @@ function resetMapView() {
   if (!mapInstance || !initialBounds) return;
   // Clear active filter back to ALL
   document.querySelectorAll('.ftab').forEach(b => b.classList.remove('on'));
-  const allTab = document.querySelector('.ftab[data-dest="all"]');
-  if (allTab) allTab.classList.add('on');
+  document.querySelectorAll('.ftab[data-dest="all"]').forEach(b => b.classList.add('on'));
   activeDest = 'all';
   buildLeaderboard('all');
   renderGrid();
