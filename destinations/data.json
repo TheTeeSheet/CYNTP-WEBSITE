@@ -462,28 +462,39 @@
         "name": "Teeth of the Dog",
         "designer": "Pete Dye, 1971 (restored 2025)",
         "description": "The reason you book this trip. Seven holes hug the ocean and the rest of the course earns its spot in the conversation. Pete Dye famously said he built 11 holes and God built the other seven, and he wasn't wrong. Just came out of a full restoration — re-grassed with Dynasty Paspalum, new sand on the fairways — so it's playing as good as it's looked in years. Tee one up at the island green on the back nine. Forecaddies mandatory. Must-play, and the best course on the trip.",
-        "image": null
+        "image": "https://res.cloudinary.com/dak67vton/image/upload/v1779670542/DJI_20260112155715_0125_D_sn5dc5.jpg"
       },
       {
         "name": "Corales",
         "designer": "Tom Fazio, 2010",
         "description": "PGA Tour stop and one of the best ocean stretches we've ever played. The Devil's Elbow (holes 16, 17, and 18) is the kind of finish that makes you forget what you shot. Mandatory caddies — sounds like a tax until you're standing over a 6-iron with the Caribbean breeze pushing your ball toward a cliff. Trust them. Must-play.",
-        "image": null
+        "image": "https://res.cloudinary.com/dak67vton/image/upload/v1779670905/Screenshot_2026-05-24_at_8.01.40_PM_lzuvd5.png"
       },
       {
         "name": "Dye Fore",
         "designer": "Pete Dye, 2003",
         "description": "The sleeper. Don't skip it. The Chavon 9 plays 300 feet above the river with mountain views on one side and Caribbean glimpses off in the distance. It's basically Big Cedar in the DR. Forecaddies mandatory here too. Must-play.",
-        "image": null
+        "image": "https://res.cloudinary.com/dak67vton/image/upload/v1779671961/Screenshot_2026-05-24_at_8.19.16_PM_mrckd4.png"
       },
       {
         "name": "La Cana",
         "designer": "P.B. Dye (27 holes)",
         "description": "Three nines — we played Tortuga and Arrecife. Both have ocean holes that hold their own against anything else on the trip. Conditioning wasn't quite at the level of Corales or Teeth, but we got the timing right on the finishing hole and watched the sun set over the Caribbean. Worth playing if you're at Puntacana.",
-        "image": null
+        "image": "https://res.cloudinary.com/dak67vton/image/upload/v1779672452/Screenshot_2026-05-24_at_8.27.22_PM_zmlnra.png"
       }
     ],
     "where_to_stay": "Splitting between two resorts is basically required. You have to be checked in as a guest to play Teeth of the Dog and Dye Fore — hard rule at Casa de Campo. Same setup at Puntacana for Corales and La Cana. We did two nights at the Westin Puntacana for the Corales and La Cana days, then one night at Casa de Campo for Teeth of the Dog and Dye Fore. The Westin is the smaller, more intimate property with beach access right off the lobby — Traditional Rooms are fine, upgrade to ocean-view if the budget allows. Casa de Campo is a 7,000-acre compound; you'll need a golf cart to get anywhere. Superior Casita Rooms were comfortable. Going bigger? The villas include breakfast and a touring cart.",
+    "gallery": [
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779670542/DJI_20260112155715_0125_D_sn5dc5.jpg" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779670905/Screenshot_2026-05-24_at_8.01.40_PM_lzuvd5.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779671961/Screenshot_2026-05-24_at_8.19.16_PM_mrckd4.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779672452/Screenshot_2026-05-24_at_8.27.22_PM_zmlnra.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779670490/DJI_20260112155547_0121_D_iibgri.jpg" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779671317/Screenshot_2026-05-24_at_8.08.27_PM_nwumnd.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779671866/Screenshot_2026-05-24_at_8.17.41_PM_cbxvsy.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779672518/Screenshot_2026-05-24_at_8.28.31_PM_gn7pwn.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779671734/Screenshot_2026-05-24_at_8.15.29_PM_vvu60j.png" }
+    ],
     "booking_link": "https://www.casadecampo.com.do/",
     "booking_text": "Book a stay at Casa de Campo →",
     "setup": [
@@ -531,8 +542,7 @@
         "lead": "Day-trips off the resorts.",
         "detail": "You can, but you don't need to. Beach, food, and golf are all on property at both places. Save the excursions for a different kind of trip."
       }
-    ],
-    "gallery": []
+    ]
   },
   {
     "slug": "evermore",
