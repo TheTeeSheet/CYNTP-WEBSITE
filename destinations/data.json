@@ -688,13 +688,93 @@
     "state": "Alabama",
     "location_tags": [
       "ALABAMA",
-      "BEACH",
-      "GULF COAST"
+      "GULF COAST",
+      "BEACH"
     ],
-    "tagline": "Alabama's best kept golf secret.",
-    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777738442/Screenshot_2026-05-02_at_11.13.51_AM_ihmb3i.png",
-    "meta_description": "Gulf Shores Alabama golf trip guide — 3 nights and 4 rounds all-in at $959 per person on the Gulf Coast.",
-    "gallery": []
+    "tagline": "Four really different courses inside a 45-minute radius, a beachfront condo for the group, and a price tag that makes most bucket-list trips look ridiculous. Gulf Shores wasn't on our radar. It should be.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/f_auto,q_auto/Screenshot_2026-05-24_at_3.10.38_PM_yrotjo.png",
+    "meta_description": "Gulf Shores golf trip guide — four courses on the Alabama Gulf Coast including Kiva Dunes, Peninsula, Lakewood, and Craft Farms.",
+    "the_take": [
+      "Gulf Shores is one of the easiest buddies trip recommendations we can make. Two-hour direct flight from a lot of the country. A beachfront condo for the group. Four really different courses inside a 45-minute radius. You don't lose half your trip to driving, and you don't have to dress up to play any of them.",
+      "We went in with zero expectations and walked off the last 18 already planning the next trip. The golf is great. The geography means you actually get to play golf instead of sitting in a car between courses. And the total cost lands in a completely different universe than the trips that get all the attention.",
+      "There's no Pebble or Bandon-level hype here, and the price tag reflects it. Gulf Shores is the trip you book when you want four real rounds, a beach view, and a total cost that comes in under most groups' single-weekend trips elsewhere."
+    ],
+    "courses": [
+      {
+        "name": "Kiva Dunes",
+        "designer": "Jerry Pate, 1995",
+        "description": "The course you have to play if you're only playing one. Links-style routing built into actual dunes, on a secluded stretch out near the tip of the Fort Morgan peninsula. It doesn't feel like Alabama. You're walking up over a dune to a tee box and seeing nothing but sand, fescue, and sky in every direction. Every hole is different. Links holes, dune holes, holes that drop into bowls of fescue. The whole thing feels found, not built. Must-play.",
+        "image": "https://res.cloudinary.com/dak67vton/image/upload/v1777738442/Screenshot_2026-05-02_at_11.13.51_AM_ihmb3i.png"
+      },
+      {
+        "name": "Peninsula Golf & Racquet Club",
+        "designer": "Earl Stone, 1995",
+        "description": "27-hole property on the Fort Morgan peninsula between Mobile Bay and the Gulf. Holes 7 and 8 on the Lakes are the reason you play here — a long dogleg-right par five with the water as a backdrop, followed by a scorable par three with the same view. Back to back. Cypress has a hidden moment too: a random wooden boardwalk that cuts through the marsh midway through the back nine. Take a late tee time. The whole property turns gold in the last ninety minutes of light. Must-play.",
+        "image": "https://res.cloudinary.com/dak67vton/image/upload/v1779653389/Screenshot_2026-05-24_at_3.09.46_PM_hvac9u.png"
+      },
+      {
+        "name": "Lakewood Club — Azalea Course",
+        "designer": "Perry Maxwell, 1947 (redesigned by Ron Garl, 1983)",
+        "description": "Robert Trent Jones Golf Trail course up in Point Clear, an hour northwest of Orange Beach. Big oaks, spring-fed lakes, fairways that bend through mature trees. Not a course where you stand up and bomb driver every hole — picking your spots matters. Lots of doglegs. Greens were lightning fast, like putting on glass. A great opener for the trip. Play it once.",
+        "image": "https://res.cloudinary.com/dak67vton/image/upload/v1779654450/Screenshot_2026-05-24_at_3.27.22_PM_qkepr6.png"
+      },
+      {
+        "name": "Craft Farms — Cypress Bend",
+        "designer": "Arnold Palmer, 1998",
+        "description": "One of only two Arnold Palmer designs in Alabama. Front nine is solid but forgettable — playable, well-maintained, friendly off the tee. Don't bail. The back is the course. Better holes, more interesting layouts, water in play. The 11th is a standout — water down the left, green tucked into a corner. Stay for the back nine. Play it once.",
+        "image": "https://res.cloudinary.com/dak67vton/image/upload/v1779655352/Screenshot_2026-05-24_at_3.42.24_PM_sddwkw.png"
+      }
+    ],
+    "where_to_stay": "We stayed at a 3-bedroom condo at Summer House on Romar Beach in Orange Beach, booked through Vacasa. Gulf-front, top floor, big balcony, kitchen, pool, hot tub. Slept four guys comfortably. The view itself was hit or miss — fog rolled in most mornings — but the location was right and the unit did the job. For bigger groups, Orange Beach has plenty of multi-bedroom rentals on the same stretch. For couples or smaller groups, smaller condos work fine with the same proximity to the courses.",
+    "setup": [
+      {
+        "label": "2 DAYS",
+        "itinerary": "What we did. Friday: Lakewood in the morning, Peninsula in the afternoon. Saturday: Kiva in the morning, Craft Farms in the afternoon. Four rounds, doable, but you're toast by Saturday night. Pack snacks and pace your beers."
+      },
+      {
+        "label": "3 DAYS",
+        "itinerary": "The move. Same four rounds, more breathing room. Spread them out, leave a morning or afternoon for the beach, eat a real dinner that isn't fueled by golf adrenaline. This is the right plan if you can swing it."
+      },
+      {
+        "label": "4+ DAYS",
+        "itinerary": "Add a fifth round — replay Kiva or pick up the second 18 at Lakewood (the Dogwood). Add a beach day. Worth the extra night for any group that wants to actually enjoy the trip instead of grinding through it."
+      }
+    ],
+    "know_before": [
+      {
+        "label": "BEST TIME",
+        "value": "March through May, or September into November. Summer is hot and humid on the Gulf. Winter is mild but foggy mornings are common."
+      },
+      {
+        "label": "FLY INTO",
+        "value": "Pensacola (PNS) is about an hour from Orange Beach. Cheaper flights and shorter drive than Mobile (MOB)."
+      },
+      {
+        "label": "BUDGET",
+        "value": "Green fees run $100–$175 per course across all four. Lodging varies — a 3-bedroom Gulf-front condo in Orange Beach lands in the same range per person per night for a group of four."
+      },
+      {
+        "label": "TEE TIMES",
+        "value": "Book through Tee Times USA for a one-call package — tee times locked, condo booked, vouchers in hand. Otherwise book each course direct; most have a 30 to 60 day booking window."
+      }
+    ],
+    "what_to_skip": [
+      {
+        "lead": "Trying to make it a two-day trip if you don't have to.",
+        "detail": "Four rounds in two days is doable. It's also a grind. Most groups will be happier with three days and the same four rounds — you get the same golf, more sleep, and a real chance to enjoy the beach you paid for. The two-day plan only works if your group is short on time or your flights make it the cleanest option."
+      }
+    ],
+    "gallery": [
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779654862/Screenshot_2026-05-24_at_3.34.16_PM_xafakn.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779672930/Screenshot_2026-05-24_at_8.35.20_PM_fuaosj.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779654757/Screenshot_2026-05-24_at_3.32.30_PM_ltirvg.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779653389/Screenshot_2026-05-24_at_3.09.46_PM_hvac9u.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779670119/Screenshot_2026-05-24_at_3.19.30_PM_hj98zt.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779654450/Screenshot_2026-05-24_at_3.27.22_PM_qkepr6.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779654350/Screenshot_2026-05-24_at_3.25.40_PM_nita9e.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779655352/Screenshot_2026-05-24_at_3.42.24_PM_sddwkw.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779655196/Screenshot_2026-05-24_at_3.39.46_PM_pze5ol.png" }
+    ]
   },
   {
     "slug": "grand-traverse-resort",
