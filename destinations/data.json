@@ -252,25 +252,25 @@
         "name": "PGA West — Pete Dye Stadium",
         "designer": "Pete Dye, 1986",
         "description": "The famous one. Host of the AMEX on the PGA Tour. We expected to get beat up after watching pros struggle here on TV, but it played surprisingly fair for mid-handicappers. Forced carries and big bunkers all over the property, but the lines are honest. The 17th — the Alcatraz island green — is the one you came for. Must-play.",
-        "image": null
+        "image": "https://res.cloudinary.com/dak67vton/image/upload/v1779678222/Screenshot_2026-05-24_at_10.03.34_PM_r2pnsf.png"
       },
       {
         "name": "Desert Willow — Mountain View",
         "designer": "Hurdzan-Fry-Schmidt",
         "description": "One of the two courses at Desert Willow and the one most people queue up for first. Conditioning was excellent and the layout makes you think on almost every shot. Less famous than PGA West but holds its own. Worth playing.",
-        "image": null
+        "image": "https://res.cloudinary.com/dak67vton/image/upload/v1779679171/Screenshot_2026-05-24_at_10.18.37_PM_ghjczm.png"
       },
       {
         "name": "Escena Golf Club",
         "designer": "Nicklaus Design, 2005",
         "description": "Sits right next to the Palm Springs airport. Normally we'd write off a course this close to a runway, but somehow it wasn't distracting. The big jetliners coming in low against the mountain backdrop was actually a cool visual. Clean modern feel, views across the valley, layout that rewards smart play. Solid public option.",
-        "image": null
+        "image": "https://res.cloudinary.com/dak67vton/image/upload/v1779680066/Screenshot_2026-05-24_at_10.33.06_PM_x9nq0c.png"
       },
       {
         "name": "Westin Rancho Mirage",
         "designer": "Pete Dye",
         "description": "Right on property at the Westin, which made it the most convenient round of the trip. Classic Pete Dye routing that tries to mess with your head and tricky greens that follow through on the threat. Easy to add to your itinerary if you're staying at the Westin — which we recommend.",
-        "image": null
+        "image": "https://res.cloudinary.com/dak67vton/image/upload/v1779679382/Screenshot_2026-05-24_at_10.21.57_PM_ldoofv.png"
       }
     ],
     "where_to_stay": "We stayed at the Westin Rancho Mirage — right on property of the Dye Course, which made one of the four rounds a walk from the lobby. Solid lodging with nothing to complain about. The amenities are big: pool with waterslides, pickleball courts, tennis, spa. Good food on property plus plenty of options outside the resort if you want to leave for dinner. Standard rooms were more than enough. If you're pairing it with a couples trip, look at rooms with patio access.",
@@ -326,7 +326,17 @@
         "detail": "Watching the pros struggle there during the AMEX makes the course look gnarly, but it plays way more fair than that on a normal tee. Pick a tee that matches your game and you'll have a great round."
       }
     ],
-    "gallery": []
+    "gallery": [
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779678222/Screenshot_2026-05-24_at_10.08.00_PM_nt0caa.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779677887/DSC09086_qahabx.jpg" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779678049/Screenshot_2026-05-24_at_9.59.10_PM_b1tfl5.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779679171/Screenshot_2026-05-24_at_10.18.37_PM_ghjczm.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779679070/Screenshot_2026-05-24_at_10.16.52_PM_fk8c9k.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779680066/Screenshot_2026-05-24_at_10.33.06_PM_x9nq0c.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779679715/Screenshot_2026-05-24_at_10.26.53_PM_nj5nsh.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779679382/Screenshot_2026-05-24_at_10.21.57_PM_ldoofv.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779680245/Screenshot_2026-05-24_at_10.34.55_PM_pam4fl.png" }
+    ]
   },
   {
     "slug": "sentryworld",
