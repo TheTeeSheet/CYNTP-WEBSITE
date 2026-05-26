@@ -1,5 +1,110 @@
 [
   {
+    "slug": "southern-ireland",
+    "trip_id": "southern-ireland",
+    "name": "Southern Ireland",
+    "state": "Ireland",
+    "location_tags": [
+      "IRELAND",
+      "SOUTHWEST",
+      "LINKS"
+    ],
+    "tagline": "Five days, six courses on the Atlantic coast. The trip every American golfer should take at least once.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/f_auto,q_auto/Screenshot_2025-09-23_at_9.03.38_AM_4_fcxok8.jpg",
+    "meta_description": "Southern Ireland golf trip guide — six Atlantic coast links courses including Old Head, Waterville, Dooks, Tralee, Lahinch, and Trump International Doonbeg.",
+    "the_take": [
+      "Southern Ireland is the trip you take once and reset your understanding of golf. Every course we played sits on the Atlantic. Every halfway house has a story. Every caddie is a character. The weather is a character. After a week here, the phrase \"golf the way it was meant to be played\" stops sounding like a slogan and starts feeling like a fact.",
+      "The trip runs the southwest coast. Old Head down south on a peninsula in County Cork. North to Killarney for two nights and a base for Waterville, Dooks, and Tralee. Then the Shannon Estuary ferry up to Doonbeg in County Clare for Lahinch and Doonbeg itself. Six rounds across five days, four playing days back to back. It's a workload. It's also the right move.",
+      "There's no version of this trip that doesn't change how you feel about the game. Cliffs and wind and grass and ocean, and a guy in his sixties walking your bag and reading the wind off the heather. If you care about golf at all, you have to play in Ireland once. At thirty, forty, fifty, whatever. Find the year, find the budget, get a group together, and go."
+    ],
+    "courses": [
+      {
+        "name": "Old Head Golf Links",
+        "designer": "Eddie Hackett (with Ron Kirby), 1997",
+        "description": "Pebble Beach on steroids. Sits on a peninsula that juts into the Atlantic like the land just forgot to stop. After the opening hole, every shot has the ocean in view — from the tee, the fairway, the green, or all three. Cliffs you're told flat out not to walk past. A lighthouse you can see from most of the round. Before the round there's a tradition where you shake the head pro's hand through a hole in a stone. You feel like you're being inducted into something. If you have one course on your bucket list, this is probably it. Must-play."
+      },
+      {
+        "name": "Waterville Golf Links",
+        "designer": "Eddie Hackett, 1973 (renovated by Tom Fazio, 2006)",
+        "description": "The real-deal classic links of the trip. Hard fast turf, tall grass along the fairways, wind off the ocean shaping every shot. They wrap the flagsticks in rubber bands on windy days so the flags don't shred themselves. Best pro shop we saw all week. The rabbit-logo gear is the most unique merch on the trip. Must-play."
+      },
+      {
+        "name": "Dooks Golf Links",
+        "designer": "Original 1889, redesigned by Martin Hawtree, 2006",
+        "description": "The most relaxed vibe of the trip. Caddies riding on the side of golf carts, less buttoned-up than anywhere else. Starts inland enough that you don't realize you're playing along the Atlantic, then you turn a corner on the back nine and the ocean opens up behind you. Play it in the afternoon. One of our favorite photos of the trip came off the back at sunset. Play it once."
+      },
+      {
+        "name": "Tralee Golf Club",
+        "designer": "Arnold Palmer, 1984 (Palmer's first European design)",
+        "description": "Best par threes of the trip. One has castle ruins behind it. Another has sheep grazing on the hillside. Behind a few of them — and this is real — the actual cows that produce Kerrygold butter graze in the field. Worth a 7 a.m. tee time to watch the fog burn off the Atlantic. This is also the course where you'll find out if your rain gear was worth what you paid. Must-play."
+      },
+      {
+        "name": "Lahinch Golf Club",
+        "designer": "Old Tom Morris (1894), redesigned by Alister MacKenzie (1927)",
+        "description": "The only course on the trip that feels rooted in a community instead of stuck out on a peninsula by itself. The village of Lahinch sits right next to the course — houses, church, streets visible from several holes. Two blind shots remain from the original Old Tom Morris layout, including a fully blind par three over a giant grass mound topped with a white rock. The halfway house in the dunes looks like a Hobbit hole. Must-play."
+      },
+      {
+        "name": "Trump International Doonbeg",
+        "designer": "Greg Norman, 2002",
+        "description": "Cameron's favorite course of the trip. Castle clubhouse on the dunes. The opening hole has one of the coolest first tee shots you'll ever play — straight fairway, first green tucked back into a massive dune. The 18th is the best finishing hole on the trip. Castle on your left, Atlantic on your right, sunset overhead. Must-play."
+      }
+    ],
+    "where_to_stay": "Killarney Park Hotel for the first two nights — possibly the nicest hotel any of us has stayed in. Recently renovated, granite bathrooms, sit-down breakfast where they bring pastries the moment you sit. Walking distance from Killarney's main street with shops, pubs, and live music. The right base for Waterville, Dooks, and Tralee. Then Trump International Doonbeg for the final two nights. The property looks like a castle — massive, stone, sitting on the dunes. Dunes Bar inside for dinner. The right base for Lahinch and Doonbeg.",
+    "booking_link": "https://bit.ly/4eAH5c3",
+    "booking_text": "Inquire About This Trip →",
+    "setup": [
+      {
+        "label": "5 DAYS",
+        "itinerary": "What we did. Land Shannon Tuesday morning. Coach pickup. Old Head that afternoon. Killarney Park for two nights. Waterville morning and Dooks afternoon on Day 2. Tralee on Day 3, then ferry across the Shannon Estuary to Doonbeg. Lahinch morning, Doonbeg evening on Day 4. Fly home Day 5. Six courses, four playing days. Pack rain gear."
+      },
+      {
+        "label": "7 DAYS",
+        "itinerary": "The version with breathing room. Same itinerary with a rest day in Killarney between the Waterville-Dooks day and Tralee. Or use the extra day to add Ballybunion — the obvious add. Better sleep, better golf, a chance to actually enjoy Killarney instead of grinding through it."
+      },
+      {
+        "label": "10+ DAYS",
+        "itinerary": "Add Northern Ireland. Royal County Down and Royal Portrush are the two adds. Otherwise stay in the southwest and replay your favorite from the first week. Doonbeg and Lahinch both reward a second look."
+      }
+    ],
+    "know_before": [
+      {
+        "label": "BEST TIME",
+        "value": "May through September. June through August is warmest but most crowded. May and September are the shoulder-season sweet spot — fewer crowds, still long daylight, weather is what it's going to be no matter when you go."
+      },
+      {
+        "label": "FLY INTO",
+        "value": "Shannon (SNN) is the southwest's main entry and puts you closest to every course on this trip. Dublin (DUB) works as a backup but adds three hours of driving each way."
+      },
+      {
+        "label": "BUDGET",
+        "value": "There's no clean number on this trip. Green fees alone land in the $350–$650 range at the premium tracks, caddie tip not included. A full package bundling tee times, lodging, coach, and dinner reservations can land anywhere in the $5,000–$10,000 per person ballpark. The variables that move it: how long you stay, where you stay, how many courses you play, whether you take the coach, group size, and the season. Get a quote before you set the budget."
+      },
+      {
+        "label": "TEE TIMES",
+        "value": "Premium courses (Old Head, Doonbeg) book six to twelve months out. The cleanest way to plan this is through a trip-planning company that locks the tee times, hotels, dinner reservations, and coach in one package. Worth every cent for a trip this complex."
+      },
+      {
+        "label": "THE COACH",
+        "value": "Take it. A Wi-Fi-equipped coach with a local driver narrates the drive, knows every shortcut (like the Shannon Estuary ferry that saves an hour between Tralee and Doonbeg), and adds something to the trip you can't put a price on."
+      },
+      {
+        "label": "RAIN GEAR",
+        "value": "Pay for the real jacket. The $50 airport version won't hold up to a real Irish weather day. Layered rain pants are a must."
+      },
+      {
+        "label": "CADDIES",
+        "value": "Take one at every course. No exceptions. Blind shots, unread wind, distances that lie. You need someone who knows the land."
+      }
+    ],
+    "what_to_skip": [
+      {
+        "lead": "The cheap rain gear and the Trump chicken sandwich.",
+        "detail": "We tested both and regret each."
+      }
+    ],
+    "gallery": []
+  },
+  {
     "slug": "big-cedar-lodge",
     "trip_id": "big-cedar",
     "name": "Big Cedar Lodge",
