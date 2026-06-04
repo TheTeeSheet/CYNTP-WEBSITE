@@ -41,8 +41,8 @@
       <button class="cem-close" id="cemClose" aria-label="Close">&times;</button>
       <div id="cemContent">
         <p class="cem-eyebrow">CYNTP Community</p>
-        <h2 class="cem-headline" id="cemHeadline">Don't play another round you'll forget.</h2>
-        <p class="cem-sub">Join free and we'll send you our Top 6 Golf Trips guide right away. The six trips we've actually taken, the must-play courses, and where to book each one. New trip guides hit your inbox every Thursday.</p>
+        <h2 class="cem-headline" id="cemHeadline">Get our Top 6 Golf Trips.</h2>
+        <p class="cem-sub">Drop your email and we'll send it over right away. Six trips we've actually taken, the must-play courses, and where to book each one. Plus trips, course reviews, and gear straight to your inbox.</p>
         <form class="cem-form" id="cemForm" novalidate>
           <input class="cem-input" id="cemEmail" type="email" placeholder="Your email address" autocomplete="email" required>
           <p class="cem-error" id="cemError">Please enter a valid email address.</p>
