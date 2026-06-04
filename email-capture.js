@@ -34,19 +34,24 @@
 <div id="ceModal" role="dialog" aria-modal="true" aria-labelledby="cemHeadline">
   <div class="cem-backdrop" id="cemBackdrop"></div>
   <div class="cem-box">
-    <button class="cem-close" id="cemClose" aria-label="Close">&times;</button>
-    <div id="cemContent">
-      <p class="cem-eyebrow">CYNTP Community</p>
-      <h2 class="cem-headline" id="cemHeadline">Don't play another round you'll forget.</h2>
-      <p class="cem-sub">Curated golf trips, course reviews, and travel intel — straight to your inbox every Thursday. Free, no fluff.</p>
-      <form class="cem-form" id="cemForm" novalidate>
-        <input class="cem-input" id="cemEmail" type="email" placeholder="Your email address" autocomplete="email" required>
-        <p class="cem-error" id="cemError">Please enter a valid email address.</p>
-        <button class="cem-btn" id="cemSubmit" type="submit">Join the Community</button>
-        <p class="cem-legal">Unsubscribe anytime. We'll never share your email.</p>
-      </form>
+    <div class="cem-img-col">
+      <img src="https://res.cloudinary.com/dak67vton/image/upload/f_auto,q_auto,w_900/v1779161086/IMG_9979_fgjlqk.heic" alt="Golf trip" loading="lazy">
     </div>
-    <div id="cemSuccess" class="cem-success" style="display:none"></div>
+    <div class="cem-copy">
+      <button class="cem-close" id="cemClose" aria-label="Close">&times;</button>
+      <div id="cemContent">
+        <p class="cem-eyebrow">CYNTP Community</p>
+        <h2 class="cem-headline" id="cemHeadline">Don't play another round you'll forget.</h2>
+        <p class="cem-sub">Join free and we'll send you our Top 6 Golf Trips guide right away. The six trips we've actually taken, the must-play courses, and where to book each one. New trip guides hit your inbox every Thursday.</p>
+        <form class="cem-form" id="cemForm" novalidate>
+          <input class="cem-input" id="cemEmail" type="email" placeholder="Your email address" autocomplete="email" required>
+          <p class="cem-error" id="cemError">Please enter a valid email address.</p>
+          <button class="cem-btn" id="cemSubmit" type="submit">Get the Free Guide</button>
+          <p class="cem-legal">Unsubscribe anytime. We'll never share your email.</p>
+        </form>
+      </div>
+      <div id="cemSuccess" class="cem-success" style="display:none"></div>
+    </div>
   </div>
 </div>`;
 
@@ -154,7 +159,7 @@
       successEl.innerHTML = '';
       form.reset();
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Join the Community';
+      submitBtn.textContent = 'Get the Free Guide';
       errorMsg.style.display = 'none';
     }
   });
