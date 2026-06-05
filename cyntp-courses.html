@@ -750,6 +750,7 @@ footer { background: #111; }
     <button class="ftab" data-dest="mississippi">Mississippi</button>
     <button class="ftab" data-dest="missouri">Missouri</button>
     <button class="ftab" data-dest="nevada">Nevada</button>
+    <button class="ftab" data-dest="ohio">Ohio</button>
     <button class="ftab" data-dest="south-carolina">South Carolina</button>
     <button class="ftab" data-dest="tennessee">Tennessee</button>
     <button class="ftab" data-dest="texas">Texas</button>
@@ -802,6 +803,7 @@ footer { background: #111; }
       <button class="ftab" data-dest="mississippi">Mississippi</button>
       <button class="ftab" data-dest="missouri">Missouri</button>
       <button class="ftab" data-dest="nevada">Nevada</button>
+      <button class="ftab" data-dest="ohio">Ohio</button>
       <button class="ftab" data-dest="south-carolina">South Carolina</button>
       <button class="ftab" data-dest="tennessee">Tennessee</button>
       <button class="ftab" data-dest="texas">Texas</button>
@@ -1736,6 +1738,23 @@ const COURSES = [
     name:"Harborside International &mdash; Starboard Course",price:"$50&ndash;$95",greenFee:"$",
     cyntp:"A links-style gem on the south side of Chicago. Wind off Lake Michigan turns what looks like a straightforward layout into a genuine challenge. Great value and a unique Chicago golf experience.",
     cyntp_rating:7.4,cyntp_tag:null,city:"Chicago, IL",comments:[]
+  },{
+    id:135,dest:"ohio",destLabel:"Ohio",thumbClass:"ct1",
+    name:"Firestone Country Club &mdash; South Course",price:"$200&ndash;$350",greenFee:"$$$",
+    cyntp:"One of the most iconic courses on the PGA Tour, and it was pretty surreal to actually play it. So many big moments have happened here, like Tiger's shot in the dark on 18 and Arnold Palmer's famous 8 on the Monster. This is up there with the most well-manicured courses we've ever played. The routing weaves through the trees with real elevation change, and the greens were slick. An awesome round.",
+    cyntp_rating:8.8,cyntp_tag:"Must Play",city:"Akron, OH",comments:[],
+    tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1780687884/Screenshot_2026-06-05_at_2.31.16_PM_uafzmt.png"
+  },{
+    id:136,dest:"ohio",destLabel:"Ohio",thumbClass:"ct2",
+    name:"Firestone Country Club &mdash; North Course",price:"$200&ndash;$350",greenFee:"$$$",
+    cyntp:"The most picturesque of the three courses on the property. Conditions were great, but you play this one for the scenery. Water surrounds a handful of holes at the start and end of the round, and 17 is one of the coolest par 3s we played all weekend, a tee shot over the water to a peninsula green. Some legitimately intimidating shots out here.",
+    cyntp_rating:8.7,cyntp_tag:"Bucket List",city:"Akron, OH",comments:[],
+    tileImg:"https://res.cloudinary.com/dak67vton/image/upload/v1780687987/Screenshot_2026-06-05_at_2.32.59_PM_wvebnh.png"
+  },{
+    id:137,dest:"ohio",destLabel:"Ohio",thumbClass:"ct3",
+    name:"Firestone Country Club &mdash; Fazio Course",price:"$200&ndash;$350",greenFee:"$$$",
+    cyntp:"The most playable of the three. Wider fairways and the same great conditions. Light on trees with generous landing areas and some big elevated views, including the highest point in the county. The front nine wraps around the perimeter of the famous South Course, and the back nine heads further west. A fun, scoreable round.",
+    cyntp_rating:8.4,cyntp_tag:null,city:"Akron, OH",comments:[]
   }
 
 ];
@@ -2010,6 +2029,9 @@ const COURSE_IMAGES = {
     'https://res.cloudinary.com/dak67vton/image/upload/v1779566517/Screenshot_2026-05-23_at_3.00.21_PM_cotdlv.png',
     'https://res.cloudinary.com/dak67vton/image/upload/v1779566328/Screenshot_2026-05-23_at_2.58.44_PM_kvwyf5.png',
   ],
+  135: ['https://res.cloudinary.com/dak67vton/image/upload/v1780687884/Screenshot_2026-06-05_at_2.31.16_PM_uafzmt.png'],
+  136: ['https://res.cloudinary.com/dak67vton/image/upload/v1780687987/Screenshot_2026-06-05_at_2.32.59_PM_wvebnh.png'],
+  137: ['https://res.cloudinary.com/dak67vton/image/upload/v1780687413/DSC02081_urgkwy.jpg'],
 };
 
 function openCourse(id) {
@@ -2259,6 +2281,7 @@ const COORDS = {
   127:[37.172, -113.389],  128:[37.139, -113.530],  129:[37.199, -113.380],
   130:[36.809, -114.110],  131:[36.818, -114.077],
   132:[41.703, -88.009],   133:[41.694, -88.063],   134:[41.811, -87.614],
+  135:[41.067, -81.564],   136:[41.068, -81.565],   137:[41.069, -81.566],
 };
 
 
