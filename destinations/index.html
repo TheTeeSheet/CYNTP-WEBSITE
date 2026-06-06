@@ -171,6 +171,11 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
 .dest-courses-grid {
   display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px;
 }
+.dest-courses-grid:has(> .dest-course-card:only-child) {
+  grid-template-columns: 1fr;
+  max-width: 480px;
+  margin: 0 auto;
+}
 .dest-course-card {
   background: rgba(255,255,255,0.025);
   border: 1px solid rgba(255,255,255,0.06);
