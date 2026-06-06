@@ -466,7 +466,7 @@
         "name": "SentryWorld",
         "designer": "Robert Trent Jones Jr., 1982 (renovated 2014)",
         "description": "The 16th is the famous Flowers Hole — 50,000+ flowers surrounding a par 3 — and it lives up to the hype. But the conditioning is what sets this place apart. Bunkers raked tight, fairways like carpet, greens true and quick. Worth playing twice on any trip: first round to figure out where you're going, second round to actually play it.",
-        "image": null
+        "image": "https://res.cloudinary.com/dak67vton/image/upload/v1777731765/Screenshot_2026-05-02_at_9.22.35_AM_s8be9k.png"
       }
     ],
     "where_to_stay": "We stayed at the Inn at SentryWorld both years — no question, this is the right call. It's a five-minute walk to the first tee and the rooms feel like a beautifully renovated cabin. Staying off property means driving in from Stevens Point or Wausau and missing the whole point. If you stay on property there is no need to leave the entire time. They have amazing food at PJ's (the restaurant on site) and the breakfast spot right off the lobby of the Inn. King rooms are big, bathrooms are nice, fire pit out back.",
@@ -522,7 +522,17 @@
         "detail": "Don't do it. Plan for two rounds minimum. SentryWorld stands on its own — two rounds and the Inn is a full weekend, no add-ons needed."
       }
     ],
-    "gallery": []
+    "gallery": [
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780508483/Screenshot_2026-06-03_at_1.41.18_PM_hz1h5a.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780508547/Screenshot_2026-06-03_at_1.42.21_PM_zf6jft.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780508723/Screenshot_2026-06-03_at_1.45.19_PM_cpmqig.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780508815/Screenshot_2026-06-03_at_1.46.48_PM_okrd02.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780509019/Screenshot_2026-06-03_at_1.50.13_PM_ury0ve.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780509225/Screenshot_2026-06-03_at_1.53.40_PM_admwx7.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780509333/Screenshot_2026-06-03_at_1.55.27_PM_mhzbc3.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780509368/Screenshot_2026-06-03_at_1.56.03_PM_fdj3wq.png" },
+      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780509485/Screenshot_2026-06-03_at_1.57.59_PM_ghxe3j.png" }
+    ]
   },
   {
     "slug": "st-george",
