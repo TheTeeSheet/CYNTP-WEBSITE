@@ -884,7 +884,7 @@ function cloudinaryThumb(url) {
 }
 
 function cloudinaryFull(url) {
-  if (url.includes('/upload/')) return url.replace('/upload/', '/upload/w_1600,q_auto,f_auto/');
+  if (url.includes('/upload/')) return url.replace('/upload/', '/upload/w_1600,q_auto:best,f_auto/');
   return url;
 }
 </script>
