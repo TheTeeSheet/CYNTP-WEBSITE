@@ -1871,7 +1871,6 @@ function renderGrid() {
         <div class="card-thumb">
           <div class="card-thumb-bg ${c.thumbClass}" ${c.tileImg ? `style="background-image:url('${c.tileImg}');background-size:cover;background-position:center;"` : ''}></div>
           <div class="card-dest-tag">${c.destLabel}</div>
-          ${c.cyntp_tag ? `<div class="card-cyntp-tag">${c.cyntp_tag}</div>` : ''}
           ${c.cyntp_rating != null ? `<div class="card-rating-badge"><span class="card-rating-badge-num">${c.cyntp_rating.toFixed(1)}</span><span class="card-rating-badge-label">CYNTP</span></div>` : ''}
         </div>
         <div class="card-body">
