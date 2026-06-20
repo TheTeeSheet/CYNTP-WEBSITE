@@ -325,13 +325,27 @@
       }
     ],
     "gallery": [
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779285490/Screenshot_2026-05-20_at_8.58.04_AM_kve2lt.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779285531/Screenshot_2026-05-20_at_8.58.46_AM_jplhbm.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779285329/Screenshot_2026-05-20_at_8.55.23_AM_cbeane.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779285083/Screenshot_2026-05-20_at_8.51.18_AM_wr4ws4.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779284925/Screenshot_2026-05-20_at_8.48.39_AM_grn6oj.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779284699/Screenshot_2026-05-20_at_8.44.52_AM_t9plvb.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779285400/Screenshot_2026-05-20_at_8.56.34_AM_pgfrny.png" }
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779285490/Screenshot_2026-05-20_at_8.58.04_AM_kve2lt.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779285531/Screenshot_2026-05-20_at_8.58.46_AM_jplhbm.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779285329/Screenshot_2026-05-20_at_8.55.23_AM_cbeane.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779285083/Screenshot_2026-05-20_at_8.51.18_AM_wr4ws4.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779284925/Screenshot_2026-05-20_at_8.48.39_AM_grn6oj.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779284699/Screenshot_2026-05-20_at_8.44.52_AM_t9plvb.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779285400/Screenshot_2026-05-20_at_8.56.34_AM_pgfrny.png"
+      }
     ]
   },
   {
@@ -432,15 +446,33 @@
       }
     ],
     "gallery": [
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779678222/Screenshot_2026-05-24_at_10.03.34_PM_r2pnsf.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779677887/DSC09086_qahabx.jpg" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779678049/Screenshot_2026-05-24_at_9.59.10_PM_b1tfl5.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779679171/Screenshot_2026-05-24_at_10.18.37_PM_ghjczm.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779679070/Screenshot_2026-05-24_at_10.12.56_PM_lngo4f.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779680066/Screenshot_2026-05-24_at_10.33.06_PM_x9nq0c.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779679715/Screenshot_2026-05-24_at_10.27.13_PM_hevs4l.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779679382/Screenshot_2026-05-24_at_10.21.57_PM_ldoofv.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779680245/Screenshot_2026-05-24_at_10.36.11_PM_aq3i2k.png" }
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779678222/Screenshot_2026-05-24_at_10.03.34_PM_r2pnsf.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779677887/DSC09086_qahabx.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779678049/Screenshot_2026-05-24_at_9.59.10_PM_b1tfl5.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779679171/Screenshot_2026-05-24_at_10.18.37_PM_ghjczm.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779679070/Screenshot_2026-05-24_at_10.12.56_PM_lngo4f.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779680066/Screenshot_2026-05-24_at_10.33.06_PM_x9nq0c.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779679715/Screenshot_2026-05-24_at_10.27.13_PM_hevs4l.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779679382/Screenshot_2026-05-24_at_10.21.57_PM_ldoofv.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779680245/Screenshot_2026-05-24_at_10.36.11_PM_aq3i2k.png"
+      }
     ]
   },
   {
@@ -523,15 +555,33 @@
       }
     ],
     "gallery": [
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780508483/Screenshot_2026-06-03_at_1.41.18_PM_hz1h5a.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780508547/Screenshot_2026-06-03_at_1.42.21_PM_zf6jft.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780508723/Screenshot_2026-06-03_at_1.45.19_PM_cpmqig.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780508815/Screenshot_2026-06-03_at_1.46.48_PM_okrd02.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780509019/Screenshot_2026-06-03_at_1.50.13_PM_ury0ve.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780509225/Screenshot_2026-06-03_at_1.53.40_PM_admwx7.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780509333/Screenshot_2026-06-03_at_1.55.27_PM_mhzbc3.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780509368/Screenshot_2026-06-03_at_1.56.03_PM_fdj3wq.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780509485/Screenshot_2026-06-03_at_1.57.59_PM_ghxe3j.png" }
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780508483/Screenshot_2026-06-03_at_1.41.18_PM_hz1h5a.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780508547/Screenshot_2026-06-03_at_1.42.21_PM_zf6jft.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780508723/Screenshot_2026-06-03_at_1.45.19_PM_cpmqig.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780508815/Screenshot_2026-06-03_at_1.46.48_PM_okrd02.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780509019/Screenshot_2026-06-03_at_1.50.13_PM_ury0ve.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780509225/Screenshot_2026-06-03_at_1.53.40_PM_admwx7.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780509333/Screenshot_2026-06-03_at_1.55.27_PM_mhzbc3.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780509368/Screenshot_2026-06-03_at_1.56.03_PM_fdj3wq.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1780509485/Screenshot_2026-06-03_at_1.57.59_PM_ghxe3j.png"
+      }
     ]
   },
   {
@@ -693,15 +743,33 @@
     ],
     "where_to_stay": "Splitting between two resorts is basically required. You have to be checked in as a guest to play Teeth of the Dog and Dye Fore — hard rule at Casa de Campo. Same setup at Puntacana for Corales and La Cana. We did two nights at the Westin Puntacana for the Corales and La Cana days, then one night at Casa de Campo for Teeth of the Dog and Dye Fore. The Westin is the smaller, more intimate property with beach access right off the lobby — Traditional Rooms are fine, upgrade to ocean-view if the budget allows. Casa de Campo is a 7,000-acre compound; you'll need a golf cart to get anywhere. Superior Casita Rooms were comfortable. Going bigger? The villas include breakfast and a touring cart.",
     "gallery": [
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779670542/DJI_20260112155715_0125_D_sn5dc5.jpg" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779670905/Screenshot_2026-05-24_at_8.01.40_PM_lzuvd5.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779671961/Screenshot_2026-05-24_at_8.19.16_PM_mrckd4.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779672452/Screenshot_2026-05-24_at_8.27.22_PM_zmlnra.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779670490/DJI_20260112155547_0121_D_iibgri.jpg" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779671317/Screenshot_2026-05-24_at_8.08.27_PM_nwumnd.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779671866/Screenshot_2026-05-24_at_8.17.41_PM_cbxvsy.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779672518/Screenshot_2026-05-24_at_8.28.31_PM_gn7pwn.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779671734/Screenshot_2026-05-24_at_8.15.29_PM_vvu60j.png" }
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779670542/DJI_20260112155715_0125_D_sn5dc5.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779670905/Screenshot_2026-05-24_at_8.01.40_PM_lzuvd5.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779671961/Screenshot_2026-05-24_at_8.19.16_PM_mrckd4.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779672452/Screenshot_2026-05-24_at_8.27.22_PM_zmlnra.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779670490/DJI_20260112155547_0121_D_iibgri.jpg"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779671317/Screenshot_2026-05-24_at_8.08.27_PM_nwumnd.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779671866/Screenshot_2026-05-24_at_8.17.41_PM_cbxvsy.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779672518/Screenshot_2026-05-24_at_8.28.31_PM_gn7pwn.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779671734/Screenshot_2026-05-24_at_8.15.29_PM_vvu60j.png"
+      }
     ],
     "booking_link": "https://www.casadecampo.com.do/",
     "booking_text": "Book a stay at Casa de Campo →",
@@ -965,15 +1033,33 @@
       }
     ],
     "gallery": [
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779654862/Screenshot_2026-05-24_at_3.34.16_PM_xafakn.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779672930/Screenshot_2026-05-24_at_8.35.20_PM_fuaosj.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779654757/Screenshot_2026-05-24_at_3.32.30_PM_ltirvg.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779653389/Screenshot_2026-05-24_at_3.09.46_PM_hvac9u.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779670119/Screenshot_2026-05-24_at_3.19.30_PM_hj98zt.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779654450/Screenshot_2026-05-24_at_3.27.22_PM_qkepr6.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779654350/Screenshot_2026-05-24_at_3.25.40_PM_nita9e.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779655352/Screenshot_2026-05-24_at_3.42.24_PM_sddwkw.png" },
-      { "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779655196/Screenshot_2026-05-24_at_3.39.46_PM_pze5ol.png" }
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779654862/Screenshot_2026-05-24_at_3.34.16_PM_xafakn.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779672930/Screenshot_2026-05-24_at_8.35.20_PM_fuaosj.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779654757/Screenshot_2026-05-24_at_3.32.30_PM_ltirvg.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779653389/Screenshot_2026-05-24_at_3.09.46_PM_hvac9u.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779670119/Screenshot_2026-05-24_at_3.19.30_PM_hj98zt.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779654450/Screenshot_2026-05-24_at_3.27.22_PM_qkepr6.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779654350/Screenshot_2026-05-24_at_3.25.40_PM_nita9e.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779655352/Screenshot_2026-05-24_at_3.42.24_PM_sddwkw.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1779655196/Screenshot_2026-05-24_at_3.39.46_PM_pze5ol.png"
+      }
     ]
   },
   {
@@ -984,11 +1070,76 @@
     "location_tags": [
       "MICHIGAN",
       "RESORT",
-      "NORTHERN MICHIGAN"
+      "3 COURSES"
     ],
-    "tagline": "Northern Michigan golf at its finest.",
-    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777751948/Screenshot_2026-05-02_at_2.58.29_PM_wffkcp.png",
-    "meta_description": "Grand Traverse Resort golf trip guide — three championship courses including The Bear by Jack Nicklaus.",
+    "tagline": "Three courses on one property. A Nicklaus signature, a Gary Player layout, and a tighter original course that bites harder than it looks. Plus a casino five minutes away. Northern Michigan’s model stay-and-play.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/f_auto,q_auto/v1777751948/Screenshot_2026-05-02_at_2.58.29_PM_wffkcp.png",
+    "meta_description": "Grand Traverse Resort golf trip guide — The Bear by Jack Nicklaus, The Wolverine by Gary Player, and Spruce Run. Three courses on one property in Traverse City, Michigan.",
+    "the_take": [
+      "We found this one through social and almost didn’t book it. Traverse City doesn’t have the reputation of Pinehurst or Pebble, and on paper three courses at one resort sounds like a marketing pitch more than a destination. What we got was a well-run resort with a legit course mix, a tower hotel right on Grand Traverse Bay, and a casino five minutes down the road for anyone who wants a real night out.",
+      "The Bear is the headliner and it earns it — Nicklaus built something that genuinely punishes you for going off line, and the greens run faster than you expect for a northern Michigan property. The Wolverine gives you Gary Player’s version of the same terrain and it’s quietly excellent, especially the stretch along the old cherry orchards in the middle of the back nine. Spruce Run is the original course on property, tighter and less dramatic, but it bites harder than the scorecard suggests. Don’t blow it off.",
+      "Non-golfers do fine here. The resort has a full spa, pools, and enough to fill a weekend without a club in hand. And if you’ve got a group that splits between golfers and non-golfers, this trip keeps everyone occupied without anyone feeling like they’re stuck waiting."
+    ],
+    "courses": [
+      {
+        "name": "The Bear",
+        "designer": "Jack Nicklaus, 1985",
+        "description": "The hardest course on property and one of the tougher public tracks in the Midwest. Nicklaus routed it through mature hardwood forests with very little margin off the tee — every missed fairway costs you. The greens are fast and slope aggressively toward the trouble. Book your best tee time for this one and don’t play from too far back. Must-play.",
+        "image": null
+      },
+      {
+        "name": "The Wolverine",
+        "designer": "Gary Player, 1999",
+        "description": "The underrated course on property. Player used the natural terrain well, routing the back nine along the old cherry orchards that used to cover this part of northern Michigan. It’s more forgiving off the tee than The Bear but punishes the same mistakes on approach. Conditions are consistently excellent. Must-play.",
+        "image": null
+      },
+      {
+        "name": "Spruce Run",
+        "designer": "William Newcomb",
+        "description": "The original course at Grand Traverse and the one most groups treat as filler. Don’t. It’s tighter than The Bear or The Wolverine, with less visual drama but a routing that demands shot-making from tee to green. A lower score here is harder to come by than it looks. Play it once.",
+        "image": null
+      }
+    ],
+    "where_to_stay": "Stay on property in the tower hotel — rooms on the upper floors look out over Grand Traverse Bay and the views at sunrise are worth the price premium. Aerie Restaurant sits at the top of the tower and is worth a dinner reservation at least one night, especially if you can time it for sunset over the bay.",
+    "booking_link": null,
+    "booking_text": "Book a stay at Grand Traverse Resort →",
+    "setup": [
+      {
+        "label": "2 DAYS",
+        "itinerary": "The Bear on day one, The Wolverine on day two. Spruce Run doesn’t make the cut on a short trip — spend any extra time at the casino or out on the bay."
+      },
+      {
+        "label": "3 DAYS",
+        "itinerary": "One round on each course. Play The Bear on day two when your legs are loose and your head is in it. Dinner at Aerie the first night, Turtle Creek Casino the second."
+      },
+      {
+        "label": "4+ DAYS",
+        "itinerary": "Same as the 3-day plan with room to breathe, or play The Bear twice. It holds up to a second look, especially if you go back with the local knowledge from round one. Add 18 at Spruce Run as a low-stakes closer on the last morning."
+      }
+    ],
+    "know_before": [
+      {
+        "label": "BEST TIME",
+        "value": "Late May through September. Northern Michigan winters close the courses down early — don’t count on playable conditions before Memorial Day or after Columbus Day."
+      },
+      {
+        "label": "FLY INTO",
+        "value": "Cherry Capital Airport (TVC) in Traverse City is 10 minutes from the resort. It’s a small airport, so check connections through Detroit (DTW) or Chicago (ORD) — you’ll often find better fares with a quick layover."
+      },
+      {
+        "label": "BUDGET",
+        "value": "Rooms run $200–$450 per night depending on season and view. Green fees: The Bear $115–$185, The Wolverine $95–$165, Spruce Run $80–$135. Resort guest rates are available when you book lodging and golf together."
+      },
+      {
+        "label": "TEE TIMES",
+        "value": "Resort guests can book tee times further in advance than public players. Lock in The Bear early — it fills up fast on weekends, especially in July and August."
+      },
+      {
+        "label": "THE CASINO",
+        "value": "Turtle Creek Casino is about five minutes down the road — full table game floor, not a slots-only situation. It’s run by the Grand Traverse Band of Ottawa and Chippewa Indians. A solid night-two option if you don’t want to eat at the resort again."
+      }
+    ],
+    "what_to_skip": [],
     "gallery": []
   },
   {
