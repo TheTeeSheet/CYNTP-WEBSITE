@@ -638,14 +638,13 @@
       {
         "label": "TEE TIMES",
         "value": "Book through Tee Times USA for the package. They handle lodging, tee times, and the reservations across all four courses. For the add-ons (Sewailo, Tubac), they can fold those in too."
-      }
-    ],
-    "what_to_skip": [
+      },
       {
-        "lead": "Booking your Arizona trip to Scottsdale on autopilot.",
-        "detail": "We're not saying skip Scottsdale forever — we're saying don't default there. Tucson is the trip most golfers are missing."
+        "label": "WHAT TO SKIP",
+        "value": "Booking your Arizona trip to Scottsdale on autopilot. We're not saying skip Scottsdale forever — we're saying don't default there. Tucson is the trip most golfers are missing."
       }
     ],
+    "what_to_skip": [],
     "gallery": []
   },
   {
