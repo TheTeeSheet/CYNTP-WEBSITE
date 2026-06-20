@@ -557,11 +557,95 @@
     "location_tags": [
       "ARIZONA",
       "DESERT",
-      "4 NIGHTS"
+      "6 COURSES"
     ],
-    "tagline": "Desert golf at The Kennedy Hotel.",
-    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777739477/Screenshot_2026-05-02_at_11.31.06_AM_mmtpto.png",
-    "meta_description": "Tucson golf trip guide — 4 nights and 4 rounds all-in at $697 per person, staying at The Kennedy Hotel.",
+    "tagline": "Four courses, three nights, a fraction of Scottsdale. Arizona's most underrated golf trip is hiding in plain sight, and it holds its own against the bigger names up north.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/f_auto,q_auto/v1777739477/Screenshot_2026-05-02_at_11.31.06_AM_mmtpto.png",
+    "meta_description": "Tucson golf trip guide — Arizona National, Starr Pass, SaddleBrooke, and more. Four courses, three nights, packages from $697 per person.",
+    "the_take": [
+      "99% of golfers planning an Arizona trip default to Scottsdale or Phoenix. Tucson gets skipped, and we think that's the mistake. We've played about 20 courses across the state by now. Scottsdale gets the hype because it has the resorts, the rankings, and the marketing budgets. Tucson has the courses, the conditions, and the pricing.",
+      "The trip economics tell the story. A premium Scottsdale round runs $300+ in season. Tucson's best courses hold their own on quality and conditioning and cost a fraction. The buddies-trip package locks four courses, three nights, lodging, and all the reservations into one number. The vibe out here is more low-key. More middle-of-nowhere. More room on the tee sheet because Scottsdale soaks up the foot traffic for the whole state.",
+      "What surprised us most: no matter how deep your pockets are, Tucson can hold its own against Scottsdale on quality and variety of courses. The mix of mountain routings, valley plays, and desert layouts is on par with anything you'd get up north. If you've got the budget for Scottsdale and you're choosing Tucson on price, you're getting the same caliber of round for half the cost."
+    ],
+    "courses": [
+      {
+        "name": "Arizona National",
+        "designer": "Robert Trent Jones, Jr., 1996",
+        "description": "The hybrid round. Most Tucson courses commit to either valley or mountain. Arizona National does both. The routing climbs into the foothills of the Santa Catalinas for a stretch, then drops back into the desert. The tee box that drops away into a frame of cacti is one of the best tee shots in the state. The 18th finishes with water down the left, houses down the right, and a fairway that looks bigger than it plays. Must-play.",
+        "image": null
+      },
+      {
+        "name": "The Club at Starr Pass",
+        "designer": "Craig Stadler & Bob Cupp, 1986 (Arnold Palmer expansion, 2005)",
+        "description": "27 holes split across three nines. Book an early enough tee time to play a full 18 minimum — 27 if you can swing it. Don't show up for a late nine, you'll wish you'd had more daylight. Conditioning is immaculate top to bottom. Tee boxes lush, fairways green, greens running true. Brand new carts with GPS screens that actually work. The kind of property where everything is dialed and nothing gets in the way of the golf. Must-play.",
+        "image": null
+      },
+      {
+        "name": "SaddleBrooke — Preserve Course",
+        "designer": "Dick Bailey",
+        "description": "The most chilled-out round on the trip. Different scenery from the bigger mountain backdrops. You're hitting into a lower rocky range, and the course is forgiving enough to let you play games on every hole and still feel like you're playing real golf. Solid conditions, relaxed pace, the kind of round that belongs in a buddies trip. Play it once.",
+        "image": null
+      },
+      {
+        "name": "SaddleBrooke — MountainView Course",
+        "designer": "Gary Panks, 1997",
+        "description": "Same property as the Preserve, completely different course. The MountainView leans into the elevated mountain scenery the Preserve doesn't. More big-view tee boxes, more of the classic Tucson backdrop. Pair it with the Preserve for a two-round day at one property and you'll feel like you played two different trips. Play it once.",
+        "image": null
+      },
+      {
+        "name": "Tubac Golf Resort",
+        "designer": "Robert Lawrence (original 18); third nine added 2006",
+        "description": "A 27-hole resort 30 to 40 minutes south of Tucson, almost to the Mexico border. Country-Mexican-cowboy feel that doesn't show up anywhere else on the trip. The least foot traffic of any course we played. Horses graze in fields behind some tee boxes. Tin Cup was filmed here, which is its claim to fame. The breakfast is also the move. Get the French toast with the orange butter. Play it once.",
+        "image": null
+      },
+      {
+        "name": "Sewailo Golf Club",
+        "designer": "Notah Begay III & Ty Butler, 2013",
+        "description": "Connected to Casino del Sol. The course sits in the valley, plays relatively flat, and has more water than you'd expect for a Tucson round. A par-3 island green early in the round gets your attention. Solid variety throughout — dog legs both ways, water in play on several holes, conditions that match the rest of the trip. And then there's the casino three minutes from 18. Pair an afternoon tee time with a craps night and you've got the trip story. Play it once.",
+        "image": null
+      }
+    ],
+    "where_to_stay": "Tee Times USA bundles lodging with the package. The standard option puts you near the Casino del Sol Resort on the west side of town, which gets you Sewailo access and a casino floor across the parking lot. For an upgrade, the JW Marriott Tucson Starr Pass Resort & Spa sits on the Starr Pass property — you roll out of bed into one of the best courses on the trip. Both work depending on whether you'd rather wake up next to a casino or a top-tier mountain course.",
+    "booking_link": "https://www.teetimesusa.com/specials/10489?utm_source=CYNTP&utm_medium=Socials&utm_campaign=Tucson2",
+    "booking_text": "Book a trip with Tee Times USA →",
+    "setup": [
+      {
+        "label": "3 DAYS",
+        "itinerary": "The package. Land Friday morning. Arizona National in the afternoon to start. Saturday: a full 18 at Starr Pass, early enough to enjoy it. Sunday: SaddleBrooke Preserve in the morning, SaddleBrooke MountainView in the afternoon. Fly home Monday. Four rounds, three nights, $697 per person if you're booking September."
+      },
+      {
+        "label": "4 DAYS",
+        "itinerary": "Add one of the bonus courses. Sewailo plus the Casino del Sol night is the easy add — leave Sunday afternoon for a craps run. If you'd rather get out of town, drive south and play Tubac. Either move gives you a fifth round without making the trip a grind."
+      },
+      {
+        "label": "5+ DAYS",
+        "itinerary": "Both add-on rounds, plus the holes we left on the table. All 27 at Starr Pass. All 27 at Tubac. A second meal at Guadalajara Grill. This is the version we want next time."
+      }
+    ],
+    "know_before": [
+      {
+        "label": "BEST TIME",
+        "value": "October through April. February (when we went) is peak Arizona weather and prices reflect that. September is the package sweet spot — desert is starting to cool but the tee sheets are still summer-quiet. Skip June through August unless you like heat-stroke golf."
+      },
+      {
+        "label": "FLY INTO",
+        "value": "Tucson International (TUS) is 20 minutes from town and 30 to 45 minutes from every course on the trip. If you're combining Tucson with Scottsdale, Phoenix Sky Harbor (PHX) is an hour and a half north and works as a backup."
+      },
+      {
+        "label": "BUDGET",
+        "value": "The Tee Times USA package starts at $697 per person for September — that's four courses, three nights, lodging included. February and the peak winter months run higher. Either way you're paying significantly less than the equivalent Scottsdale trip. Green fees at the premium Tucson courses run roughly half what you'd pay for a comparable Scottsdale round."
+      },
+      {
+        "label": "TEE TIMES",
+        "value": "Book through Tee Times USA for the package. They handle lodging, tee times, and the reservations across all four courses. For the add-ons (Sewailo, Tubac), they can fold those in too."
+      }
+    ],
+    "what_to_skip": [
+      {
+        "lead": "Booking your Arizona trip to Scottsdale on autopilot.",
+        "detail": "We're not saying skip Scottsdale forever — we're saying don't default there. Tucson is the trip most golfers are missing."
+      }
+    ],
     "gallery": []
   },
   {
