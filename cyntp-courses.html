@@ -1874,7 +1874,7 @@ function renderGrid() {
     g.courses.forEach(c => {
       html += `<div class="course-card r on" onclick="openCourse(${c.id})">
         <div class="card-thumb">
-          <div class="card-thumb-bg ${c.thumbClass}" ${c.tileImg ? `style="background-image:url('${c.tileImg}');background-size:cover;background-position:center;"` : ''}></div>
+          <div class="card-thumb-bg ${c.thumbClass}" ${c.tileImg ? `style="background-image:url('${cld(c.tileImg)}');background-size:cover;background-position:center;"` : ''}></div>
           <div class="card-dest-tag">${c.destLabel}</div>
           ${c.cyntp_rating != null ? `<div class="card-rating-badge"><span class="card-rating-badge-num">${c.cyntp_rating.toFixed(1)}</span><span class="card-rating-badge-label">CYNTP</span></div>` : ''}
         </div>
@@ -2052,7 +2052,7 @@ function openCourse(id) {
     ? `<div class="panel-dots">${imgs.map((_, i) => `<div class="panel-dot${i === 0 ? ' active' : ''}"></div>`).join('')}</div>`
     : '';
   const heroInner = imgs.length > 0
-    ? `<div class="panel-hero-img" id="panelHeroImg" style="background-image:url('${imgs[0]}')" data-imgs='${JSON.stringify(imgs)}' data-idx="0"></div>${arrows}${dots}`
+    ? `<div class="panel-hero-img" id="panelHeroImg" style="background-image:url('${cld(imgs[0])}')" data-imgs='${JSON.stringify(imgs.map(cld))}' data-idx="0"></div>${arrows}${dots}`
     : `<div class="panel-hero-bg ${course.thumbClass}"></div>`;
 
   const panel = document.getElementById('overlayPanel');
@@ -2289,6 +2289,16 @@ const COORDS = {
   132:[41.703, -88.009],   133:[41.694, -88.063],   134:[41.811, -87.614],
   135:[41.067, -81.564],   136:[41.068, -81.565],   137:[41.069, -81.566],
 };
+
+function cld(url) {
+  if (!url || !url.includes('/upload/')) return url;
+  const after = url.split('/upload/')[1];
+  const first = after.split('/')[0];
+  if (/^v\d+$/.test(first) || first.includes('.')) {
+    return url.replace('/upload/', '/upload/f_auto,q_auto/');
+  }
+  return url;
+}
 
 
 
