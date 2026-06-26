@@ -1851,6 +1851,16 @@ document.addEventListener('click', e => {
 
 // ── RENDER ────────────────────────────────────────────────────────────
 
+function cld(url) {
+  if (!url || !url.includes('/upload/')) return url;
+  const after = url.split('/upload/')[1];
+  const first = after.split('/')[0];
+  if (/^v\d+$/.test(first) || first.includes('.')) {
+    return url.replace('/upload/', '/upload/f_auto,q_auto/');
+  }
+  return url;
+}
+
 function renderGrid() {
   const wrap = document.getElementById('courseGridWrap');
   let filtered = activeDest === 'all' ? courseData : courseData.filter(c => c.dest === activeDest);
@@ -2289,18 +2299,6 @@ const COORDS = {
   132:[41.703, -88.009],   133:[41.694, -88.063],   134:[41.811, -87.614],
   135:[41.067, -81.564],   136:[41.068, -81.565],   137:[41.069, -81.566],
 };
-
-function cld(url) {
-  if (!url || !url.includes('/upload/')) return url;
-  const after = url.split('/upload/')[1];
-  const first = after.split('/')[0];
-  if (/^v\d+$/.test(first) || first.includes('.')) {
-    return url.replace('/upload/', '/upload/f_auto,q_auto/');
-  }
-  return url;
-}
-
-
 
 // ── MAP INIT ──────────────────────────────────────────────────────────
 function initMap() {
