@@ -591,13 +591,119 @@
     "state": "Utah",
     "location_tags": [
       "UTAH",
-      "DESERT",
-      "RED ROCK"
+      "NEVADA",
+      "GREATER ZION"
     ],
-    "tagline": "Red rock. Black lava. Zero bad holes.",
-    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/v1777752084/Screenshot_2026-05-02_at_3.01.13_PM_vvq1fj.png",
-    "meta_description": "St. George Utah golf trip guide — the most visually dramatic golf in America, with red rock canyons and ancient lava fields.",
-    "gallery": []
+    "tagline": "Four courses, two states, and red rock in every direction. A lava field outside Ivins, a cliff edge above a reservoir, and a canyon course 45 minutes south in Nevada that doesn't look real in photos. You won't find golf like this anywhere else in the world.",
+    "hero_image": "https://res.cloudinary.com/dak67vton/image/upload/f_auto,q_auto/v1777752084/Screenshot_2026-05-02_at_3.01.13_PM_vvq1fj.png",
+    "meta_description": "St. George golf trip guide — Sand Hollow, Black Desert, Wolf Creek, and The Ledges. Two states, four courses, red rock in every direction.",
+    "the_take": [
+      "St. George spent years as the town people drove through on the way to Zion. That's over. Sand Hollow has been on the top 100 public lists since it opened in 2008, Black Desert brought the PGA Tour back to Utah for the first time in sixty years, and there are ten more courses within a half hour of both.",
+      "We built this one around four rounds. Sand Hollow and Black Desert are the reason you fly here. The Ledges sits fifteen minutes from downtown with the best views inside the city limits. Then you drive 45 minutes south into Nevada for Wolf Creek, which does not look like a real golf course in photos and somehow looks less real in person.",
+      "Two states, four courses, and no round longer than an hour from your bed."
+    ],
+    "courses": [
+      {
+        "name": "Sand Hollow Resort, Championship",
+        "designer": "John Fought, 2008",
+        "description": "The reason the trip exists. The front nine is good, honest desert golf. The back nine is why people fly here. Holes 11 through 15 run along the edge of a cliff above Sand Hollow Reservoir with nothing but air on one side, and the 12th belongs in any conversation about the best holes in the West. It has been in the national top 100 public conversation since the day it opened and it still holds up. If you only get one round on this whole trip, take this one.",
+        "verdict": "Must-play.",
+        "image": null
+      },
+      {
+        "name": "Black Desert",
+        "designer": "Tom Weiskopf and Phil Smith, 2022",
+        "description": "Weiskopf's final design, finished after he died in 2022, routed straight through a black lava field near Ivins. The contrast of black rock against green fairway with Red Mountain behind it does not look real in person and it looks even less real on camera. It's the most expensive round of the trip at around $350, or $275 if you're staying on property, and that includes cart, forecaddie, range balls, and food on course. It hosts the Bank of Utah Championship on the PGA Tour every fall, so you're playing a course you've watched on TV.",
+        "verdict": "Must-play.",
+        "image": null
+      },
+      {
+        "name": "Wolf Creek",
+        "designer": "Dennis and John Rider, 2000 (Mesquite, NV)",
+        "description": "Forty five minutes south into Nevada and worth every mile. Wolf Creek is carved into canyon walls with 200 feet of elevation change and tee shots that drop so far you lose the ball in the air. The 12th falls close to 100 feet from tee to green. The 14th is the most photographed hole in Nevada that isn't at Shadow Creek. It's cart path only the whole way, the slope is 154 from the tips, and there is no bailout on most holes. Move up a tee box, take the extra sleeve, and enjoy it.",
+        "verdict": "Must-play.",
+        "image": null
+      },
+      {
+        "name": "The Ledges",
+        "designer": "Matt Dye, 2006",
+        "description": "Pete Dye's nephew built two nines that barely feel related. The front is open and links-adjacent, the back tightens up against the rock. The 15th plays to a green set under a lava wall with a creek in front, and the Snow Canyon views from up there are the best in the city limits. Closest good course to downtown, which makes it the easy call for an arrival day or a getaway morning round.",
+        "image": null
+      }
+    ],
+    "also_worth_playing": [
+      {
+        "name": "Coral Canyon",
+        "meta": "Keith Foster, 2000, Washington UT",
+        "description": "The value play of the region and a course we'd rank higher than most lists do. Twenty five years of maturity, real elevation change, Zion views on the back nine, and a par 3 sixth perched over rock and sand that stands up against anything in town. Around $65 to $135. If you're adding a fifth round, add this one."
+      },
+      {
+        "name": "Copper Rock",
+        "meta": "opened 2019, Hurricane UT",
+        "description": "The front nine is flat and easy to forget. Then the back climbs onto the benchlands and turns into a different golf course. The perched tee on 17 is the shot everybody films. It hosts an Epson Tour event, which tells you what the greens are like. Around $155."
+      },
+      {
+        "name": "Conestoga",
+        "meta": "Gary Panks, 2010, Mesquite NV",
+        "description": "The other Mesquite course worth your time. The front nine runs through the canyons and holds its own, the back flattens out through the neighborhood. Paspalum fairways, Troon conditioning, and a bar after the round that locals treat like a landmark. If you're already driving down for Wolf Creek, make it a 36 hole day and play this one in the afternoon."
+      }
+    ],
+    "where_to_stay": [
+      "Black Desert Resort. It opened in Ivins in 2024 and it's the nicest place to sleep in southern Utah, which would be reason enough, but the math is what actually sells it. Resort guests play Black Desert for $275 instead of $350, so two rounds on property pays back most of a night's room rate. You walk out of your room onto a PGA Tour venue, and everything else on the itinerary is close: under 20 minutes to The Ledges, about 45 to Sand Hollow, a little over an hour to Wolf Creek.",
+      "The property is more than a golf hotel. There are several restaurants, a 15,000 square foot spa, and 21 pickleball courts including a stadium court, which matters if anyone in the group isn't playing all four rounds. Book the Hotel Collection for a normal room. For a buddies trip, the Resort or Terrace collections give you multi-bedroom units where the per person cost drops fast once you split it.",
+      "If the budget won't stretch, rent a house out by Sand Hollow and drive to Black Desert on the one day you play it."
+    ],
+    "booking_link": "https://blackdesertresort.com/",
+    "booking_text": "Book a stay at Black Desert Resort →",
+    "setup": [
+      {
+        "label": "3 DAYS",
+        "itinerary": "Sand Hollow, Black Desert, Wolf Creek. Drop The Ledges and you still have the trip. Put Wolf Creek in the middle so the drive doesn't land on a travel day."
+      },
+      {
+        "label": "4 DAYS",
+        "itinerary": "The full itinerary. The Ledges on arrival day since it's closest to town, then Sand Hollow, then Black Desert, then Wolf Creek on the way out if you're flying home from Las Vegas."
+      },
+      {
+        "label": "5+ DAYS",
+        "itinerary": "Same four with room to breathe, plus the honorable mentions. Make the Mesquite day a 36 by adding Conestoga in the afternoon, and put a fifth round into Coral Canyon or Copper Rock rather than replaying one of the big three. Give up one morning for Snow Canyon State Park, which is 15 minutes from town and takes about two hours, or drive the hour to Zion if nobody in the group has seen it."
+      }
+    ],
+    "know_before": [
+      {
+        "label": "BEST TIME",
+        "value": "March through May, or October into November. Summer highs sit above 100 and the rates drop for a reason. Winter plays fine most days, but mornings are cold and frost delays are real."
+      },
+      {
+        "label": "THE HEAT",
+        "value": "Take this seriously. St. George sits in the low desert and summer highs run 100 to 110 from June into September. It is dry heat, which sounds better than it plays. You will not feel yourself sweating and you will be behind on water by the sixth hole. Even in a good month, an afternoon round in May or October can push 90. Take the first tee time of the day and start drinking before you're thirsty."
+      },
+      {
+        "label": "FLY INTO",
+        "value": "St. George Regional (SGU) is 15 minutes from town with nonstops from Salt Lake, Denver, Phoenix, Dallas, Los Angeles, and Chicago. Las Vegas (LAS) is about two hours south and usually cheaper. If you fly into Vegas, the St. George Shuttle runs 13 trips a day and takes the rental car cost off the trip — but you'll still want wheels for the Mesquite day."
+      },
+      {
+        "label": "BUDGET",
+        "value": "The Ledges and Coral Canyon run under $150. Sand Hollow swings from about $100 in the off season to $250 in peak spring. Black Desert is around $350 and includes cart, forecaddie, and food. Wolf Creek is the swing factor: $390 to $420 in peak spring, but $95 to $125 on a summer twilight. Lodging is $150 to $400 a night. Booking the whole thing through our partner at Tee Times USA usually beats piecing it together yourself — it's the easiest lever on the total cost."
+      },
+      {
+        "label": "TIME ZONE",
+        "value": "Mesquite is on Pacific time, an hour behind St. George. Your 9:00 tee time at Wolf Creek is 10:00 back at the house, so the drive costs you nothing in sleep. Just don't get it backwards on the way home."
+      }
+    ],
+    "what_to_skip": [
+      {
+        "lead": "Playing any of the big three twice.",
+        "detail": "Sand Hollow, Black Desert, and Wolf Creek are all worth the trip and none of them are worth a repeat lap on the same week. They hit hardest the first time, and at $275 to $420 a round the second one is the most expensive way to see something you already saw. If you have room for a fifth round, go play Coral Canyon or Copper Rock, or add Conestoga to your Mesquite day. You'll spend half as much and come home with another course to talk about."
+      },
+      {
+        "lead": "Basing the trip in Mesquite.",
+        "detail": "The rooms are cheaper and you'd be next door to Wolf Creek and Conestoga, so it looks like the smart move on a spreadsheet. It isn't. Three of your four rounds are in Utah, the food and the scenery are better in St. George, and you'd be making that 45 minute drive four times instead of once."
+      }
+    ],
+    "gallery": [],
+    "trip_booking_link": "https://www.teetimesusa.com/specials/10747?utm_source=CYNTP&utm_medium=Socials&utm_campaign=St.+George+2",
+    "trip_booking_text": "Book the Trip"
   },
   {
     "slug": "tucson",

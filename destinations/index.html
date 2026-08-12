@@ -221,6 +221,81 @@ nav .active { color: var(--sun) !important; background: rgba(255,255,255,0.08); 
   font-size: 14px; color: var(--sun); margin-bottom: 12px;
 }
 .dest-course-desc { font-size: 15px; color: #d4d0c4; line-height: 1.68; }
+.dest-course-verdict {
+  margin-top: 14px;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--sun); font-weight: 700;
+}
+
+/* ── ALSO WORTH PLAYING (sub-block under Courses) ── */
+.dest-also-block {
+  margin-top: 48px; padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.dest-also-heading {
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.5); font-weight: 600; margin-bottom: 20px;
+}
+.dest-also-list {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px;
+}
+.dest-also-name {
+  font-family: var(--font-head); font-size: 17px; letter-spacing: 1px;
+  color: var(--paper); margin-bottom: 4px;
+}
+.dest-also-meta {
+  font-family: var(--font-serif); font-style: italic; font-size: 13px;
+  color: var(--sun); font-weight: normal; letter-spacing: 0; text-transform: none;
+}
+.dest-also-desc {
+  font-size: 14px; color: #d4d0c4; line-height: 1.65; margin-top: 6px;
+}
+@media (max-width: 900px) {
+  .dest-also-list { grid-template-columns: 1fr; gap: 22px; }
+}
+
+/* ── HERO CTA (Book the Trip button in hero) ── */
+.dest-hero-cta {
+  display: inline-flex; align-items: center; margin-top: 28px;
+  background: var(--sun); color: var(--ink);
+  font-family: var(--font-head); font-size: 14px; letter-spacing: 2px;
+  padding: 14px 28px; border-radius: 8px;
+  transition: background 0.2s;
+}
+.dest-hero-cta:hover { background: var(--sun2); }
+
+/* ── TRIP BOOKING CTA (dedicated section) ── */
+.dest-trip-cta-section { padding: 64px 80px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.dest-trip-cta-inner {
+  max-width: 720px; margin: 0 auto; text-align: center;
+  background: linear-gradient(135deg, rgba(212,160,85,0.12), rgba(45,106,63,0.08));
+  border: 1px solid rgba(212,160,85,0.3);
+  border-radius: 16px; padding: 48px 40px;
+}
+.dest-trip-cta-eyebrow {
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--sun); font-weight: 600; margin-bottom: 14px;
+}
+.dest-trip-cta-headline {
+  font-family: var(--font-head); font-size: clamp(28px, 3.6vw, 40px);
+  color: var(--paper); letter-spacing: 2px; margin-bottom: 14px; line-height: 1;
+}
+.dest-trip-cta-sub {
+  font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.6;
+  margin-bottom: 28px;
+}
+.dest-trip-cta-btn {
+  display: inline-flex; align-items: center;
+  background: var(--sun); color: var(--ink);
+  font-family: var(--font-head); font-size: 14px; letter-spacing: 2px;
+  padding: 15px 34px; border-radius: 8px;
+  transition: background 0.2s;
+}
+.dest-trip-cta-btn:hover { background: var(--sun2); }
+@media (max-width: 680px) {
+  .dest-trip-cta-section { padding: 48px 24px; }
+  .dest-trip-cta-inner { padding: 36px 24px; }
+}
 
 /* ── WHERE TO STAY ── */
 .dest-stay-body {
@@ -500,6 +575,7 @@ function renderFull(dest) {
     setupSectionHTML(dest),
     kbygSectionHTML(dest),
     skipSectionHTML(dest),
+    tripCtaSectionHTML(dest),
     gallerySectionHTML(dest),
     ctaSectionHTML()
   ].join('');
@@ -545,6 +621,9 @@ function renderComingSoon(dest) {
 function heroHTML(dest) {
   const bgStyle = dest.hero_image ? ` style="background-image:url('${dest.hero_image}')"` : '';
   const tags = (dest.location_tags || []).map(t => `<span class="dest-location-tag">${t}</span>`).join('');
+  const cta = dest.trip_booking_link
+    ? `<a href="${dest.trip_booking_link}" target="_blank" rel="noopener noreferrer" class="dest-hero-cta">${esc(dest.trip_booking_text || 'Book the Trip')} &rarr;</a>`
+    : '';
   return `
     <div class="dest-hero">
       <div class="dest-hero-bg"${bgStyle}></div>
@@ -554,8 +633,22 @@ function heroHTML(dest) {
         ${tags ? `<div class="dest-location-tags">${tags}</div>` : ''}
         <h1 class="dest-hero-name">${esc(dest.name.toUpperCase())}</h1>
         ${dest.tagline ? `<p class="dest-hero-tagline">${esc(dest.tagline)}</p>` : ''}
+        ${cta}
       </div>
     </div>`;
+}
+
+function tripCtaSectionHTML(dest) {
+  if (!dest.trip_booking_link) return '';
+  return `
+    <section class="dest-trip-cta-section">
+      <div class="dest-trip-cta-inner">
+        <div class="dest-trip-cta-eyebrow">CYNTP × Tee Times USA</div>
+        <h2 class="dest-trip-cta-headline">READY TO BOOK?</h2>
+        <p class="dest-trip-cta-sub">The full ${esc(dest.name)} trip packaged through our partner — lodging, rounds, and cart included. Booking here helps you land better group rates than piecing it together yourself.</p>
+        <a href="${dest.trip_booking_link}" target="_blank" rel="noopener noreferrer" class="dest-trip-cta-btn">${esc(dest.trip_booking_text || 'Book the Trip')} &rarr;</a>
+      </div>
+    </section>`;
 }
 
 function sectionLabel(label) {
@@ -643,6 +736,9 @@ function coursesSectionHTML(dest) {
         : '';
       imgWrap = `<div class="dest-course-image-wrap"><div id="${id}" class="dest-course-image" style="background-image:url('${esc(imgs[0])}')" data-imgs='${JSON.stringify(imgs)}' data-idx="0"></div>${arrows}</div>`;
     }
+    const verdict = c.verdict
+      ? `<div class="dest-course-verdict">${esc(c.verdict)}</div>`
+      : '';
     return `
     <div class="dest-course-card">
       ${imgWrap}
@@ -650,14 +746,26 @@ function coursesSectionHTML(dest) {
         <div class="dest-course-name">${esc(c.name)}</div>
         <div class="dest-course-designer">${esc(c.designer)}</div>
         <p class="dest-course-desc">${esc(c.description)}</p>
+        ${verdict}
       </div>
     </div>`;
   }).join('');
+  const alsoItems = (dest.also_worth_playing || []).map(a => `
+    <div class="dest-also-item">
+      <div class="dest-also-name">${esc(a.name)} <span class="dest-also-meta">— ${esc(a.meta)}</span></div>
+      <p class="dest-also-desc">${esc(a.description)}</p>
+    </div>`).join('');
+  const alsoBlock = alsoItems ? `
+    <div class="dest-also-block">
+      <div class="dest-also-heading">Also Worth Playing</div>
+      <div class="dest-also-list">${alsoItems}</div>
+    </div>` : '';
   return `
     <section class="dest-section">
       <div class="dest-section-inner">
         ${sectionLabel('The Courses')}
         <div class="dest-courses-grid">${items}</div>
+        ${alsoBlock}
       </div>
     </section>`;
 }
@@ -667,11 +775,14 @@ function staySectionHTML(dest) {
   const btn = dest.booking_link
     ? `<a href="${dest.booking_link}" target="_blank" rel="noopener noreferrer" class="dest-booking-btn">${esc(dest.booking_text || 'Book Your Stay →')}</a>`
     : '';
+  const paras = Array.isArray(dest.where_to_stay)
+    ? dest.where_to_stay.map(p => `<p class="dest-stay-body">${esc(p)}</p>`).join('')
+    : `<p class="dest-stay-body">${esc(dest.where_to_stay)}</p>`;
   return `
     <section class="dest-section dest-section--narrow">
       <div class="dest-section-inner">
         ${sectionLabel('Where to Stay')}
-        <p class="dest-stay-body">${esc(dest.where_to_stay)}</p>
+        ${paras}
         ${btn}
       </div>
     </section>`;
