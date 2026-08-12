@@ -701,7 +701,20 @@
         "detail": "The rooms are cheaper and you'd be next door to Wolf Creek and Conestoga, so it looks like the smart move on a spreadsheet. It isn't. Three of your four rounds are in Utah, the food and the scenery are better in St. George, and you'd be making that 45 minute drive four times instead of once."
       }
     ],
-    "gallery": [],
+    "gallery": [
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1786572551/Screenshot_2026-08-12_at_5.09.06_PM_qkyjmr.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1786572257/Screenshot_2026-08-12_at_5.04.11_PM_lzhknm.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1786571720/Screenshot_2026-08-12_at_4.55.14_PM_k5pejo.png"
+      },
+      {
+        "url": "https://res.cloudinary.com/dak67vton/image/upload/v1786573777/Screenshot_2026-08-12_at_5.29.29_PM_o2nram.png"
+      }
+    ],
     "trip_booking_link": "https://www.teetimesusa.com/specials/10747?utm_source=CYNTP&utm_medium=Socials&utm_campaign=St.+George+2",
     "trip_booking_text": "Book the Trip"
   },
