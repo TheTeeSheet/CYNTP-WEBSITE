@@ -687,13 +687,13 @@ function glanceSectionHTML(dest) {
     });
   }
   if (bestTime) {
-    cells.push({ label: 'Best Time', value: firstSentence(bestTime.value), detail: '' });
+    cells.push({ label: 'Best Time', value: bestTime.glance || firstSentence(bestTime.value), detail: '' });
   }
   if (flyInto) {
-    cells.push({ label: 'Fly Into', value: firstSentence(flyInto.value), detail: '' });
+    cells.push({ label: 'Fly Into', value: flyInto.glance || firstSentence(flyInto.value), detail: '' });
   }
   if (budget) {
-    cells.push({ label: 'Budget', value: firstSentence(budget.value), detail: '' });
+    cells.push({ label: 'Budget', value: budget.glance || firstSentence(budget.value), detail: '' });
   }
 
   if (cells.length < 2) return '';

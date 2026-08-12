@@ -680,11 +680,13 @@
       },
       {
         "label": "FLY INTO",
-        "value": "St. George Regional (SGU) is 15 minutes from town with nonstops from Salt Lake, Denver, Phoenix, Dallas, Los Angeles, and Chicago. Las Vegas (LAS) is about two hours south and usually cheaper. If you fly into Vegas, the St. George Shuttle runs 13 trips a day and takes the rental car cost off the trip — but you'll still want wheels for the Mesquite day."
+        "value": "St. George Regional (SGU) is 15 minutes from town with nonstops from Salt Lake, Denver, Phoenix, Dallas, Los Angeles, and Chicago. Las Vegas (LAS) is about two hours south and usually cheaper. If you fly into Vegas, the St. George Shuttle runs 13 trips a day and takes the rental car cost off the trip — but you'll still want wheels for the Mesquite day.",
+        "glance": "SGU or LAS"
       },
       {
         "label": "BUDGET",
-        "value": "The Ledges and Coral Canyon run under $150. Sand Hollow swings from about $100 in the off season to $250 in peak spring. Black Desert is around $350 and includes cart, forecaddie, and food. Wolf Creek is the swing factor: $390 to $420 in peak spring, but $95 to $125 on a summer twilight. Lodging is $150 to $400 a night. Booking the whole thing through our partner at Tee Times USA usually beats piecing it together yourself — it's the easiest lever on the total cost."
+        "value": "The Ledges and Coral Canyon run under $150. Sand Hollow swings from about $100 in the off season to $250 in peak spring. Black Desert is around $350 and includes cart, forecaddie, and food. Wolf Creek is the swing factor: $390 to $420 in peak spring, but $95 to $125 on a summer twilight. Lodging is $150 to $500 a night. Booking the whole thing through our partner at Tee Times USA usually beats piecing it together yourself — it's the easiest lever on the total cost.",
+        "glance": "Lodging $150–$500/night · Golf $150–$450"
       },
       {
         "label": "TIME ZONE",
