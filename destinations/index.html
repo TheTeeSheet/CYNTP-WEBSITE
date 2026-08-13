@@ -644,7 +644,7 @@ function tripCtaSectionHTML(dest) {
     <section class="dest-trip-cta-section">
       <div class="dest-trip-cta-inner">
         <div class="dest-trip-cta-eyebrow">CYNTP × Tee Times USA</div>
-        <h2 class="dest-trip-cta-headline">READY TO BOOK?</h2>
+        <h2 class="dest-trip-cta-headline">READY TO EXPERIENCE ${esc(dest.name.toUpperCase())}?</h2>
         <p class="dest-trip-cta-sub">The full ${esc(dest.name)} trip packaged through our partner — lodging, rounds, and cart included. Booking here helps you land better group rates than piecing it together yourself.</p>
         <a href="${dest.trip_booking_link}" target="_blank" rel="noopener noreferrer" class="dest-trip-cta-btn">${esc(dest.trip_booking_text || 'Book the Trip')} &rarr;</a>
       </div>
